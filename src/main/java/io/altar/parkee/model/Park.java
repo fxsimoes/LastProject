@@ -1,5 +1,5 @@
 package io.altar.parkee.model;
 
-public class Cliente {
+public class Park {
 
 }
