@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkee</title>
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputScript name="bootstrap/js/bootstrap.js" />
+</h:head>
+<h:body>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="titulo col-md-12">
+				<h1>
+					<b>Parkee</b>
+				</h1>
+				<h:form>
+					<p:toolbar style="margin-top:5px 0px">
+						<f:facet name="right">
+							<p:commandButton type="button" value="Login" />
+							<p:commandButton type="button" value="Sign Up" />
+						</f:facet>
+						<f:facet name="left">
+							<p:menuButton value="Parkee" style="margin-right:20px">
+								<p:menuitem value="Home" outcome="index" />
+								<p:menuitem value="User"/>
+								<p:menuitem value="Admin"/>
+							</p:menuButton>
+						</f:facet>
+					</p:toolbar>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
