@@ -4,7 +4,7 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Parkee</title>
+	<title>Parkeet</title>
 	<h:outputStylesheet name="css/style.css" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
@@ -15,9 +15,21 @@
 
 		<div class="row">
 			<div class="titulo col-md-12">
-				<h1>
-					<b>Parkee</b>
-				</h1>
+
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"> <img alt="Brand" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"></a>
+						</div>
+					</div>
+				</nav>
+
+
+
+
+
+
+
 				<h:form>
 					<p:toolbar style="margin-top:5px 0px">
 						<f:facet name="right">
@@ -27,8 +39,8 @@
 						<f:facet name="left">
 							<p:menuButton value="Parkee" style="margin-right:20px">
 								<p:menuitem value="Home" outcome="index" />
-								<p:menuitem value="User"/>
-								<p:menuitem value="Admin"/>
+								<p:menuitem value="User" />
+								<p:menuitem value="Admin" />
 							</p:menuButton>
 						</f:facet>
 					</p:toolbar>
