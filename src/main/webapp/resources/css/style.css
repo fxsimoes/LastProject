@@ -3,10 +3,10 @@
 /*a mudar*/
 
 h1 {
-	font-family: ;
-	font-size: ;
-	color: !important;
-	
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000 !important;
+
 }
 
 
@@ -35,7 +35,7 @@ footer {
 
 
 body {
-	
+
 	/*background: linear-gradient(#e4e4e4, #b5b5b5) !important; */
 
 }
@@ -49,7 +49,7 @@ body {
     display:flex;
     align-items: top; /* Vertical center alignment */
     justify-content: center; /* Horizontal center alignment */
-   
+
 }
 
 .backbutton{
