@@ -1,5 +1,5 @@
 package io.altar.parkee.repository;
 
-public class ClientRepository {
+public class CustomerRepository {
 
 }
