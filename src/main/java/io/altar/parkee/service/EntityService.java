@@ -1,10 +1,9 @@
 package io.altar.parkee.service;
 
-import io.altar.parkee.model.Entity;
+import io.altar.parkee.model.EntityModel;
 import io.altar.parkee.repository.EntityRepository;
 
-public class EntityService<E extends Entity> {
-	
+public class EntityService<E extends EntityModel> {
 	
 	public void addEntity(EntityRepository<E> entityList, E entity){
 //		Collection<E> list = new ArrayList<E>(entityList.values());

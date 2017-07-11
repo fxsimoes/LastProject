@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Entity {
+public class EntityModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -19,7 +19,7 @@ public class Entity {
 		this.id = id;
 	}
 
-	public Entity() {
+	public EntityModel() {
 	}
 
 }

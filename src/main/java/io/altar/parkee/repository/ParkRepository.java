@@ -5,12 +5,8 @@ import io.altar.parkee.service.EntityService;
 
 public class ParkRepository extends EntityService<Park> {
 	
-	
-	
-	
-	
 	private static final ParkRepository INSTANCE = new ParkRepository();
-
+	
 	private ParkRepository() {}
 
 	public static ParkRepository getInstance() {
