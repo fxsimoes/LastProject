@@ -1,6 +1,6 @@
 package io.altar.parkee.model;
 
-public class Parking_Type {
+public class ParkingType {
 
 	private int id;
 	private String nome;
