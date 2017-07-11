@@ -3,15 +3,36 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
-
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkeet</title>
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputScript name="bootstrap/js/bootstrap.js" />
 
 </h:head>
 <h:body>
-			<h:form>
-			<h1>Hello HEllo World  bitchessss café master</h1>
-			</h:form>
 
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
+	
+	
+	<h:form>
+		<h1></h1>
+	</h:form>
+
+
+
+
+
+
+
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
 </h:body>
 </html>

@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+/*a mudar*/
+
+h1 {
+	font-family: ;
+	font-size: ;
+	color: !important;
+	
+}
+
+
+header {
+		margin-top:0px;
+		font-family: arial;
+}
+
+footer {
+		margin-top:100px;
+		font-family: arial;
+		text-align: center;
+		font-size: 12px;
+		font-weight: bold;
+}
+
+
+
+
+
+
+
+.ui-spinner-input {
+
+}
+
+
+body {
+	
+	/*background: linear-gradient(#e4e4e4, #b5b5b5) !important; */
+
+}
+
+
+.divider {
+	width: 30px;
+}
+
+.flex-container {
+    display:flex;
+    align-items: top; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+   
+}
+
+.backbutton{
+		text-align: center;
+		margin-top: 20px;
+}
+
+
