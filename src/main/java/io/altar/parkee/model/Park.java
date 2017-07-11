@@ -8,6 +8,7 @@ public class Park {
 	private int nrOfSpots;
 	private int spotRef;
 	private String parkLocation;
+	
 	public int getParkId() {
 		return parkId;
 	}
