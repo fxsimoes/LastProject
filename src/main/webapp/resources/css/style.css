@@ -4,12 +4,30 @@
 
 .navbar{
 	height: 170px;
+	margin-bottom: 0px !important;
+}
+
+.navbar-header{
+	display: inline-block;
 }
 
 h1 {
+	font-family: Verdana !important;
+	color: #000000 !important;
+	font-weight: bold;
+	padding-left: 200px;
+	padding-top: 30px;
 	font-family: Verdana;
 	font-size: 10px;
+	font-variant: small-caps;
+}
+
+h2 {
+	font-family: Verdana !important;
 	color: #000000 !important;
+	font-weight: bold;
+	font-size: 5px;
+	text-align: center;
 
 }
 
@@ -28,10 +46,9 @@ footer {
 }
 
 
+.searchpark {
 
-
-
-
+}
 
 .ui-spinner-input {
 
@@ -40,7 +57,7 @@ footer {
 
 body {
 
-	/*background: linear-gradient(#e4e4e4, #b5b5b5) !important; */
+	background: linear-gradient(#e4e4e4, #b5b5b5) !important; 
 
 }
 
