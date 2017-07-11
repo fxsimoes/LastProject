@@ -6,6 +6,7 @@ public class ParkingType {
 	private String nome;
 	private String code;
 	
+	
 	public int getId() {
 		return id;
 	}
