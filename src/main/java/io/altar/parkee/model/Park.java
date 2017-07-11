@@ -1,16 +1,38 @@
 package io.altar.parkee.model;
 
-public class Park {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import io.altar.parkee.model.EntityModel;
+
+@Entity
+@Table(name="Products")
+public class Park extends EntityModel implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private int parkId;
 	private String parkName;
 	private int hourlyPrice;
 	private int nrOfSpots;
-	private int spotRef;
+	private String spotRef;
 	private String parkLocation;
 	private int longitude;
 	private int latitude;
 	
+//	
+//		@Column(name="Shelves", nullable = true)
+//
+//		private String shelfLoc ="shelfId";
+//
+//		private String name = "Name";
+//		@Column(name="Discount")
+//		private Integer discount = 0;
+//		@Column(name="IVA")
+//		private Integer iva = 0;
+//		@Column(name="Price")
+//		private Double price = 0.0;
 	
 	public int getLongitude() {
 		return longitude;
@@ -48,10 +70,10 @@ public class Park {
 	public void setNrOfSpots(int nrOfSpots) {
 		this.nrOfSpots = nrOfSpots;
 	}
-	public int getSpotRef() {
+	public String getSpotRef() {
 		return spotRef;
 	}
-	public void setSpotRef(int spotRef) {
+	public void setSpotRef(String spotRef) {
 		this.spotRef = spotRef;
 	}
 	public String getParkLocation() {
@@ -61,5 +83,6 @@ public class Park {
 		this.parkLocation = parkLocation;
 	}
 	
+	public Park(){}
 	
 }
