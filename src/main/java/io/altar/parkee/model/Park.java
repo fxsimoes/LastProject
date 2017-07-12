@@ -29,19 +29,6 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="Latitude")
 	private int latitude = 0;
 
-	//
-	// @Column(name="Shelves", nullable = true)
-	//
-	// private String shelfLoc ="shelfId";
-	//
-	// private String name = "Name";
-	// @Column(name="Discount")
-	// private Integer discount = 0;
-	// @Column(name="IVA")
-	// private Integer iva = 0;
-	// @Column(name="Price")
-	// private Double price = 0.0;
-
 	public int getLongitude() {
 		return longitude;
 	}
