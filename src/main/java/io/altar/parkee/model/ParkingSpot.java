@@ -1,19 +1,19 @@
 package io.altar.parkee.model;
 
-public class ParkingSpot {
+public class ParkingSpot extends EntityModel {
 
-	private int parkId;
+//	private int parkId;
 	private int number;
 	private String row;
 	private int statusId;
 
-	public int getParkId() {
-		return parkId;
-	}
-
-	public void setParkId(int parkId) {
-		this.parkId = parkId;
-	}
+//	public int getParkId() {
+//		return parkId;
+//	}
+//
+//	public void setParkId(int parkId) {
+//		this.parkId = parkId;
+//	}
 
 	public int getNumber() {
 		return number;
