@@ -3,7 +3,6 @@ package io.altar.parkee.service;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -15,10 +14,10 @@ import io.altar.parkee.repository.ParkRepository;
 	public class ParkService extends EntityService<Park>{
 		
 		@Inject
-		private Instance <ParkRepository> parkList;
+		private ParkRepository parkList;
 		
 		public ParkRepository getParkRepository(){
-			return (ParkRepository) parkList;
+			return parkList;
 		}
 		
 		public List<Park> showParks(ParkRepository parkList){
@@ -27,7 +26,7 @@ import io.altar.parkee.repository.ParkRepository;
 		}
 		
 		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-			((ParkRepository) parkList).modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
+			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
 		}
 		
 }

@@ -2,23 +2,31 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import io.altar.parkee.model.EntityModel;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "Park")
 public class Park extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Column(name="Park Name")
 	private String parkName;
+	@Column(name="Hourly Price")
 	private int hourlyPrice;
+	@Column(name="Nr of Spots")
 	private int nrOfSpots;
+	@Column(name="Spot Ref")
 	private String spotRef;
+	@Column(name="Location")
 	private String parkLocation;
+	@Column(name="Longitude")
 	private int longitude;
+	@Column(name="Latitude")
 	private int latitude;
 
 	//
