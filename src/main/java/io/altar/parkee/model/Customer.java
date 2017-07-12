@@ -1,19 +1,19 @@
 package io.altar.parkee.model;
 
-public class Customer {
+public class Customer extends EntityModel {
 
 	private int customerId;
 	private String customerName;
 	private int customerContact;
 	private int NIF;
 
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+//	public int getId() {
+//		return customerId;
+//	}
+//
+//	public void setCustomerId(int customerId) {
+//		this.customerId = customerId;
+//	}
 
 	public String getCustomerName() {
 		return customerName;
