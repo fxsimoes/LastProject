@@ -41,33 +41,34 @@
 					<br />
 					<h:outputText value="Park Name: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.name}"
+					<h:inputText value="#{ParkBean.activePark.parkName}"
 						placeholder="Enter name" required="true" />
 					<br />
 					<h:outputText value="Hourly Price: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.val}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.hourlyPrice}" required="true" />
 					<br />
 					<h:outputText value="Nr of free spots: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.nrOfSpots}" required="true" />
 					<br />
 					<h:outputText value="Spot Ref: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.spotRef}" required="true" />
 					<br />
 					<h:outputText value="Park Location: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.parkLocation}" required="true" />
 					<br />
 					<h:outputText value="Longitude: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.longitude}" required="true" />
 					<br />
 					<h:outputText value="Latitude: " />
 					<br />
-					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
+					<h:inputText value="#{ParkBean.activePark.latitude}" required="true" />
 					<br />
+<<<<<<< HEAD
 
 					<p:commandButton value="Submit" action="#{ProductBean.addPark()}" />
 				</h:form>
@@ -87,6 +88,11 @@
 					<br />
 					<p:commandButton value="Delete"
 						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
+=======
+					
+					<p:commandButton value="Submit"
+						action="#{ParkBean.addPark()}" />
+>>>>>>> DeveloP
 				</h:form>
 			</div>
 

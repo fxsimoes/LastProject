@@ -119,6 +119,7 @@ public class ParkBean implements Serializable {
 
 	@Inject
 	private ParkService parkService;
+	
 
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
@@ -135,12 +136,12 @@ public class ParkBean implements Serializable {
 		return null;
 	}
 
-	public String deletePark() {
-//		try{
+	public String deletePark(int id) {
+		try{
 		parkService.removeEntity(parkService.getParkRepository(), activePark);
-//		}catch(NullPointerException e){
-//			System.out.println("Exception Caught");
-//		}
+		}catch(NullPointerException e){
+			System.out.println("Exception Caught");
+		}
 		return null;
 	}
 }
