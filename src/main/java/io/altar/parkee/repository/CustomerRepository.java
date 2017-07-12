@@ -1,5 +1,9 @@
 package io.altar.parkee.repository;
 
-public class CustomerRepository {
+@Named("customerRepository")
+@ApplicationScoped
 
+public class CustomerRepository extends EntityRepository<Customer> {
+
+	
 }
