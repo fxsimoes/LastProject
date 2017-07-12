@@ -46,6 +46,32 @@
 					</button>
 				</span>
 			</div>
+
+			<div id="clientsection">
+				<h:form id="form">
+					<p:growl id="msgs" showDetail="true" />
+					<p:tabView>
+						<p:tab title="Clients">
+							<h:panelGrid columns="2" cellpadding="10">
+								<ui:insert name="Clients">
+								<ui:include src="/clientsdata.xhtml" />
+								</ui:insert>
+							</h:panelGrid>
+						</p:tab>
+						<p:tab title="Vehicles">
+							<h:panelGrid columns="2" cellpadding="10">
+
+							</h:panelGrid>
+						</p:tab>
+						<p:tab title="Parks">
+							<h:panelGrid columns="2" cellpadding="10">
+
+							</h:panelGrid>
+						</p:tab>
+					</p:tabView>
+				</h:form>
+			</div>
+
 		</div>
 	</div>
 

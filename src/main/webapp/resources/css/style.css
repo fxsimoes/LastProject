@@ -136,6 +136,13 @@ body {
 	width: 30px;
 }
 
+.ui-tabs-panels {       /*panels das tabs client, parks, cars*/
+	border: 0px !important;
+	border-color: transparent !important;
+	/*background: black !important;*/
+}
+
+
 .flex-container {
 	display: flex;
 	align-items: top; /* Vertical center alignment */
