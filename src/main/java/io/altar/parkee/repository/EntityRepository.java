@@ -9,12 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.transaction.UserTransaction;
-
 import io.altar.parkee.model.EntityModel;
 
 public class EntityRepository<E extends EntityModel> {
 	
-	@PersistenceContext(unitName="Database")
+	@PersistenceContext(unitName="database")
 	private EntityManager em;
 	
 	@Resource
