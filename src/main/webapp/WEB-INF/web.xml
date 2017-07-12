@@ -20,11 +20,5 @@
         <param-name>primefaces.FONT_AWESOME</param-name>
         <param-value>true</param-value>
     </context-param> 
-<<<<<<< HEAD
-=======
-<!--     <persistence-unit-ref>
-    	<persistence-unit-ref-name>database/pu</persistence-unit-ref-name>
-    	<persistence-unit-name>database</persistence-unit-name>
-    </persistence-unit-ref> -->
->>>>>>> DeveloP
+
 </web-app>
