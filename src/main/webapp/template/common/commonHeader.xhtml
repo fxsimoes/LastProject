@@ -14,42 +14,35 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<div class="titulo col-md-12">
 
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<div class="icon">
-								<a class="navbar-brand"
-									href="http://localhost:8080/ePark/index.xhtml"> <img
-									src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"
-									alt="Parkeet" />
-								</a>
-							</div>
-							<div>
-								<h1>Parkeet</h1>
-							</div>
-						</div>
-					</div>
-				</nav>
-				<h:form>
+
+			<nav class="navbar navbar-default">
+				<div class="brandicon">
+					<a class="icon" href="http://localhost:8080/ePark/index.xhtml">
+						<img class="icon"
+						src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"
+						alt="Parkeet" />
+					</a> <span class="logotipo"> PARKEET</span>
+				</div>
+			</nav>
+			<h:form>
 				<p:toolbar>
-						<f:facet name="right">
-							<p:commandButton type="button" value="Login" />
-							<p:commandButton type="button" value="Sign Up" />
-						</f:facet>
-						<f:facet name="left">
-								<p:menuButton value="Parkee">
-								<p:menuitem value="Home" outcome="index" />
-								<p:menuitem value="User" />
-								<p:menuitem value="Admin" />
-							</p:menuButton> 
-						</f:facet> 
-					</p:toolbar>
-					</h:form>
-					
-				<h:form>
-					<!--  <p:toolbar style="margin-top:5px 0px">
+			
+					<f:facet name="right">
+						<p:commandButton type="button" value="Login" icon="fa fa-user"/>
+						<p:commandButton type="button" value="Sign Up"  icon="fa fa-fw fa-sign-in"/>
+					</f:facet>
+					<f:facet name="right">
+						<p:menuButton value="Menu">
+							<p:menuitem value="Home" outcome="index" icon="fa fa-home" />
+							<p:menuitem value="User" outcome="user" icon="fa fa-user" />
+							<p:menuitem value="Admin" outcome="admin" icon="fa fa-fw fa-wrench"/>
+						</p:menuButton>
+					</f:facet>
+				</p:toolbar>
+			</h:form>
+
+			<!--  <p:toolbar style="margin-top:5px 0px">
 						<f:facet name="right">
 							<p:commandButton type="button" value="Login" />
 							<p:commandButton type="button" value="Sign Up" />
@@ -62,8 +55,6 @@
 							</p:menuButton> 
 						</f:facet> 
 					</p:toolbar> -->
-				</h:form>
-			</div>
 		</div>
 	</div>
 </h:body>
