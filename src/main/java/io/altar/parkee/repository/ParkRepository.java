@@ -33,25 +33,25 @@ public class ParkRepository extends EntityRepository<Park> {
 //		((Park) ParkRepository.getInstance().get(id)).setLatitude(latitude);
 //	}	
 	
-	public static Connection getConnection(){
-		
-		try{
-		String driver = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/FSi";
-		String user = "root";
-		String password = "123";
-		Class.forName(driver);
-		
-		Connection con = DriverManager.getConnection(url, user, password);
-		System.out.println("Worked!!!");
-		
-		return con;
-		}catch(Exception e){
-			System.out.println(e);
-		}
-
-		return null;
-	}
+//	public static Connection getConnection(){
+//		
+//		try{
+//		String driver = "com.mysql.jdbc.Driver";
+//		String url = "jdbc:mysql://localhost:3306/FSi";
+//		String user = "root";
+//		String password = "123";
+//		Class.forName(driver);
+//		
+//		Connection con = DriverManager.getConnection(url, user, password);
+//		System.out.println("Worked!!!");
+//		
+//		return con;
+//		}catch(Exception e){
+//			System.out.println(e);
+//		}
+//
+//		return null;
+//	}
 	
 	public List<Park> getDbElements() {
 		Query query = getDb().createQuery("FROM Park");

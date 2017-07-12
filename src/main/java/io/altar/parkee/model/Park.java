@@ -14,13 +14,13 @@ public class Park extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="Park Name")
+	@Column(name="ParkName")
 	private String parkName = "Name";
-	@Column(name="Hourly Price")
+	@Column(name="HourlyPrice")
 	private int hourlyPrice = 0;
-	@Column(name="Nr of Spots")
+	@Column(name="NrOfSpots")
 	private int nrOfSpots = 0;
-	@Column(name="Spot Ref")
+	@Column(name="SpotRef")
 	private String spotRef = "N1";
 	@Column(name="Location")
 	private String parkLocation = "Cascais";
@@ -28,19 +28,6 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude = 0;
 	@Column(name="Latitude")
 	private int latitude = 0;
-
-	//
-	// @Column(name="Shelves", nullable = true)
-	//
-	// private String shelfLoc ="shelfId";
-	//
-	// private String name = "Name";
-	// @Column(name="Discount")
-	// private Integer discount = 0;
-	// @Column(name="IVA")
-	// private Integer iva = 0;
-	// @Column(name="Price")
-	// private Double price = 0.0;
 
 	public int getLongitude() {
 		return longitude;
