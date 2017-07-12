@@ -13,7 +13,6 @@ public class Park extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int parkId;
 	private String parkName;
 	private int hourlyPrice;
 	private int nrOfSpots;
@@ -49,14 +48,6 @@ public class Park extends EntityModel implements Serializable {
 
 	public void setLatitude(int latitude) {
 		this.latitude = latitude;
-	}
-
-	public int getParkId() {
-		return parkId;
-	}
-
-	public void setParkId(int parkId) {
-		this.parkId = parkId;
 	}
 
 	public String getParkName() {
@@ -99,7 +90,6 @@ public class Park extends EntityModel implements Serializable {
 		this.parkLocation = parkLocation;
 	}
 
-	public Park() {
-	}
+	public Park() {}
 
 }
