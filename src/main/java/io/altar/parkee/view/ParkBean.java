@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Park;
-import io.altar.parkee.repository.ParkRepository;
 import io.altar.parkee.service.ParkService;
 
 
@@ -138,11 +137,11 @@ public class ParkBean implements Serializable {
 	}
 
 	public String deletePark(int id) {
-//		try{
+		try{
 		parkService.removeEntity(parkService.getParkRepository(), activePark);
-//		}catch(NullPointerException e){
-//			System.out.println("Exception Caught");
-//		}
+		}catch(NullPointerException e){
+			System.out.println("Exception Caught");
+		}
 		return null;
 	}
 }

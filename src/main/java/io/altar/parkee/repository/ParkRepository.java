@@ -4,11 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Park;
 
+@Named("ParkRepository")
+@ApplicationScoped
 public class ParkRepository extends EntityRepository<Park> {
 	
 //	private static final ParkRepository INSTANCE = new ParkRepository();
@@ -58,8 +62,8 @@ public class ParkRepository extends EntityRepository<Park> {
 	@Override
 	@Transactional
 	public void removeFromDb(Park park){
-		Park productToRemove = getDb().find(Park.class, park.getId());
-		getDb().remove(productToRemove);
+		Park parkToRemove = getDb().find(Park.class, park.getId());
+		getDb().remove(parkToRemove);
 	}
 	
 	@Transactional
