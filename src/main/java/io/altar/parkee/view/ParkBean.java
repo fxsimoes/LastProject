@@ -10,11 +10,10 @@ import javax.inject.Named;
 import io.altar.parkee.model.Park;
 import io.altar.parkee.service.ParkService;
 
-
 @Named("ParkBean")
 @RequestScoped
 public class ParkBean implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	private int parkId;
 	private String parkName;
@@ -24,9 +23,8 @@ public class ParkBean implements Serializable {
 	private String parkLocation;
 	private int longitude;
 	private int latitude;
-	
+
 	private Park newPark = new Park();
-	
 	private Park activePark = new Park();
 
 	public int getParkId() {
@@ -119,15 +117,34 @@ public class ParkBean implements Serializable {
 
 	@Inject
 	private ParkService parkService;
-	
 
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
 
-	public String addPark() {
+	// public void addPark() {
+	// newPark = parkService.addEntity(getParkId(), getParkName(),
+	// getNrOfSpots(), getSpotRef(), getParkLocation(), getLongitude(),
+	// getLatitude(), getHourlyPrice());
+	//// newPark.setHourlyPrice(hourlyPrice);
+	//// newPark.setParkName(parkName);
+	//// newPark.setNrOfSpots(nrOfSpots);
+	//// newPark.setSpotRef(spotRef);
+	//// newPark.setParkLocation(parkLocation);
+	//// newPark.setLongitude(longitude);
+	//// newPark.setLatitude(latitude);
+	// }
+
+	public Park addPark() {
+		newPark.setHourlyPrice(hourlyPrice);
+		newPark.setParkName(parkName);
+		newPark.setNrOfSpots(nrOfSpots);
+		newPark.setSpotRef(spotRef);
+		newPark.setParkLocation(parkLocation);
+		newPark.setLongitude(longitude);
+		newPark.setLatitude(latitude);
 		parkService.addEntity(parkService.getParkRepository(), newPark);
-		return null;
+		return newPark;
 	}
 
 	public String editPark() {
@@ -137,9 +154,9 @@ public class ParkBean implements Serializable {
 	}
 
 	public String deletePark(int id) {
-		try{
-		parkService.removeEntity(parkService.getParkRepository(), activePark);
-		}catch(NullPointerException e){
+		try {
+			parkService.removeEntity(parkService.getParkRepository(), activePark);
+		} catch (NullPointerException e) {
 			System.out.println("Exception Caught");
 		}
 		return null;
