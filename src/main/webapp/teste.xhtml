@@ -23,33 +23,19 @@
 </h:head>
 <h:body>
 
-	<div id="header">
+<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/template/common/commonHeader.xhtml" />
 		</ui:insert>
 	</div>
 
 	<div class="content">
-		<div class="col-xs-6 col-xs-offset-3">
-			<div class="text">
-
-				<h2>
-					<span class="glyphicon glyphicon-map-marker"></span> Find Parking
-				</h2>
-			</div>
-
-			<div class="input-group searchpark">
-				<input type="text" class="form-control"
-					placeholder="Search Address..." /> <span class="input-group-btn">
-					<button class="btn btn-default btngo" type="button">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-			</div>
-
+		<div class="col-xs-12 col-xs-offset-0">
 			<div id="clientsection">
 				<h:form id="form">
 					<p:growl id="msgs" showDetail="true" />
+					<p:button outcome="index" value="Homepage" icon="ui-icon-star">
+					</p:button>
 					<p:tabView>
 						<p:tab title="Clients">
 							<h:panelGrid columns="2" cellpadding="10">
@@ -65,7 +51,9 @@
 						</p:tab>
 						<p:tab title="Parks">
 							<h:panelGrid columns="2" cellpadding="10">
-
+								<ui:insert name="Parks">
+								<ui:include src="/parkdata.xhtml" />
+								</ui:insert>
 							</h:panelGrid>
 						</p:tab>
 					</p:tabView>
