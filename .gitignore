@@ -1,1 +1,9 @@
 /target/
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/http-cache.lucene60/write.lock
+.metadata/.plugins/org.eclipse.jdt.core/index.db
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.jboss.tools/local-history.lucene60/write.lock
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.jboss.tools/local-history.lucene60/_0.cfs
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.jboss.tools/http-cache.lucene60/write.lock
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/local-history.lucene60/write.lock
+.metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/local-history.lucene60/_0.cfs
+.metadata/.lock
