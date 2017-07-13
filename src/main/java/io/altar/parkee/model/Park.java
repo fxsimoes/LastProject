@@ -2,37 +2,32 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import io.altar.parkee.model.EntityModel;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "Park")
 public class Park extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	private String parkName;
-	private int hourlyPrice;
-	private int nrOfSpots;
-	private String spotRef;
-	private String parkLocation;
-	private int longitude;
-	private int latitude;
-
-	//
-	// @Column(name="Shelves", nullable = true)
-	//
-	// private String shelfLoc ="shelfId";
-	//
-	// private String name = "Name";
-	// @Column(name="Discount")
-	// private Integer discount = 0;
-	// @Column(name="IVA")
-	// private Integer iva = 0;
-	// @Column(name="Price")
-	// private Double price = 0.0;
+	
+	@Column(name="ParkName")
+	private String parkName = "Name";
+	@Column(name="HourlyPrice")
+	private int hourlyPrice = 0;
+	@Column(name="NrOfSpots")
+	private int nrOfSpots = 0;
+	@Column(name="SpotRef")
+	private String spotRef = "N1";
+	@Column(name="Location")
+	private String parkLocation = "Cascais";
+	@Column(name="Longitude")
+	private int longitude = 0;
+	@Column(name="Latitude")
+	private int latitude = 0;
 
 	public int getLongitude() {
 		return longitude;
