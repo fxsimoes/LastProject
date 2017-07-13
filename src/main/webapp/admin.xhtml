@@ -22,73 +22,50 @@
 
 </h:head>
 <h:body>
-	<div id="header">
+
+<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/template/common/commonHeader.xhtml" />
 		</ui:insert>
 	</div>
-	<div class="col-xs-10 col-xs-offset-1">
-		<div class="AdminActions flex-container flex-item">
-			<div class="Add flex-item">
-				<h3>
-					<span class="glyphicon glyphicon-folder-open"></span><b> Add</b>
-				</h3>
-				<p></p>
-				<h:form>
-					Add park details:
-					<br />
-					<h:outputText value="Park Name: " />
-					<br />
-					<h:inputText value="#{ParkBean.parkName}"
-						placeholder="Enter name" required="true" />
-					<br />
-					<h:outputText value="Hourly Price: " />
-					<br />
-					<h:inputText value="#{ParkBean.hourlyPrice}" required="true" />
-					<br />
-					<h:outputText value="Nr of free spots: " />
-					<br />
-					<h:inputText value="#{ParkBean.nrOfSpots}" required="true" />
-					<br />
-					<h:outputText value="Spot Ref: " />
-					<br />
-					<h:inputText value="#{ParkBean.spotRef}" required="true" />
-					<br />
-					<h:outputText value="Park Location: " />
-					<br />
-					<h:inputText value="#{ParkBean.parkLocation}" required="true" />
-					<br />
-					<h:outputText value="Longitude: " />
-					<br />
-					<h:inputText value="#{ParkBean.longitude}" required="true" />
-					<br />
-					<h:outputText value="Latitude: " />
-					<br />
-					<h:inputText value="#{ParkBean.latitude}" required="true" />
-					<br />
-					<p:commandButton value="Submit" action="#{ProductBean.addPark()}" />
+
+	<div class="content">
+		<div class="col-xs-12 col-xs-offset-0">
+			<div id="clientsection">
+				<h:form id="form">
+					<p:growl id="msgs" showDetail="true" />
+					<p:button outcome="index" value="Homepage" icon="ui-icon-star">
+					</p:button>
+					<p:tabView>
+						<p:tab title="Parks">
+							<h:panelGrid columns="2" cellpadding="10">
+								<ui:insert name="Parks">
+								<ui:include src="/parkdata.xhtml" />
+								</ui:insert>
+							</h:panelGrid>
+						</p:tab>
+						<p:tab title="Clients">
+							<h:panelGrid columns="2" cellpadding="10">
+								<ui:insert name="Clients">
+								<ui:include src="/clientsdata.xhtml" />
+								</ui:insert>
+							</h:panelGrid>
+						</p:tab>
+						<p:tab title="Vehicles">
+							<h:panelGrid columns="2" cellpadding="10">
+								<ui:insert name="Clients">
+								<ui:include src="/vehicledata.xhtml" />
+								</ui:insert>
+							</h:panelGrid>
+						</p:tab>
+						
+					</p:tabView>
 				</h:form>
 			</div>
-			<div class="divider"></div>
-			<div class="Remove flex-item">
-				<h3>
-					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
-				</h3>
-				<h:form>		
-				Select a park (<b>ID</b>) to remove:
-					<br />
-					<h:inputText style="width: 50px;"
-						value="#{ProductBean.newProduct.entityId}" required="true" />
-					<br />
-					<p:commandButton value="Delete"
-						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
-					
-					<p:commandButton value="Submit"
-						action="#{ParkBean.addPark()}" />
-				</h:form>
-			</div>
+
 		</div>
 	</div>
+
 	<div id="footer">
 		<ui:insert name="footer">
 			<ui:include src="/template/common/commonFooter.xhtml" />

@@ -37,6 +37,13 @@
 					<p:button outcome="index" value="Homepage" icon="ui-icon-star">
 					</p:button>
 					<p:tabView>
+						<p:tab title="Parks">
+							<h:panelGrid columns="2" cellpadding="10">
+								<ui:insert name="Parks">
+								<ui:include src="/parkdata.xhtml" />
+								</ui:insert>
+							</h:panelGrid>
+						</p:tab>
 						<p:tab title="Clients">
 							<h:panelGrid columns="2" cellpadding="10">
 								<ui:insert name="Clients">
@@ -46,16 +53,12 @@
 						</p:tab>
 						<p:tab title="Vehicles">
 							<h:panelGrid columns="2" cellpadding="10">
-
-							</h:panelGrid>
-						</p:tab>
-						<p:tab title="Parks">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Parks">
-								<ui:include src="/parkdata.xhtml" />
+								<ui:insert name="Clients">
+								<ui:include src="/vehicledata.xhtml" />
 								</ui:insert>
 							</h:panelGrid>
 						</p:tab>
+						
 					</p:tabView>
 				</h:form>
 			</div>
