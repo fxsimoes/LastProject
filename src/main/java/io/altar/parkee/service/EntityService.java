@@ -6,7 +6,6 @@ import io.altar.parkee.repository.EntityRepository;
 public class EntityService<E extends EntityModel> {
 	
 	public void addEntity(EntityRepository<E> entityList, E entity){
-//		Collection<E> list = new ArrayList<E>(entityList.values());
 		entityList.addToDb(entity);
 	}
 	
