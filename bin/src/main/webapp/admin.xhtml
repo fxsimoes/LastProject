@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkeet</title>
+	<link rel="icon" type="png"
+		href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar"
+		rel="stylesheet" />
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputScript name="bootstrap/js/bootstrap.js" />
+
+</h:head>
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
+	<div class="col-xs-10 col-xs-offset-1">
+		<div class="AdminActions flex-container flex-item">
+			<div class="Add flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-folder-open"></span><b> Add</b>
+				</h3>
+				<p></p>
+				<h:form>
+					Add park details:
+					<br />
+					<h:outputText value="Park Name: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.parkName}"
+						placeholder="Enter name" required="true" />
+					<br />
+					<h:outputText value="Hourly Price: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.hourlyPrice}" required="true" />
+					<br />
+					<h:outputText value="Nr of free spots: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.nrOfSpots}" required="true" />
+					<br />
+					<h:outputText value="Spot Ref: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.spotRef}" required="true" />
+					<br />
+					<h:outputText value="Park Location: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.parkLocation}" required="true" />
+					<br />
+					<h:outputText value="Longitude: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.longitude}" required="true" />
+					<br />
+					<h:outputText value="Latitude: " />
+					<br />
+					<h:inputText value="#{ParkBean.activePark.latitude}" required="true" />
+					<br />
+					<p:commandButton value="Submit" action="#{ProductBean.addPark()}" />
+				</h:form>
+			</div>
+			<div class="divider"></div>
+			<div class="Remove flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+				</h3>
+				<h:form>		
+				Select a park (<b>ID</b>) to remove:
+					<br />
+					<h:inputText style="width: 50px;"
+						value="#{ProductBean.newProduct.entityId}" required="true" />
+					<br />
+					<p:commandButton value="Delete"
+						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
+					
+					<p:commandButton value="Submit"
+						action="#{ParkBean.addPark()}" />
+				</h:form>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>

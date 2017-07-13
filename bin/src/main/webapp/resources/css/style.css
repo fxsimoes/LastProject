@@ -10,8 +10,7 @@
 	border-radius: 0px !important;
 	background: transparent !important;
 	/*text-align:center !important;*/
-	background: transparent !important;
-	/*background: rgba(128, 0, 0, .20) !important;*/
+	background: rgba(128, 0, 0, .20) !important;
 	/*border-color: rgba(128, 0, 0, .50) !important; */
 }
 
@@ -73,12 +72,13 @@ h2 {
 	padding: 0px 10px 10px 10px !important;
 	border: 0px !important;
 	border-radius: 0px !important;
-	padding-top: 10px !important; /*40px*/
+	padding-top: 40px !important;
+	
 	position: fixed;
-	top: 0px;
-	margin: auto;
-	z-index: 100000;
-	width: 100%;
+	top:0px; 
+	margin:auto; 
+	z-index:100000; 
+	width:100%;
 
 	/*background: rgba(128, 0, 0, .75) !important;*/
 }
@@ -135,6 +135,13 @@ body {
 .divider {
 	width: 30px;
 }
+
+.ui-tabs-panels {       /*panels das tabs client, parks, cars*/
+	border: 0px !important;
+	border-color: transparent !important;
+	/*background: black !important;*/
+}
+
 
 .flex-container {
 	display: flex;
