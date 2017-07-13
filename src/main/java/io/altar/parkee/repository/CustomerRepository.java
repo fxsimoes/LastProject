@@ -1,14 +1,12 @@
 package io.altar.parkee.repository;
 
-<<<<<<< HEAD
-public class CustomerRepository {
-	
-	
-=======
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+
+import io.altar.parkee.model.Customer;
+
 @Named("customerRepository")
 @ApplicationScoped
->>>>>>> TiagoCruz
-
 public class CustomerRepository extends EntityRepository<Customer> {
 
 	
