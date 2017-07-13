@@ -1,11 +1,19 @@
 package io.altar.parkee.model;
 
-public class Customer extends EntityModel {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-	private int customerId;
+@Entity
+@Table(name = "Customer")
+public class Customer extends EntityModel {
+	
+	@Column(name="CustomerName")
 	private String customerName;
+	@Column(name="CustomerContact")
 	private int customerContact;
-	private int NIF;
+	@Column(name="Nif")
+	private int nif;
 
 //	public int getId() {
 //		return customerId;
@@ -31,15 +39,14 @@ public class Customer extends EntityModel {
 		this.customerContact = customerContact;
 	}
 
-	public int getNIF() {
-		return NIF;
+	public int getNif() {
+		return nif;
 	}
 
-	public void setNIF(int nif) {
-		NIF = nif;
+	public void setNif(int nif) {
+		this.nif = nif;
 	}
 
-	public Customer() {
-	}
-
+	public Customer() {}
+	
 }
