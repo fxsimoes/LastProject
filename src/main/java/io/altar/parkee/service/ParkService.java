@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Park;
 import io.altar.parkee.repository.ParkRepository;
@@ -20,11 +21,17 @@ import io.altar.parkee.repository.ParkRepository;
 			return parkList;
 		}
 		
-		public Park addEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-
-			Park newPark = parkList.addToDb(id, name, spots, spotRef, location, longitude, latitude, price);
+		@Transactional
+		public Park addEntity(Park newPark){
+			parkList.addToDb(newPark);
 			return newPark;
 		}
+		
+//		public Park addEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
+//
+//			Park newPark = parkList.addToDb(id, name, spots, spotRef, location, longitude, latitude, price);
+//			return newPark;
+//		}
 		
 		public List<Park> showParks(ParkRepository parkList){
 			List<Park> list = parkList.getDbElements();

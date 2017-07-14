@@ -14,24 +14,22 @@ import io.altar.parkee.model.Park;
 @ApplicationScoped
 public class ParkRepository extends EntityRepository<Park> {
 	
-	private EntityManager em;
-	
 	public List<Park> getDbElements() {
-		Query query = getDb().createQuery("FROM Park");
-		List<Park> dbElements = (List<Park>) query.getResultList();
-		return dbElements;
+		Query query = getEm().createQuery("FROM Park");
+		List<Park> dbParks = (List<Park>) query.getResultList();
+		return dbParks;
 	}
 	
 	@Override
 	@Transactional
 	public void removeFromDb(Park park){
-		Park parkToRemove = getDb().find(Park.class, park.getId());
-		getDb().remove(parkToRemove);
+		Park parkToRemove = getEm().find(Park.class, park.getId());
+		getEm().remove(parkToRemove);
 	}
 	
 	@Transactional
 	public void modifyDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-		Park dbPark = getDb().find(Park.class, id);
+		Park dbPark = getEm().find(Park.class, id);
 		dbPark.setHourlyPrice(price);
 		dbPark.setParkName(name);		
 		dbPark.setNrOfSpots(spots);
@@ -43,57 +41,24 @@ public class ParkRepository extends EntityRepository<Park> {
 	
 //	@Transactional
 //	public void addToDb(Park newPark){
-//		em.persist(newPark);
+//		getEm().persist(newPark);
 //	}
-//	
-	@Transactional
-	public Park addToDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-		Park newPark =  new Park();
-		newPark.setHourlyPrice(price);
-		newPark.setParkName(name);		
-		newPark.setNrOfSpots(spots);
-		newPark.setSpotRef(spotRef);
-		newPark.setParkLocation(location);
-		newPark.setLongitude(longitude);
-		newPark.setLatitude(latitude);
-		em.persist(newPark);
-		return newPark;
-	}
-}
-//	private static final ParkRepository INSTANCE = new ParkRepository();
-//	
-//	private ParkRepository() {}
-//
-//	public static ParkRepository getInstance() {
-//		return INSTANCE;
+}	
+
+//	@Transactional
+//	public Park addToDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
+//		Park newPark =  new Park();
+//		newPark.setHourlyPrice(price);
+//		newPark.setParkName(name);		
+//		newPark.setNrOfSpots(spots);
+//		newPark.setSpotRef(spotRef);
+//		newPark.setParkLocation(location);
+//		newPark.setLongitude(longitude);
+//		newPark.setLatitude(latitude);
+//		getEm().persist(newPark);
+//		return newPark;
 //	}
-//	
-//	public void modifyPark(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price) {
-//		((Park) ParkRepository.getInstance().get(id)).setHourlyPrice(price);
-//		((Park) ParkRepository.getInstance().get(id)).setParkName(name);		
-//		((Park) ParkRepository.getInstance().get(id)).setNrOfSpots(spots);
-//		((Park) ParkRepository.getInstance().get(id)).setSpotRef(spotRef);
-//		((Park) ParkRepository.getInstance().get(id)).setParkLocation(location);
-//		((Park) ParkRepository.getInstance().get(id)).setLongitude(longitude);
-//		((Park) ParkRepository.getInstance().get(id)).setLatitude(latitude);
-//	}	
 	
-//	public static Connection getConnection(){
-//		
-//		try{
-//		String driver = "com.mysql.jdbc.Driver";
-//		String url = "jdbc:mysql://localhost:3306/FSi";
-//		String user = "root";
-//		String password = "123";
-//		Class.forName(driver);
-//		
-//		Connection con = DriverManager.getConnection(url, user, password);
-//		System.out.println("Worked!!!");
-//		
-//		return con;
-//		}catch(Exception e){
-//			System.out.println(e);
-//		}
-//
-//		return null;
-//	}
+
+
+	

@@ -14,19 +14,19 @@ public class Park extends EntityModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="ParkName")
-	private String parkName;
+	private String parkName=null;
 	@Column(name="HourlyPrice")
-	private int hourlyPrice;
+	private int hourlyPrice=0;
 	@Column(name="NrOfSpots")
-	private int nrOfSpots;
+	private int nrOfSpots=0;
 	@Column(name="SpotRef")
-	private String spotRef;
+	private String spotRef=null;
 	@Column(name="Location")
-	private String parkLocation;
+	private String parkLocation=null;
 	@Column(name="Longitude")
-	private int longitude;
+	private int longitude=0;
 	@Column(name="Latitude")
-	private int latitude;
+	private int latitude=0;
 
 	public int getLongitude() {
 		return longitude;

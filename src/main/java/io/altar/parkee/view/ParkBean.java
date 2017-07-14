@@ -2,94 +2,20 @@ package io.altar.parkee.view;
 
 import java.io.Serializable;
 import java.util.Collection;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import io.altar.parkee.model.Park;
 import io.altar.parkee.service.ParkService;
+import io.altar.parkee.model.Park;
 
 @Named("ParkBean")
 @RequestScoped
 public class ParkBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int parkId;
-	private String parkName;
-	private int hourlyPrice;
-	private int nrOfSpots;
-	private String spotRef;
-	private String parkLocation;
-	private int longitude;
-	private int latitude;
 
 	private Park newPark = new Park();
 	private Park activePark = new Park();
-
-	public int getParkId() {
-		return parkId;
-	}
-
-	public void setParkId(int parkId) {
-		this.parkId = parkId;
-	}
-
-	public String getParkName() {
-		return parkName;
-	}
-
-	public void setParkName(String parkName) {
-		this.parkName = parkName;
-	}
-
-	public int getHourlyPrice() {
-		return hourlyPrice;
-	}
-
-	public void setHourlyPrice(int hourlyPrice) {
-		this.hourlyPrice = hourlyPrice;
-	}
-
-	public int getNrOfSpots() {
-		return nrOfSpots;
-	}
-
-	public void setNrOfSpots(int nrOfSpots) {
-		this.nrOfSpots = nrOfSpots;
-	}
-
-	public String getSpotRef() {
-		return spotRef;
-	}
-
-	public void setSpotRef(String spotRef) {
-		this.spotRef = spotRef;
-	}
-
-	public String getParkLocation() {
-		return parkLocation;
-	}
-
-	public void setParkLocation(String parkLocation) {
-		this.parkLocation = parkLocation;
-	}
-
-	public int getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(int longitude) {
-		this.longitude = longitude;
-	}
-
-	public int getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(int latitude) {
-		this.latitude = latitude;
-	}
 
 	public Park getNewPark() {
 		return newPark;
@@ -121,37 +47,16 @@ public class ParkBean implements Serializable {
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
-
-	// public void addPark() {
-	// newPark = parkService.addEntity(getParkId(), getParkName(),
-	// getNrOfSpots(), getSpotRef(), getParkLocation(), getLongitude(),
-	// getLatitude(), getHourlyPrice());
-	//// newPark.setHourlyPrice(hourlyPrice);
-	//// newPark.setParkName(parkName);
-	//// newPark.setNrOfSpots(nrOfSpots);
-	//// newPark.setSpotRef(spotRef);
-	//// newPark.setParkLocation(parkLocation);
-	//// newPark.setLongitude(longitude);
-	//// newPark.setLatitude(latitude);
-	// }
-
-	public Park addPark() {
-		newPark.setHourlyPrice(hourlyPrice);
-		newPark.setParkName(parkName);
-		newPark.setNrOfSpots(nrOfSpots);
-		newPark.setSpotRef(spotRef);
-		newPark.setParkLocation(parkLocation);
-		newPark.setLongitude(longitude);
-		newPark.setLatitude(latitude);
-		parkService.addEntity(parkService.getParkRepository(), newPark);
-		return newPark;
+	
+	public void addPark(){
+		parkService.addEntity(newPark);
 	}
 
-	public String editPark() {
-		System.out.println(activePark.toString());
-		parkService.modifyEntity(parkId, parkName, nrOfSpots, spotRef, parkLocation, longitude, latitude, hourlyPrice);
-		return null;
-	}
+//	public String editPark() {
+//		System.out.println(activePark.toString());
+//		parkService.modifyEntity(parkId, parkName, nrOfSpots, spotRef, parkLocation, longitude, latitude, hourlyPrice);
+//		return null;
+//	}
 
 	public String deletePark(int id) {
 		try {
@@ -162,3 +67,28 @@ public class ParkBean implements Serializable {
 		return null;
 	}
 }
+
+// public void addPark() {
+// newPark = parkService.addEntity(getParkId(), getParkName(),
+// getNrOfSpots(), getSpotRef(), getParkLocation(), getLongitude(),
+// getLatitude(), getHourlyPrice());
+//// newPark.setHourlyPrice(hourlyPrice);
+//// newPark.setParkName(parkName);
+//// newPark.setNrOfSpots(nrOfSpots);
+//// newPark.setSpotRef(spotRef);
+//// newPark.setParkLocation(parkLocation);
+//// newPark.setLongitude(longitude);
+//// newPark.setLatitude(latitude);
+// }
+
+//public Park addPark() {
+//	newPark.setHourlyPrice(hourlyPrice);
+//	newPark.setParkName(parkName);
+//	newPark.setNrOfSpots(nrOfSpots);
+//	newPark.setSpotRef(spotRef);
+//	newPark.setParkLocation(parkLocation);
+//	newPark.setLongitude(longitude);
+//	newPark.setLatitude(latitude);
+//	parkService.addEntity(parkService.getParkRepository(), newPark);
+//	return newPark;
+//}

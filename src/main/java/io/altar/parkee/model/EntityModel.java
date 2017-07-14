@@ -19,7 +19,6 @@ public class EntityModel {
 		this.id = id;
 	}
 
-	public EntityModel() {
-	}
+	public EntityModel() {}
 
 }
