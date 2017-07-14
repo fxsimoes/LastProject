@@ -13,6 +13,14 @@ public class EntityRepository<E extends EntityModel> {
 	@PersistenceContext(unitName="database")
 	private EntityManager em;
 	
+	public EntityManager getEm() {
+		return em;
+	}
+
+	public void setEm(EntityManager em) {
+		this.em = em;
+	}
+
 	@Resource
     private UserTransaction userTransaction;
 	
