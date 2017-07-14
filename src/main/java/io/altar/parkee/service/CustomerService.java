@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Customer;
+import io.altar.parkee.model.Park;
 import io.altar.parkee.repository.CustomerRepository;
 
 @Named("CustomerService")
@@ -25,6 +26,13 @@ public class CustomerService extends EntityService<Customer> {
 		List<Customer> list = customerList.getDbElements();
 		return list;
 	}
+	
+	public Customer addEntity(int id, String customerName, int customerContact, int nif){
+
+		Customer newCustomer = customerList.addToDb(id, customerName, customerContact, nif);
+		return newCustomer;
+	}
+	
 	
 	public void modifyEntity(int id, String customerName, int customerContact, int nif) {
 		
