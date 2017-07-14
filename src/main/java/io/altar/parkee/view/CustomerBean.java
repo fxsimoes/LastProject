@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Customer;
+import io.altar.parkee.model.Park;
 import io.altar.parkee.service.CustomerService;
 
 @Named("CustomerBean")
@@ -79,5 +80,13 @@ public class CustomerBean implements Serializable {
 
 	public void setCustomerService(CustomerService customerService) {
 		this.customerService = customerService;
+	}
+	
+	public Customer addCustomer() {
+		newCustomer.setCustomerName(customerName);
+		newCustomer.setCustomerContact(customerContact);
+		newCustomer.setNif(nif);
+		customerService.addEntity(customerService.getCustomerRepository(), newCustomer);
+		return newCustomer;
 	}
 }
