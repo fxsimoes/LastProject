@@ -4,14 +4,18 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Customer;
+import io.altar.parkee.model.Park;
 
 @Named("customerRepository")
 @ApplicationScoped
 public class CustomerRepository extends EntityRepository<Customer> {
+	
+	private EntityManager em;
 	
 	public List<Customer> getDbElements() {
 		
@@ -35,5 +39,15 @@ public class CustomerRepository extends EntityRepository<Customer> {
 		dbCustomer.setCustomerName(customerName);
 		dbCustomer.setCustomerContact(customerContact);		
 		dbCustomer.setNif(nif);
+	}
+	
+	@Transactional
+	public Customer addToDb(int id, String customerName, int customerContact, int nif){
+		Customer newCustomer =  new Customer();
+		newCustomer.setCustomerName(customerName);
+		newCustomer.setCustomerContact(customerContact);	
+		newCustomer.setNif(nif);
+		em.persist(newCustomer);
+		return newCustomer;
 	}
 }
