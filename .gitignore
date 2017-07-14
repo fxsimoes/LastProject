@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 target/classes/io/altar/parkee/model/CostumerVehicle.class
 target/classes/io/altar/parkee/model/Customer.class
 target/classes/io/altar/parkee/model/EntityModel.class
@@ -19,7 +19,8 @@ target/classes/io/altar/parkee/view/CustomerBean.class
 target/classes/io/altar/parkee/view/ParkBean.class
 target/classes/io/altar/parkee/view/ParkingStatusBean.class
 target/classes/io/altar/parkee/view/VehicleBean.class
-=======
+
+/bin/
 /target/
 .metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/http-cache.lucene60/write.lock
 .metadata/.plugins/org.eclipse.jdt.core/index.db
@@ -42,4 +43,4 @@ target/classes/io/altar/parkee/view/VehicleBean.class
 .settings/org.eclipse.jdt.core.prefs
 .settings/org.eclipse.wst.jsdt.ui.superType.container
 .classpath
->>>>>>> DeveloP
+
