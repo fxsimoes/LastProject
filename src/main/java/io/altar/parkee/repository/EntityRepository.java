@@ -17,8 +17,20 @@ public class EntityRepository<E extends EntityModel> {
 		return em;
 	}
 
+	public void setEm(EntityManager em) {
+		this.em = em;
+	}
+
 	@Resource
     private UserTransaction userTransaction;
+	
+	public EntityManager getDb() {
+		return em;
+	}
+
+	public void setDb(EntityManager em) {
+		this.em = em;
+	}
 
 	@Transactional
 	public void addToDb(E entity){
