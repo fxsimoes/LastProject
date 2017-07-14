@@ -7,12 +7,14 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Parkeet</title>
-	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"/> 
-	
+	<link rel="icon" type="png"
+		href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+
 	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
 		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"/>
-		
+	<link href="https://fonts.googleapis.com/css?family=Lalezar"
+		rel="stylesheet" />
+
 	<h:outputStylesheet name="css/style.css" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
@@ -20,10 +22,45 @@
 </h:head>
 <h:body>
 	<div class="col-xs-12">
+	
+		<div class="parktable">
+				<p:dataTable var="park" value="#{dtBasicView.cars}">
+					<p:column headerText="Id">
+						<h:outputText value="#{car.id}" />
+					</p:column>
+
+					<p:column headerText="Name">
+						<h:outputText value="#{car.year}" />
+					</p:column>
+
+					<p:column headerText="Hourly Price">
+						<h:outputText value="#{car.brand}" />
+					</p:column>
+
+					<p:column headerText="Nr of free spots">
+						<h:outputText value="#{car.color}" />
+					</p:column>
+					
+					<p:column headerText="Park Location">
+						<h:outputText value="#{car.color}" />
+					</p:column>
+					
+					<p:column headerText="Longitude">
+						<h:outputText value="#{car.color}" />
+					</p:column>
+					
+					<p:column headerText="Latitude">
+						<h:outputText value="#{car.color}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		
 		<div class="AdminActions flex-container flex-item">
+
 			<div class="Add flex-item">
 				<h3>
-					<span class="glyphicon glyphicon-th"></span><b> Add park details</b>
+					<span class="glyphicon glyphicon-th"></span><b> Add park
+						details</b>
 				</h3>
 				<p></p>
 				<h:form>
@@ -31,8 +68,8 @@
 					<br />
 					<h:outputText value="Park Name: " />
 					<br />
-					<h:inputText value="#{ParkBean.parkName}"
-						placeholder="Enter name" required="true" />
+					<h:inputText value="#{ParkBean.parkName}" placeholder="Enter name"
+						required="true" />
 					<br />
 					<h:outputText value="Hourly Price: " />
 					<br />
@@ -58,7 +95,7 @@
 					<br />
 					<h:inputText value="#{ParkBean.latitude}" required="true" />
 					<br />
-					<p:commandButton value="Submit" action="#{ProductBean.addPark()}" />
+					<p:commandButton value="Submit" action="#{ParkBean.addPark()}" />
 				</h:form>
 			</div>
 			<div class="divider"></div>
@@ -74,13 +111,12 @@
 					<br />
 					<p:commandButton value="Delete"
 						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
-					
-					<p:commandButton value="Submit"
-						action="#{ParkBean.addPark()}" />
+
+					<p:commandButton value="Submit" action="#{ParkBean.addPark()}" />
 				</h:form>
-				
+
 			</div>
 		</div>
-</div>
+	</div>
 </h:body>
 </html>
