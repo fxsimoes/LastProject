@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
 import io.altar.parkee.model.EntityModel;
 
 @Entity
@@ -15,19 +14,19 @@ public class Park extends EntityModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="ParkName")
-	private String parkName = "Name";
+	private String parkName;
 	@Column(name="HourlyPrice")
-	private int hourlyPrice = 0;
+	private int hourlyPrice;
 	@Column(name="NrOfSpots")
-	private int nrOfSpots = 0;
+	private int nrOfSpots;
 	@Column(name="SpotRef")
-	private String spotRef = "N1";
+	private String spotRef;
 	@Column(name="Location")
-	private String parkLocation = "Cascais";
+	private String parkLocation;
 	@Column(name="Longitude")
-	private int longitude = 0;
+	private int longitude;
 	@Column(name="Latitude")
-	private int latitude = 0;
+	private int latitude;
 
 	public int getLongitude() {
 		return longitude;
