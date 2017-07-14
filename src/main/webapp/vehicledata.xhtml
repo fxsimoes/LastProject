@@ -24,42 +24,33 @@
 		<div class="AdminActions flex-container flex-item">
 			<div class="Add flex-item">
 				<h3>
-					<span class="glyphicon glyphicon-folder-open"></span><b> Add vehicle details:</b>
+					<span class="glyphicon glyphicon-road"></span><b> Add vehicle details:</b>
 				</h3>
 				<p></p>
 				<h:form>
-					<!-- alterar nomes e beans! -->
 					<br />
-					<h:outputText value="Park Name: " />
+					<h:outputText value="Vehicle License: " />
 					<br />
-					<h:inputText value="#{ParkBean.parkName}"
-						placeholder="Enter name" required="true" />
+					<h:inputText value="#{VehicleBean.vehicle.license}"
+						placeholder="Enter license" required="true" />
 					<br />
 					<h:outputText value="Hourly Price: " />
 					<br />
-					<h:inputText value="#{ParkBean.hourlyPrice}" required="true" />
+					<h:inputText value="#{VehicleBean.vehicle.customerId}" required="true" />
 					<br />
 					<h:outputText value="Nr of free spots: " />
 					<br />
-					<h:inputText value="#{ParkBean.nrOfSpots}" required="true" />
+					<h:inputText value="#{VehicleBean.vehicle.customerName}" required="true" />
 					<br />
 					<h:outputText value="Spot Ref: " />
 					<br />
-					<h:inputText value="#{ParkBean.spotRef}" required="true" />
+					<h:inputText value="#{VehicleBean.vehicle.brand}" required="true" />
 					<br />
 					<h:outputText value="Park Location: " />
 					<br />
-					<h:inputText value="#{ParkBean.parkLocation}" required="true" />
+					<h:inputText value="#{VehicleBean.vehicle.color}" required="true" />
 					<br />
-					<h:outputText value="Longitude: " />
-					<br />
-					<h:inputText value="#{ParkBean.longitude}" required="true" />
-					<br />
-					<h:outputText value="Latitude: " />
-					<br />
-					<h:inputText value="#{ParkBean.latitude}" required="true" />
-					<br />
-					<p:commandButton value="Submit" action="#{ProductBean.addPark()}" />
+					<p:commandButton value="Submit" action="#{VehicleBean.addVehicle()}" />
 				</h:form>
 			</div>
 			<div class="divider"></div>
