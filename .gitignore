@@ -44,3 +44,5 @@ target/classes/io/altar/parkee/view/VehicleBean.class
 .settings/org.eclipse.wst.jsdt.ui.superType.container
 .classpath
 
+.settings/org.hibernate.eclipse.console.prefs
+.tern-project
