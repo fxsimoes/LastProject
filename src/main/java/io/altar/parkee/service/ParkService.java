@@ -14,6 +14,7 @@ import io.altar.parkee.repository.ParkRepository;
 	@RequestScoped
 	public class ParkService extends EntityService<Park>{
 		
+		
 		@Inject
 		private ParkRepository parkList;
 		
@@ -26,12 +27,6 @@ import io.altar.parkee.repository.ParkRepository;
 			parkList.addToDb(newPark);
 			return newPark;
 		}
-		
-//		public Park addEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-//
-//			Park newPark = parkList.addToDb(id, name, spots, spotRef, location, longitude, latitude, price);
-//			return newPark;
-//		}
 		
 		public List<Park> showParks(ParkRepository parkList){
 			List<Park> list = parkList.getDbElements();

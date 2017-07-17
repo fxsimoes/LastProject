@@ -15,45 +15,14 @@ import io.altar.parkee.service.CustomerService;
 public class CustomerBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int customerId;
-	private String customerName;
-	private int customerContact;
-	private int nif;
+//	private int customerId;
+//	private String customerName;
+//	private int customerContact;
+//	private int nif;
 	
 	private Customer newCustomer = new Customer();
 	private Customer activeCustomer = new Customer();
 
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-	
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public int getCustomerContact() {
-		return customerContact;
-	}
-
-	public void setCustomerContact(int customerContact) {
-		this.customerContact = customerContact;
-	}
-
-	public int getNif() {
-		return nif;
-	}
-
-	public void setNif(int nif) {
-		this.nif = nif;
-	}
 
 	public Customer getNewCustomer() {
 		return newCustomer;
@@ -82,11 +51,7 @@ public class CustomerBean implements Serializable {
 		this.customerService = customerService;
 	}
 	
-	public Customer addCustomer() {
-		newCustomer.setCustomerName(customerName);
-		newCustomer.setCustomerContact(customerContact);
-		newCustomer.setNif(nif);
-		customerService.addEntity(customerService.getCustomerRepository(), newCustomer);
-		return newCustomer;
+	public void addCustomer() {
+		customerService.addEntity(newCustomer);
 	}
 }
