@@ -41,13 +41,13 @@ public class CustomerRepository extends EntityRepository<Customer> {
 		dbCustomer.setNif(nif);
 	}
 	
-	@Transactional
-	public Customer addToDb(int id, String customerName, int customerContact, int nif){
-		Customer newCustomer =  new Customer();
-		newCustomer.setCustomerName(customerName);
-		newCustomer.setCustomerContact(customerContact);	
-		newCustomer.setNif(nif);
-		em.persist(newCustomer);
-		return newCustomer;
-	}
+//	@Transactional
+//	public Customer addToDb(int id, String customerName, int customerContact, int nif){
+//		Customer newCustomer =  new Customer();
+//		newCustomer.setCustomerName(customerName);
+//		newCustomer.setCustomerContact(customerContact);	
+//		newCustomer.setNif(nif);
+//		em.persist(newCustomer);
+//		return newCustomer;
+//	}
 }
