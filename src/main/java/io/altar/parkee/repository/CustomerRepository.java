@@ -32,14 +32,14 @@ public class CustomerRepository extends EntityRepository<Customer> {
 		getEm().remove(customerToRemove);
 	}
 	
-//	@Transactional
-//	public void modifyDb(int id, String customerName, int customerContact, int nif){
-//		
-//		Customer dbCustomer = getEm().find(Customer.class, id);
-//		dbCustomer.setCustomerName(customerName);
-//		dbCustomer.setCustomerContact(customerContact);		
-//		dbCustomer.setNif(nif);
-//	}
+	@Transactional
+	public void modifyDb(int id, String customerName, int customerContact, int nif){
+		
+		Customer dbCustomer = getEm().find(Customer.class, id);
+		dbCustomer.setCustomerName(customerName);
+		dbCustomer.setCustomerContact(customerContact);		
+		dbCustomer.setNif(nif);
+	}
 	
 //	@Transactional
 //	public Customer addToDb(int id, String customerName, int customerContact, int nif){

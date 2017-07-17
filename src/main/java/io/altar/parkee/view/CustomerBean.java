@@ -15,10 +15,6 @@ import io.altar.parkee.service.CustomerService;
 public class CustomerBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-//	private int customerId;
-//	private String customerName;
-//	private int customerContact;
-//	private int nif;
 	
 	private Customer newCustomer = new Customer();
 	private Customer activeCustomer = new Customer();
