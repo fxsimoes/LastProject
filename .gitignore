@@ -46,3 +46,4 @@ target/classes/io/altar/parkee/view/VehicleBean.class
 
 .settings/org.hibernate.eclipse.console.prefs
 .tern-project
+/.metadata/
