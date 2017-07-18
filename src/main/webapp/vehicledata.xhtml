@@ -19,8 +19,41 @@
 
 </h:head>
 <h:body>
+	
+		<div id= "VehicleTable" class="vehicletable">
+				<p:dataTable var="vehicle" id="VehicleList" value="#{VehicleBean.vehicles}" >
+					<p:column headerText="Id">
+						<h:outputText value="#{vehicle.id}" />
+					</p:column>
+
+					<p:column headerText="Vehicle License">
+						<h:outputText value="#{vehicle.license}" />
+					</p:column>
+
+					<p:column headerText="Car Owner's ID">
+						<h:outputText value="#{vehicle.customerId}" />
+					</p:column>
+					
+					<p:column headerText="Car Owner's Name">
+						<h:outputText value="#{vehicle.customerName}" />
+					</p:column>
+					
+					<p:column headerText="License">
+						<h:outputText value="#{vehicle.license}" />
+					</p:column>
+					
+					<p:column headerText="Brand">
+						<h:outputText value="#{vehicle.brand}" />
+					</p:column>
+					
+					<p:column headerText="Color">
+						<h:outputText value="#{vehicle.color}" />
+					</p:column>
+					
+				</p:dataTable>
+			</div>
 			
-<div class="col-xs-10 col-xs-offset-1">
+	<div class="col-xs-10 col-xs-offset-1">
 		<div class="AdminActions flex-container flex-item">
 			<div class="Add flex-item">
 				<h3>
@@ -34,19 +67,19 @@
 					<h:inputText value="#{VehicleBean.newVehicle.license}"
 						placeholder="Enter license" required="true" />
 					<br />
-					<h:outputText value="Hourly Price: " />
+					<h:outputText value="Car Owner ID: " />
 					<br />
 					<h:inputText value="#{VehicleBean.newVehicle.customerId}" required="true" />
 					<br />
-					<h:outputText value="Nr of free spots: " />
+					<h:outputText value="Owner's Name: " />
 					<br />
 					<h:inputText value="#{VehicleBean.newVehicle.customerName}" required="true" />
 					<br />
-					<h:outputText value="Spot Ref: " />
+					<h:outputText value="Vehicle Brand: " />
 					<br />
 					<h:inputText value="#{VehicleBean.newVehicle.brand}" required="true" />
 					<br />
-					<h:outputText value="Park Location: " />
+					<h:outputText value="Vehicle Color: " />
 					<br />
 					<h:inputText value="#{VehicleBean.newVehicle.color}" required="true" />
 					<br />
@@ -59,16 +92,14 @@
 					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
 				</h3>
 				<h:form>		
-				Select a park (<b>ID</b>) to remove:
+				Select a Vehicle (<b>ID</b>) to remove:
 					<br />
 					<h:inputText style="width: 50px;"
-						value="#{ProductBean.newProduct.entityId}" required="true" />
+						value="#{VehicleBean.newVehicle.id}" required="true" />
 					<br />
 					<p:commandButton value="Delete"
-						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
-					
-					<p:commandButton value="Submit"
-						action="#{ParkBean.addPark()}" />
+						action="#{VehicleBean.removeNewVehicle(id)}" />
+				
 				</h:form>
 			</div>
 		</div>
