@@ -52,13 +52,5 @@ public class ParkSpotBean implements Serializable {
 	public void addParkSpot(){
 		parkSpotService.addEntity(newParkSpot);
 	}
-
-//	public String deleteParkSpot(int id) {
-//		try {
-//			ParkSpotService.removeEntity(ParkSpotService.getParkSpotRepository(), activeParkSpot);
-//		} catch (NullPointerException e) {
-//			System.out.println("Exception Caught");
-//		}
-//		return null;
-//	}
+	
 }
