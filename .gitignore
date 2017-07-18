@@ -4,7 +4,6 @@ target/*
 .DS_STORE
 .metadata/*
 .classpath
-<<<<<<< HEAD
 .project
 .project
 .tern-project
