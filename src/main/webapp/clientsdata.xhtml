@@ -20,24 +20,24 @@
 </h:head>
 <h:body>
 			
-<div class="col-xs-10 col-xs-offset-1">
+	<div class="col-xs-10 col-xs-offset-1">
 
 		<div id= "CustomerTable" class="customertable">
 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" >
 					<p:column headerText="Id">
-						<h:outputText value="#{}" />
+						<h:outputText value="#{customer.id}" />
 					</p:column>
 
 					<p:column headerText="Name">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.customerName}" />
 					</p:column>
 
 					<p:column headerText="Contact">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.customerContact}" />
 					</p:column>
 
 					<p:column headerText="Nif">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.nif}" />
 					</p:column>
 				</p:dataTable>
 			</div>
