@@ -1,13 +1,13 @@
 package io.altar.parkee.view;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Customer;
-import io.altar.parkee.model.Park;
 import io.altar.parkee.service.CustomerService;
 
 @Named("CustomerBean")
@@ -38,6 +38,11 @@ public class CustomerBean implements Serializable {
 
 	@Inject
 	private CustomerService customerService;
+	
+	public Collection<Customer> getCustomers() {
+		
+		return customerService.showCustomers(customerService.getCustomerRepository());
+	}
 	
 	public CustomerService getCustomerService() {
 		return customerService;

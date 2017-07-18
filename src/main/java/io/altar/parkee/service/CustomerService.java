@@ -8,7 +8,6 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Customer;
-import io.altar.parkee.model.Park;
 import io.altar.parkee.repository.CustomerRepository;
 
 @Named("CustomerService")

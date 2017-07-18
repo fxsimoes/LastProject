@@ -9,13 +9,10 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Customer;
-import io.altar.parkee.model.Park;
 
 @Named("CustomerRepository")
 @ApplicationScoped
 public class CustomerRepository extends EntityRepository<Customer> {
-	
-	private EntityManager em;
 	
 	public List<Customer> getDbElements() {
 		
