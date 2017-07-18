@@ -28,6 +28,18 @@ import io.altar.parkee.repository.ParkRepository;
 			return newPark;
 		}
 		
+		@Transactional
+		public Park remove(Park oldPark){
+			parkList.removeFromDb(oldPark);
+			return oldPark;
+		}
+		
+		@Transactional
+		public Park removeIt(Park oldPark){
+			parkList.removeFromDb(oldPark);
+			return oldPark;
+		}
+		
 		public List<Park> showParks(ParkRepository parkList){
 			List<Park> list = parkList.getDbElements();
 			return list;

@@ -38,7 +38,9 @@ public class EntityRepository<E extends EntityModel> {
 	}
 	
 	@Transactional
-	public void removeFromDb(E entity){}
+	public void removeFromDb(E entity){
+		em.remove(entity);
+	}
 	
 	@Transactional
 	public void modifyDb(E newEntity){
