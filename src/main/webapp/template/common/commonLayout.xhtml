@@ -7,22 +7,32 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Parkeet</title>
-	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"/> 
-	
-	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"/>
-		
+	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet" />
 	<h:outputStylesheet name="css/style.css" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
-
 </h:head>
-	<h:body>
+<h:body>
 
-		<div class="content" class="col-md-12">
-				<ui:insert name="content"></ui:insert>
-		</div>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
 
-	</h:body>
+	<div id="content">
+		<ui:insert name="content">
+			<ui:include src="/template/common/commonContent.xhtml" />
+		</ui:insert>
+	</div>
+
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+
+</h:body>
 </html>
