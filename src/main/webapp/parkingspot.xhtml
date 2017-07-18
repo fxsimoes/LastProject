@@ -57,12 +57,12 @@
 					<br />
 					<h:outputText value="Number: " />
 					<br />
-					<h:inputText value="#{ParkBean.parkName}"
+					<h:inputText value="#{ParkBean.newPark.parkName}"
 						placeholder="Enter number" required="true" />
 					<br />
 					<h:outputText value="Row: " />
 					<br />
-					<h:inputText value="#{ParkBean.hourlyPrice}" required="true" />
+					<h:inputText value="#{ParkBean.newPark.hourlyPrice}" required="true" />
 					<br />
 
 					<h:outputText value="Status: " />
@@ -76,10 +76,6 @@
 					<br />
 					
 					<!--  alterar este bean para a cena que usares pa adicionar o status -->
-					
-					
-					
-					
 					
 					<p:commandButton value="Submit" action="#{ParkBean.addPark()}" />
 				</h:form>

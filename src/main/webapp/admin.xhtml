@@ -3,87 +3,61 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Parkeet</title>
-	<link rel="icon" type="png"
-		href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
-
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar"
-		rel="stylesheet" />
-	<h:outputStylesheet name="css/style.css" />
-	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
-	<h:outputScript name="bootstrap/js/bootstrap.js" />
-
-</h:head>
 <h:body>
+	<ui:composition template="template/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<div class="content">
+				<div class="col-xs-12 col-xs-offset-0">
+					<div id="clientsection">
+						<h:form id="form">
+							<p:growl id="msgs" showDetail="true" />
+							<p:button outcome="index" value="Homepage" icon="ui-icon-star">
+							</p:button>
+							<p:tabView>
+								<p:tab title="Parks">
+									<h:panelGrid columns="2" cellpadding="10">
+										<ui:insert name="Parks">
+											<ui:include src="/parkdata.xhtml" />
+										</ui:insert>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="Customer" icon="fa fa-user">
+									<h:panelGrid columns="2" cellpadding="10">
+										<ui:insert name="Customer">
+											<ui:include src="/clientsdata.xhtml" />
+										</ui:insert>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="Vehicles">
+									<h:panelGrid columns="2" cellpadding="10">
+										<ui:insert name="Vehicles">
+											<ui:include src="/vehicledata.xhtml" />
+										</ui:insert>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="Parking Spot">
+									<h:panelGrid columns="2" cellpadding="10">
+										<ui:insert name="ParkingSpot">
+											<ui:include src="/parkingspot.xhtml" />
+										</ui:insert>
+									</h:panelGrid>
+								</p:tab>
+								<p:tab title="painel extra teste">
+									<h:panelGrid columns="2" cellpadding="10">
+										<ui:insert name="PainelTeste">
+											<ui:include src="/painelteste.xhtml" />
+										</ui:insert>
+									</h:panelGrid>
+								</p:tab>
 
-<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/template/common/commonHeader.xhtml" />
-		</ui:insert>
-	</div>
-
-	<div class="content">
-		<div class="col-xs-12 col-xs-offset-0">
-			<div id="clientsection">
-				<h:form id="form">
-					<p:growl id="msgs" showDetail="true" />
-					<p:button outcome="index" value="Homepage" icon="ui-icon-star">
-					</p:button>
-					<p:tabView>
-						<p:tab title="Parks">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Parks">
-								<ui:include src="/parkdata.xhtml" />
-								</ui:insert>
-							</h:panelGrid>
-						</p:tab>
-						<p:tab  title="Customer" icon="fa fa-user">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Clients">
-								<ui:include src="/clientsdata.xhtml" />
-								</ui:insert>
-							</h:panelGrid>
-						</p:tab>
-						<p:tab title="Vehicles">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Clients">
-								<ui:include src="/vehicledata.xhtml" />
-								</ui:insert>
-							</h:panelGrid>
-						</p:tab>
-						<p:tab title="Parking Spot">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Clients">
-								<ui:include src="/parkingspot.xhtml" />
-								</ui:insert>
-							</h:panelGrid>
-						</p:tab>
-						<p:tab title="painel extra teste">
-							<h:panelGrid columns="2" cellpadding="10">
-								<ui:insert name="Clients">
-								<ui:include src="/painelteste.xhtml" />
-								</ui:insert>
-							</h:panelGrid>
-						</p:tab>
-						
-					</p:tabView>
-				</h:form>
+							</p:tabView>
+						</h:form>
+					</div>
+				</div>
 			</div>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<ui:insert name="footer">
-			<ui:include src="/template/common/commonFooter.xhtml" />
-		</ui:insert>
-	</div>
+		</ui:define>
+	</ui:composition>
 </h:body>
 </html>

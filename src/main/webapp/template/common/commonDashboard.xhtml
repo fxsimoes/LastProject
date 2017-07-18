@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkeet</title>
+	<link rel="icon" type="png"
+		href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar"
+		rel="stylesheet" />
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputScript name="bootstrap/js/bootstrap.js" />
+</h:head>
+<h:body>
+
+	<h:outputScript library="holder" name="holder.js" />
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.5.2/holder.min.js"></script-->
+	<b:navBar brand="Parkeet" brandHref="#" inverse="true" fixed="top"
+		fluid="true">
+		<b:navbarLinks pull="right">
+			<b:navLink value="Dashboard" href="#"></b:navLink>
+			<b:navLink value="Settings" href="#"></b:navLink>
+			<b:navLink value="Profile" href="#"></b:navLink>
+			<b:navLink value="Help" href="#"></b:navLink>
+		</b:navbarLinks>
+		<h:form styleClass="navbar-form navbar-right">
+			<div class="form-group">
+				<b:inputText placeholder="Search..." fieldSize="sm" />
+			</div>
+		</h:form>
+	</b:navBar>
+	<b:container fluid="true">
+		<b:row>
+			<b:column col-sm="3" col-md="2" styleClass="sidebar">
+				<b:listLinks>
+					<b:navLink header="Dasboard Links" />
+					<b:navLink href="#" value="Overview" active="true" />
+					<b:navLink href="#" value="Reports" />
+					<b:navLink href="#" value="Analytics" />
+				</b:listLinks>
+				<b:listLinks>
+					<b:navLink href="" value="Park" />
+					<b:navLink href="#" value="Customer" />
+					<b:navLink href="#" value="Vehicles" />
+					<b:navLink href="#" value="Parking Spots" />
+				</b:listLinks>
+			</b:column>
+			<b:column col-sm="9" offset-sm="3" col-md="10" offset="2"
+				styleClass="main">
+				<h1>Dashboard</h1>
+				<hr />
+				<b:row styleClass="placeholders">
+					<b:column col-xs="6" col-sm="3" styleClass="placeholder">
+						<img data-src="holder.js/200x200/sky" class="img-responsive"
+							alt="Generic placeholder thumbnail" />
+						<h4>Label</h4>
+						<span class="text-muted">Something else</span>
+					</b:column>
+					<b:column col-xs="6" col-sm="3" styleClass="placeholder">
+						<img data-src="holder.js/200x200/vine" class="img-responsive"
+							alt="Generic placeholder thumbnail" />
+						<h4>Label</h4>
+						<span class="text-muted">Something else</span>
+					</b:column>
+					<b:column col-xs="6" col-sm="3" styleClass="placeholder">
+						<img data-src="holder.js/200x200/sky" class="img-responsive"
+							alt="Generic placeholder thumbnail" />
+						<h4>Label</h4>
+						<span class="text-muted">Something else</span>
+					</b:column>
+					<b:column col-xs="6" col-sm="3" styleClass="placeholder">
+						<img data-src="holder.js/200x200/vine" class="img-responsive"
+							alt="Generic placeholder thumbnail" />
+						<h4>Label</h4>
+						<span class="text-muted">Something else</span>
+					</b:column>
+				</b:row>
+				<h1>Section title</h1>
+				<hr />
+				<b:row styleClass="table-responsive">
+				
+					<div id="content">
+						<ui:insert name="content">
+							<ui:include src="/template/common/commonContent.xhtml" />
+						</ui:insert>
+						
+						
+					</div>
+				</b:row>
+			</b:column>
+		</b:row>
+	</b:container>
+</h:body>
+</html>
