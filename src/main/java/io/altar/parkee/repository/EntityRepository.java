@@ -8,6 +8,7 @@ import javax.transaction.UserTransaction;
 
 import io.altar.parkee.model.EntityModel;
 
+
 public class EntityRepository<E extends EntityModel> {
 	
 	@PersistenceContext(unitName="database")
