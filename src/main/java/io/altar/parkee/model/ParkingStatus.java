@@ -33,5 +33,14 @@ public class ParkingStatus extends EntityModel implements Serializable {
 	
 	
 
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+	public ParkingStatus() {}
+
+=======
+	
+>>>>>>> 7f3505d3b043b63bf37549b9fea52016236bc03e
+>>>>>>> dev
 }
