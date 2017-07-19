@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
@@ -16,7 +15,7 @@ public class CustomerRepository extends EntityRepository<Customer> {
 	
 	public List<Customer> getDbElements() {
 		
-		Query query = getEm().createQuery("FROM customer");
+		Query query = getEm().createQuery("FROM Customer");
 		List<Customer> dbCustomers = (List<Customer>) query.getResultList();
 		return dbCustomers;
 	}
