@@ -6,6 +6,7 @@
 	
 	xmlns:p="http://primefaces.org/ui">
 <h:body>
+<<<<<<< HEAD
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
@@ -52,6 +53,48 @@
 							<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
 						</h3>
 						<h:form>		
+=======
+			
+<div class="col-xs-10 col-xs-offset-1">
+		<div class="AdminActions flex-container flex-item">
+			<div class="Add flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-road"></span><b> Add vehicle details:</b>
+				</h3>
+				<p></p>
+				<h:form>
+					<br />
+					<h:outputText value="Vehicle License: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.license}"
+						placeholder="Enter license" required="true" />
+					<br />
+					<h:outputText value="Hourly Price: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.customerId}" required="true" />
+					<br />
+					<h:outputText value="Nr of free spots: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.customerName}" required="true" />
+					<br />
+					<h:outputText value="Spot Ref: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.brand}" required="true" />
+					<br />
+					<h:outputText value="Park Location: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.color}" required="true" />
+					<br />
+					<p:commandButton value="Submit" action="#{VehicleBean.addNewVehicle()}" />
+				</h:form>
+			</div>
+			<div class="divider"></div>
+			<div class="Remove flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+				</h3>
+				<h:form>		
+>>>>>>> origin/dev
 				Select a park (<b>ID</b>) to remove:
 					<br />
 							<h:inputText style="width: 50px;"

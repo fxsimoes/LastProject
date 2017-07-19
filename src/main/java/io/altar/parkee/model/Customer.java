@@ -19,14 +19,6 @@ public class Customer extends EntityModel implements Serializable {
 	@Column(name="Nif")
 	private int nif;
 
-//	public int getId() {
-//		return customerId;
-//	}
-//
-//	public void setCustomerId(int customerId) {
-//		this.customerId = customerId;
-//	}
-
 	public String getCustomerName() {
 		return customerName;
 	}
