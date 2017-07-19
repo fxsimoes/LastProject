@@ -1,51 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Parkeet</title>
-	<h:outputStylesheet name="css/style.css" />
-	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
-	<h:outputScript name="bootstrap/js/bootstrap.js" />
-</h:head>
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
 <h:body>
+	<ui:composition>
+		<div class="container-fluid">
+			<div class="row">
 
-	<div class="container-fluid">
+				<b:navBar fixed="top"
+					inverse="true">
+					<b:navbarLinks pull="left">
+						<b:navLink class="brandicon" href="index.xhtml">
+						</b:navLink>
+						<b:navLink class="logotipo" href="index.xhtml">
+						<span id="glyphLogo" class="glyphicon glyphicon-map-marker"> </span><span>PARKEET</span>
+						</b:navLink>
+						<b:dropMenu value="Menu">
+							<b:navLink value="User" href="user.xhtml"></b:navLink>
+							<b:navLink value="Admin" href="adminConsole.xhtml"></b:navLink>
+						</b:dropMenu>
+						<b:navLink value="Home" href="index.xhtml"></b:navLink>
+						<b:navLink value="About" href="#about"></b:navLink>
+						<b:navLink value="Contact" href="#contact"></b:navLink>
+					</b:navbarLinks>
+					
+					<b:navbarLinks pull="right">
+						<b:navLink value="Search for Parking" href="user.xhtml"></b:navLink>
+						<b:navLink value="Login" href="login.xhtml"></b:navLink>
+						<b:navLink value="Sign Up" href="login.xhtml"></b:navLink>
+					</b:navbarLinks>
+				</b:navBar>
 
-		<div class="row">
-
-			<nav class="navbar navbar-default">
-				<div class="brandicon">
-					<a class="icon" href="http://localhost:8080/ePark/index.xhtml">
-						<img class="icon"
-						src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"
-						alt="Parkeet" />
-					</a> <span class="logotipo"> PARKEET</span>
-				</div>
-			</nav>
-			<h:form>
-				<p:toolbar>
-					<f:facet name="right">
-						<p:commandButton type="button" value="Login" icon="fa fa-user"/>
-						<p:commandButton type="button" value="Sign Up"  icon="fa fa-fw fa-sign-in"/>
-					</f:facet>
-					<f:facet name="right">
-						<p:menuButton value="Menu">
-							<p:menuitem value="Home" outcome="index" icon="fa fa-home" />
-							<p:menuitem value="User" outcome="user" icon="fa fa-user" />
-							<p:menuitem value="Admin" outcome="admin" icon="fa fa-fw fa-wrench"/>
-							<p:menuitem value="ParkData temp" outcome="parkdata" />
-							<p:menuitem value="CostumerData temp" outcome="clientsdata" />
-							<p:menuitem value="VehicleData temp" outcome="vehicledata" />
-							<p:menuitem value="ParkingSpot temp" outcome="parkingspot" />
-							
-						</p:menuButton>
-					</f:facet>
-				</p:toolbar>
-			</h:form>
-
-			<!--  <p:toolbar style="margin-top:5px 0px">
+				<!--  
+				<nav class="navbar navbar-default">
+					<div class="brandicon">
+						<a class="icon" href="http://localhost:8080/ePark/index.xhtml">
+							<img class="icon"
+							src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"
+							alt="Parkeet" />
+						</a> <span class="logotipo"> PARKEET</span>
+					</div>
+				</nav>
+				<h:form>
+					<p:toolbar>
+						<f:facet name="right">
+							<p:commandButton type="button" value="Login" icon="fa fa-user" />
+							<p:commandButton type="button" value="Sign Up"
+								icon="fa fa-fw fa-sign-in" />
+						</f:facet>
+						<f:facet name="right">
+							<p:menuButton value="Menu">
+								<p:menuitem value="Home" outcome="index" icon="fa fa-home" />
+								<p:menuitem value="User" outcome="user" icon="fa fa-user" />
+								<p:menuitem value="Admin" outcome="admin"
+									icon="fa fa-fw fa-wrench" />
+									<p:menuitem value="AdminTeste" outcome="adminTeste"
+									icon="fa fa-fw fa-wrench" />
+								<p:menuitem value="ParkData temp" outcome="parkdata" />
+								<p:menuitem value="CostumerData temp" outcome="clientsdata" />
+								<p:menuitem value="VehicleData temp" outcome="vehicledata" />
+								<p:menuitem value="ParkingSpot temp" outcome="parkingspot" />
+							</p:menuButton>
+						</f:facet>
+					</p:toolbar>
+				</h:form>
+				-->
+				<!--  <p:toolbar style="margin-top:5px 0px">
 						<f:facet name="right">
 							<p:commandButton type="button" value="Login" />
 							<p:commandButton type="button" value="Sign Up" />
@@ -58,7 +82,8 @@
 							</p:menuButton> 
 						</f:facet> 
 					</p:toolbar> -->
+			</div>
 		</div>
-	</div>
+	</ui:composition>
 </h:body>
 </html>

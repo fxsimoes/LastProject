@@ -3,90 +3,73 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" 
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Parkeet</title>
-	<link rel="icon" type="png"
-		href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
 
-	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar"
-		rel="stylesheet" />
-
-	<h:outputStylesheet name="css/style.css" />
-	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
-	<h:outputScript name="bootstrap/js/bootstrap.js" />
-
-</h:head>
 <h:body>
-	<div class="col-xs-12">
+	<ui:composition template="template/common/commonDashboard.xhtml">
+		<ui:define name="content">
+			<div class="col-xs-10 col-xs-offset-1">
+				<h1>Parking spots</h1>
+				<div class="ParkSpotTable">
+					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}">
+						<p:column headerText="ID">
+							<h:outputText value="#{ParkSpot.id}" />
+						</p:column>
+						<p:column headerText="InputSpotNum">
+							<h:outputText value="#{ParkSpot.inputSpotNum}" />
+						</p:column>
+						<p:column headerText="Number">
+							<h:outputText value="#{ParkSpot.number}" />
+						</p:column>
+						<p:column headerText="Row">
+							<h:outputText value="#{ParkSpot.row}" />
+						</p:column>
+						<p:column headerText="Status">
+							<h:outputText value="#{ParkSpot.statusId}" />
+						</p:column>
 
-		<div class="parktable">
-			<p:dataTable var="parking spot" value="#{dtBasicView.cars}">
-				<p:column headerText="ID">
-					<h:outputText value="#{car.id}" />
-				</p:column>
+					</p:dataTable>
+				</div>
 
-				<p:column headerText="Number">
-					<h:outputText value="#{car.year}" />
-				</p:column>
-
-				<p:column headerText="Row">
-					<h:outputText value="#{car.brand}" />
-				</p:column>
-
-				<p:column headerText="Status">
-					<h:outputText value="#{car.color}" />
-				</p:column>
-
-			</p:dataTable>
-		</div>
-
-		<div class="AdminActions flex-container flex-item">
-
-			<div class="Add flex-item">
-				<h3>
-					<span class="glyphicon glyphicon-th"></span><b> Add parking
-						spot details</b>
-				</h3>
-				<p></p>
-				<h:form>
-					<br />
-					<br />
-					<h:outputText value="Number: " />
-					<br />
-					<h:inputText value="#{ParkBean.parkName}"
-						placeholder="Enter number" required="true" />
-					<br />
-					<h:outputText value="Row: " />
-					<br />
-					<h:inputText value="#{ParkBean.hourlyPrice}" required="true" />
-					<br />
-
-					<h:outputText value="Status: " />
-					<br />
-					<p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+				<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+						<h3>
+							<span class="glyphicon glyphicon-th"></span><b> Add parking
+								spot details</b>
+						</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="InputSpotNum: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.inputSpotNum}"
+								required="true" />
+							<br />
+							<h:outputText value="Number: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.number}"
+								required="true" />
+							<br />
+							<h:outputText value="Row: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.row}"
+								required="true" />
+							<br />
+							<h:outputText value="Status: " />
+							<br />
 						
-						<f:selectItem itemLabel="Free" itemValue="Free" />
-						<f:selectItem itemLabel="Occupied" itemValue="Occupied" />	
-						<f:selectItem itemLabel="Reserved" itemValue="Reserved" />
-					</p:selectOneMenu>
-					<br />
-					
-					<!--  alterar este bean para a cena que usares pa adicionar o status -->
-					
-					
-					
-					
-					
-					<p:commandButton value="Submit" action="#{ParkBean.addPark()}" />
-				</h:form>
+
+							<p:commandButton value="Submit"
+								action="#{ParkSpotBean.addParkSpot()}" />
+						</h:form>
+					</div>
+					<div class="divider"></div>
+
+				</div>
 			</div>
-			<div class="divider"></div>
-			
-		</div>
-	</div>
+		</ui:define>
+	</ui:composition>
+
 </h:body>
 </html>

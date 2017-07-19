@@ -3,41 +3,32 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" 
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Parkeet</title>
-	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"/> 
-	
-	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"/>
-		
-	<h:outputStylesheet name="css/style.css" />
-	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
-	<h:outputScript name="bootstrap/js/bootstrap.js" />
 
-</h:head>
 <h:body>
-			
-<div class="col-xs-10 col-xs-offset-1">
 
+	<ui:composition template="template/common/commonDashboard.xhtml">
+		<ui:define name="content">
+				
+	<div class="col-xs-10 col-xs-offset-1">
+		<h1>Customers</h1>
 		<div id= "CustomerTable" class="customertable">
 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" >
 					<p:column headerText="Id">
-						<h:outputText value="#{}" />
+						<h:outputText value="#{customer.id}" />
 					</p:column>
 
 					<p:column headerText="Name">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.customerName}" />
 					</p:column>
 
 					<p:column headerText="Contact">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.customerContact}" />
 					</p:column>
 
 					<p:column headerText="Nif">
-						<h:outputText value="#{CustomerBean}" />
+						<h:outputText value="#{customer.nif}" />
 					</p:column>
 				</p:dataTable>
 			</div>
@@ -73,21 +64,22 @@
 					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
 				</h3>
 				<h:form>		
+
 				Select a park (<b>ID</b>) to remove:
 					<br />
-					<h:inputText style="width: 50px;"
-						value="#{ProductBean.newProduct.entityId}" required="true" />
-					<br />
-					<p:commandButton value="Delete"
-						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
-					
-					<p:commandButton value="Submit"
-						action="#" />
-				</h:form>
-			</div>
-		</div>
-	</div>
+							<h:inputText style="width: 50px;"
+								value="#{ProductBean.newProduct.entityId}" required="true" />
+							<br />
+							<p:commandButton value="Delete"
+								action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
 
+							<p:commandButton value="Submit" action="#" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
 
 
 </h:body>
