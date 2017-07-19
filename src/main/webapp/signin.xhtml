@@ -12,19 +12,18 @@
 		<div class="col-xs-12">
 			  <b:container>
             <h:form styleClass="form-signin" prependId="false">
-                <h3 class="form-signin-heading">Please log in</h3>
-                <b:inputText id="email" placeholder="Email address" value="#{}" >
+                <h3 class="form-signin-heading">Please sign in</h3>
+                <b:inputText id="email" placeholder="Email address" >
                     <f:facet name="prepend">
                         <b:icon name="user" />
                     </f:facet>
                 </b:inputText>
-                <b:inputText id="password" placeholder="Password" type="password" value=#{}>
+                <b:inputText id="password" placeholder="Password" type="password">
                     <f:facet name="prepend">
                         <b:iconAwesome name="key" />
                     </f:facet>
                 </b:inputText>
-                <b:selectBooleanCheckbox value="true" caption="remember me"/>
-                <b:commandButton look="primary btn-block" value="Log In" icon="log-in" size="lg"/>
+                <b:commandButton look="primary btn-block" value="Sign In" icon="log-in" size="lg"/>
             </h:form>
         </b:container>
 
@@ -34,3 +33,4 @@
 
 </h:body>
 </html>
+

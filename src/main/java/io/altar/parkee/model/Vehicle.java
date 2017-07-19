@@ -27,16 +27,21 @@ public class Vehicle extends EntityModel implements Serializable {
 	@OneToOne
 	private Customer customer;
 
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	public String getLicense() {
 		return license;
 	}
 
-
 	public void setLicense(String license) {
 		this.license = license;
 	}
-
 
 	public int getCustomerId() {
 		return customerId;

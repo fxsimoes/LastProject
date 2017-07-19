@@ -5,9 +5,6 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
-
-import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
