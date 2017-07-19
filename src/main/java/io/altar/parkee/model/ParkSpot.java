@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +20,19 @@ public class ParkSpot extends EntityModel implements Serializable {
 	private int number;
 	@Column(name="ParkSpotRow")
 	private String row;
-	@Column(name="statusId")
-	private int statusId;
 	
+//	@Column(name="statusId")
+	private enum StatusId{	
+		F,B,O;
+	}
+
+	@Column(name="SpotIdent")
+	private String spotIdent = row+number;
+
+	@ManyToOne
+	private Park park;
+	@JoinTable
+
 	public int getInputSpotNum() {
 		return inputSpotNum;
 	}
@@ -44,14 +56,17 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public void setRow(String row) {
 		this.row = row;
 	}
-
-	public int getStatusId() {
-		return statusId;
+	
+	public String getSpotIdent() {
+		return spotIdent;
 	}
 
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
+	public void setSpotIdent(String spotIdent) {
+		this.spotIdent = spotIdent;
 	}
+//	public void setStatusId(StatusId input) {
+//        userPermissions = input;
+//    }
 
 	public ParkSpot() {
 	}

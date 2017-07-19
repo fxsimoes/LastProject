@@ -2,8 +2,10 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import io.altar.parkee.model.EntityModel;
 
@@ -27,7 +29,8 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude;
 	@Column(name="Latitude")
 	private int latitude;
-
+	
+//	@OneToMany(mappedBy="Park",orphanRemoval=true
 	public int getLongitude() {
 		return longitude;
 	}

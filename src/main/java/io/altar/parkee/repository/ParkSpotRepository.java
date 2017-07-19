@@ -27,7 +27,7 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 		dbParkSpot.setInputSpotNum(inputSpotNum);
 		dbParkSpot.setNumber(number);		
 		dbParkSpot.setRow(row);
-		dbParkSpot.setStatusId(statusId);	
+//		dbParkSpot.setStatusId(statusId);	
 	}
 	
 	@Override
