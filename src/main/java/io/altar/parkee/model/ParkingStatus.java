@@ -1,27 +1,37 @@
 package io.altar.parkee.model;
 
-public class ParkingStatus {
+import java.io.Serializable;
 
-	private String Name;
-	private String Code;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-	public String getName() {
-		return Name;
-	}
+@Entity
+@Table(name = "Status")
+public class ParkingStatus extends EntityModel implements Serializable {
 
-	public void setName(String name) {
-		Name = name;
-	}
-
-	public String getCode() {
-		return Code;
-	}
-
-	public void setCode(String code) {
+	private static final long serialVersionUID = 1L;
+	
+//	@Column(name="StatusName")
+//	private int Name;
+	@Column(name="StatusCode")
+	private int Code;
+	
+	
+//	public int getName() {
+//		return (int) (Math.random() * 10);
+//	}
+//	public void setName(int name) {
+//		Name = name;
+//	}
+	public int getCode() {
+		return (int) (Math.random() * 3);
+		}
+	public void setCode(int code) {
 		Code = code;
 	}
+	
+	
 
-	public ParkingStatus() {
-	}
-
+	
 }
