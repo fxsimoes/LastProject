@@ -1,6 +1,8 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,7 +14,7 @@ import io.altar.parkee.model.EntityModel;
 @Entity
 @Table(name = "Park")
 public class Park extends EntityModel implements Serializable {
-
+//
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="ParkName")
@@ -30,7 +32,10 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="Latitude")
 	private int latitude;
 	
-//	@OneToMany(mappedBy="Park",orphanRemoval=true
+//	@OneToMany(mappedBy="Park", orphanRemoval=true)
+//	@Cascade(value= {org.hibernate.annotations.CascadeType.ALL})
+//	private List<ParkSpot> parkSpot = new ArrayList<ParkSpot>();
+//-------------------------------------------------------------------------------	
 	public int getLongitude() {
 		return longitude;
 	}

@@ -34,6 +34,5 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	
 	public void modifyEntity(int id, int inputSpotNum, int number, String row, int statusId){
 		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
-	}
-	
+	}	
 }
