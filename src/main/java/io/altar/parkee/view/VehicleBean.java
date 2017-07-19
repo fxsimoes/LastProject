@@ -1,11 +1,13 @@
 package io.altar.parkee.view;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
 import io.altar.parkee.service.VehicleService;
 
@@ -37,9 +39,19 @@ public class VehicleBean implements Serializable {
 	public void setVehicleService(VehicleService vehicleService) {
 		this.vehicleService = vehicleService;
 	}
+	
+	public Collection<Vehicle> getVehicles() {
+		return vehicleService.showVehicles(vehicleService.getVehicleList());
+	}
 
 	public void addNewVehicle(){
 		vehicleService.addVehicle(newVehicle);
 	}
+	
+	public void removeNewVehicle(int id){
+		vehicleService.removeVehicle(id);
+	}
+	
+	
 	
 }

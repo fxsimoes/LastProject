@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +19,7 @@ public class Customer extends EntityModel implements Serializable {
 	private int customerContact;
 	@Column(name="Nif")
 	private int nif;
-
+	
 	public String getCustomerName() {
 		return customerName;
 	}
