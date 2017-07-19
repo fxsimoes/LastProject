@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +14,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column (name ="InputSpotNumber")
-	private int inputSpotNum;
+
 	@Column(name="ParkSpotNumber")
 	private int number;
 	@Column(name="ParkSpotRow")
@@ -21,12 +22,17 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="statusId")
 	private int statusId;
 	
-	public int getInputSpotNum() {
-		return inputSpotNum;
+	@OneToOne
+	@JoinColumn(name="NrOfSpots")
+	private Park park;
+	
+	
+	public Park getPark() {
+		return park;
 	}
 
-	public void setInputSpotNum(int inputSpotNum) {
-		this.inputSpotNum = inputSpotNum;
+	public void setPark(Park park) {
+		this.park = park;
 	}
 
 	public int getNumber() {

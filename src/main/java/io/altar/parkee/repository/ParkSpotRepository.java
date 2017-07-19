@@ -24,7 +24,6 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	@Transactional
 	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
-		dbParkSpot.setInputSpotNum(inputSpotNum);
 		dbParkSpot.setNumber(number);		
 		dbParkSpot.setRow(row);
 		dbParkSpot.setStatusId(statusId);	
