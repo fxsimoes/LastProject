@@ -36,7 +36,7 @@ public class ParkSpotBean implements Serializable {
 	}
 
 	public ParkSpotService getParkSpotService() {
-		return getParkSpotService();
+		return parkSpotService;
 	}
 
 	public void setParkService(ParkSpotService parkSpotService) {
@@ -46,7 +46,7 @@ public class ParkSpotBean implements Serializable {
 	@Inject
 	private ParkSpotService parkSpotService;
 	public Collection<ParkSpot> getSpots() {
-		return parkSpotService.showParks(parkSpotService.getParkRepository());
+		return parkSpotService.showSpots(parkSpotService.getParkRepository());
 	}
 	
 	public void addParkSpot(){
