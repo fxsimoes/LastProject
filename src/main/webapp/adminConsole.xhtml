@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="template/common/commonLayout.xhtml">
+	
+	<ui:define name="content">
+
+	<b:container fluid="true">
+		<b:row>
+			<b:column col-sm="3" col-md="2" styleClass="sidebar">
+				<b:listLinks>
+					<b:navLink header="Admin Console" />
+					<b:navLink href="overview.xhtml" value="Overview"/>
+				</b:listLinks>
+				<br />
+				<b:listLinks>
+					<b:navLink href="parkdata.xhtml" value="Parks" />
+					<b:navLink href="clientsdata.xhtml" value="Customers" />
+					<b:navLink href="vehicledata.xhtml" value="Vehicles" />
+					<b:navLink href="parkingspot.xhtml" value="Parking Spots" />
+				</b:listLinks>
+			</b:column>
+			<b:column col-sm="9" offset-sm="3" col-md="10" offset="2"
+				styleClass="main">
+
+				<b:row styleClass="table-responsive">
+
+					<div id="content">
+						<ui:insert name="content">
+							<ui:include src="/template/common/commonContent.xhtml" />
+						</ui:insert>
+
+					</div>
+				</b:row>
+			</b:column>
+		</b:row>
+	</b:container>
+	</ui:define>
+	
+	</ui:composition>
+</h:body>
+
+</html>

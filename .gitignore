@@ -6,3 +6,4 @@ target/*
 .project
 bin/*
 .tern-project
+/target/
