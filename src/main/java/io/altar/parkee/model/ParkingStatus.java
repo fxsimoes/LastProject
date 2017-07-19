@@ -21,7 +21,6 @@ public class ParkingStatus {
 		Code = code;
 	}
 
-	public ParkingStatus() {
-	}
+	public ParkingStatus() {}
 
 }
