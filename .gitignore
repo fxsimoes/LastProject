@@ -1,7 +1,13 @@
 .settings/*
+bin/*
 target/*
 .DS_STORE
 .metadata/*
 .classpath
 .project
+<<<<<<< HEAD
+=======
+.project
+.tern-project
+>>>>>>> 9e032e1c96777feef1c15aaa31875ef2bc4675de
 /target/
