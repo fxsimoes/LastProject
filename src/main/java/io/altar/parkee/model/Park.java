@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,8 +18,12 @@ public class Park extends EntityModel implements Serializable {
 	private String parkName;
 	@Column(name="HourlyPrice")
 	private int hourlyPrice;
-	@Column(name="NrOfSpots")
+	@Column(name="nrOfSpots")
 	private int nrOfSpots;
+
+    @OneToOne(optional=false, mappedBy="park")
+	private ParkSpot parkSpot;
+    public ParkSpot getParkSpot() { return parkSpot; }
 	@Column(name="SpotRef")
 	private String spotRef;
 	@Column(name="Location")
@@ -29,7 +32,16 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude;
 	@Column(name="Latitude")
 	private int latitude;
+	
+	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
 
+	public int getNrOfSpots() {
+		return nrOfSpots;
+	}
+
+	public void setNrOfSpots(int nrOfSpots) {
+		this.nrOfSpots = nrOfSpots;
+	}
 
 	public int getLongitude() {
 		return longitude;
@@ -61,14 +73,6 @@ public class Park extends EntityModel implements Serializable {
 
 	public void setHourlyPrice(int hourlyPrice) {
 		this.hourlyPrice = hourlyPrice;
-	}
-
-	public int getNrOfSpots() {
-		return nrOfSpots;
-	}
-
-	public void setNrOfSpots(int nrOfSpots) {
-		this.nrOfSpots = nrOfSpots;
 	}
 
 	public String getSpotRef() {

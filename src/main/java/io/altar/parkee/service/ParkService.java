@@ -45,8 +45,8 @@ import io.altar.parkee.repository.ParkRepository;
 			return list;
 		}
 		
-		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
-		}
+//		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
+//			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
+//		}
 		
 }

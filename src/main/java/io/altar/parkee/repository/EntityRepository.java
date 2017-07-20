@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 import javax.transaction.UserTransaction;
 
 import io.altar.parkee.model.EntityModel;
+import io.altar.parkee.model.Park;
+import io.altar.parkee.model.ParkSpot;
 
 
 public class EntityRepository<E extends EntityModel> {
@@ -21,6 +23,14 @@ public class EntityRepository<E extends EntityModel> {
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
+	
+//	public void getRef(){
+//
+//	Park park = em.getReference(Park.class, nrOfSpots());
+//	ParkSpot newParkSpot = new ParkSpot();
+//	newParkSpot.setPark(park);
+//	em.persist(newParkSpot);
+//	}
 
 	@Resource
     private UserTransaction userTransaction;

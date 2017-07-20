@@ -14,7 +14,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-
 	@Column(name="ParkSpotNumber")
 	private int number;
 	@Column(name="ParkSpotRow")
@@ -22,18 +21,11 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="statusId")
 	private int statusId;
 	
-	@OneToOne
-	@JoinColumn(name="NrOfSpots")
-	private Park park;
-	
-	
-	public Park getPark() {
-		return park;
-	}
-
-	public void setPark(Park park) {
-		this.park = park;
-	}
+    @OneToOne(optional=false)
+    @JoinColumn(
+      name="nrOfSpots", unique=true, nullable=false, updatable=false)
+    private Park park;
+    public Park getPark() { return park; }
 
 	public int getNumber() {
 		return number;

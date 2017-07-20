@@ -27,15 +27,15 @@ public class ParkRepository extends EntityRepository<Park> {
 		getEm().remove(parkToRemove);
 	}
 	
-	@Transactional
-	public void modifyDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-		Park dbPark = getEm().find(Park.class, id);
-		dbPark.setHourlyPrice(price);
-		dbPark.setParkName(name);		
-		dbPark.setNrOfSpots(spots);
-		dbPark.setSpotRef(spotRef);
-		dbPark.setParkLocation(location);
-		dbPark.setLongitude(longitude);
-		dbPark.setLatitude(latitude);
-	}
+//	@Transactional
+//	public void modifyDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
+//		Park dbPark = getEm().find(Park.class, id);
+//		dbPark.setHourlyPrice(price);
+//		dbPark.setParkName(name);		
+//		dbPark.setNrOfSpots(spots);
+//		dbPark.setSpotRef(spotRef);
+//		dbPark.setParkLocation(location);
+//		dbPark.setLongitude(longitude);
+//		dbPark.setLatitude(latitude);
+//	}
 }	
