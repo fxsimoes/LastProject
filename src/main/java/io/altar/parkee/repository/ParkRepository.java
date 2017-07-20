@@ -38,27 +38,4 @@ public class ParkRepository extends EntityRepository<Park> {
 		dbPark.setLongitude(longitude);
 		dbPark.setLatitude(latitude);
 	}
-	
-//	@Transactional
-//	public void addToDb(Park newPark){
-//		getEm().persist(newPark);
-//	}
 }	
-
-//	@Transactional
-//	public Park addToDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-//		Park newPark =  new Park();
-//		newPark.setHourlyPrice(price);
-//		newPark.setParkName(name);		
-//		newPark.setNrOfSpots(spots);
-//		newPark.setSpotRef(spotRef);
-//		newPark.setParkLocation(location);
-//		newPark.setLongitude(longitude);
-//		newPark.setLatitude(latitude);
-//		getEm().persist(newPark);
-//		return newPark;
-//	}
-	
-
-
-	
