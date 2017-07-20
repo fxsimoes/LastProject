@@ -27,7 +27,17 @@
             /*#f5f5f5 */
             /*max-height: 1000px !important;*/
             padding-top: 100px !important;
+            z-index: 100 !important;  
+            position: relative !important;
         }
+        
+        
+        .fundo{
+        	filter: blur(5px)  !important;      
+        	z-index: -100 !important;  	
+        	position: absolute !important;
+        }
+        
                 
         @media (min-width: 768px) {
         .sidebar {
@@ -204,13 +214,16 @@ body {
 	background:
 		url("https://images.unsplash.com/uploads/1413425985184f77e9d23/46107d09?dpr=1&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=")
 		!important;
+		
 	/*background:
 		url("https://www.wykop.pl/cdn/c3201142/comment_4OBTeXyj4LR8UKUHqiTTbhYhRXoaa8lD.jpg")
 		!important;*/
-	-webkit-filter: grayscale(50%) !important; 
+
 	width: 100% !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
+	
+
 }
 
 .divider {
@@ -249,3 +262,5 @@ body {
 	display: inline-block !important;
 	text-align: center !important;*/
 }
+
+

@@ -73,3 +73,145 @@
 	</div>
 </h:body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  
+
+	<div id="ParkTable" class="parktable">
+					<p:dataTable id="rowEditingTable" var="message"
+						value="#{messageTableController.messages}" paginator="true"
+						rows="5" paginatorPosition="bottom"
+						filteredValue="#{messageTableController.filteredMessages}"
+						editable="true">
+						<f:facet name="header">  
+            Row Editing  
+        </f:facet>
+
+						<p:column filterBy="#{park.id}">
+							<f:facet name="header">
+								<h:outputText value="Id" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.id}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText id="modelInput" value="#{park.id}"
+										style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column filterBy="#{park.parkName}">
+							<f:facet name="header">
+								<h:outputText value="Name" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.parkName}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.parkName}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						<p:column filterBy="#{park.hourlyPrice}">
+							<f:facet name="header">
+								<h:outputText value="Hourly Price" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.hourlyPrice}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.hourlyPrice}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column filterBy="#{park.nrOfSpots}">
+							<f:facet name="header">
+								<h:outputText value="Nr of free spots" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.nrOfSpots}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.nrOfSpots}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						
+						<p:column filterBy="#{park.parkLocation}">
+							<f:facet name="header">
+								<h:outputText value="Park Location" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.parkLocation}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.parkLocation}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						
+						<p:column filterBy="#{park.longitude}">
+							<f:facet name="header">
+								<h:outputText value="Longitude" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.longitude}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.longitude}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column filterBy="#{park.latitude}">
+							<f:facet name="header">
+								<h:outputText value="Latitude" />
+							</f:facet>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{park.latitude}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{park.latitude}" style="width:96%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						
+						<p:column style="width:6%" exportable="false">
+							<p:rowEditor />
+						</p:column>
+					</p:dataTable>
+					-->
