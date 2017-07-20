@@ -4,15 +4,17 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import io.altar.parkee.model.EntityModel;
 
 @Entity
 @Table(name = "Park")
 public class Park extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Column(name="ParkName")
 	private String parkName;
 	@Column(name="HourlyPrice")
@@ -27,6 +29,7 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude;
 	@Column(name="Latitude")
 	private int latitude;
+
 
 	public int getLongitude() {
 		return longitude;
