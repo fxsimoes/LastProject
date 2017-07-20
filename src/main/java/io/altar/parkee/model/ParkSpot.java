@@ -14,6 +14,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private Park park;
 	@Column (name ="InputSpotNumber")
 	private int inputSpotNum;
 	@Column(name="ParkSpotNumber")
@@ -30,7 +31,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 	private String spotIdent = row+number;
 
 	@ManyToOne
-	private Park park;
 	@JoinTable
 
 	public int getInputSpotNum() {
