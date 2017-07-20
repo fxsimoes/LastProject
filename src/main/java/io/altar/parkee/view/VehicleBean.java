@@ -16,6 +16,7 @@ import io.altar.parkee.service.VehicleService;
 public class VehicleBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private Vehicle newVehicle = new Vehicle();
 	
 	public Vehicle getNewVehicle() {
@@ -50,10 +51,6 @@ public class VehicleBean implements Serializable {
 	public void removeNewVehicle(int id){
 		vehicleService.removeVehicle(id);
 		System.out.println(id);
-	}
-	
-	public void getElementById(int id){
-	
 	}
 	
 	

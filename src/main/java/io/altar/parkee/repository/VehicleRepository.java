@@ -16,4 +16,6 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		List<Vehicle> dbVehicles = (List<Vehicle>) query.getResultList();
 		return dbVehicles;
 	}
+	
+	
 }

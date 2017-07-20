@@ -18,11 +18,7 @@
 					</p:column>
 
 					<p:column headerText="Car Owner's ID">
-						<h:outputText value="#{vehicle.customerId}" />
-					</p:column>
-					
-					<p:column headerText="Car Owner's Name">
-						<h:outputText value="#{vehicle.customerName}" />
+						<h:outputText value="#{vehicle.customer.id}" />
 					</p:column>
 					
 					<p:column headerText="License">
@@ -56,11 +52,7 @@
 					<br />
 					<h:outputText value="Car Owner ID: " />
 					<br />
-					<h:inputText value="#{VehicleBean.newVehicle.customerId}" required="true" />
-					<br />
-					<h:outputText value="Owner's Name: " />
-					<br />
-					<h:inputText value="#{VehicleBean.newVehicle.customerName}" required="true" />
+					<h:inputText value="#{VehicleBean.getCustomer()}" required="true" />
 					<br />
 					<h:outputText value="Vehicle Brand: " />
 					<br />

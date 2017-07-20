@@ -15,10 +15,6 @@ public class Vehicle extends EntityModel implements Serializable {
 	
 	@Column(name="License")
 	private String license;
-	@Column(name="CustomerId")
-	private int customerId;
-	@Column(name="CustomerName")
-	private String customerName;
 	@Column(name="Brand")
 	private String brand;
 	@Column(name="Color")
@@ -35,6 +31,7 @@ public class Vehicle extends EntityModel implements Serializable {
 		this.customer = customer;
 	}
 
+
 	public String getLicense() {
 		return license;
 	}
@@ -42,26 +39,6 @@ public class Vehicle extends EntityModel implements Serializable {
 	public void setLicense(String license) {
 		this.license = license;
 	}
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
 
 	public String getBrand() {
 		return brand;

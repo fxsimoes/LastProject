@@ -18,6 +18,8 @@ public class Customer extends EntityModel implements Serializable {
 	private int customerContact;
 	@Column(name="Nif")
 	private int nif;
+	@Column(name="Vehicle")
+	private Vehicle myVehicle;
 	
 	public String getCustomerName() {
 		return customerName;
