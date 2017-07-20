@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -13,8 +17,11 @@ import javax.persistence.Table;
 public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+//	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	
-	private Park park;
 	@Column (name ="InputSpotNumber")
 	private int inputSpotNum;
 	@Column(name="ParkSpotNumber")
@@ -23,8 +30,8 @@ public class ParkSpot extends EntityModel implements Serializable {
 	private String row;
 	
 //	@Column(name="statusId")
-	private enum StatusId{	
-		F,B,O;
+	private enum statusId{	
+		Free, Reserved, Occupied;
 	}
 
 	@Column(name="SpotIdent")
@@ -32,6 +39,12 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	@ManyToOne
 	@JoinTable
+
+
+//	@JoinTable (name="park", nullable= false)
+//	@ForeignKey(name="park_fk")
+	private Park park = new Park ();
+//----------------------------------------------------------------------------------------------
 
 	public int getInputSpotNum() {
 		return inputSpotNum;
