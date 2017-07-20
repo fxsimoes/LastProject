@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 import io.altar.parkee.model.EntityModel;
 
@@ -32,9 +33,18 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="Latitude")
 	private int latitude;
 	
-//	@OneToMany(mappedBy="Park", orphanRemoval=true)
-//	@Cascade(value= {org.hibernate.annotations.CascadeType.ALL})
+//	@OneToMany(cascade = CascadeType.ALL, mappedBy="Park")
+////	@Cascade(value= {org.hibernate.annotations.CascadeType.ALL})
 //	private List<ParkSpot> parkSpot = new ArrayList<ParkSpot>();
+//	
+//	
+//	
+	
+	
+	
+	
+	
+	
 //-------------------------------------------------------------------------------	
 	public int getLongitude() {
 		return longitude;
