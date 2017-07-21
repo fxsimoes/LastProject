@@ -23,7 +23,7 @@ public class VehicleService extends EntityService<Vehicle>{
 	}
 	
 	public Vehicle addVehicle(Vehicle newVehicle){
-		vehicleList.addToDb(newVehicle);
+		vehicleList.create(newVehicle);
 		return newVehicle;
 	}
 	
@@ -34,7 +34,7 @@ public class VehicleService extends EntityService<Vehicle>{
 	
 	public void removeVehicle(int id){
 		Vehicle productToRemove = vehicleList.getDbElements().get(id);
-		vehicleList.removeFromDb(productToRemove);
+		vehicleList.delete(productToRemove);
 	}
 
 }

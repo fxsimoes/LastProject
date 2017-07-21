@@ -24,19 +24,19 @@ import io.altar.parkee.repository.ParkRepository;
 		
 		@Transactional
 		public Park addEntity(Park newPark){
-			parkList.addToDb(newPark);
+			parkList.create(newPark);
 			return newPark;
 		}
 		
 		@Transactional
 		public Park remove(Park oldPark){
-			parkList.removeFromDb(oldPark);
+			parkList.delete(oldPark);
 			return oldPark;
 		}
 		
 		@Transactional
 		public Park removeIt(Park oldPark){
-			parkList.removeFromDb(oldPark);
+			parkList.delete(oldPark);
 			return oldPark;
 		}
 		

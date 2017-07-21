@@ -2,9 +2,10 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,9 +22,9 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="nrOfSpots")
 	private int nrOfSpots;
 
-    @OneToOne(optional=false, mappedBy="park")
+    @OneToOne(optional=false, mappedBy="park", cascade=CascadeType.ALL, 
+    		targetEntity=ParkSpot.class, fetch=FetchType.EAGER)
 	private ParkSpot parkSpot;
-    public ParkSpot getParkSpot() { return parkSpot; }
 	@Column(name="SpotRef")
 	private String spotRef;
 	@Column(name="Location")
@@ -32,6 +33,8 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude;
 	@Column(name="Latitude")
 	private int latitude;
+	
+	public ParkSpot getParkSpot() { return parkSpot; }
 	
 	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
 

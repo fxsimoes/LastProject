@@ -31,7 +31,7 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	
 	@Override
 	@Transactional
-	public void removeFromDb(ParkSpot parkSpot){
+	public void delete(ParkSpot parkSpot){
 		ParkSpot parkSpotToRemove = getEm().find(ParkSpot.class, parkSpot.getId());
 		getEm().remove(parkSpotToRemove);
 	}
