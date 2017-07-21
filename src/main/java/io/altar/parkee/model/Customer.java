@@ -1,10 +1,7 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -36,12 +33,6 @@ public class Customer extends EntityModel implements Serializable {
 			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
 	private List<Vehicle> vehicles;
 	
-
-//	@ManyToMany
-//    private List<Vehicle> vehicleList;
-	
-	
-
 	public String getCustomerName() {
 		return customerName;
 	}
