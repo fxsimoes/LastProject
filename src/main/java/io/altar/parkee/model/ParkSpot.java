@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-<<<<<<< HEAD
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,11 +14,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SecondaryTable;
-=======
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
->>>>>>> dev
 import javax.persistence.Table;
 
 @Entity
@@ -27,12 +24,9 @@ import javax.persistence.Table;
 public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-<<<<<<< HEAD
+
 	@Column (name ="inputSpotNumber")
 	private int inputSpotNum;
-=======
->>>>>>> dev
 	@Column(name="ParkSpotNumber")
 	private int number;
 	@Column(name="ParkSpotRow")
@@ -52,7 +46,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 //	@Column(name="SpotIdent")
 //	private String spotIdent = row+number;
 	
-<<<<<<< HEAD
+
 	@ManyToOne
 	@JoinTable(
 	        name="Park_Spots",
@@ -68,20 +62,9 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	public int getInputSpotNum() {
 		return inputSpotNum;
-=======
-    @OneToOne(optional=false, targetEntity=Park.class, 
-    		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    @JoinColumn(
-      name="nrOfSpots", unique=false, updatable=true)
-    private Park park;
-    
-        
-    public void setPark(Park park) {
-		this.park = park;
->>>>>>> dev
+
 	}
 
-	public Park getPark() { return park; }
 
 	public int getNumber() {
 		return number;

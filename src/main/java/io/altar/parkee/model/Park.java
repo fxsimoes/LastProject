@@ -5,19 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-<<<<<<< HEAD
+
 
 //import javax.persistece.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.SecondaryTable;
-=======
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
->>>>>>> dev
 import javax.persistence.Table;
 
 @Entity
@@ -33,9 +31,10 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="nrOfSpots")
 	private int nrOfSpots;
 
-    @OneToOne(optional=false, mappedBy="park", cascade=CascadeType.ALL, 
-    		targetEntity=ParkSpot.class, fetch=FetchType.EAGER)
-	private ParkSpot parkSpot;
+//    @OneToOne(optional=false, mappedBy="park", cascade=CascadeType.ALL, 
+//    		targetEntity=ParkSpot.class, fetch=FetchType.EAGER)
+//	private ParkSpot parkSpot;
+    
 	@Column(name="SpotRef")
 	private String spotRef;
 	@Column(name="Location")
@@ -45,13 +44,7 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="Latitude")
 	private int latitude;
 	
-<<<<<<< HEAD
-	@OneToMany(cascade = CascadeType.ALL, mappedBy ="park")
-	private List<ParkSpot> parkSpot = new ArrayList<ParkSpot>();
-=======
-	public ParkSpot getParkSpot() { return parkSpot; }
-	
-	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
+//	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
 
 	public int getNrOfSpots() {
 		return nrOfSpots;
@@ -60,9 +53,7 @@ public class Park extends EntityModel implements Serializable {
 	public void setNrOfSpots(int nrOfSpots) {
 		this.nrOfSpots = nrOfSpots;
 	}
->>>>>>> dev
 
-	
 //-------------------------------------------------------------------------------	
 	public int getLongitude() {
 		return longitude;
