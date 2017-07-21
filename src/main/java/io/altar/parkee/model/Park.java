@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+
+//import javax.persistece.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -33,17 +35,9 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="Latitude")
 	private int latitude;
 	
-//	@OneToMany(cascade = CascadeType.ALL, mappedBy="Park")
-////	@Cascade(value= {org.hibernate.annotations.CascadeType.ALL})
-//	private List<ParkSpot> parkSpot = new ArrayList<ParkSpot>();
-//	
-//	
-//	
-	
-	
-	
-	
-	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy ="park")
+	private List<ParkSpot> parkSpot = new ArrayList<ParkSpot>();
+
 	
 //-------------------------------------------------------------------------------	
 	public int getLongitude() {

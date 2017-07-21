@@ -9,6 +9,7 @@ import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -20,10 +21,6 @@ import javax.persistence.Table;
 public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private long id;
 	
 	@Column (name ="inputSpotNumber")
 	private int inputSpotNum;
@@ -32,19 +29,30 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="ParkSpotRow")
 	private String row;
 	@Column(name= "StatusId")
-	private int statusId;
-	
-	
+//	private int statusId;
+	private double statusId;
+
 //	@Column (name="NrOfSpots", table= "Park")
-	private int nrOfSpots;
+//	private int nrOfSpots;
 	
-//	@Column(name="statusId")
+	@Column(name="statusId")
 //	private enum statusId{	
 //		Free, Reserved, Occupied;
 //	}
 
 //	@Column(name="SpotIdent")
 //	private String spotIdent = row+number;
+	
+	@ManyToOne
+	@JoinTable(
+	        name="Park_Spots",
+	        joinColumns=
+	         @JoinColumn(name="Park_Id", referencedColumnName="ID"),
+	        inverseJoinColumns=
+	            @JoinColumn(name="Spot_Id", referencedColumnName="ID")
+	    )
+    private Park getPark() {
+		return getPark(); }	
 	
 //----------------------------------------------------------------------------------------------
 
@@ -82,13 +90,24 @@ public class ParkSpot extends EntityModel implements Serializable {
 //	public void setStatusId(StatusId input) {
 //        userPermissions = input;
 //    }
-
-	public int getStatusId() {
-		return statusId;	}
+//
+//	public int getStatusId() {
+//		return statusId;	
+//	}
 
 	public void setStatusId(int statusId) {
 		this.statusId = statusId;
-	}
+		}
+	
+//	public double getStatusId() {
+		
+//	Park park = new Park();
+//		return Math.random()*Park.class;
+//	}
+
+//	public void setStatusId(int statusId) {
+//		this.statusId = statusId;
+//	}
 
 	public ParkSpot() {
 	}
