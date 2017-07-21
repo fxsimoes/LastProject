@@ -28,7 +28,7 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	}
 	
 	public List<ParkSpot> showSpots(ParkSpotRepository parkSpotList){
-		List<ParkSpot> list = parkSpotList.getDbElements();
+		List<ParkSpot> list = parkSpotList.getSpots();
 		return list;
 	}
 	
