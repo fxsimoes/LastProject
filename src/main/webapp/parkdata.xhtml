@@ -8,13 +8,15 @@
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
 			<div id="d" class="col-xs-10 col-xs-offset-1">
-
-				<h:form>
-
+				<h1>Parks</h1>
+				
+			<!-- NEW TABLE (under construction) (se esta nao funcionar bem enquanto testam a DB, comentem esta parte e usem a OLD TABLE) -->
+				
+			<h:form>
 					<p:dataTable id="ParkList" var="park" value="#{ParkBean.parks}"
 						selectionMode="single" selection="#{ParkBean.activePark}"
 						rowKey="#{park.id}"
-						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
 						paginator="true" rows="10" style="margin-bottom:20px">
 
 						<f:facet name="header">
@@ -38,7 +40,6 @@
 								<p:commandButton value="No" type="button"
 									styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 							</p:confirmDialog>
-
 						</f:facet>
 
 						<p:column headerText="Id">
@@ -75,6 +76,7 @@
 
 					<p:dialog header="Add Park" widgetVar="parkAdd" modal="true"
 						showEffect="fade" hideEffect="fade" resizable="false">
+						
 						<p:outputPanel id="addPark"
 							style="text-align:center; color:black;">
 							<p:panelGrid columns="2" columnClasses="label,value">
@@ -114,28 +116,9 @@
 					</p:dialog>
 				</h:form>
 
-				<!--  
-                <h3>Export Current Page</h3>
-                <h:commandLink>
-                    <p:graphicImage value="demo/images/excel.png" width="36" />
-                    <p:dataExporter type="xls" target="ParkList" fileName="entities"
-                        pageOnly="true" />
-                </h:commandLink>
+		<!-- OLD TABLE (esta funciona lol)-->
 
-                <h:commandLink>
-                    <p:graphicImage value="demo/images/pdf.png" width="36" />
-                    <p:dataExporter type="pdf" target="ParkList" fileName="entities"
-                        pageOnly="true" />
-                </h:commandLink>
 
-                <h:commandLink>
-                    <p:graphicImage value="demo/images/csv.png" width="36" />
-                    <p:dataExporter type="csv" target="ParkList" fileName="entities"
-                        pageOnly="true" />
-                </h:commandLink>
- -->
-
-				<h1>Parks</h1>
 				<div id="ParkTable" class="parktable">
 					<p:dataTable var="park" id="ParkList" value="#{ParkBean.parks}">
 						<p:column headerText="Id">
