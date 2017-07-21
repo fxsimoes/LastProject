@@ -1,11 +1,15 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -24,11 +28,16 @@ public class Customer extends EntityModel implements Serializable {
 	@Column(name="Nif")
 	private int nif;
 	
-	@ManyToMany
-	@JoinTable(name = "CUSTOMER_VEHICLE",
-			joinColumns = { @JoinColumn(name = "id") }, 
-			inverseJoinColumns = { @JoinColumn(name = "License") })
-	private Set<Vehicle> vehicles = new HashSet<Vehicle>();
+	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinTable(name = "customer_vehicle",
+			joinColumns = { @JoinColumn(name = "cust_id") }, 
+			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
+	private List<Vehicle> vehicles;
+	
+
+//	@ManyToMany
+//    private List<Vehicle> vehicleList;
+	
 	
 	public String getCustomerName() {
 		return customerName;
@@ -56,12 +65,16 @@ public class Customer extends EntityModel implements Serializable {
 
 	public Customer() {}
 
-	public Set<Vehicle> getVehicles() {
+	public List<Vehicle> getVehicles() {
 		return vehicles;
 	}
 
-	public void setVehicles(Set<Vehicle> vehicles) {
+	public void setVehicles(List<Vehicle> vehicles) {
 		this.vehicles = vehicles;
+	}
+	
+	public void addVehicle(Vehicle newVehicle) {
+		vehicles.add(newVehicle);	
 	}
 
 }
