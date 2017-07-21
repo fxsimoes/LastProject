@@ -29,7 +29,7 @@ public class CustomerService extends EntityService<Customer> {
 	
 	@Transactional
 	public Customer addEntity(Customer newCustomer){
-		customerList.addToDb(newCustomer);
+		customerList.create(newCustomer);
 		return newCustomer;
 	}
 	

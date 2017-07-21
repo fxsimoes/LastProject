@@ -23,11 +23,11 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	
 	@Transactional
 	public ParkSpot addEntity(ParkSpot newParkSpot){
-		parkSpotList.addToDb(newParkSpot);
+		parkSpotList.delete(newParkSpot);
 		return newParkSpot;
 	}
 	
-	public List<ParkSpot> showParks(ParkSpotRepository parkSpotList){
+	public List<ParkSpot> showSpots(ParkSpotRepository parkSpotList){
 		List<ParkSpot> list = parkSpotList.getDbElements();
 		return list;
 	}

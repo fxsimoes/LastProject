@@ -5,5 +5,7 @@ target/*
 .metadata/*
 .classpath
 .project
+.project
 .tern-project
+/bin/
 /target/

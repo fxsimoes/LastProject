@@ -2,8 +2,12 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +16,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column (name ="InputSpotNumber")
-	private int inputSpotNum;
 	@Column(name="ParkSpotNumber")
 	private int number;
 	@Column(name="ParkSpotRow")
@@ -21,13 +23,18 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="statusId")
 	private int statusId;
 	
-	public int getInputSpotNum() {
-		return inputSpotNum;
+    @OneToOne(optional=false, targetEntity=Park.class, 
+    		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(
+      name="nrOfSpots", unique=false, updatable=true)
+    private Park park;
+    
+        
+    public void setPark(Park park) {
+		this.park = park;
 	}
 
-	public void setInputSpotNum(int inputSpotNum) {
-		this.inputSpotNum = inputSpotNum;
-	}
+	public Park getPark() { return park; }
 
 	public int getNumber() {
 		return number;

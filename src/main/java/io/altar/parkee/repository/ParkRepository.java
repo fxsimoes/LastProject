@@ -22,43 +22,20 @@ public class ParkRepository extends EntityRepository<Park> {
 	
 	@Override
 	@Transactional
-	public void removeFromDb(Park park){
+	public void delete(Park park){
 		Park parkToRemove = getEm().find(Park.class, park.getId());
 		getEm().remove(parkToRemove);
 	}
 	
-	@Transactional
-	public void modifyDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-		Park dbPark = getEm().find(Park.class, id);
-		dbPark.setHourlyPrice(price);
-		dbPark.setParkName(name);		
-		dbPark.setNrOfSpots(spots);
-		dbPark.setSpotRef(spotRef);
-		dbPark.setParkLocation(location);
-		dbPark.setLongitude(longitude);
-		dbPark.setLatitude(latitude);
-	}
-	
 //	@Transactional
-//	public void addToDb(Park newPark){
-//		getEm().persist(newPark);
+//	public void modifyDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
+//		Park dbPark = getEm().find(Park.class, id);
+//		dbPark.setHourlyPrice(price);
+//		dbPark.setParkName(name);		
+//		dbPark.setNrOfSpots(spots);
+//		dbPark.setSpotRef(spotRef);
+//		dbPark.setParkLocation(location);
+//		dbPark.setLongitude(longitude);
+//		dbPark.setLatitude(latitude);
 //	}
 }	
-
-//	@Transactional
-//	public Park addToDb(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
-//		Park newPark =  new Park();
-//		newPark.setHourlyPrice(price);
-//		newPark.setParkName(name);		
-//		newPark.setNrOfSpots(spots);
-//		newPark.setSpotRef(spotRef);
-//		newPark.setParkLocation(location);
-//		newPark.setLongitude(longitude);
-//		newPark.setLatitude(latitude);
-//		getEm().persist(newPark);
-//		return newPark;
-//	}
-	
-
-
-	
