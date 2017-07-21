@@ -1,21 +1,14 @@
 package io.altar.parkee.service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-<<<<<<< HEAD
-import io.altar.parkee.model.Vehicle;
-=======
 import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.Vehicle;
 import io.altar.parkee.repository.CustomerRepository;
->>>>>>> dev
 import io.altar.parkee.repository.VehicleRepository;
 
 @Named("VehicleService")
