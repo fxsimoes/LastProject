@@ -8,14 +8,12 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-<<<<<<< HEAD
-import javax.persistence.OneToOne;
-=======
+
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
->>>>>>> TiagoCruz
+
+
 import javax.persistence.Table;
 
 @Entity
@@ -34,9 +32,6 @@ public class Vehicle extends EntityModel implements Serializable {
 	private String brand;
 	@Column(name="Color")
 	private String color;
-	
-	@OneToOne
-	private Customer customer;
 
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy="vehicles")
 	private List<Customer> customers;

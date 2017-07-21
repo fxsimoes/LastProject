@@ -9,14 +9,11 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-<<<<<<< HEAD
-import javax.persistence.OneToOne;
-=======
+
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
->>>>>>> TiagoCruz
 import javax.persistence.Table;
 
 @Entity
@@ -32,8 +29,7 @@ public class Customer extends EntityModel implements Serializable {
 	@Column(name="Nif")
 	private int nif;
 	
-<<<<<<< HEAD
-=======
+
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(name = "customer_vehicle",
 			joinColumns = { @JoinColumn(name = "cust_id") }, 
@@ -45,7 +41,7 @@ public class Customer extends EntityModel implements Serializable {
 //    private List<Vehicle> vehicleList;
 	
 	
->>>>>>> TiagoCruz
+
 	public String getCustomerName() {
 		return customerName;
 	}
