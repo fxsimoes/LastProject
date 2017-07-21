@@ -1,13 +1,18 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "CUSTOMER")
 public class Customer extends EntityModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -18,7 +23,13 @@ public class Customer extends EntityModel implements Serializable {
 	private int customerContact;
 	@Column(name="Nif")
 	private int nif;
-
+	
+	@ManyToMany
+	@JoinTable(name = "CUSTOMER_VEHICLE",
+			joinColumns = { @JoinColumn(name = "id") }, 
+			inverseJoinColumns = { @JoinColumn(name = "License") })
+	private Set<Vehicle> vehicles = new HashSet<Vehicle>();
+	
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -44,5 +55,13 @@ public class Customer extends EntityModel implements Serializable {
 	}
 
 	public Customer() {}
-	
+
+	public Set<Vehicle> getVehicles() {
+		return vehicles;
+	}
+
+	public void setVehicles(Set<Vehicle> vehicles) {
+		this.vehicles = vehicles;
+	}
+
 }
