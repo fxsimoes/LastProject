@@ -2,8 +2,10 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,15 @@ public class Customer extends EntityModel implements Serializable {
 	private int nif;
 	@Column(name="Vehicle")
 	private Vehicle myVehicle;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	public Vehicle getMyVehicle() {
+		return myVehicle;
+	}
+
+	public void setMyVehicle(Vehicle myVehicle) {
+		this.myVehicle = myVehicle;
+	}
 	
 	public String getCustomerName() {
 		return customerName;

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,17 +18,6 @@ public class Vehicle extends EntityModel implements Serializable {
 	private String brand;
 	@Column(name="Color")
 	private String color;
-	
-	@OneToOne
-	private Customer customer;
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 
 
 	public String getLicense() {

@@ -17,10 +17,6 @@
 						<h:outputText value="#{vehicle.license}" />
 					</p:column>
 
-					<p:column headerText="Car Owner's ID">
-						<h:outputText value="#{vehicle.customer.id}" />
-					</p:column>
-					
 					<p:column headerText="License">
 						<h:outputText value="#{vehicle.license}" />
 					</p:column>
@@ -49,10 +45,6 @@
 					<br />
 					<h:inputText value="#{VehicleBean.newVehicle.license}"
 						placeholder="Enter license" required="true" />
-					<br />
-					<h:outputText value="Car Owner ID: " />
-					<br />
-					<h:inputText value="#{VehicleBean.getCustomer()}" required="true" />
 					<br />
 					<h:outputText value="Vehicle Brand: " />
 					<br />
