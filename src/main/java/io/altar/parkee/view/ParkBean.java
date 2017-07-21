@@ -15,7 +15,15 @@ public class ParkBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Park newPark = new Park();
-	private Park activePark = new Park();
+	private Park oldPark = new Park();
+	
+	public Park getOldPark() {
+		return oldPark;
+	}
+
+	public void setOldPark(Park oldPark) {
+		this.oldPark = oldPark;
+	}
 
 	public Park getNewPark() {
 		return newPark;
@@ -23,14 +31,6 @@ public class ParkBean implements Serializable {
 
 	public void setNewPark(Park newPark) {
 		this.newPark = newPark;
-	}
-
-	public Park getActivePark() {
-		return activePark;
-	}
-
-	public void setActivePark(Park activePark) {
-		this.activePark = activePark;
 	}
 
 	public ParkService getParkService() {
@@ -58,13 +58,12 @@ public class ParkBean implements Serializable {
 //		return null;
 //	}
 
-	public String deletePark(int id) {
-		try {
-			parkService.removeEntity(parkService.getParkRepository(), activePark);
-		} catch (NullPointerException e) {
-			System.out.println("Exception Caught");
-		}
-		return null;
+	public void deletePark(int id) {
+//		parkService.removeIt(oldPark.);
+	}
+	
+	public void removeFromDb(Park oldPark){
+
 	}
 }
 

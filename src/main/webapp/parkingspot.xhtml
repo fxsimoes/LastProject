@@ -17,7 +17,7 @@
 							<h:outputText value="#{ParkSpot.id}" />
 						</p:column>
 						<p:column headerText="InputSpotNum">
-							<h:outputText value="#{ParkSpot.inputSpotNum}" />
+							<h:outputText value="#{ParkSpot.park}" />
 						</p:column>
 						<p:column headerText="Number">
 							<h:outputText value="#{ParkSpot.number}" />
@@ -44,7 +44,7 @@
 							<br />
 							<h:outputText value="InputSpotNum: " />
 							<br />
-							<h:inputText value="#{ParkSpotBean.newParkSpot.inputSpotNum}"
+							<h:inputText value="#{ParkSpotBean.newParkSpot.statusId}"
 								required="true" />
 							<br />
 							<h:outputText value="Number: " />

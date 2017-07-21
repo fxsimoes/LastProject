@@ -6,14 +6,14 @@ import io.altar.parkee.repository.EntityRepository;
 public class EntityService<E extends EntityModel> {
 	
 	public void addEntity(EntityRepository<E> entityList, E entity){
-		entityList.addToDb(entity);
+		entityList.create(entity);
 	}
 	
 	public void editEntity(EntityRepository<E> entityList, E entity){
-		entityList.modifyDb(entity);
+		entityList.update(entity);
 	}
 	
 	public void removeEntity(EntityRepository<E> entityList, E entity){
-		entityList.removeFromDb(entity);
+		entityList.delete(entity);
 	}
 }

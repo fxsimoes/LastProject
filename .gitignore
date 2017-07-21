@@ -7,12 +7,18 @@ target/*
 .project
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .project
 .tern-project
 >>>>>>> 9e032e1c96777feef1c15aaa31875ef2bc4675de
 =======
 .tern-project
+>>>>>>> dev
+=======
+.project
+.tern-project
+/bin/
 >>>>>>> dev
 /target/
 src/main/java/io/altar/parkee/service/ParkSpotService.java
