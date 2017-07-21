@@ -14,12 +14,13 @@ import io.altar.parkee.model.ParkSpot;
 @ApplicationScoped
 public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	
-	public List<ParkSpot> getDbElements() {
+	public List<ParkSpot> getSpots() {
 		
 		Query query = getEm().createQuery("FROM ParkSpot");
 		List<ParkSpot> dbParkSpots = (List<ParkSpot>) query.getResultList();
 		return dbParkSpots;
 	}
+
 	
 	@Transactional
 	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
