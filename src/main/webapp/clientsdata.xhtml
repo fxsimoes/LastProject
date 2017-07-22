@@ -32,7 +32,36 @@
 					</p:column>
 				</p:dataTable>
 			</div>
-			
+			<!-- TESTE -->
+			<br />
+				<h:outputText value="Customer ID: " />
+				<br />
+				<h:inputText value="#{CustomerBean.newCustomer.id}"
+					placeholder="Enter name" required="true" />
+			<br />
+			<h:form>
+					<p:commandButton value="Submit" action="#{CustomerBean.getCustomersById()}" />
+			</h:form>
+			<div id= "SearchCustomerData" class="searchcustomertable">
+				<p:dataTable var="customerbyid" id="SearchCustomerList" value="#{CustomerBean.customersById}" >
+					<p:column headerText="Id">
+						<h:outputText value="#{customerbyid.license}" />
+					</p:column>
+
+					<p:column headerText="Name">
+						<h:outputText value="#{customer.customerName}" />
+					</p:column>
+
+					<p:column headerText="Contact">
+						<h:outputText value="#{customer.customerContact}" />
+					</p:column>
+
+					<p:column headerText="Nif">
+						<h:outputText value="#{customer.nif}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+			<!-- FIM TESTE -->
 		<div class="AdminActions flex-container flex-item">
 			<div class="Add flex-item">
 				<h3>

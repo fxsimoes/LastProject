@@ -19,18 +19,18 @@ public class Customer extends EntityModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="CustomerName")
+	@Column(name="CUSTOMER_NAME")
 	private String customerName;
-	@Column(name="CustomerContact")
+	@Column(name="CUSTOMER_CONTACT")
 	private int customerContact;
-	@Column(name="Nif")
+	@Column(name="NIF")
 	private int nif;
 	
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name = "customer_vehicle",
-			joinColumns = { @JoinColumn(name = "cust_id") }, 
-			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
+	@JoinTable(name = "CUSTOMER_VEHICLE",
+			joinColumns = { @JoinColumn(name = "CUSTOMER_ID") }, 
+			inverseJoinColumns = { @JoinColumn(name = "VEHICLE_ID") })
 	private List<Vehicle> vehicles;
 	
 	public String getCustomerName() {
