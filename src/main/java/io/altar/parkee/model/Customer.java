@@ -32,12 +32,6 @@ public class Customer extends EntityModel implements Serializable {
 			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
 	private List<Vehicle> vehicles;
 	
-
-//	@ManyToMany
-//    private List<Vehicle> vehicleList;
-	
-	
-
 	public String getCustomerName() {
 		return customerName;
 	}
