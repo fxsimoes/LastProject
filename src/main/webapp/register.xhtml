@@ -13,17 +13,17 @@
 			  <b:container>
             <h:form styleClass="form-signin" prependId="false">
                 <h3 class="form-signin-heading">Please sign in</h3>
-                <b:inputText id="email" placeholder="Email address" >
+                <b:inputText id="email" placeholder="Email address" required="true" requiredMessage="Please fill with email adress">
                     <f:facet name="prepend">
                         <b:icon name="user" />
                     </f:facet>
                 </b:inputText>
-                <b:inputText id="password" placeholder="Password" type="password">
+                <b:inputText id="password" placeholder="Password" type="password" required="true" requiredMessage="Please insert a password">
                     <f:facet name="prepend">
                         <b:iconAwesome name="key" />
                     </f:facet>
                 </b:inputText>
-                <b:commandButton look="primary btn-block" value="Sign In" icon="log-in" size="lg"/>
+                <b:commandButton look="primary btn-block" value="register" icon="log-in" size="lg"/>
             </h:form>
         </b:container>
 
