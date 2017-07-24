@@ -1,12 +1,20 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+
 import javax.persistence.Table;
 
 @Entity
@@ -15,15 +23,11 @@ public class Vehicle extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="License")
+	@Column(name="LICENSE")
 	private String license;
-	//@Column(name="CustomerId")
-	//private int customerId;
-	//@Column(name="CustomerName")
-	//private String customerName;
-	@Column(name="Brand")
+	@Column(name="BRAND")
 	private String brand;
-	@Column(name="Color")
+	@Column(name="COLOR")
 	private String color;
 
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy="vehicles")
