@@ -18,6 +18,7 @@
 			<scope>provided</scope>
 		</dependency>
 
+		
 		<dependency>
 			<groupId>net.bootsfaces</groupId>
 			<artifactId>bootsfaces</artifactId>

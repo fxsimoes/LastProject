@@ -25,29 +25,12 @@ public class Customer extends EntityModel implements Serializable {
 	private int customerContact;
 	@Column(name="Nif")
 	private int nif;
-	@Column(name="Vehicle")
-	private Vehicle myVehicle;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	public Vehicle getMyVehicle() {
-		return myVehicle;
-	}
-
-	public void setMyVehicle(Vehicle myVehicle) {
-		this.myVehicle = myVehicle;
-	}
-	
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(name = "customer_vehicle",
 			joinColumns = { @JoinColumn(name = "cust_id") }, 
 			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
 	private List<Vehicle> vehicles;
-	
-
-//	@ManyToMany
-//    private List<Vehicle> vehicleList;
-	
 	
 
 	public String getCustomerName() {
