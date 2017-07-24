@@ -2,8 +2,6 @@ package io.altar.parkee.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale.Category;
-import java.util.Set;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -14,6 +12,7 @@ import io.altar.parkee.model.Park;
 import io.altar.parkee.model.ParkSpot;
 import io.altar.parkee.repository.ParkRepository;
 import io.altar.parkee.repository.ParkSpotRepository;
+
 
 	@Named("ParkService")
 	@RequestScoped
@@ -28,10 +27,16 @@ import io.altar.parkee.repository.ParkSpotRepository;
 		}
 		
 		@Transactional
-		public Park addEntity(Park newPark){
+		public Park update(Park newPark){
 			parkList.create(newPark);
 			return newPark;
 		}
+		
+//		@Transactional
+//		public Park update(E entity){
+//			parkList.create(entity);
+//			return entity;
+//		}
 		
 		@Transactional
 		public Park remove(Park oldPark){
@@ -88,7 +93,7 @@ import io.altar.parkee.repository.ParkSpotRepository;
 //		public void addPark() {
 //			Set<ParkSpot> spotSet = spotList.getCategoriesFromNames(categoryNameList);
 //			Set<Park> parkSet = parkList.getPlatformsFromNames(platformNameList);
-//			newPark.setCategorySet(categorySet);
+//			parkList.setParkSpotSet(spotSet);
 //			newProduct.setPlatformSet(platformSet);
 //			parkList.addToDb(newProduct);	
 //			for(Category category: categorySet){
@@ -105,6 +110,7 @@ import io.altar.parkee.repository.ParkSpotRepository;
 //			}	
 //		}
 		
+
 //		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
 //			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
 //		}

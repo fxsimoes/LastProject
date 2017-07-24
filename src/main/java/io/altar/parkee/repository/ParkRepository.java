@@ -32,12 +32,24 @@ public class ParkRepository extends EntityRepository<Park> {
 	public Set<Park> getParks(List<Integer> parkIDs){
 		Set<Park> parks = new HashSet<>();
 		for(Integer id: parkIDs){
-			TypedQuery<Park> query = getDb().createQuery("SELECT pSpot FROM Park AS pSpot WHERE pSpot.parkId = :id", Park.class);
+			TypedQuery<Park> query = getDb().createQuery("SELECT pSpot FROM Park AS pSpot WHERE pSpot.id = :id", Park.class);
 			query.setParameter("id", id);
 			List<Park> results = query.getResultList();
 			parks.add(results.get(0));
 		}
 		return parks;
+	}
+	
+	public Park getProductFromName(String parkName){
+		TypedQuery<Park> query = getDb().createQuery("SELECT p FROM Park AS p WHERE p.parkName = :name", Park.class);
+		query.setParameter("name", parkName);
+		return query.getSingleResult();
+	}
+	
+	public Park getParkFromId(Integer parkId){
+		TypedQuery<Park> query = getDb().createQuery("SELECT p FROM Park AS p WHERE p.parkId = :id", Park.class);
+		query.setParameter("id", parkId);
+		return query.getSingleResult();
 	}
 	
 //	@Transactional

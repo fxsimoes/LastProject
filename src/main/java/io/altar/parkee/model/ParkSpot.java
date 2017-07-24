@@ -6,8 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,12 +22,14 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="statusId")
 	private int statusId;
 	
-    @OneToOne(optional=false, targetEntity=Park.class, 
+    @ManyToOne(optional=false, targetEntity=Park.class, 
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    @JoinColumn(
-      name="nrOfSpots", unique=false, updatable=true)
     private Park park;
     
+//    @Transactional
+//    public void add(entity){
+//    	EntityRepository.create(entity);
+//    }
         
     public void setPark(Park park) {
 		this.park = park;
