@@ -1,14 +1,13 @@
 package io.altar.parkee.repository;
 
 import java.util.List;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
-
 import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.ParkSpot;
+import io.altar.parkee.model.ParkSpot.statusID;
 
 @Named("ParkSpotRepository")
 @ApplicationScoped
@@ -22,11 +21,13 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	}
 	
 	@Transactional
-	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
+	public <statusID> void modifyDb(int id, int inputSpotNum, int number, String row, statusID statusId) {
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
+		dbParkSpot.setInputSpotNum(inputSpotNum);
 		dbParkSpot.setNumber(number);		
 		dbParkSpot.setRow(row);
-		dbParkSpot.setStatusId(statusId);	
+	
+		dbParkSpot.setStatusID((io.altar.parkee.model.ParkSpot.statusID) statusId);	
 	}
 	
 	@Override

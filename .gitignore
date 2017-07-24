@@ -25,3 +25,4 @@ src/main/java/io/altar/parkee/service/ParkSpotService.java
 src/main/java/io/altar/parkee/service/ParkSpotService.java
 src/main/java/io/altar/parkee/service/ParkSpotService.java
 src/main/java/io/altar/parkee/service/ParkSpotService.java
+src/main/java/io/altar/parkee/model/Park.java

@@ -32,7 +32,7 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 		return list;
 	}
 	
-	public void modifyEntity(int id, int inputSpotNum, int number, String row, int statusId){
+	public <statusID> void modifyEntity(int id, int inputSpotNum, int number, String row, statusID statusId){
 		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
 	}	
 }
