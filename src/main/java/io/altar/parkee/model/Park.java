@@ -29,7 +29,7 @@ public class Park extends EntityModel implements Serializable {
 	@Column(name="HourlyPrice")
 	private int hourlyPrice;
 	@Column(name="nrOfSpots")
-	private int nrOfSpots;
+	private static int nrOfSpots;
 
 //    @OneToOne(optional=false, mappedBy="park", cascade=CascadeType.ALL, 
 //    		targetEntity=ParkSpot.class, fetch=FetchType.EAGER)
@@ -46,7 +46,7 @@ public class Park extends EntityModel implements Serializable {
 	
 //	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
 
-	public int getNrOfSpots() {
+	public static int getNrOfSpots() {
 		return nrOfSpots;
 	}
 

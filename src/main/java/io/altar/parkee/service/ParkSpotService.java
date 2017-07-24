@@ -8,6 +8,7 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.ParkSpot;
+//import io.altar.parkee.model.ParkSpot.statusID;
 import io.altar.parkee.repository.ParkSpotRepository;
 
 @Named("ParkSpotService")
@@ -32,7 +33,14 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 		return list;
 	}
 	
-	public <statusID> void modifyEntity(int id, int inputSpotNum, int number, String row, statusID statusId){
+	
+//	public void modifyEntity(int id, int inputSpotNum, int number, String row, statusID statusId){
+//		
+//		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
+//	}	
+	
+public void modifyEntity(int id, int inputSpotNum, int number, String row, int statusId){
+		
 		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
-	}	
+	}
 }
