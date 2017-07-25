@@ -1,5 +1,12 @@
 package io.altar.parkee.service;
 
-public class AccountService {
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
+
+@Named("AccountService")
+@RequestScoped
+public class AccountService {
+	
+	
 }
