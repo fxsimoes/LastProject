@@ -13,68 +13,24 @@
 				
 	<div class="col-xs-10 col-xs-offset-1">
 		<h1>Customers</h1>
-		<h:form>
-		    <p:dataTable var="customer" value="#{CustomerBean.customers}" widgetVar="customersTable"
-		                 emptyMessage="No customers found with given criteria" filteredValue="#{dtFilterView.filteredCars}">
-		 
-		        <f:facet name="header">
-		            <p:outputPanel>
-		                <h:outputText value="Search all fields:" />
-		                <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
-		            </p:outputPanel>
-		        </f:facet>
-		 
-		        <p:column filterBy="#{customer.id}" headerText="Id" footerText="contains" filterMatchMode="contains">
-		            <h:outputText value="#{customer.id}" />
-		        </p:column>
-		 
-		        <p:column filterBy="#{customer.customerName}" headerText="Name" footerText="lte" filterMatchMode="lte">
-		            <f:facet name="filter">
-		                <p:spinner onchange="PF('customersTable').filter()" styleClass="year-spinner">
-		                    <f:converter converterId="javax.faces.Integer" />
-		                </p:spinner>
-		            </f:facet>
-		            <h:outputText value="#{customer.customerName}" />
-		        </p:column>
-		 
-		        <p:column filterBy="#{car.brand}" headerText="Brand" footerText="exact" filterMatchMode="exact">
-		            <f:facet name="filter">
-		                <p:selectOneMenu onchange="PF('carsTable').filter()" >
-		                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
-		                    <f:selectItems value="#{dtFilterView.brands}" />
-		                </p:selectOneMenu>
-		            </f:facet>
-		            <h:outputText value="#{car.brand}" />
-		        </p:column>
-		 
-		        <p:column filterBy="#{car.color}" headerText="Color" footerText="in" filterMatchMode="in">
-		            <f:facet name="filter">
-		                <p:selectCheckboxMenu label="Colors" onchange="PF('carsTable').filter()" panelStyle="width:125px" scrollHeight="150">
-		                    <f:selectItems value="#{dtFilterView.colors}" />
-		                </p:selectCheckboxMenu>
-		            </f:facet>
-		            <h:outputText value="#{car.color}" />
-		        </p:column>
-		 
-		        <p:column filterBy="#{car.sold}" headerText="Status" footerText="equals" filterMatchMode="equals">
-		            <f:facet name="filter">
-		                <p:selectOneButton onchange="PF('carsTable').filter()">
-		                    <f:converter converterId="javax.faces.Boolean" />
-		                    <f:selectItem itemLabel="All" itemValue="" />
-		                    <f:selectItem itemLabel="Sold" itemValue="true" />
-		                    <f:selectItem itemLabel="Sale" itemValue="false" />
-		                </p:selectOneButton>
-		            </f:facet>
-		            <h:outputText value="#{car.sold ? 'Sold': 'Sale'}" />
-		        </p:column>
-		 
-		        <p:column filterBy="#{car.price}" headerText="Price" footerText="custom (min)" filterFunction="#{dtFilterView.filterByPrice}">
-		            <h:outputText value="#{car.price}">
-		                <f:convertNumber currencySymbol="$" type="currency"/>
-		            </h:outputText>
-		        </p:column>
-		    </p:dataTable>
-		</h:form>
+		
+	<h:form>
+	  <b:dataTable value="#{CustomerBean.customers}"
+	               var="customer"
+	               onorder="console.log('order');"
+	               onpage="console.log('page');"
+	               onsearch="console.log('search');"
+	               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);"
+	               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);"
+	               select="true"
+	               selectionMode="multiple"
+	               >
+	      <b:dataTableColumn value="#{customer.id}" label="Id" />
+	      <b:dataTableColumn value="#{customer.customerName}" label="Name"/>
+	      <b:dataTableColumn value="#{customer.customerContact}" label="Contact"/>
+	      <b:dataTableColumn value="#{customer.nif}" label="Nif"/>
+	  </b:dataTable>
+	</h:form>
 		
 <!-- 		<div id= "CustomerTable" class="customertable"> -->
 <!-- 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" > -->
@@ -96,99 +52,27 @@
 <!-- 				</p:dataTable> -->
 <!-- 			</div> -->
 			<!-- TESTE -->
-			<h:form>
-			<br />
-			
-				<h:outputText value="Customer ID: " />
-				<br />
-				<h:inputText value="#{CustomerBean.newCustomer.id}"
-					placeholder="Enter id" required="true" />
-			<br />
-			
-					<p:commandButton value="Submit" action="#{VehicleBean.getCustomersById()}" update="SearchCustomerList"/>
-			</h:form>
+		
 			<h1>Vehicles</h1>
-			<div id= "SearchCustomerData" class="searchcustomertable">
-				<p:dataTable var="customerbyid" id="SearchCustomerList" value="#{VehicleBean.customersById}" >
-					<p:column headerText="Id">
-						<h:outputText value="#{customerbyid.id}" />
-					</p:column>
-
-					<p:column headerText="License">
-						<h:outputText value="#{customerbyid.license}" />
-					</p:column>
-
-					<p:column headerText="Brand">
-						<h:outputText value="#{customerbyid.brand}" />
-					</p:column>
-
-					<p:column headerText="Color">
-						<h:outputText value="#{customerbyid.color}" />
-					</p:column>
-				</p:dataTable>
-			</div>
 			
 			<h:form>
-			    <p:dataTable var="customerbyid" value="#{VehicleBean.customersById}" widgetVar="carsTable"
-			                 emptyMessage="No cars found with given criteria" filteredValue="#{dtFilterView.filteredCars}">
-			 
-			        <f:facet name="header">
-			            <p:outputPanel>
-			                <h:outputText value="Search all fields:" />
-			                <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
-			            </p:outputPanel>
-			        </f:facet>
-			 
-			        <p:column filterBy="#{customerbyid.id}" headerText="Id" footerText="contains" filterMatchMode="contains">
-			            <h:outputText value="#{customerbyid.id}" />
-			        </p:column>
-			 
-			        <p:column filterBy="#{customerbyid.license}" headerText="License" footerText="lte" filterMatchMode="lte">
-			            <f:facet name="filter">
-			                <p:spinner onchange="PF('carsTable').filter()" styleClass="year-spinner">
-			                    <f:converter converterId="javax.faces.Integer" />
-			                </p:spinner>
-			            </f:facet>
-			            <h:outputText value="#{customerbyid.license}" />
-			        </p:column>
-			 
-			        <p:column filterBy="#{car.brand}" headerText="Brand" footerText="exact" filterMatchMode="exact">
-			            <f:facet name="filter">
-			                <p:selectOneMenu onchange="PF('carsTable').filter()" >
-			                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
-			                    <f:selectItems value="#{dtFilterView.brands}" />
-			                </p:selectOneMenu>
-			            </f:facet>
-			            <h:outputText value="#{car.brand}" />
-			        </p:column>
-			 
-			        <p:column filterBy="#{car.color}" headerText="Color" footerText="in" filterMatchMode="in">
-			            <f:facet name="filter">
-			                <p:selectCheckboxMenu label="Colors" onchange="PF('carsTable').filter()" panelStyle="width:125px" scrollHeight="150">
-			                    <f:selectItems value="#{dtFilterView.colors}" />
-			                </p:selectCheckboxMenu>
-			            </f:facet>
-			            <h:outputText value="#{car.color}" />
-			        </p:column>
-			 
-			        <p:column filterBy="#{car.sold}" headerText="Status" footerText="equals" filterMatchMode="equals">
-			            <f:facet name="filter">
-			                <p:selectOneButton onchange="PF('carsTable').filter()">
-			                    <f:converter converterId="javax.faces.Boolean" />
-			                    <f:selectItem itemLabel="All" itemValue="" />
-			                    <f:selectItem itemLabel="Sold" itemValue="true" />
-			                    <f:selectItem itemLabel="Sale" itemValue="false" />
-			                </p:selectOneButton>
-			            </f:facet>
-			            <h:outputText value="#{car.sold ? 'Sold': 'Sale'}" />
-			        </p:column>
-			 
-			        <p:column filterBy="#{car.price}" headerText="Price" footerText="custom (min)" filterFunction="#{dtFilterView.filterByPrice}">
-			            <h:outputText value="#{car.price}">
-			                <f:convertNumber currencySymbol="$" type="currency"/>
-			            </h:outputText>
-			        </p:column>
-			    </p:dataTable>
+			  <b:dataTable value="#{VehicleBean.customersById}"
+			               var="customerbyid"
+			               onorder="console.log('order');"
+			               onpage="console.log('page');"
+			               onsearch="console.log('search');"
+			               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);"
+			               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);"
+			               select="true"
+			               selectionMode="multiple"
+			               >
+			      <b:dataTableColumn value="#{customerbyid.id}" />
+			      <b:dataTableColumn value="#{customerbyid.license}" />
+			      <b:dataTableColumn value="#{customerbyid.brand}" />
+			      <b:dataTableColumn value="#{customerbyid.color}" />
+			      <b:dataTableColumn value="#{car.price}" />
+			      <b:dataTableColumn value="#{car.enginePower}" label="Engine Power (hp)" />
+			  </b:dataTable>
 			</h:form>
 			
 			<!-- FIM TESTE -->
