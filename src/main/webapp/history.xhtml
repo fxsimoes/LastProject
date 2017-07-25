@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="template/common/commonDashboardForUser.xhtml">
+		<ui:define name="content">
+			<div id="history" class="col-xs-10 col-xs-offset-1">
+				<h1 >Your History</h1>
+				<b:form>
+    <b:dateTimePicker value="#{dateTimeBean.justNow}"
+        allow-input-toggle="#{dateTimeBean.allowInputToggle}"
+        icon-position="#{dateTimeBean.iconPosition}"
+        mode="#{dateTimeBean.mode}"
+        side-by-side="#{dateTimeBean.sideBySide}"
+        show-date="#{dateTimeBean.showDate}"
+        show-time="#{dateTimeBean.showTime}"
+        show-icon="#{dateTimeBean.showIcon}"
+        use-current="#{dateTimeBean.useCurrent}" />
+</b:form>
+			</div>	
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

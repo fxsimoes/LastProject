@@ -12,24 +12,28 @@
 	<ui:define name="content">
 	<div class="container-fluid">
 			<div class="row">
-				<div class="content">
-					<div class="col-xs-6 col-xs-offset-3">
-						<div class="findParking">
+				<div class="content findParking col-xs-8 col-xs-offset-2">
+					<div class="findTitle">
+						
 							<h2>
-								<span class="glyphicon glyphicon-map-marker"></span> Find
-								Parking
+								<span class="glyphicon glyphicon-map-marker"></span> Find Parking 
 							</h2>
-						</div>
+						
 					</div>
 
-					<div class="searchsection col-xs-6 col-xs-offset-3">
+					<div class="searchsection col-xs-10 col-xs-offset-1">
 						<div class="input-group searchpark">
 							<input type="text" class="form-control"
 								placeholder="Search Address..." /> <span
 								class="input-group-btn">
-								<button class="btn btn-default btngo" type="button">
+								
+								 <b:button class="btngo" href="searchResults.xhtml"
+               					  look="danger" iconAwesome="search" />
+																
+								<!-- <button class="btn btn-default btngo" type="button" href="searchResults.xhtml">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
+								 -->
 							</span>
 						</div>
 					</div>
