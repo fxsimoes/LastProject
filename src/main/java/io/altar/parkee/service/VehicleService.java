@@ -1,9 +1,7 @@
 package io.altar.parkee.service;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -28,6 +26,19 @@ public class VehicleService extends EntityService<Vehicle>{
 	public VehicleRepository getVehicleList() {
 		return vehicleList;
 	}
+	
+	//TESTE
+	
+	public VehicleRepository getVehicleRepository() {
+		return vehicleList;
+	}
+	
+		public List<Vehicle> showCustomersById(VehicleRepository vehicleList){
+			
+			List<Vehicle> list = vehicleList.getDbElementsById();
+			return list;
+		}
+		
 	
 	public Vehicle addVehicle(Vehicle newVehicle){
 		

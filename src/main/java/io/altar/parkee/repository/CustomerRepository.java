@@ -19,13 +19,6 @@ public class CustomerRepository extends EntityRepository<Customer> {
 		List<Customer> dbCustomers = (List<Customer>) query.getResultList();
 		return dbCustomers;
 	}
-	//TESTE
-	public List<Customer> getDbElementsById() {
-		
-		Query query = getEm().createQuery("SELECT * FROM customer INNER JOIN customer_vehicle ON customer.id = customer_vehicle INNER JOIN vehicle ON customer_vehicle.VEHICLE_ID = vehicle.id");
-		List<Customer> dbCustomers = (List<Customer>) query.getResultList();
-		return dbCustomers;
-	}
 	
 	@Override
 	@Transactional
