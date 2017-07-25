@@ -19,8 +19,18 @@ public class ParkBean implements Serializable {
 
 	private Park newPark = new Park();
 	private Park oldPark = new Park();
-	private ParkSpot spot = new ParkSpot();
+	private Park activePark = new Park();
 	
+	
+	public Park getActivePark() {
+		return activePark;
+	}
+
+	public void setActivePark(Park activePark) {
+		this.activePark = activePark;
+	}
+
+
 	public Park getOldPark() {
 		return oldPark;
 	}
@@ -53,7 +63,12 @@ public class ParkBean implements Serializable {
 	}
 	
 	public void addPark(){
+		
+		for(int i=0; i<5; i++){	
+		ParkSpot spot = new ParkSpot();
 		newPark.addToSpots(spot);
+		
+		}
 		parkService.update(newPark);
 	}
 	
@@ -75,8 +90,8 @@ public class ParkBean implements Serializable {
 //		return null;
 //	}
 
-	public void deletePark(int id) {
-//		parkService.removeIt(oldPark.);
+	public void deletePark() {
+		parkService.remove(activePark);
 	}
 	
 	public void removeFromDb(Park oldPark){

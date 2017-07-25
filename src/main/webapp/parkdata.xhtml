@@ -54,12 +54,12 @@
 
 							<p:commandButton value="Edit" update="ParkList"
 								oncomplete="PF('parkEdit').show()">
-								<f:setPropertyActionListener target="#{ProductBean.id}"
-									value="#{ProductBean.selectedProduct.id}" />
-								<f:setPropertyActionListener target="#{ProductBean.name}"
-									value="#{ProductBean.selectedProduct.name}" />
-								<f:setPropertyActionListener target="#{ProductBean.shelfId}"
-									value="#{ProductBean.selectedProduct.shelfIdLocation}" />
+								<f:setPropertyActionListener target="#{ParkBean.activePark.id}"
+									value="#{ParkBean.activePark.id}" />
+								<f:setPropertyActionListener target="#{ParkBean.activePark.parkName}"
+									value="#{ParkBean.activePark.parkName}" />
+								<f:setPropertyActionListener target="#{ParkBean.activePark.parkLocation}"
+									value="#{ParkBean.activePark.parkLocation}" />
 								<f:setPropertyActionListener target="#{ProductBean.discount}"
 									value="#{ProductBean.selectedProduct.discount}" />
 								<f:setPropertyActionListener target="#{ProductBean.tax}"
@@ -137,9 +137,9 @@
 									value="#{ParkBean.newPark.latitude}" required="true" />
 
 							</p:panelGrid>
-							<p:commandButton id="ParkAddSubmit" value="Submit"
+ 							<p:commandButton id="ParkAddSubmit" value="Submit"
 								update="ParkList" action="#{ParkBean.addPark()}"
-								oncomplete="PF('parkAdd').hide()" />
+								oncomplete="PF('parkAdd').hide()" /> 
 						</p:outputPanel>
 					</p:dialog>
 				</h:form>
