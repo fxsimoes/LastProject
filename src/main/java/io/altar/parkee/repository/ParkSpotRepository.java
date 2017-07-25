@@ -21,8 +21,7 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	}
 
 	
-	@Transactional
-<<<<<<< HEAD
+//	@Transactional
 //	public void modifyDb(int id, int inputSpotNum, int number, String row, statusID statusId) {
 //		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
 //		dbParkSpot.setInputSpotNum(inputSpotNum);
@@ -31,10 +30,8 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 //		dbParkSpot.setStatusID(statusId);	
 //	}
 	
-	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
-=======
+	@Transactional
 	public void modifyDb(int id, int inputSpotNum, int number, String row, String status) {
->>>>>>> Francisco
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
 		dbParkSpot.setInputSpotNum(inputSpotNum);
 		dbParkSpot.setNumber(number);		
