@@ -7,7 +7,6 @@ import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.ParkSpot;
 
 @Named("ParkSpotRepository")

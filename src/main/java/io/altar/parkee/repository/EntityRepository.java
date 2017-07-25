@@ -48,18 +48,18 @@ public class EntityRepository<E extends EntityModel> {
 	}
 	
 	@Transactional
-	public void delete(E entity){
-		em.remove(entity);
-	}
-
-	@Transactional
 	public void retrieve(E entity, int id){
-		emp= em.find(EntityModel.class, entity);
+		emp= em.find(EntityModel.class, id);
 	}
 	
 	@Transactional
 	public void update(E newEntity){
 		em.merge(newEntity);
+	}
+	
+	@Transactional
+	public void delete(E entity){
+		em.remove(entity);
 	}
 	
 //private int id = 0;
