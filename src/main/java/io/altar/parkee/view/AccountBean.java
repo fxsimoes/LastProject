@@ -3,31 +3,32 @@ package io.altar.parkee.view;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Account;
 import io.altar.parkee.service.AccountService;
 
-@Named("Account")
+@Named("AccountBean")
 @SessionScoped
 public class AccountBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Account account = new Account();
-	private boolean loggedIn = false;
 	
+	
+	@Inject
 	private AccountService accountService;
 	
-	public boolean isLoggedIn() {
-		return loggedIn;
+	public Account getAccount() {
+		return account;
 	}
-	public void setLoggedIn(boolean loggedIn) {
-		this.loggedIn = loggedIn;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
-	
-	public String action(){
-		loggedIn = true;
-		return " ";
+
+	public void action(){
+		accountService.action(account);
 	}
 	
 //	public Account signIn(){
