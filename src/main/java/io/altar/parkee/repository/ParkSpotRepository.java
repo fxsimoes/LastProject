@@ -5,7 +5,11 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
+<<<<<<< HEAD
 import io.altar.parkee.model.Customer;
+=======
+
+>>>>>>> origin/Francisco
 import io.altar.parkee.model.ParkSpot;
 //import io.altar.parkee.model.ParkSpot.statusID;
 
@@ -13,12 +17,13 @@ import io.altar.parkee.model.ParkSpot;
 @ApplicationScoped
 public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	
-	public List<ParkSpot> getDbElements() {
+	public List<ParkSpot> getSpots() {
 		
 		Query query = getEm().createQuery("FROM ParkSpot");
 		List<ParkSpot> dbParkSpots = (List<ParkSpot>) query.getResultList();
 		return dbParkSpots;
 	}
+
 	
 	@Transactional
 //	public void modifyDb(int id, int inputSpotNum, int number, String row, statusID statusId) {

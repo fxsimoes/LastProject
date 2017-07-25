@@ -1,15 +1,11 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -22,26 +18,20 @@ public class Customer extends EntityModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="CustomerName")
+	@Column(name="CUSTOMER_NAME")
 	private String customerName;
-	@Column(name="CustomerContact")
+	@Column(name="CUSTOMER_CONTACT")
 	private int customerContact;
-	@Column(name="Nif")
+	@Column(name="NIF")
 	private int nif;
 	
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name = "customer_vehicle",
-			joinColumns = { @JoinColumn(name = "cust_id") }, 
-			inverseJoinColumns = { @JoinColumn(name = "vehicle_id") })
+	@JoinTable(name = "CUSTOMER_VEHICLE",
+			joinColumns = { @JoinColumn(name = "CUSTOMER_ID") }, 
+			inverseJoinColumns = { @JoinColumn(name = "VEHICLE_ID") })
 	private List<Vehicle> vehicles;
 	
-
-//	@ManyToMany
-//    private List<Vehicle> vehicleList;
-	
-	
-
 	public String getCustomerName() {
 		return customerName;
 	}

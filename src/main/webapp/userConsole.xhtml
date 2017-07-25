@@ -8,21 +8,19 @@
 
 <h:body>
 	<ui:composition template="template/common/commonLayoutBlured.xhtml">
-	
 	<ui:define name="content">
 
 	<b:container fluid="true">
 		<b:row>
 			<b:column col-sm="3" col-md="2" styleClass="sidebar">
 				<b:listLinks>
-					<b:navLink href="overviewAdmin.xhtml" value="Overview" iconAwesome="area-chart" active="true" />
+					<b:navLink href="overviewUser.xhtml" value="Overview" iconAwesome="user-circle" active="true"/>
 				</b:listLinks>
 				<br />
 				<b:listLinks>
-					<b:navLink href="parkdata.xhtml" value="Parks" iconAwesome="road"/>
-					<b:navLink href="clientsdata.xhtml" value="Customers" iconAwesome="user-circle" />
-					<b:navLink href="vehicledata.xhtml" value="Vehicles" iconAwesome="car"/>
-					<b:navLink href="parkingspot.xhtml" value="Parking Spots" iconAwesome="map-signs"/>
+					<b:navLink href="parkticket.xhtml" value="Park Ticket"  iconAwesome="address-card-o"/>
+					<b:navLink href="useraccount.xhtml" value="Account"  iconAwesome="cog"/>
+					<b:navLink href="history.xhtml" value="History" iconAwesome="calendar"/>
 				</b:listLinks>
 			</b:column>
 			<b:column col-sm="9" offset-sm="3" col-md="10" offset="2"
@@ -32,7 +30,7 @@
 
 					<div id="content">
 						<ui:insert name="content">
-							<ui:include src="/template/common/commonContent.xhtml" />
+							<ui:include src="/template/common/commonContent.xhtml"/>
 						</ui:insert>
 
 					</div>

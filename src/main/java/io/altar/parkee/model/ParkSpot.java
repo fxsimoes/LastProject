@@ -16,8 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SecondaryTable;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -71,6 +70,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 //		}
 //	}
 	
+<<<<<<< HEAD
 //-------------------------------------RANDOM NrOFSPOTS-------------------------------------------------------------//
 
 		public  int x (int cenas){	
@@ -79,6 +79,20 @@ public class ParkSpot extends EntityModel implements Serializable {
 		}
 	
 // -----------------------------------------------------------------------------------------------------------------//
+=======
+    @ManyToOne(optional=false, targetEntity=Park.class, 
+    		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Park park;
+    
+//    @Transactional
+//    public void add(entity){
+//    	EntityRepository.create(entity);
+//    }
+        
+    public void setPark(Park park) {
+		this.park = park;
+	}
+>>>>>>> origin/Francisco
 
 	// @ManyToOne
 	// @JoinTable(

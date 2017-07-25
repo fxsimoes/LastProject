@@ -2,11 +2,14 @@ package io.altar.parkee.view;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import io.altar.parkee.service.ParkService;
+
 import io.altar.parkee.model.Park;
+import io.altar.parkee.model.ParkSpot;
+import io.altar.parkee.service.ParkService;
 
 @Named("ParkBean")
 @RequestScoped
@@ -16,7 +19,18 @@ public class ParkBean implements Serializable {
 
 	private Park newPark = new Park();
 	private Park oldPark = new Park();
+	private Park activePark = new Park();
 	
+	
+	public Park getActivePark() {
+		return activePark;
+	}
+
+	public void setActivePark(Park activePark) {
+		this.activePark = activePark;
+	}
+
+
 	public Park getOldPark() {
 		return oldPark;
 	}
@@ -40,7 +54,7 @@ public class ParkBean implements Serializable {
 	public void setParkService(ParkService parkService) {
 		this.parkService = parkService;
 	}
-
+ 
 	@Inject
 	private ParkService parkService;
 
@@ -49,8 +63,26 @@ public class ParkBean implements Serializable {
 	}
 	
 	public void addPark(){
-		parkService.addEntity(newPark);
+		
+		for(int i=0; i<5; i++){	
+		ParkSpot spot = new ParkSpot();
+		newPark.addToSpots(spot);
+		
+		}
+		parkService.update(newPark);
 	}
+	
+//	public void addPark2() {
+//		
+//	newPark.setParkSpot(parkService);
+//	parkService.addEntity(newPark);
+//	for (ParkSpot pSpot : parkService) {
+//		Set<Product> productSetTemp = category.getProductSet();
+//		productSetTemp.add(newPark);
+//		pSpot.setProductSet(productSetTemp);
+//		parkService.update(pSpot);
+//	}
+//	}
 
 //	public String editPark() {
 //		System.out.println(activePark.toString());
@@ -58,8 +90,8 @@ public class ParkBean implements Serializable {
 //		return null;
 //	}
 
-	public void deletePark(int id) {
-//		parkService.removeIt(oldPark.);
+	public void deletePark() {
+		parkService.remove(activePark);
 	}
 	
 	public void removeFromDb(Park oldPark){

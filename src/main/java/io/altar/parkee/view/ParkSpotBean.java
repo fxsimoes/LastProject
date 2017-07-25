@@ -7,7 +7,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import io.altar.parkee.model.Park;
 import io.altar.parkee.model.ParkSpot;
+import io.altar.parkee.repository.ParkRepository;
 import io.altar.parkee.service.ParkSpotService;
 
 @Named("ParkSpotBean")
@@ -16,8 +18,10 @@ public class ParkSpotBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private Park newPark = new Park();
 	private ParkSpot newParkSpot = new ParkSpot();
 	private ParkSpot activeParkSpot = new ParkSpot();
+	private ParkRepository parkRepo;
 	
 	public ParkSpot getNewParkSpot() {
 		return newParkSpot;
@@ -50,7 +54,7 @@ public class ParkSpotBean implements Serializable {
 	}
 	
 	public void addParkSpot(){
-		parkSpotService.addEntity(newParkSpot);
+		parkRepo.getParkFromId(1).addToSpots(newParkSpot);
 	}
 	
 }

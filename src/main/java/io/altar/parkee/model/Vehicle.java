@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
@@ -22,15 +23,11 @@ public class Vehicle extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="License")
+	@Column(name="LICENSE")
 	private String license;
-	//@Column(name="CustomerId")
-	//private int customerId;
-	//@Column(name="CustomerName")
-	//private String customerName;
-	@Column(name="Brand")
+	@Column(name="BRAND")
 	private String brand;
-	@Column(name="Color")
+	@Column(name="COLOR")
 	private String color;
 
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy="vehicles")
