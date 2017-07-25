@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-
-
-//import javax.persistece.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -29,16 +26,15 @@ public class Park extends EntityModel implements Serializable {
 	private int hourlyPrice;
 	@Column(name="nrOfSpots")
 	private int nrOfSpots;
-<<<<<<< HEAD
+
 
 //    @OneToOne(optional=false, mappedBy="park", cascade=CascadeType.ALL, 
 //    		targetEntity=ParkSpot.class, fetch=FetchType.EAGER)
 //	private ParkSpot parkSpot;
     
-=======
     @OneToMany(mappedBy="park", cascade = {CascadeType.ALL})
     private List<ParkSpot> parkSpots = new ArrayList<ParkSpot>();
->>>>>>> origin/Francisco
+
 	@Column(name="SpotRef")
 	private String spotRef;
 	@Column(name="Location")
@@ -54,9 +50,9 @@ public class Park extends EntityModel implements Serializable {
 		this.parkSpots.add(spot);
 	}
 	
-<<<<<<< HEAD
+
 //	public void setParkSpot(ParkSpot parkSpot){ this.parkSpot=parkSpot;}
-=======
+
 	public List<ParkSpot> getParkSpots() {
 		return parkSpots;
 	}
@@ -64,7 +60,7 @@ public class Park extends EntityModel implements Serializable {
 	public void setParkSpots(List<ParkSpot> parkSpots) {
 		this.parkSpots = parkSpots;
 	}
->>>>>>> origin/Francisco
+
 
 	public int getNrOfSpots() {
 		return nrOfSpots;

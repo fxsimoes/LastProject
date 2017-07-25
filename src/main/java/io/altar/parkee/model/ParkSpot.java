@@ -25,10 +25,10 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private Park park = new Park();
+	private Park park1 = new Park();
 	
 	@Column(name = "inputSpotNumber")
-	private  int inputSpotNum = x(park.getNrOfSpots());
+	private  int inputSpotNum = x(park1.getNrOfSpots());
 	@Column(name = "ParkSpotNumber")
 	private int number;
 	@Column(name = "ParkSpotRow")
@@ -70,7 +70,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 //		}
 //	}
 	
-<<<<<<< HEAD
+
 //-------------------------------------RANDOM NrOFSPOTS-------------------------------------------------------------//
 
 		public  int x (int cenas){	
@@ -79,7 +79,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 		}
 	
 // -----------------------------------------------------------------------------------------------------------------//
-=======
+
     @ManyToOne(optional=false, targetEntity=Park.class, 
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
@@ -92,7 +92,7 @@ public class ParkSpot extends EntityModel implements Serializable {
     public void setPark(Park park) {
 		this.park = park;
 	}
->>>>>>> origin/Francisco
+
 
 	// @ManyToOne
 	// @JoinTable(

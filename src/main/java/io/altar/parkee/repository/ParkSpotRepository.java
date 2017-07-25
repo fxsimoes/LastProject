@@ -5,11 +5,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
-<<<<<<< HEAD
 import io.altar.parkee.model.Customer;
-=======
-
->>>>>>> origin/Francisco
 import io.altar.parkee.model.ParkSpot;
 //import io.altar.parkee.model.ParkSpot.statusID;
 
