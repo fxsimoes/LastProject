@@ -15,53 +15,72 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="ParkSpotNumber")
-	private int number;
-	@Column(name="ParkSpotRow")
-	private String row;
-	@Column(name="statusId")
-	private int statusId;
-	
     @ManyToOne(optional=false, targetEntity=Park.class, 
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
+	
+	@Column(name="ParkSpotNumber")
+	private Integer number;
+	@Column(name="ParkSpotRow")
+	private String row;
+	@Column(name="status")
+	private String status;
+	@Column(name="SpotRef")
+	private String spotRef;
+	
+
     
 //    @Transactional
 //    public void add(entity){
 //    	EntityRepository.create(entity);
 //    }
+    
+    
         
     public void setPark(Park park) {
 		this.park = park;
 	}
 
+	public String getSpotRef() {
+		return spotRef;
+	}
+
+	public void setSpotRef(String spotRef) {
+		this.spotRef = spotRef;
+	}
+
 	public Park getPark() { return park; }
 
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
 	public String getRow() {
 		return row;
 	}
-
+	
 	public void setRow(String row) {
 		this.row = row;
 	}
 
-	public int getStatusId() {
-		return statusId;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public ParkSpot() {
+	public ParkSpot() {}
+	
+	public ParkSpot(String status){
+		this.status=status;
+		row="A";
+//		IntStream spotRefy= IntStream.iterate(0, number->number+1).limit(5).forEach(number);
+		
 	}
-
 }

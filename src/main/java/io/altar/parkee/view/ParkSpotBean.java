@@ -18,7 +18,6 @@ public class ParkSpotBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Park newPark = new Park();
 	private ParkSpot newParkSpot = new ParkSpot();
 	private ParkSpot activeParkSpot = new ParkSpot();
 	private ParkRepository parkRepo;
@@ -54,7 +53,7 @@ public class ParkSpotBean implements Serializable {
 	}
 	
 	public void addParkSpot(){
-		parkRepo.getParkFromId(1).addToSpots(newParkSpot);
+		parkRepo.getParkFromId(1).addToSpots(new ParkSpot());
 	}
 	
 }
