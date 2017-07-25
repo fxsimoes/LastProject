@@ -31,8 +31,6 @@ public class VehicleBean implements Serializable {
 	@Inject
 	private VehicleService vehicleService;
 	
-	
-	
 	public VehicleService getVehicleService() {
 		return vehicleService;
 	}
@@ -42,7 +40,7 @@ public class VehicleBean implements Serializable {
 	}
 	
 	public Collection<Vehicle> getVehicles() {
-		return vehicleService.showVehicles(vehicleService.getVehicleList());
+		return vehicleService.showVehicles(vehicleService.getVehicleRepository());
 	}
 
 	public void addNewVehicle(){
@@ -54,9 +52,9 @@ public class VehicleBean implements Serializable {
 	}
 	
 	//TESTE
-		public Collection<Vehicle> getCustomersById() {
+	public Collection<Vehicle> getVehiclesByCustomerName() {
 			
-			return vehicleService.showCustomersById(vehicleService.getVehicleList());
-		}
+		return vehicleService.showVehiclesByCustomerName(vehicleService.getVehicleRepository());
+	}
 	
 }

@@ -56,4 +56,8 @@ public class CustomerBean implements Serializable {
 		customerService.addEntity(newCustomer);
 	}
 	
+	public void deleteCustomer() {
+		
+		customerService.deleteCustomer(id);
+	}
 }

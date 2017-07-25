@@ -49,7 +49,7 @@ public class EntityRepository<E extends EntityModel> {
 	
 	@Transactional
 	public void retrieve(E entity, int id){
-		emp= em.find(EntityModel.class, id);
+		emp = em.find(EntityModel.class, id);
 	}
 	
 	@Transactional

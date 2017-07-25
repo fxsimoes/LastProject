@@ -21,7 +21,7 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 	}
 	
 	//TESTE
-	public List<Vehicle> getDbElementsById() {
+	public List<Vehicle> getDbVehiclesByCustomerName() {
 			
 		Query queryvehicles = getEm().createNativeQuery("SELECT vehicle.* FROM customer INNER JOIN customer_vehicle ON customer.id = customer_vehicle.customer_id INNER JOIN vehicle ON customer_vehicle.vehicle_id = vehicle.id",Vehicle.class);
 		List<Vehicle> dbVehicles = (List<Vehicle>) queryvehicles.getResultList();

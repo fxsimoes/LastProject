@@ -32,8 +32,9 @@
 	  </b:dataTable>
 	</h:form>
 		
-<!-- 		<div id= "CustomerTable" class="customertable"> -->
+<!-- 		<div id= "CustomerVehiclesTable" class="customervehiclestable"> -->
 <!-- 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" > -->
+				
 <!-- 					<p:column headerText="Id"> -->
 <!-- 						<h:outputText value="#{customer.id}" /> -->
 <!-- 					</p:column> -->
@@ -55,25 +56,23 @@
 		
 			<h1>Vehicles</h1>
 			
-			<h:form>
-			  <b:dataTable value="#{VehicleBean.customersById}"
-			               var="customerbyid"
-			               onorder="console.log('order');"
-			               onpage="console.log('page');"
-			               onsearch="console.log('search');"
-			               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);"
-			               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);"
-			               select="true"
-			               selectionMode="multiple"
-			               >
-			      <b:dataTableColumn value="#{customerbyid.id}" />
-			      <b:dataTableColumn value="#{customerbyid.license}" />
-			      <b:dataTableColumn value="#{customerbyid.brand}" />
-			      <b:dataTableColumn value="#{customerbyid.color}" />
-			      <b:dataTableColumn value="#{car.price}" />
-			      <b:dataTableColumn value="#{car.enginePower}" label="Engine Power (hp)" />
-			  </b:dataTable>
-			</h:form>
+<!-- 			<h:form> -->
+<!-- 			  <b:dataTable value="#{VehicleBean.customersById}" -->
+<!-- 			               var="customerbyid customer" -->
+<!-- 			               onorder="console.log('order');" -->
+<!-- 			               onpage="console.log('page');" -->
+<!-- 			               onsearch="console.log('search');" -->
+<!-- 			               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);" -->
+<!-- 			               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);" -->
+<!-- 			               select="true" -->
+<!-- 			               selectionMode="multiple" -->
+<!-- 			               > -->
+<!-- 			      <b:dataTableColumn value="#{customerbyid.id}" label="Customer"/> -->
+<!-- 			      <b:dataTableColumn value="#{customerbyid.license}" label="License"/> -->
+<!-- 			      <b:dataTableColumn value="#{customerbyid.brand}" label="Brand"/> -->
+<!-- 			      <b:dataTableColumn value="#{customerbyid.color}" label="Color"/> -->
+<!-- 			  </b:dataTable> -->
+<!-- 			</h:form> -->
 			
 			<!-- FIM TESTE -->
 		<div class="AdminActions flex-container flex-item">
