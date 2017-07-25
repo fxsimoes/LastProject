@@ -31,8 +31,8 @@ public class AccountBean implements Serializable {
 		accountService.action(account);
 	}
 	
-//	public Account signIn(){
-//		
+//	public void signIn(){
+//		accountService.addAccount(account);
 //	}
-	
+//	
 }

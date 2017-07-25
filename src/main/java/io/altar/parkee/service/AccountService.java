@@ -14,4 +14,9 @@ public class AccountService {
 		account.setLoggedIn(true);
 		return "userConsole.xhtml";
 	}
+
+//	public Account addAccount(Account account) {
+//		
+//	
+//	}
 }
