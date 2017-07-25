@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 </h:head>
 
-<h:body>
+<h:body class="bodyBlured">
 	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/template/common/commonHeader.xhtml" />
@@ -31,7 +31,6 @@
 		<b:row>
 			<b:column col-sm="3" col-md="2" styleClass="sidebar">
 				<b:listLinks>
-					<b:navLink header="Admin Console" />
 					<b:navLink href="overviewUser.xhtml" value="Overview" iconAwesome="user-circle"/>
 				</b:listLinks>
 				<br />

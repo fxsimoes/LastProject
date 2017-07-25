@@ -4,6 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+
 <h:body>
 	<ui:composition template="template/common/commonDashboardForUser.xhtml">
 		<ui:define name="content">
@@ -11,63 +12,93 @@
 				<h1>Your Account</h1>
 
 				//se tivermos tempo: extrato pdf para o mail do cliente //faturas
-				//mensagem confirmacao de reserva (site e mail?)
+				//mensagem confirmacao de reserva (site e mail?) <br /> <br />
 
-				<br />
-				<br />
-				<h:form>
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:outputLabel for="date" value="Date: " />
-						<p:inputMask id="date" value="#{maskView.date}" mask="99/99/9999" />
+				<h4>Personal Info</h4>
+				<div class="userAccountInfo">
+					<h:form>
+						<h:panelGrid columns="2" cellpadding="5">
 
-						<p:outputLabel for="phone" value="Phone:" />
-						<p:inputMask id="phone" value="#{maskView.phone}"
-							mask="(999) 999-9999" />
+							<p:outputLabel for="name" value="Name:" />
+							<p:inputMask id="name" value="#{maskView.taxId}"
+								mask="99-9999999" />
 
-						<p:outputLabel for="phoneWithExt" value="Phone with Ext:" />
-						<p:inputMask id="phoneWithExt" value="#{maskView.phoneExt}"
-							mask="(999) 999-9999? x99999" />
+							<p:outputLabel for="contact" value="Contact:" />
+							<p:inputMask id="contact" value="#{maskView.phone}"
+								mask="(999) 999-9999" />
 
-						<p:outputLabel for="taxId" value="Tax Id:" />
-						<p:inputMask id="taxId" value="#{maskView.taxId}"
-							mask="99-9999999" />
+							<p:outputLabel for="nif" value="NIF:" />
+							<p:inputMask id="nif" value="#{maskView.phoneExt}" />
+							<br />
+							<p:commandButton id="submitUserAccount" value="Submit"
+								update="display" oncomplete="PF('dlg').show()" />
+						</h:panelGrid>
 
-						<p:outputLabel for="ssn" value="SSN:" />
-						<p:inputMask id="ssn" value="#{maskView.ssn}" mask="999-99-9999" />
+						<p:dialog widgetVar="dlg" modal="true" resizable="false"
+							header="Values" showEffect="fade">
+							<p:panelGrid id="display" columns="2" columnClasses="label,value">
+								<h:outputText value="Date: " />
+								<h:outputText id="dateValue" value="#{maskView.date}" />
 
-						<p:outputLabel for="key" value="Product Key: " />
-						<p:inputMask id="key" value="#{maskView.productKey}"
-							mask="a*-999-a999" />
+								<h:outputText value="Phone: " />
+								<h:outputText id="phoneValue" value="#{maskView.phone}" />
 
-						<p:commandButton value="Reset" type="reset" />
-						<p:commandButton value="Submit" update="display"
-							oncomplete="PF('dlg').show()" />
-					</h:panelGrid>
+								<h:outputText value="Phone with Ext: " />
+								<h:outputText id="phoneWithExtValue"
+									value="#{maskView.phoneExt}" />
 
-					<p:dialog widgetVar="dlg" modal="true" resizable="false"
-						header="Values" showEffect="fade">
-						<p:panelGrid id="display" columns="2" columnClasses="label,value">
-							<h:outputText value="Date: " />
-							<h:outputText id="dateValue" value="#{maskView.date}" />
+								<h:outputText value="taxId: " />
+								<h:outputText id="taxValue" value="#{maskView.taxId}" />
 
-							<h:outputText value="Phone: " />
-							<h:outputText id="phoneValue" value="#{maskView.phone}" />
+								<h:outputText value="SSN: " />
+								<h:outputText id="ssnValue" value="#{maskView.ssn}" />
 
-							<h:outputText value="Phone with Ext: " />
-							<h:outputText id="phoneWithExtValue" value="#{maskView.phoneExt}" />
+								<h:outputText value="Product Key: " />
+								<h:outputText id="keyValue" value="#{maskView.productKey}" />
+							</p:panelGrid>
+						</p:dialog>
+					</h:form>
+				</div>
 
-							<h:outputText value="taxId: " />
-							<h:outputText id="taxValue" value="#{maskView.taxId}" />
+				<h4>Your vehicle</h4>
+				<div class="userAccountInfo">
+					<h:form>
+						<h:panelGrid columns="2" cellpadding="5">
 
-							<h:outputText value="SSN: " />
-							<h:outputText id="ssnValue" value="#{maskView.ssn}" />
+							<p:outputLabel for="vehicleLicense" value="License" />
+							<p:inputMask id="vehicleLicense" value="#{maskView.taxId}"
+								mask="99-99-99" />
+							<br />
+							<p:commandButton id="submitUserAccount" value="Submit"
+								update="display" oncomplete="PF('dlg').show()" />
+						</h:panelGrid>
 
-							<h:outputText value="Product Key: " />
-							<h:outputText id="keyValue" value="#{maskView.productKey}" />
-						</p:panelGrid>
-					</p:dialog>
-				</h:form>
+						<p:dialog widgetVar="dlg" modal="true" resizable="false"
+							header="Values" showEffect="fade">
+							<p:panelGrid id="display" columns="2" columnClasses="label,value">
+								<h:outputText value="Date: " />
+								<h:outputText id="dateValue" value="#{maskView.date}" />
 
+								<h:outputText value="Phone: " />
+								<h:outputText id="phoneValue" value="#{maskView.phone}" />
+
+								<h:outputText value="Phone with Ext: " />
+								<h:outputText id="phoneWithExtValue"
+									value="#{maskView.phoneExt}" />
+
+								<h:outputText value="taxId: " />
+								<h:outputText id="taxValue" value="#{maskView.taxId}" />
+
+								<h:outputText value="SSN: " />
+								<h:outputText id="ssnValue" value="#{maskView.ssn}" />
+
+								<h:outputText value="Product Key: " />
+								<h:outputText id="keyValue" value="#{maskView.productKey}" />
+							</p:panelGrid>
+						</p:dialog>
+					</h:form>
+				</div>
+				<h4>Extra info</h4>
 
 
 

@@ -5,6 +5,14 @@
 	color: white !important;
 }
 
+
+.navbar, .navbar-inverse, .navbar-fixed-top{
+	background-color: rgba(34, 34, 34, 1) !important;
+	border-bottom: 0px solid !important;
+	filter: drop-shadow(10px 5px 5px black);
+
+}
+
 .form-signin {
 	margin: 0 auto;
 	margin-top: 100px;
@@ -13,7 +21,7 @@
 
 .sidebar {
 	/* background-color: rgba(	245, 245, 245, 0.9) !important;*/
-	background-color: rgba(34, 34, 34, 0.9) !important;
+	background-color: rgba(34, 34, 34, 0.95) !important;
 	border-right: 0px solid !important;
 	bottom: 0;
 	display: block;
@@ -34,10 +42,303 @@
 	position: relative !important;
 }
 
+.findTitle{
+	filter: drop-shadow(10px 5px 5px black);
+}
+
+.findParking{
+	padding-top: 50px;
+	padding-bottom: 100px;
+	/*background-color: rgba(245, 245, 245, 0.5);*/
+	/*background-color: rgba(128, 0, 0, 0.8);	*/
+	
+}
+
+.searchResults {
+	background-color: rgba(245, 245, 245, 0.7);
+	padding-top: 100px !important;
+	position: relative !important;
+}
+
 .fundo {
 	filter: blur(5px) !important;
 	position: absolute !important;
 }
+
+
+
+#history, #ticket, #account, #overview {
+	height: 1000px;
+}
+
+.collapse navbar-collapse navbar-ex1-collapse {
+	
+}
+
+#glyphLogo {
+	font-size: 22px;
+	padding-right: 5px;
+	color: #428bca;
+}
+
+
+
+
+.glyphicon-map-marker{
+	font-size: 30px;
+}
+
+.searchsection {
+	display: inline-block !important;
+	filter: drop-shadow(10px 5px 5px black);
+}
+
+.ui-tabs-nav {
+	background: transparent !important;
+}
+
+
+.progress {
+	width: 500px !important;
+}
+
+/*TABELA PRIMEFACES */
+.ui-datatable-header, .ui-widget-header, .ui-corner-top {
+	color: #800000 !important;
+	background-color: rgba(245, 245, 245, 0.5);
+	border-color: white !important;
+}
+
+.ui-dialog, .ui-widget-content, .ui-corner-all, .ui-shadow, .ui-hidden-container, .ui-state-default {
+	color: black !important;
+	background-color: rgba(245, 245, 245, 0.5);
+	border-color: white !important;
+}
+
+.ui-inputfield, .ui-inputmask, .ui-state-default, .ui-corner-all{
+	color: black !important;
+}
+
+.ui-outputlabel {
+	width: 100px !important;
+	padding: 15px !important;
+	font-size: 14px !important;
+}
+
+
+.ui-button-text {
+	font-size: 13px !important;
+}
+/*TABELA PRIMEFACES */
+
+
+/* MUDAR CORES TABELA{
+	background: transparent !important;
+}*/
+
+#submitUserAccount{
+	margin-top:100px !important;
+}
+
+
+
+.icon {
+	max-height: 40px;
+	-webkit-filter: drop-shadow(1px 1px 2px #550000);
+	filter: drop-shadow(1px 1px 2px #550000);
+}
+/*<img class="icon"src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" alt="Parkeet" /> */
+.logotipo {
+	font-family: 'Lalezar', cursive !important;
+	text-shadow: 1px 1px 2px #550000;
+	color: #800000 !important;
+	font-size: 35px !important;
+}
+
+
+
+
+h1 {
+	font-family: 'Lalezar', cursive !important;
+	color: #800000 !important;
+	border-bottom: 1px solid #800000;
+	padding-bottom:5px;
+}
+
+h2 {
+	/*font-family: 'Crete Round', serif !important;*/
+	
+	font-family: 'Lalezar', cursive !important;
+	color: #ffffff !important;
+	font-weight: bold;
+	font-size: 40px !important;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+h5 {
+	font-family: 'Lalezar', cursive !important;
+	color: #428bca !important;
+	font-weight: bold;
+	font-size: 20px !important;
+	text-align: left;
+	padding-top: 10px;
+}
+
+h6 {
+	font-family: 'Lalezar', cursive !important;
+	font-weight: bold;
+	font-size: 20px !important;
+	text-align: left;
+	padding-top: 0px;
+}
+
+h4 {
+	font-family: 'Lalezar', cursive !important;
+	color: #800000 !important;
+	border-bottom: 1px solid #800000;
+	font-size: 20px;
+	padding-bottom:5px;
+}
+
+.content {
+	margin-top: 150px;
+}
+
+.form-control {
+	height: 100px important!;
+}
+
+#header {
+	/*position:fixed; 
+	top:0px; 
+	margin:auto; 
+	z-index:100000; 
+	width:100%;*/
+	
+}
+
+.ui-widget-header {
+	padding: 0px 10px 10px 10px !important;
+	border: 0px !important;
+	border-radius: 0px !important;
+	padding-top: 10px !important; /*40px*/
+	/*position: fixed;
+	top: 0px;
+	margin: auto;
+	z-index: 100000;
+	width: 100%;
+*/
+	/*background: rgba(128, 0, 0, .75) !important;*/
+}
+
+#j_idt17 {
+	margin-bottom: 0px !important; /*ui widget header*/
+}
+
+.ui-button, .ui-widget {
+	font-family: Arial !important;
+	color: #800000 !important;
+	/*background: transparent !important;*/
+}
+
+.ui-button {
+	/*background: #e0e0d1!important;*/
+	border-width: 2px !important;
+	border: 0px !important;
+	margin-left: 5px;
+	margin-right: 5px;
+	box-shadow: 0 0px transparent !important;
+}
+
+.form-control, .btngo {
+	height: 50px !important;
+}
+
+.btngo {
+	/*background-color: #800000 !important;*/
+	color: #5e0000!important;
+	font-size: 18px !important;
+	width: 60px;
+	padding-top: 12px !important;
+}
+
+footer {
+	margin-top: 450px;
+	font-family: arial;
+	/*text-align: center;*/
+	font-size: 12px;
+	font-weight: bold;
+	color: #e0e0d1 !important;
+}
+
+
+
+body {
+	/*background: linear-gradient(#e4e4e4, #b5b5b5);*/
+	/*background:
+		url("https://images.unsplash.com/uploads/1413425985184f77e9d23/46107d09?dpr=1&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=")
+		!important;*/
+	/*background: url("https://www.wykop.pl/cdn/c3201142/comment_4OBTeXyj4LR8UKUHqiTTbhYhRXoaa8lD.jpg")
+		!important;*/
+	background-image: url("#{resource['img/fundo2.png']}") !important;
+	background-size: 100% 875px !important;
+	width: 100% !important;
+	background-repeat: no-repeat !important;
+	background-position: top !important;
+	background-color: black !important;
+}
+
+.bodyBlured {
+	background-image: url("#{resource['img/fundo2blur.png']}") !important;
+	background-size: 100% 875px !important;
+	width: 100% !important;
+	background-repeat: no-repeat !important;
+	background-position: top !important;
+	background-color: black !important;
+}
+
+
+.divider {
+	width: 30px;
+}
+
+.flex-container {
+	display: flex;
+	align-items: top; /* Vertical center alignment */
+	justify-content: left; /* Horizontal center alignment */
+}
+
+
+
+
+
+/*a mudar*/
+.navbar-default {
+	height: 80px;
+	margin-bottom: 0px !important;
+	margin-left: 10px !important;
+	background: #800000 !important;
+	/*border-color:#800000!important; */
+	border-color: transparent !important;
+	border-radius: 0px !important;
+	background: transparent !important;
+	/*text-align:center !important;*/
+	/*background: rgba(128, 0, 0, .20) !important;*/
+	/*border-color: rgba(128, 0, 0, .50) !important; */
+}
+
+.brandicon {
+	/*float: left !important;*/
+	/*padding: 10px;
+	display: inline-block !important;
+	text-align: center !important;*/
+	
+}
+
+
+
+
 
 @media ( min-width : 768px) {
 	.sidebar {
@@ -103,208 +404,4 @@
 .placeholder img {
 	border-radius: 50%;
 	display: inline-block;
-}
-
-#history, #ticket, #account, #overview {
-	height: 1000px;
-}
-
-.collapse navbar-collapse navbar-ex1-collapse {
-	
-}
-
-#glyphLogo {
-	font-size: 22px;
-	padding-right: 5px;
-}
-
-.searchsection {
-	display: inline-block !important;
-}
-
-.ui-tabs-nav {
-	background: transparent !important;
-}
-
-
-.progress {
-	width: 500px !important;
-}
-
-/*TABELA PRIMEFACES */
-.ui-datatable-header, .ui-widget-header, .ui-corner-top {
-	color: #800000 !important;
-	background-color: rgba(245, 245, 245, 0.5);
-	border-color: white !important;
-}
-
-.ui-dialog, .ui-widget-content, .ui-corner-all, .ui-shadow, .ui-hidden-container, .ui-state-default {
-	color: black !important;
-	background-color: rgba(245, 245, 245, 0.5);
-	border-color: white !important;
-}
-
-.ui-inputfield, .ui-inputmask, .ui-state-default, .ui-corner-all{
-	color: black !important;
-}
-
-.ui-outputlabel {
-	width: 200px !important;
-	padding-bottom: 20px !important;
-}
-
-
-/*TABELA PRIMEFACES */
-
-
-/* MUDAR CORES TABELA{
-	background: transparent !important;
-}*/
-.icon {
-	max-height: 40px;
-	-webkit-filter: drop-shadow(1px 1px 2px #550000);
-	filter: drop-shadow(1px 1px 2px #550000);
-}
-/*<img class="icon"src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" alt="Parkeet" /> */
-.logotipo {
-	font-family: 'Lalezar', cursive !important;
-	text-shadow: 1px 1px 2px #550000;
-	color: #800000 !important;
-	font-size: 35px !important;
-}
-
-h1 {
-	color: #800000 !important;
-}
-
-h2 {
-	font-family: 'Crete Round', serif !important;
-	color: #ffffff !important;
-	font-weight: bold;
-	font-size: 5px;
-	text-align: center;
-	padding-bottom: 15px;
-}
-
-.content {
-	margin-top: 300px;
-}
-
-.form-control {
-	height: 100px important!;
-}
-
-#header {
-	/*position:fixed; 
-	top:0px; 
-	margin:auto; 
-	z-index:100000; 
-	width:100%;*/
-	
-}
-
-.ui-widget-header {
-	padding: 0px 10px 10px 10px !important;
-	border: 0px !important;
-	border-radius: 0px !important;
-	padding-top: 10px !important; /*40px*/
-	/*position: fixed;
-	top: 0px;
-	margin: auto;
-	z-index: 100000;
-	width: 100%;
-*/
-	/*background: rgba(128, 0, 0, .75) !important;*/
-}
-
-#j_idt17 {
-	margin-bottom: 0px !important; /*ui widget header*/
-}
-
-.ui-button, .ui-widget {
-	font-family: Arial !important;
-	color: #800000 !important;
-	/*background: transparent !important;*/
-}
-
-.ui-button {
-	/*background: #e0e0d1!important;*/
-	border-width: 2px !important;
-	border: 0px !important;
-	margin-left: 5px;
-	margin-right: 5px;
-	box-shadow: 0 0px transparent !important;
-}
-
-.form-control, .btngo {
-	height: 50px !important;
-}
-
-.btngo {
-	background-color: #800000 !important;
-	color: white !important;
-	font-size: 18px !important;
-	width: 60px;
-}
-
-footer {
-	margin-top: 500px;
-	font-family: arial;
-	text-align: center;
-	font-size: 12px;
-	font-weight: bold;
-	color: #e0e0d1 !important;
-}
-
-body {
-	/*background: linear-gradient(#e4e4e4, #b5b5b5);*/
-	/*background:
-		url("https://images.unsplash.com/uploads/1413425985184f77e9d23/46107d09?dpr=1&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=")
-		!important;*/
-	/*background: url("https://www.wykop.pl/cdn/c3201142/comment_4OBTeXyj4LR8UKUHqiTTbhYhRXoaa8lD.jpg")
-		!important;*/
-	background-image: url("#{resource['img/fundo2.png']}") !important;
-	background-size: 100% 875px !important;
-	width: 100% !important;
-	background-repeat: no-repeat !important;
-	background-position: top !important;
-	background-color: black !important;
-}
-
-.background {
-	
-}
-
-.divider {
-	width: 30px;
-}
-
-.flex-container {
-	display: flex;
-	align-items: top; /* Vertical center alignment */
-	justify-content: center; /* Horizontal center alignment */
-}
-
-/*a mudar*/
-.navbar-default {
-	height: 80px;
-	margin-bottom: 0px !important;
-	margin-left: 10px !important;
-	background: #800000 !important;
-	/*border-color:#800000!important; */
-	border-color: transparent !important;
-	border-radius: 0px !important;
-	background: transparent !important;
-	/*text-align:center !important;*/
-	background: transparent !important;
-	/*background: rgba(128, 0, 0, .20) !important;*/
-	/*border-color: rgba(128, 0, 0, .50) !important; */
-}
-
-.brandicon {
-	/*float: left !important;*/
-	/*padding: 10px;
-	display: inline-block !important;
-	text-align: center !important;*/
-	
 }
