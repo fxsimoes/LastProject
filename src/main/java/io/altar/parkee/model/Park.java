@@ -34,9 +34,12 @@ public class Park extends EntityModel implements Serializable {
     
     @OneToMany(mappedBy="park", cascade = {CascadeType.ALL})
     private List<ParkSpot> parkSpots = new ArrayList<ParkSpot>();
+<<<<<<< HEAD
 
 	@Column(name="SpotRef")
 	private String spotRef;
+=======
+>>>>>>> Francisco
 	@Column(name="Location")
 	private String parkLocation;
 	@Column(name="Longitude")
@@ -101,14 +104,6 @@ public class Park extends EntityModel implements Serializable {
 
 	public void setHourlyPrice(int hourlyPrice) {
 		this.hourlyPrice = hourlyPrice;
-	}
-
-	public String getSpotRef() {
-		return spotRef;
-	}
-
-	public void setSpotRef(String spotRef) {
-		this.spotRef = spotRef;
 	}
 
 	public String getParkLocation() {
