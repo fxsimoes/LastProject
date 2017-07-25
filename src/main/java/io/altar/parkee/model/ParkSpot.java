@@ -25,9 +25,11 @@ import javax.persistence.Table;
 public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	private Park park = new Park();
+	
 	@Column(name = "inputSpotNumber")
-	private static int inputSpotNum = x(Park.getNrOfSpots());
+	private  int inputSpotNum = x(park.getNrOfSpots());
 	@Column(name = "ParkSpotNumber")
 	private int number;
 	@Column(name = "ParkSpotRow")
@@ -71,7 +73,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 	
 //-------------------------------------RANDOM NrOFSPOTS-------------------------------------------------------------//
 
-		public static int x (int cenas){	
+		public  int x (int cenas){	
 			cenas = (int) (Math.random()*inputSpotNum);
 			return cenas;
 		}
@@ -89,8 +91,8 @@ public class ParkSpot extends EntityModel implements Serializable {
 	// private Park getPark() {
 	// return getPark(); }
 
-	// -----------------------------------GETTERS
-	// SETTERS-----------------------------------------------------------//
+	
+	// -------------------------------------------SETTERS-----------------------------------------------------------//
 
 	public int getNumber() {
 		return number;
