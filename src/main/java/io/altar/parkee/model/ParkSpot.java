@@ -28,15 +28,13 @@ public class ParkSpot extends EntityModel implements Serializable {
 	@Column(name="SpotRef")
 	private String spotRef;
 	
-
     
 //    @Transactional
 //    public void add(entity){
 //    	EntityRepository.create(entity);
 //    }
     
-    
-        
+         
     public void setPark(Park park) {
 		this.park = park;
 	}
@@ -77,10 +75,10 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	public ParkSpot() {}
 	
-	public ParkSpot(String status){
-		this.status=status;
-		row="A";
-//		IntStream spotRefy= IntStream.iterate(0, number->number+1).limit(5).forEach(number);
-		
-	}
+//	public ParkSpot(String status){
+//		this.status=status;
+//		row="A";
+////		IntStream spotRefy= IntStream.iterate(0, number->number+1).limit(5).forEach(number);
+//		
+//	}
 }
