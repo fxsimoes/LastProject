@@ -5,12 +5,10 @@
 	color: white !important;
 }
 
-
-.navbar, .navbar-inverse, .navbar-fixed-top{
+.navbar, .navbar-inverse, .navbar-fixed-top {
 	background-color: rgba(34, 34, 34, 1) !important;
 	border-bottom: 0px solid !important;
 	filter: drop-shadow(10px 5px 5px black);
-
 }
 
 .form-signin {
@@ -42,16 +40,15 @@
 	position: relative !important;
 }
 
-.findTitle{
+.findTitle {
 	filter: drop-shadow(10px 5px 5px black);
 }
 
-.findParking{
+.findParking {
 	padding-top: 50px;
 	padding-bottom: 100px;
 	/*background-color: rgba(245, 245, 245, 0.5);*/
 	/*background-color: rgba(128, 0, 0, 0.8);	*/
-	
 }
 
 .searchResults {
@@ -64,8 +61,6 @@
 	filter: blur(5px) !important;
 	position: absolute !important;
 }
-
-
 
 #history, #ticket, #account, #overview {
 	height: 1000px;
@@ -81,10 +76,7 @@
 	color: #428bca;
 }
 
-
-
-
-.glyphicon-map-marker{
+.glyphicon-map-marker {
 	font-size: 30px;
 }
 
@@ -97,7 +89,6 @@
 	background: transparent !important;
 }
 
-
 .progress {
 	width: 500px !important;
 }
@@ -109,13 +100,14 @@
 	border-color: white !important;
 }
 
-.ui-dialog, .ui-widget-content, .ui-corner-all, .ui-shadow, .ui-hidden-container, .ui-state-default {
+.ui-dialog, .ui-widget-content, .ui-corner-all, .ui-shadow,
+	.ui-hidden-container, .ui-state-default {
 	color: black !important;
 	background-color: rgba(245, 245, 245, 0.5);
 	border-color: white !important;
 }
 
-.ui-inputfield, .ui-inputmask, .ui-state-default, .ui-corner-all{
+.ui-inputfield, .ui-inputmask, .ui-state-default, .ui-corner-all {
 	color: black !important;
 }
 
@@ -125,22 +117,26 @@
 	font-size: 14px !important;
 }
 
-
 .ui-button-text {
 	font-size: 13px !important;
 }
 /*TABELA PRIMEFACES */
 
-
 /* MUDAR CORES TABELA{
 	background: transparent !important;
 }*/
-
-#submitUserAccount{
-	margin-top:100px !important;
+.label {
+	color: black !important;
+	border-style: none !important;
 }
 
+.ui-widget-content{
+	vertical-align: middle !important;
+}
 
+#submitUserAccount {
+	margin-top: 100px !important;
+}
 
 .icon {
 	max-height: 40px;
@@ -155,19 +151,19 @@
 	font-size: 35px !important;
 }
 
-
-
+.timeline-event, .timeline-event-box, .ui-widget, .ui-state-default {
+	
+}
 
 h1 {
 	font-family: 'Lalezar', cursive !important;
 	color: #800000 !important;
 	border-bottom: 1px solid #800000;
-	padding-bottom:5px;
+	padding-bottom: 5px;
 }
 
 h2 {
 	/*font-family: 'Crete Round', serif !important;*/
-	
 	font-family: 'Lalezar', cursive !important;
 	color: #ffffff !important;
 	font-weight: bold;
@@ -198,7 +194,7 @@ h4 {
 	color: #800000 !important;
 	border-bottom: 1px solid #800000;
 	font-size: 20px;
-	padding-bottom:5px;
+	padding-bottom: 5px;
 }
 
 .content {
@@ -257,7 +253,7 @@ h4 {
 
 .btngo {
 	/*background-color: #800000 !important;*/
-	color: #5e0000!important;
+	color: #5e0000 !important;
 	font-size: 18px !important;
 	width: 60px;
 	padding-top: 12px !important;
@@ -271,8 +267,6 @@ footer {
 	font-weight: bold;
 	color: #e0e0d1 !important;
 }
-
-
 
 body {
 	/*background: linear-gradient(#e4e4e4, #b5b5b5);*/
@@ -298,7 +292,6 @@ body {
 	background-color: black !important;
 }
 
-
 .divider {
 	width: 30px;
 }
@@ -308,10 +301,6 @@ body {
 	align-items: top; /* Vertical center alignment */
 	justify-content: left; /* Horizontal center alignment */
 }
-
-
-
-
 
 /*a mudar*/
 .navbar-default {
@@ -335,10 +324,6 @@ body {
 	text-align: center !important;*/
 	
 }
-
-
-
-
 
 @media ( min-width : 768px) {
 	.sidebar {
