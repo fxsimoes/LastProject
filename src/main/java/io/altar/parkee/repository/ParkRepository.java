@@ -39,6 +39,7 @@ public class ParkRepository extends EntityRepository<Park> {
 		}
 		return parks;
 	}
+
 	
 	public Park getProductFromName(String parkName){
 		TypedQuery<Park> query = getDb().createQuery("SELECT p FROM Park AS p WHERE p.parkName = :name", Park.class);

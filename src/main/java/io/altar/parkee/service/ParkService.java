@@ -27,10 +27,18 @@ import io.altar.parkee.repository.ParkSpotRepository;
 		}
 		
 		@Transactional
-		public Park update(Park newPark){
+		public Park create(Park newPark){
 			parkList.create(newPark);
 			return newPark;
 		}
+		
+		public String getIncrementedString(String str){
+	        StringBuilder sb = new StringBuilder();
+	        for(char c:str.toCharArray()){
+	            sb.append(++c);
+	        }
+	        return sb.toString();
+	    }
 		
 //		@Transactional
 //		public Park update(E entity){

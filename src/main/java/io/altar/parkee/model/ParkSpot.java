@@ -21,14 +21,11 @@ public class ParkSpot extends EntityModel implements Serializable {
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
 	
-	@Column(name="ParkSpotNumber")
-	private Integer number;
-	@Column(name="ParkSpotRow")
-	private String row;
 	@Column(name="status")
 	private String status;
 	@Column(name="SpotRef")
 	private String spotRef;
+<<<<<<< HEAD
 	
     
 //    @Transactional
@@ -37,6 +34,9 @@ public class ParkSpot extends EntityModel implements Serializable {
 //    }
     
          
+=======
+        
+>>>>>>> Francisco
     public void setPark(Park park) {
 		this.park = park;
 	}
@@ -50,22 +50,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 	}
 
 	public Park getPark() { return park; }
-
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
-
-	public String getRow() {
-		return row;
-	}
-	
-	public void setRow(String row) {
-		this.row = row;
-	}
 
 	public String getStatus() {
 		return status;
@@ -99,8 +83,9 @@ public class ParkSpot extends EntityModel implements Serializable {
 //		}
 //	}
 	
-	public ParkSpot(String status){
+	public ParkSpot(String status, String spotRef){
 		this.status=status;
+<<<<<<< HEAD
 		row="A";
 		List<String> myList = new ArrayList<>();
 		for(number=1; number<=5; number++) {
@@ -108,6 +93,9 @@ public class ParkSpot extends EntityModel implements Serializable {
 			myList.add(spotRef);
 		}
 		System.out.println(myList);
+=======
+		this.spotRef=spotRef;
+>>>>>>> Francisco
 	}
 }
 

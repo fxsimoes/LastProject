@@ -94,5 +94,4 @@ public class Park extends EntityModel implements Serializable {
 	}
 
 	public Park() {}
-
 }
