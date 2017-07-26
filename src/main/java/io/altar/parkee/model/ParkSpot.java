@@ -1,6 +1,8 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -74,11 +76,52 @@ public class ParkSpot extends EntityModel implements Serializable {
 	}
 
 	public ParkSpot() {}
-	
-//	public ParkSpot(String status){
-//		this.status=status;
-//		row="A";
-////		IntStream spotRefy= IntStream.iterate(0, number->number+1).limit(5).forEach(number);
+
+//	public static void cenas (){
+//		
+//		List<String> myList = new ArrayList<>();
+//		for(getNumber=1; getNumber()<=5; getNumber++) {
+//		spotRef=row+getNumber();
+//			myList.add(spotRef);
+//		}
+//		System.out.println(myList);
+//		
 //		
 //	}
+
+//	public static void cenas(){
+//
+//		int j;
+//		int num=5;
+//		String cona= "A";
+//		for (int i=0; i<=num; i++){	
+//			j= i;	
+//		}
+//	}
+	
+	public ParkSpot(String status){
+		this.status=status;
+		row="A";
+		List<String> myList = new ArrayList<>();
+		for(number=1; number<=5; number++) {
+			spotRef=row+number;
+			myList.add(spotRef);
+		}
+		System.out.println(myList);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

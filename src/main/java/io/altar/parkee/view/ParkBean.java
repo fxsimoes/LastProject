@@ -66,14 +66,14 @@ public class ParkBean implements Serializable {
 		return parkService.showParks(parkService.getParkRepository());
 	}
 	
-//	public void addPark(){
-//		for(int i=0; i<newPark.getNrOfSpots(); i++){	
-//		newPark.addToSpots(new ParkSpot("Free"));
-////		i = pSpot.getNumber();
-////		spotRef= pSpot.getSpotRef();
-//		}
-//		parkService.update(newPark);
-//	}
+	public void addPark(){
+		for(int i=0; i<newPark.getNrOfSpots(); i++){	
+		newPark.addToSpots(new ParkSpot("Free"));
+//		i = pSpot.getNumber();
+//		spotRef= pSpot.getSpotRef();
+		}
+		parkService.update(newPark);
+	}
 	
 //	public void addPark2() {
 //		
