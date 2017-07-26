@@ -9,3 +9,17 @@ target/*
 .tern-project
 /bin/
 /target/
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/libraries/Maven__org_primefaces_primefaces_6_0.xml
+.idea/libraries/Maven__net_bootsfaces_bootsfaces_1_1_1.xml
+.idea/libraries/Maven__javax_javaee_api_7_0.xml
+.idea/libraries/Maven__javax_activation_activation_1_1.xml
+.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_0.xml
+.idea/encodings.xml
+.idea/compiler.xml
+.idea/artifacts/Parkeet_war_exploded.xml
+.idea/artifacts/Parkeet_war.xml
+.idea/Parkeet.iml

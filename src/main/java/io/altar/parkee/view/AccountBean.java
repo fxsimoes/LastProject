@@ -38,6 +38,7 @@ public class AccountBean implements Serializable {
 	}
 
 	public void action(){
+		account = new Account();
 		account.setLoggedIn(true);
 		
 		if(account.isLoggedIn() == true){

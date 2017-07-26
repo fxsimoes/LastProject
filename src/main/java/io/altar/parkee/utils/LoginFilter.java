@@ -35,7 +35,7 @@ public class LoginFilter implements Filter {
 		accountBean = (AccountBean) req.getSession().getAttribute("AccountBean");
 		String url = req.getRequestURI();
 		
-		if (accountBean.getAccount() == null || !accountBean.getAccount().isLoggedIn()){
+		if (accountBean == null || !accountBean.getAccount().isLoggedIn()){
 			System.out.println("sem sessao");
 			//Se a sessao for nula e tentar aceder a certas paginas, segue para o Login para o utilizador se autenticar
 			if(url.indexOf("index.xhtml") >= 0 || url.indexOf("userConsole.xhtml") >= 0){
