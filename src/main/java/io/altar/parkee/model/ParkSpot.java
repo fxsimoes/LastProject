@@ -82,12 +82,15 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public ParkSpot(String status){
 		this.status=status;
 		row="A";
-//		IntStream spotRefy= IntStream.iterate(0, number->number+1).limit(5).forEach(number);
-		
 		List<Integer> myList = new ArrayList<>();
-		for(number=0; number<5; number++) {
-			myList.add(number);
+		List<String> myList2 = new ArrayList<>();
+		for(number=0; number<=5; number++) {
+//			myList.add(number);
+//			spotRef=row+myList.get(number);
+//			myList2.add(spotRef);
+			spotRef=row+number;
+			myList2.add(spotRef);
 		}
-		System.out.println(myList);
+		System.out.println(myList2);
 	}
 }
