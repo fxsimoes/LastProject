@@ -55,24 +55,29 @@ public class ParkBean implements Serializable {
 		this.parkService = parkService;
 	}
 	
-	private String spotRef;
-	
 	@Inject
 	private ParkService parkService;
-	
-	private ParkSpot pSpot;
 
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
-	
+	private char row = 'A';
+	private String spotRef;
+
 	public void addPark(){
-		for(int i=0; i<newPark.getNrOfSpots(); i++){	
-		newPark.addToSpots(new ParkSpot("Free"));
-//		i = pSpot.getNumber();
-//		spotRef= pSpot.getSpotRef();
+		int rowNumber=1;
+		
+		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
+			spotRef=String.valueOf(row)+rowNumber;
+			
+			if(rowNumber%5==0) {
+				row++;
+				rowNumber=0;}
+				rowNumber++;
+				
+		newPark.addToSpots(new ParkSpot("Free", spotRef));
 		}
-		parkService.update(newPark);
+		parkService.create(newPark);
 	}
 	
 //	public void addPark2() {

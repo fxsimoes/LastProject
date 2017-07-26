@@ -61,10 +61,6 @@
 							<h:outputText value="#{pList.parkLocation}" />
 						</p:column>
 
-						<p:column headerText="Spot ref">
-							<h:outputText value="#{pList.spotRef}" />
-						</p:column>
-
 						<p:column headerText="Latitude">
 							<h:outputText value="#{pList.latitude}" />
 						</p:column>
@@ -95,10 +91,6 @@
 								<p:inputText styleClass="input"
 									value="#{ParkBean.newPark.parkLocation}" />
 
-								<h:outputText value="Spot ref" />
-								<p:inputText styleClass="input"
-									value="#{ParkBean.newPark.spotRef}" />
-
 								<h:outputText value="Latitude" />
 								<p:inputText styleClass="input"
 									value="#{ParkBean.newPark.latitude}" />
@@ -114,7 +106,7 @@
 					</p:dialog>
 
 					<!-- FUTURO EDIT mudar nomes conforme -->
-					<p:dialog header="Edit Park" widgetVar="parktEdit" modal="true"
+<!-- 					<p:dialog header="Edit Park" widgetVar="parktEdit" modal="true"
 						showEffect="fade" rendered="#{not empty ParkBean.activePark}"
 						hideEffect="fade" resizable="false">
 						<p:outputPanel id="editPark" style="text-align:center;">
@@ -135,10 +127,6 @@
 								<p:inputText styleClass="input" readonly="false"
 									value="#{ParkBean.activePark.parkLocation}" required="true" />
 
-								<h:outputText value="Spot ref" />
-								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.spotRef}" required="true" />
-
 								<h:outputText value="Latitude" />
 								<p:inputText styleClass="input" readonly="false"
 									value="#{ParkBean.activePark.latitude}" required="true" />
@@ -148,10 +136,10 @@
 									value="#{ParkBean.activePark.longitude}" required="true" />
 							</p:panelGrid>
 							<p:commandButton id="ParkEditSubmit" value="Submit"
-								update="ParkList" action="#{ParkBean.editPark()}"
+								update="ParkList" 
 								oncomplete="PF('productEdit').hide()" />
 						</p:outputPanel>
-					</p:dialog>
+					</p:dialog> -->
 				</h:form>
 			</div>
 		</ui:define>

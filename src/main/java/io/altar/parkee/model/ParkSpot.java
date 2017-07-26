@@ -1,8 +1,6 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -21,23 +19,10 @@ public class ParkSpot extends EntityModel implements Serializable {
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
 	
-	@Column(name="ParkSpotNumber")
-	private Integer number;
-	@Column(name="ParkSpotRow")
-	private String row;
 	@Column(name="status")
 	private String status;
 	@Column(name="SpotRef")
 	private String spotRef;
-	
-
-    
-//    @Transactional
-//    public void add(entity){
-//    	EntityRepository.create(entity);
-//    }
-    
-    
         
     public void setPark(Park park) {
 		this.park = park;
@@ -53,22 +38,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	public Park getPark() { return park; }
 
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
-
-	public String getRow() {
-		return row;
-	}
-	
-	public void setRow(String row) {
-		this.row = row;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -79,18 +48,8 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	public ParkSpot() {}
 	
-	public ParkSpot(String status){
+	public ParkSpot(String status, String spotRef){
 		this.status=status;
-		row="A";
-		List<Integer> myList = new ArrayList<>();
-		List<String> myList2 = new ArrayList<>();
-		for(number=0; number<=5; number++) {
-//			myList.add(number);
-//			spotRef=row+myList.get(number);
-//			myList2.add(spotRef);
-			spotRef=row+number;
-			myList2.add(spotRef);
-		}
-		System.out.println(myList2);
+		this.spotRef=spotRef;
 	}
 }
