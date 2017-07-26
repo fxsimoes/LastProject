@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -21,6 +21,18 @@ public class Account extends EntityModel implements Serializable {
 	
 	private boolean loggedIn = false;
 	
+
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
+	
+	@OneToOne
+	private Customer customer;
+
+	
 	public String getEmail() {
 		return email;
 	}
@@ -34,14 +46,6 @@ public class Account extends EntityModel implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public boolean isLoggedIn() {
-		return loggedIn;
-	}
-	public void setLoggedIn(boolean loggedIn) {
-		this.loggedIn = loggedIn;
-	}
-	
 	
 	public Account(){}
 	
