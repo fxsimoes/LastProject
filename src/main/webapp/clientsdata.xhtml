@@ -57,8 +57,8 @@
 			<h1>Vehicles</h1>
 			
 <!-- 			<h:form> -->
-<!-- 			  <b:dataTable value="#{VehicleBean.customersById}" -->
-<!-- 			               var="customerbyid customer" -->
+<!-- 			  <b:dataTable value="#{VehicleBean.vehiclesByCustomerName}" -->
+<!-- 			               var="vehiclesbycustomername customer" -->
 <!-- 			               onorder="console.log('order');" -->
 <!-- 			               onpage="console.log('page');" -->
 <!-- 			               onsearch="console.log('search');" -->
@@ -110,10 +110,10 @@
 				Select a park (<b>ID</b>) to remove:
 					<br />
 							<h:inputText style="width: 50px;"
-								value="#{ProductBean.newProduct.entityId}" required="true" />
+								value="#{CustomerBean.deleteCustomer()}" required="true" />
 							<br />
 							<p:commandButton value="Delete"
-								action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
+								action="#{CustomerBean.deleteCustomer()}" />
 
 							<p:commandButton value="Submit" action="#" />
 						</h:form>
