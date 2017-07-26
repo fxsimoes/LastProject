@@ -1,8 +1,6 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -25,18 +23,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 	private String status;
 	@Column(name="SpotRef")
 	private String spotRef;
-<<<<<<< HEAD
-	
-    
-//    @Transactional
-//    public void add(entity){
-//    	EntityRepository.create(entity);
-//    }
-    
-         
-=======
         
->>>>>>> Francisco
     public void setPark(Park park) {
 		this.park = park;
 	}
@@ -60,48 +47,12 @@ public class ParkSpot extends EntityModel implements Serializable {
 	}
 
 	public ParkSpot() {}
-
-//	public static void cenas (){
-//		
-//		List<String> myList = new ArrayList<>();
-//		for(getNumber=1; getNumber()<=5; getNumber++) {
-//		spotRef=row+getNumber();
-//			myList.add(spotRef);
-//		}
-//		System.out.println(myList);
-//		
-//		
-//	}
-
-//	public static void cenas(){
-//
-//		int j;
-//		int num=5;
-//		String cona= "A";
-//		for (int i=0; i<=num; i++){	
-//			j= i;	
-//		}
-//	}
 	
 	public ParkSpot(String status, String spotRef){
 		this.status=status;
-<<<<<<< HEAD
-		row="A";
-		List<String> myList = new ArrayList<>();
-		for(number=1; number<=5; number++) {
-			spotRef=row+number;
-			myList.add(spotRef);
-		}
-		System.out.println(myList);
-=======
 		this.spotRef=spotRef;
->>>>>>> Francisco
 	}
 }
-
-
-
-
 
 
 
