@@ -1,5 +1,94 @@
 @CHARSET "UTF-8";
 
+
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Bootfaces*/
 .nav>li>a {
 	color: white !important;
@@ -42,6 +131,7 @@
 
 .findTitle {
 	filter: drop-shadow(10px 5px 5px black);
+	/* cursor: url("https://maps.gstatic.com/mapfiles/openhand_8_8.cur") 8 8, default;*/
 }
 
 .findParking {
@@ -55,6 +145,7 @@
 	background-color: rgba(245, 245, 245, 0.7);
 	padding-top: 100px !important;
 	position: relative !important;
+	margin-bottom: 100px;
 }
 
 .fundo {
@@ -62,7 +153,7 @@
 	position: absolute !important;
 }
 
-#history, #ticket, #account, #overview {
+#history, #ticket, #account, #overview, #parks, #customers, #vehicles, #parkingspots {
 	height: 1000px;
 }
 
@@ -259,13 +350,34 @@ h4 {
 	padding-top: 12px !important;
 }
 
+.index{
+	margin-bottom: 450px;
+}
+
 footer {
-	margin-top: 450px;
+	background-color: transparent;
 	font-family: arial;
 	/*text-align: center;*/
 	font-size: 12px;
 	font-weight: bold;
 	color: #e0e0d1 !important;
+}
+
+
+.footer{
+		background-color: black;
+	
+}
+.Contact{
+	padding-top: 10px !important;
+	background-color: black;
+}
+
+.bottom {
+		background-color: black;
+		text-align: center;
+		padding-top: 30px;
+		padding-bottom: 20px;
 }
 
 body {

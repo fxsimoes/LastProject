@@ -9,8 +9,8 @@
 
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
-
 			<div class="col-xs-10 col-xs-offset-1">
+			<div id="customers">
 				<h1>Customers</h1>
 				<div id="CustomerTable" class="customertable">
 					<p:dataTable var="customer" id="CustomerList"
@@ -74,7 +74,7 @@
 								action="#{CustomerBean.addCustomer()}" update="CustomerList" />
 						</h:form>
 					</div>
-
+				</div>
 				</div>
 			</div>
 		</ui:define>
