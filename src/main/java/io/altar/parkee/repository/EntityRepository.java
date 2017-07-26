@@ -31,6 +31,22 @@ public class EntityRepository<E extends EntityModel> {
 //	}
 	private EntityModel emp;
 	
+	public EntityModel getEmp() {
+		return emp;
+	}
+
+	public void setEmp(EntityModel emp) {
+		this.emp = emp;
+	}
+
+	public UserTransaction getUserTransaction() {
+		return userTransaction;
+	}
+
+	public void setUserTransaction(UserTransaction userTransaction) {
+		this.userTransaction = userTransaction;
+	}
+
 	@Resource
     private UserTransaction userTransaction;
 	

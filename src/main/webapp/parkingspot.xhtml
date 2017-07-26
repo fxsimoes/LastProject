@@ -16,8 +16,8 @@
 						<p:column headerText="ID">
 							<h:outputText value="#{ParkSpot.id}" />
 						</p:column>
-						<p:column headerText="InputSpotNum">
-							<h:outputText value="#{ParkSpot.park}" />
+						<p:column headerText="Park ID">
+							<h:outputText value="#{ParkSpot.park.id}" />
 						</p:column>
 						<p:column headerText="Number">
 							<h:outputText value="#{ParkSpot.number}" />
@@ -26,7 +26,7 @@
 							<h:outputText value="#{ParkSpot.row}" />
 						</p:column>
 						<p:column headerText="Status">
-							<h:outputText value="#{ParkSpot.statusId}" />
+							<h:outputText value="#{ParkSpot.status}" />
 						</p:column>
 
 					</p:dataTable>
@@ -44,7 +44,7 @@
 							<br />
 							<h:outputText value="InputSpotNum: " />
 							<br />
-							<h:inputText value="#{ParkSpotBean.newParkSpot.statusId}"
+							<h:inputText value="#{ParkSpotBean.newParkSpot.status}"
 								required="true" />
 							<br />
 							<h:outputText value="Number: " />
