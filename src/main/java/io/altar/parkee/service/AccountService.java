@@ -20,9 +20,9 @@ public class AccountService {
 //		RequestContext context = RequestContext.getCurrentInstance();
 //		context.execute(script);
 		
-		account.
+//		account.
 		
-		account.setLoggedIn(true);	
+//		account.setLoggedIn(true);	
 		
 		return "userConsole.xhtml";
 		
