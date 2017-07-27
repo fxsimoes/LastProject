@@ -88,8 +88,5 @@ public class ParkBean implements Serializable {
 		parkService.remove(activePark);
 	}
 	
-	public void removeFromDb(Park oldPark){
-
-	}
 }
 

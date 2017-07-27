@@ -39,14 +39,16 @@ import io.altar.parkee.repository.ParkSpotRepository;
 			return oldPark;
 		}
 		
+		@Transactional
+		public Park update(Park currentPark){
+			parkList.update(currentPark);
+			return currentPark;
+		}
+		
 		public List<Park> showParks(ParkRepository parkList){
 			List<Park> list = parkList.getDbElements();
 			return list;
 		}
-		
-		@Inject
-		private ParkSpotRepository spotsList;
-		
 		
 		
 		public ParkRepository getParkList() {
@@ -61,10 +63,6 @@ import io.altar.parkee.repository.ParkSpotRepository;
 			return spotsDbList;
 		}
 
-		public void setSpotsList(ParkSpotRepository spotsList) {
-			this.spotsList = spotsList;
-		}
-
 		private List<String> spotsDbList = new ArrayList<>();
 
 		public List<String> getSpotsList() {
@@ -75,10 +73,6 @@ import io.altar.parkee.repository.ParkSpotRepository;
 			this.spotsDbList = spotsDbList;
 		}
 
-		public Park update(Park currentPark){
-			parkList.update(currentPark);
-			return currentPark;
-		}
 //		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
 //			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
 //		}
