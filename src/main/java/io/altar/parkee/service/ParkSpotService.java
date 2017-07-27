@@ -23,17 +23,17 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	
 	@Transactional
 	public ParkSpot addEntity(ParkSpot newParkSpot){
-		parkSpotList.addToDb(newParkSpot);
+		parkSpotList.delete(newParkSpot);
 		return newParkSpot;
 	}
 	
-	public List<ParkSpot> showParks(ParkSpotRepository parkSpotList){
-		List<ParkSpot> list = parkSpotList.getDbElements();
+	public List<ParkSpot> showSpots(ParkSpotRepository parkSpotList){
+		List<ParkSpot> list = parkSpotList.getSpots();
 		return list;
 	}
 	
-	public void modifyEntity(int id, int inputSpotNum, int number, String row, int statusId){
-		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
+	public void modifyEntity(int id, String spotRef, String status){
+		parkSpotList.modifyDb(id, spotRef, status);
 	}
 	
 }

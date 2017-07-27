@@ -5,9 +5,132 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:body>
+
+		<div id= "VehicleTable" class="vehicletable">
+				<p:dataTable var="vehicle" id="VehicleList" value="#{VehicleBean.vehicles}" >
+					<p:column headerText="Id">
+						<h:outputText value="#{vehicle.id}" />
+					</p:column>
+
+					<p:column headerText="Vehicle License">
+						<h:outputText value="#{vehicle.license}" />
+					</p:column>
+
+					<p:column headerText="Car Owner's ID">
+						<h:outputText value="#{vehicle.customerId}" />
+					</p:column>
+					
+					<p:column headerText="Car Owner's Name">
+						<h:outputText value="#{vehicle.customerName}" />
+					</p:column>
+					
+					<p:column headerText="License">
+						<h:outputText value="#{vehicle.license}" />
+					</p:column>
+					
+					<p:column headerText="Brand">
+						<h:outputText value="#{vehicle.brand}" />
+					</p:column>
+					
+					<p:column headerText="Color">
+						<h:outputText value="#{vehicle.color}" />
+					</p:column>
+					
+				</p:dataTable>
+			</div>
+			
+	<div class="col-xs-10 col-xs-offset-1">
+		<div class="AdminActions flex-container flex-item">
+			<div class="Add flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-road"></span><b> Add vehicle details:</b>
+				</h3>
+				<p></p>
+				<h:form>
+					<br />
+					<h:outputText value="Vehicle License: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.license}"
+						placeholder="Enter license" required="true" />
+					<br />
+					<h:outputText value="Vehicle Brand: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.brand}" required="true" />
+					<br />
+					<h:outputText value="Brand: " />
+					<br />
+					<h:inputText value="#{VehicleBean.newVehicle.brand}" required="true" />
+					<br />
+					<p:commandButton value="Submit" action="#{VehicleBean.addNewVehicle()}" />
+				</h:form>
+			</div>
+			<div class="divider"></div>
+			<div class="Remove flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+				</h3>
+				<h:form>		
+				Select a Vehicle (<b>ID</b>) to remove:
+					<br />
+					<h:inputText style="width: 50px;"
+						value="#{VehicleBean.newVehicle.id}" required="true" />
+					<br />
+					<p:commandButton value="Delete"
+						action="#{VehicleBean.removeNewVehicle(id)}" />
+				
+				</h:form>
+			</div>
+		</div>
+	</div>
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
+				<h1>Vehicles</h1>
+				<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+					<h3>
+							<span class="glyphicon glyphicon-road"></span><b> Add vehicle
+								details:</b>
+						</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="Vehicle License: " />
+							<br />
+							<h:inputText value="#{VehicleBean.newVehicle.license}"
+								placeholder="Enter license" required="true" />
+							<br />
+							<h:outputText value="Brand: " />
+							<br />
+							<h:inputText value="#{VehicleBean.newVehicle.brand}"
+								required="true" />
+							<br />
+							<h:outputText value="Color: " />
+							<br />
+							<h:inputText value="#{VehicleBean.newVehicle.color}"
+								required="true" />
+							<br />
+							<p:commandButton value="Submit"
+								action="#{VehicleBean.addNewVehicle()}" />
+						</h:form>
+					</div>
+					<div class="divider"></div>
+					<div class="Remove flex-item">
+						<h3>
+							<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+						</h3>
+						<h:form>		
+				Select a park (<b>ID</b>) to remove:
+					<br />
+							<h:inputText style="width: 50px;"
+								value="#{ProductBean.newProduct.entityId}" required="true" />
+							<br />
+							<p:commandButton value="Delete"
+								action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
+
+							<p:commandButton value="Submit" action="#{ParkBean.addPark()}" />
+						</h:form>
+					</div>
 				<div id="vehicles">
 					<h1>Vehicles</h1>
 					
