@@ -1,9 +1,11 @@
 .settings/*
+bin/*
 target/*
 .DS_STORE
 .metadata/*
 .classpath
 .project
-bin/*
+.project
 .tern-project
+/bin/
 /target/

@@ -29,7 +29,7 @@ public class CustomerService extends EntityService<Customer> {
 	
 	@Transactional
 	public Customer addEntity(Customer newCustomer){
-		customerList.addToDb(newCustomer);
+		customerList.create(newCustomer);
 		return newCustomer;
 	}
 	
@@ -42,5 +42,10 @@ public class CustomerService extends EntityService<Customer> {
 	public void modifyEntity(int id, String customerName, int customerContact, int nif) {
 		
 		customerList.modifyDb(id, customerName, customerContact, nif);
+	}
+	
+	public void deleteCustomer(Customer customer) {
+		
+		customerList.delete(customer);
 	}
 }

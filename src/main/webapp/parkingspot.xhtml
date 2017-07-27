@@ -6,10 +6,12 @@
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
 
 <h:body>
+
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
 				<h1>Parking spots</h1>
+<<<<<<< HEAD
 				<div id="customers">
 					<div class="ParkSpotTable">
 						<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}">
@@ -28,6 +30,25 @@
 							<p:column headerText="Status">
 								<h:outputText value="#{ParkSpot.statusId}" />
 							</p:column>
+=======
+				<div class="ParkSpotTable">
+					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}">
+						<p:column headerText="ID">
+							<h:outputText value="#{ParkSpot.id}" />
+						</p:column>
+						<p:column headerText="Park ID">
+							<h:outputText value="#{ParkSpot.park.id}" />
+						</p:column>
+						<p:column headerText="Number">
+							<h:outputText value="#{ParkSpot.number}" />
+						</p:column>
+						<p:column headerText="Row">
+							<h:outputText value="#{ParkSpot.row}" />
+						</p:column>
+						<p:column headerText="Status">
+							<h:outputText value="#{ParkSpot.status}" />
+						</p:column>
+>>>>>>> origin/TiagoCruz
 
 						</p:dataTable>
 					</div>
@@ -59,6 +80,46 @@
 								<h:outputText value="Status: " />
 								<br />
 
+<<<<<<< HEAD
+=======
+
+				<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+						<h3>
+							<span class="glyphicon glyphicon-th"></span><b> Add parking
+								spot details</b>
+						</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="InputSpotNum: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.status}"
+								required="true" />
+							<br />
+							<h:outputText value="Number: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.number}"
+								required="true" />
+							<br />
+							<h:outputText value="Row: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.row}"
+								required="true" />
+							<br />
+							<h:outputText value="Status: " />
+							<br />
+							<!-- 					<p:selectOneMenu id="console"
+						value="#{ParkSpotBean.newParkSpot.statusId}">
+						<f:selectItem itemLabel="Free" itemValue="Free" />
+						<f:selectItem itemLabel="Occupied" itemValue="Occupied" />
+						<f:selectItem itemLabel="Reserved" itemValue="Reserved" />
+					</p:selectOneMenu> -->
+							<br />
+
+
+
+>>>>>>> origin/TiagoCruz
 
 								<p:commandButton value="Submit"
 									action="#{ParkSpotBean.addParkSpot()}" />
@@ -66,6 +127,7 @@
 						</div>
 						<div class="divider"></div>
 					</div>
+
 
 				</div>
 			</div>

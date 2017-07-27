@@ -8,6 +8,7 @@ import javax.transaction.UserTransaction;
 
 import io.altar.parkee.model.EntityModel;
 
+
 public class EntityRepository<E extends EntityModel> {
 	
 	@PersistenceContext(unitName="database")
@@ -19,6 +20,31 @@ public class EntityRepository<E extends EntityModel> {
 
 	public void setEm(EntityManager em) {
 		this.em = em;
+	}
+	
+//	public void getRef(){
+//
+//	Park park = em.getReference(Park.class, nrOfSpots());
+//	ParkSpot newParkSpot = new ParkSpot();
+//	newParkSpot.setPark(park);
+//	em.persist(newParkSpot);
+//	}
+	private EntityModel emp;
+	
+	public EntityModel getEmp() {
+		return emp;
+	}
+
+	public void setEmp(EntityModel emp) {
+		this.emp = emp;
+	}
+
+	public UserTransaction getUserTransaction() {
+		return userTransaction;
+	}
+
+	public void setUserTransaction(UserTransaction userTransaction) {
+		this.userTransaction = userTransaction;
 	}
 
 	@Resource
@@ -33,16 +59,23 @@ public class EntityRepository<E extends EntityModel> {
 	}
 
 	@Transactional
-	public void addToDb(E entity){
+	public void create(E entity){
 		em.persist(entity);
 	}
 	
 	@Transactional
-	public void removeFromDb(E entity){}
+	public void retrieve(E entity, int id){
+		emp = em.find(EntityModel.class, id);
+	}
 	
 	@Transactional
-	public void modifyDb(E newEntity){
+	public void update(E newEntity){
 		em.merge(newEntity);
+	}
+	
+	@Transactional
+	public void delete(E entity){
+		em.remove(entity);
 	}
 	
 //private int id = 0;

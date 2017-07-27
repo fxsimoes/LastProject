@@ -1,6 +1,7 @@
 package io.altar.parkee.view;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -28,8 +29,6 @@ public class VehicleBean implements Serializable {
 	@Inject
 	private VehicleService vehicleService;
 	
-	
-	
 	public VehicleService getVehicleService() {
 		return vehicleService;
 	}
@@ -37,9 +36,27 @@ public class VehicleBean implements Serializable {
 	public void setVehicleService(VehicleService vehicleService) {
 		this.vehicleService = vehicleService;
 	}
+	
+	public Collection<Vehicle> getVehicles() {
+		return vehicleService.showVehicles(vehicleService.getVehicleRepository());
+	}
 
 	public void addNewVehicle(){
 		vehicleService.addVehicle(newVehicle);
 	}
 	
+<<<<<<< HEAD
 }
+=======
+	public void removeNewVehicle(int id){
+		vehicleService.removeVehicle(id);
+	}
+	
+	//TESTE
+	public Collection<Vehicle> getVehiclesByCustomerName() {
+			
+		return vehicleService.showVehiclesByCustomerName(vehicleService.getVehicleRepository());
+	}
+	
+}
+>>>>>>> origin/TiagoCruz

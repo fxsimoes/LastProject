@@ -7,32 +7,31 @@ import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.ParkSpot;
 
 @Named("ParkSpotRepository")
 @ApplicationScoped
 public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 	
-	public List<ParkSpot> getDbElements() {
+	public List<ParkSpot> getSpots() {
 		
 		Query query = getEm().createQuery("FROM ParkSpot");
 		List<ParkSpot> dbParkSpots = (List<ParkSpot>) query.getResultList();
 		return dbParkSpots;
 	}
+
 	
 	@Transactional
-	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
+	public void modifyDb(int id, int inputSpotNum, int number, String row, String status) {
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
-		dbParkSpot.setInputSpotNum(inputSpotNum);
 		dbParkSpot.setNumber(number);		
 		dbParkSpot.setRow(row);
-		dbParkSpot.setStatusId(statusId);	
+		dbParkSpot.setStatus(status);	
 	}
 	
 	@Override
 	@Transactional
-	public void removeFromDb(ParkSpot parkSpot){
+	public void delete(ParkSpot parkSpot){
 		ParkSpot parkSpotToRemove = getEm().find(ParkSpot.class, parkSpot.getId());
 		getEm().remove(parkSpotToRemove);
 	}

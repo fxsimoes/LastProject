@@ -2,11 +2,14 @@ package io.altar.parkee.view;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import io.altar.parkee.service.ParkService;
+
 import io.altar.parkee.model.Park;
+import io.altar.parkee.model.ParkSpot;
+import io.altar.parkee.service.ParkService;
 
 @Named("ParkBean")
 @RequestScoped
@@ -15,7 +18,26 @@ public class ParkBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Park newPark = new Park();
+	private Park oldPark = new Park();
 	private Park activePark = new Park();
+	
+	
+	public Park getActivePark() {
+		return activePark;
+	}
+
+	public void setActivePark(Park activePark) {
+		this.activePark = activePark;
+	}
+
+
+	public Park getOldPark() {
+		return oldPark;
+	}
+
+	public void setOldPark(Park oldPark) {
+		this.oldPark = oldPark;
+	}
 
 	public Park getNewPark() {
 		return newPark;
@@ -25,14 +47,6 @@ public class ParkBean implements Serializable {
 		this.newPark = newPark;
 	}
 
-	public Park getActivePark() {
-		return activePark;
-	}
-
-	public void setActivePark(Park activePark) {
-		this.activePark = activePark;
-	}
-
 	public ParkService getParkService() {
 		return parkService;
 	}
@@ -40,17 +54,38 @@ public class ParkBean implements Serializable {
 	public void setParkService(ParkService parkService) {
 		this.parkService = parkService;
 	}
-
+	
+	private String spotRef;
+	
 	@Inject
 	private ParkService parkService;
+	
+	private ParkSpot pSpot;
 
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
 	
 	public void addPark(){
-		parkService.addEntity(newPark);
+		for(int i=0; i<newPark.getNrOfSpots(); i++){	
+		newPark.addToSpots(new ParkSpot("Free"));
+//		i = pSpot.getNumber();
+//		spotRef= pSpot.getSpotRef();
+		}
+		parkService.update(newPark);
 	}
+	
+//	public void addPark2() {
+//		
+//	newPark.setParkSpot(parkService);
+//	parkService.addEntity(newPark);
+//	for (ParkSpot pSpot : parkService) {
+//		Set<Product> productSetTemp = category.getProductSet();
+//		productSetTemp.add(newPark);
+//		pSpot.setProductSet(productSetTemp);
+//		parkService.update(pSpot);
+//	}
+//	}
 
 //	public String editPark() {
 //		System.out.println(activePark.toString());
@@ -58,13 +93,12 @@ public class ParkBean implements Serializable {
 //		return null;
 //	}
 
-	public String deletePark(int id) {
-		try {
-			parkService.removeEntity(parkService.getParkRepository(), activePark);
-		} catch (NullPointerException e) {
-			System.out.println("Exception Caught");
-		}
-		return null;
+	public void deletePark() {
+		parkService.remove(activePark);
+	}
+	
+	public void removeFromDb(Park oldPark){
+
 	}
 }
 
