@@ -31,6 +31,22 @@ public class EntityRepository<E extends EntityModel> {
 //	}
 	private EntityModel emp;
 	
+	public EntityModel getEmp() {
+		return emp;
+	}
+
+	public void setEmp(EntityModel emp) {
+		this.emp = emp;
+	}
+
+	public UserTransaction getUserTransaction() {
+		return userTransaction;
+	}
+
+	public void setUserTransaction(UserTransaction userTransaction) {
+		this.userTransaction = userTransaction;
+	}
+
 	@Resource
     private UserTransaction userTransaction;
 	
@@ -48,18 +64,18 @@ public class EntityRepository<E extends EntityModel> {
 	}
 	
 	@Transactional
-	public void delete(E entity){
-		em.remove(entity);
-	}
-
-	@Transactional
 	public void retrieve(E entity, int id){
-		emp= em.find(EntityModel.class, entity);
+		emp = em.find(EntityModel.class, id);
 	}
 	
 	@Transactional
 	public void update(E newEntity){
 		em.merge(newEntity);
+	}
+	
+	@Transactional
+	public void delete(E entity){
+		em.remove(entity);
 	}
 	
 //private int id = 0;

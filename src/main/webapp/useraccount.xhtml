@@ -20,12 +20,10 @@
 						<h:panelGrid columns="2" cellpadding="5">
 
 							<p:outputLabel for="name" value="Name:" />
-							<p:inputMask id="name" value="#{maskView.taxId}"
-								mask="99-9999999" />
+							<p:inputMask id="name" value="#{maskView.taxId}"/>
 
 							<p:outputLabel for="contact" value="Contact:" />
-							<p:inputMask id="contact" value="#{maskView.phone}"
-								mask="(999) 999-9999" />
+							<p:inputMask id="contact" mask="99 999 99 99" value="#{maskView.phone}"/>
 
 							<p:outputLabel for="nif" value="NIF:" />
 							<p:inputMask id="nif" value="#{maskView.phoneExt}" />

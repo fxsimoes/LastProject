@@ -3,78 +3,122 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
-			<div class="col-xs-10 col-xs-offset-1">
-			<div id="customers">
-				<h1>Customers</h1>
-				<div id="CustomerTable" class="customertable">
-					<p:dataTable var="customer" id="CustomerList"
-						value="#{CustomerBean.customers}">
-						<p:column headerText="Id">
-							<h:outputText value="#{customer.id}" />
-						</p:column>
+				
+	<div class="col-xs-10 col-xs-offset-1">
+		<h1>Customers</h1>
+		
+	<h:form>
+	  <b:dataTable value="#{CustomerBean.customers}"
+	               var="customer"
+	               onorder="console.log('order');"
+	               onpage="console.log('page');"
+	               onsearch="console.log('search');"
+	               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);"
+	               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);"
+	               select="true"
+	               selectionMode="multiple"
+	               >
+	      <b:dataTableColumn value="#{customer.id}" label="Id" />
+	      <b:dataTableColumn value="#{customer.customerName}" label="Name"/>
+	      <b:dataTableColumn value="#{customer.customerContact}" label="Contact"/>
+	      <b:dataTableColumn value="#{customer.nif}" label="Nif"/>
+	  </b:dataTable>
+	</h:form>
+		
+<!-- 		<div id= "CustomerTable" class="customertable"> -->
+<!-- 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" > -->
+<!-- 					<p:column headerText="Id"> -->
+<!-- 						<h:outputText value="#{customer.id}" /> -->
+<!-- 					</p:column> -->
 
-						<p:column headerText="Name">
-							<h:outputText value="#{customer.customerName}" />
-						</p:column>
+<!-- 					<p:column headerText="Name"> -->
+<!-- 						<h:outputText value="#{customer.customerName}" /> -->
+<!-- 					</p:column> -->
 
-						<p:column headerText="Contact">
-							<h:outputText value="#{customer.customerContact}" />
-						</p:column>
+<!-- 					<p:column headerText="Contact"> -->
+<!-- 						<h:outputText value="#{customer.customerContact}" /> -->
+<!-- 					</p:column> -->
 
-						<p:column headerText="Nif">
-							<h:outputText value="#{customer.nif}" />
-						</p:column>
-					</p:dataTable>
-				</div>
+<!-- 					<p:column headerText="Nif"> -->
+<!-- 						<h:outputText value="#{customer.nif}" /> -->
+<!-- 					</p:column> -->
+<!-- 				</p:dataTable> -->
+<!-- 			</div> -->
+			<!-- TESTE -->
+		
+			<h1>Vehicles</h1>
+			
+			<h:form>
+			  <b:dataTable value="#{VehicleBean.customersById}"
+			               var="customerbyid"
+			               onorder="console.log('order');"
+			               onpage="console.log('page');"
+			               onsearch="console.log('search');"
+			               onselect="console.log(typeOfSelection + ' ' + indexes + ' has been selected');ajax:carPool.onSelect(car, typeOfSelection, indexes);"
+			               ondeselect="console.log(typeOfSelection + ' ' + indexes + ' has been deselected');ajax:carPool.onDeselect(car, typeOfSelection, indexes);"
+			               select="true"
+			               selectionMode="multiple"
+			               >
+			      <b:dataTableColumn value="#{customerbyid.id}" />
+			      <b:dataTableColumn value="#{customerbyid.license}" />
+			      <b:dataTableColumn value="#{customerbyid.brand}" />
+			      <b:dataTableColumn value="#{customerbyid.color}" />
+			      <b:dataTableColumn value="#{car.price}" />
+			      <b:dataTableColumn value="#{car.enginePower}" label="Engine Power (hp)" />
+			  </b:dataTable>
+			</h:form>
+			
+			<!-- FIM TESTE -->
+		<div class="AdminActions flex-container flex-item">
+			<div class="Add flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-folder-open"></span><b> Add customer details:</b>
+				</h3>
+				<p></p>
+				<h:form>
+					<!-- alterar nomes e beans! -->
+					<br />
+					<h:outputText value="Customer Name: " />
+					<br />
+					<h:inputText value="#{CustomerBean.newCustomer.customerName}"
+						placeholder="Enter name" required="true" />
+					<br />
+					<h:outputText value="Customer Contact: " />
+					<br />
+					<h:inputText value="#{CustomerBean.newCustomer.customerContact}" required="true" />
+					<br />
+					<h:outputText value="Customer Nif: " />
+					<br />
+					<h:inputText value="#{CustomerBean.newCustomer.nif}" required="true" />
+					<br />
+					<p:commandButton value="Submit" action="#{CustomerBean.addCustomer()}" />
+				</h:form>
+			</div>
+			<div class="divider"></div>
+			<div class="Remove flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+				</h3>
+				<h:form>		
 
-				<div class="AdminActions flex-container flex-item">
-					<div class="Add flex-item">
-						<h3>
-							<span class="glyphicon glyphicon-folder-open"></span><b> Add
-								customer details:</b>
-						</h3>
-						<p></p>
-						<h:form>
-					
+				Select a park (<b>ID</b>) to remove:
+					<br />
+							<h:inputText style="width: 50px;"
+								value="#{ProductBean.newProduct.entityId}" required="true" />
 							<br />
-							<h:outputText value="Customer Name: " />
-							<br />
-							<h:inputText value="#{CustomerBean.newCustomer.customerName}"
-								placeholder="Enter name" required="true" />
-							<br />
-							<h:outputText value="Customer Contact: " />
-							<br />
-							<h:inputText value="#{CustomerBean.newCustomer.customerContact}"
-								required="true" />
-							<br />
-							<h:outputText value="Customer Nif: " />
-							<br />
-							<h:inputText value="#{CustomerBean.newCustomer.nif}"
-								required="true" />
-							<br />
-							<br />
-					
-							<!--  MUDAR VALUE PA BEAN QUE INTERESSA
-							<b:selectOneMenu value="#{selectOneMenuBean.brand}" required="true" label="Select a Costumer:" > 
-								<f:selectItem itemLabel="(Please select)" itemValue="" />
-								<f:selectItem itemLabel="Customer 1" itemValue="1" />
-								<f:selectItem itemLabel="Customer 2" itemValue="2" />
-								<f:selectItem itemLabel="Customer 3" itemValue="3" />
-							</b:selectOneMenu>
-							 -->
-							
-							<br />
-							<p:commandButton value="Submit"
-								action="#{CustomerBean.addCustomer()}" update="CustomerList" />
+							<p:commandButton value="Delete"
+								action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" />
+
+							<p:commandButton value="Submit" action="#" />
 						</h:form>
 					</div>
-				</div>
 				</div>
 			</div>
 		</ui:define>

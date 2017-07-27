@@ -28,12 +28,12 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	}
 	
 	public List<ParkSpot> showSpots(ParkSpotRepository parkSpotList){
-		List<ParkSpot> list = parkSpotList.getDbElements();
+		List<ParkSpot> list = parkSpotList.getSpots();
 		return list;
 	}
 	
-	public void modifyEntity(int id, int inputSpotNum, int number, String row, int statusId){
-		parkSpotList.modifyDb(id, inputSpotNum, number, row, statusId);
+	public void modifyEntity(int id, String spotRef, String status){
+		parkSpotList.modifyDb(id, spotRef, status);
 	}
 	
 }

@@ -6,7 +6,6 @@
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
@@ -16,18 +15,13 @@
 						<p:column headerText="ID">
 							<h:outputText value="#{ParkSpot.id}" />
 						</p:column>
-						<p:column headerText="InputSpotNum">
-							<h:outputText value="#{ParkSpot.park}" />
-						</p:column>
-						<p:column headerText="Number">
-							<h:outputText value="#{ParkSpot.number}" />
-						</p:column>
-						<p:column headerText="Row">
-							<h:outputText value="#{ParkSpot.row}" />
+						<p:column headerText="Park ID">
+							<h:outputText value="#{ParkSpot.park.id}" />
 						</p:column>
 						<p:column headerText="Status">
-							<h:outputText value="#{ParkSpot.statusId}" />
+							<h:outputText value="#{ParkSpot.status}" />
 						</p:column>
+<<<<<<< HEAD
 
 					</p:dataTable>
 				</div>
@@ -69,13 +63,86 @@
 
 
 
+=======
+					</p:dataTable>
+				</div>
+				<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+						<h3>
+							<span class="glyphicon glyphicon-th"></span><b> Add parking
+								spot details</b>
+						</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="InputSpotNum: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.status}"
+								required="true" />
+							<br />
+							<h:outputText value="Status: " />
+							<br />
+							<p:commandButton value="Submit"
+								action="#{ParkSpotBean.addParkSpot()}" />
+						</h:form>
+					</div>
+					<div class="divider"></div>
+				<div id="customers">
+					<div class="ParkSpotTable">
+						<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}">
+							<p:column headerText="ID">
+								<h:outputText value="#{ParkSpot.id}" />
+							</p:column>
+							<p:column headerText="InputSpotNum">
+								<h:outputText value="#{ParkSpot.inputSpotNum}" />
+							</p:column>
+							<p:column headerText="Number">
+								<h:outputText value="#{ParkSpot.number}" />
+							</p:column>
+							<p:column headerText="Row">
+								<h:outputText value="#{ParkSpot.row}" />
+							</p:column>
+							<p:column headerText="Status">
+								<h:outputText value="#{ParkSpot.statusId}" />
+							</p:column>
+
+						</p:dataTable>
+					</div>
+
+					<div class="AdminActions flex-container flex-item">
+						<div class="Add flex-item">
+							<h4>
+								<span class="glyphicon glyphicon-th"></span><b> Add parking
+									spot details</b>
+							</h4>
+							<p></p>
+							<h:form>
+								<br />
+								<h:outputText value="InputSpotNum: " />
+								<br />
+								<h:inputText value="#{ParkSpotBean.newParkSpot.inputSpotNum}"
+									required="true" />
+								<br />
+								<h:outputText value="Number: " />
+								<br />
+								<h:inputText value="#{ParkSpotBean.newParkSpot.number}"
+									required="true" />
+								<br />
+								<h:outputText value="Row: " />
+								<br />
+								<h:inputText value="#{ParkSpotBean.newParkSpot.row}"
+									required="true" />
+								<br />
+								<h:outputText value="Status: " />
+								<br />
+
+>>>>>>> dev
 
 							<p:commandButton value="Submit"
 								action="#{ParkSpotBean.addParkSpot()}" />
 						</h:form>
 					</div>
 					<div class="divider"></div>
-
 
 				</div>
 			</div>

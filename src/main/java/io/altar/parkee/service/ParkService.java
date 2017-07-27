@@ -1,5 +1,6 @@
 package io.altar.parkee.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -8,7 +9,10 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Park;
+import io.altar.parkee.model.ParkSpot;
 import io.altar.parkee.repository.ParkRepository;
+import io.altar.parkee.repository.ParkSpotRepository;
+
 
 	@Named("ParkService")
 	@RequestScoped
@@ -23,10 +27,11 @@ import io.altar.parkee.repository.ParkRepository;
 		}
 		
 		@Transactional
-		public Park addEntity(Park newPark){
+		public Park create(Park newPark){
 			parkList.create(newPark);
 			return newPark;
 		}
+		
 		
 		@Transactional
 		public Park remove(Park oldPark){
@@ -35,9 +40,9 @@ import io.altar.parkee.repository.ParkRepository;
 		}
 		
 		@Transactional
-		public Park removeIt(Park oldPark){
-			parkList.delete(oldPark);
-			return oldPark;
+		public Park update(Park currentPark){
+			parkList.update(currentPark);
+			return currentPark;
 		}
 		
 		public List<Park> showParks(ParkRepository parkList){
@@ -45,6 +50,29 @@ import io.altar.parkee.repository.ParkRepository;
 			return list;
 		}
 		
+		
+		public ParkRepository getParkList() {
+			return parkList;
+		}
+
+		public void setParkList(ParkRepository parkList) {
+			this.parkList = parkList;
+		}
+
+		public List<String> getSpotsDbList() {
+			return spotsDbList;
+		}
+
+		private List<String> spotsDbList = new ArrayList<>();
+
+		public List<String> getSpotsList() {
+			return spotsDbList;
+		}
+
+		public void setSpotsDbList(List<String> spotsDbList) {
+			this.spotsDbList = spotsDbList;
+		}
+
 //		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
 //			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);
 //		}
