@@ -7,3 +7,5 @@ target/*
 .project
 .project
 .tern-project
+/bin/
+/target/

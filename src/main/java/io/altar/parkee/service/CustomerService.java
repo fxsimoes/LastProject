@@ -21,12 +21,6 @@ public class CustomerService extends EntityService<Customer> {
 		return customerList;
 	}
 	
-	public List<Customer> showCustomers(CustomerRepository customerRepository){
-		
-		List<Customer> list = customerList.getDbElements();
-		return list;
-	}
-	
 //	public Customer addEntity(int id, String customerName, int customerContact, int nif){
 //
 //		Customer newCustomer = customerList.addToDb(id, customerName, customerContact, nif);
@@ -35,8 +29,14 @@ public class CustomerService extends EntityService<Customer> {
 	
 	@Transactional
 	public Customer addEntity(Customer newCustomer){
-		customerList.addToDb(newCustomer);
+		customerList.create(newCustomer);
 		return newCustomer;
+	}
+	
+	public List<Customer> showCustomers(CustomerRepository customerList){
+		
+		List<Customer> list = customerList.getDbElements();
+		return list;
 	}
 	
 	public void modifyEntity(int id, String customerName, int customerContact, int nif) {

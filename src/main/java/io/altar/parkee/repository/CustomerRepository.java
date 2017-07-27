@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
@@ -16,14 +15,14 @@ public class CustomerRepository extends EntityRepository<Customer> {
 	
 	public List<Customer> getDbElements() {
 		
-		Query query = getEm().createQuery("FROM customer");
+		Query query = getEm().createQuery("FROM Customer");
 		List<Customer> dbCustomers = (List<Customer>) query.getResultList();
 		return dbCustomers;
 	}
 	
 	@Override
 	@Transactional
-	public void removeFromDb(Customer customer){
+	public void delete(Customer customer){
 		
 		Customer customerToRemove = getEm().find(Customer.class, customer.getId());
 		getEm().remove(customerToRemove);

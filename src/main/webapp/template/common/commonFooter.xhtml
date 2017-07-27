@@ -1,22 +1,47 @@
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	>
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-		 <title>Parkeet</title>
-		 <h:outputStylesheet name="css/style.css"/>
-	</h:head>
-	<h:body>
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-		<div class="col-xs-8 col-xs-offset-2">
+<h:body>
+	<ui:composition>
+		
+			<footer>
+				<div class="col-xs-12 footer">
 
-	<footer>
-  UP ACADEMY - Parkeet - 2017
-	</footer>
-	</div>
+					<div class="row-fluid flex-container flex-item col-xs-12 col-xs-offset-3 ">
 
-	</h:body>
+						<div class="Contact">
+							<h5>Contact</h5>
+							<address>
+								<b>Parkeet</b> <br /> R. Adriano Correia de Oliveira
+								4A <br /> 1600-312 <br /> Lisboa <br /> Portugal <br />
+								2222222
+							</address>
+
+
+							<div class="mapa">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1555.8568615339982!2d-9.153559916471327!3d38.747331097449255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933046a63d0f7%3A0x9bc843d712078882!2sR.+Adriano+Correia+de+Oliveira+4A%2C+1600-312+Lisboa!5e0!3m2!1sen!2spt!4v1500940523771"
+									width="400" height="200" style="border: 0" />
+							</div>
+						</div>
+						
+						<div class="Contact">
+						<h5>About</h5>
+						...
+						<h5>Help</h5>
+						...
+						</div>
+					</div>
+					
+				</div>
+				<div class="container col-xs-12 col-xs-offset-0 bottom">
+					 UP ACADEMY - Parkeet - 2017
+				</div>
+			</footer>
+
+	</ui:composition>
+</h:body>
 </html>

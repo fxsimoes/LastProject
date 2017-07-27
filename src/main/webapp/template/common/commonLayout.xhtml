@@ -2,27 +2,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui">
+	
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Parkeet</title>
-	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png"/> 
-	
-	<link href="https://fonts.googleapis.com/css?family=Crete+Round"
-		rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"/>
-		
-	<h:outputStylesheet name="css/style.css" />
+	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputStylesheet name="css/style.css" />
+
+
+	<!--<h:outputScript src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA6BP-V67_klKwRAHdU3MlABuRqx-mVQU&libraries=places&callback=initMap"
+        async defer/>  
+     <h:outputScript type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places;key=#{AIzaSyAA6BP-V67_klKwRAHdU3MlABuRqx-mVQU}"/>
+     <h:outputScript name="resources/js/script.js" />  -->
+     
+	<!--  
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
-
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+    -->
 </h:head>
-	<h:body>
+<h:body>
+	<div class="background">
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
 
-		<div class="content" class="col-md-12">
-				<ui:insert name="content"></ui:insert>
-		</div>
+	<div id="content">
+		<ui:insert name="content">
+			<ui:include src="/template/common/commonContent.xhtml" />
+		</ui:insert>
+	</div>
 
-	</h:body>
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+	</div>
+	<script type="text/javascript" src="resources/js/script.js"></script>
+</h:body>
 </html>

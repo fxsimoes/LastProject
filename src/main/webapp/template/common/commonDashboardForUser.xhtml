@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkeet</title>
+	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet" />
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+</h:head>
+
+<h:body class="bodyBlured">
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
+	
+
+	<b:container fluid="true">
+		<b:row>
+			<b:column col-sm="3" col-md="2" styleClass="sidebar">
+				<b:listLinks>
+					<b:navLink href="overviewUser.xhtml" value="Overview" iconAwesome="user-circle"/>
+				</b:listLinks>
+				<br />
+				<b:listLinks>
+					<b:navLink href="parkticket.xhtml" value="Park Ticket"  iconAwesome="address-card-o"/>
+					<b:navLink href="useraccount.xhtml" value="Account"  iconAwesome="cog"/>
+					<b:navLink href="history.xhtml" value="History" iconAwesome="calendar"/>
+				</b:listLinks>
+			</b:column>
+			<b:column col-sm="9" offset-sm="3" col-md="10" offset="2"
+				styleClass="main">	
+				<b:row styleClass="table-responsive">
+					<div id="content">
+						<ui:insert name="content">
+							<ui:include src="/template/common/commonContent.xhtml" />
+						</ui:insert>
+					</div>
+				</b:row>
+			</b:column>			 
+		</b:row>
+	</b:container>
+	
+	
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+	
+</h:body>
+
+</html>

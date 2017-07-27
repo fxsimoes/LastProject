@@ -55,4 +55,5 @@ public class CustomerBean implements Serializable {
 	public void addCustomer() {
 		customerService.addEntity(newCustomer);
 	}
+	
 }

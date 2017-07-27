@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Parkeet</title>
+	<link rel="icon" type="png" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/car-128.png" />
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet" />
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+</h:head>
+
+<h:body class="bodyBlured">
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
+	
+
+	<b:container fluid="true">
+		<b:row>
+			<b:column col-sm="3" col-md="2" styleClass="sidebar">
+				<b:listLinks>
+					<b:navLink href="overviewAdmin.xhtml" value="Overview" iconAwesome="area-chart" />
+				</b:listLinks>
+				<br />
+				<b:listLinks>
+					<b:navLink href="parkdata.xhtml" value="Parks" iconAwesome="road"/>
+					<b:navLink href="clientsdata.xhtml" value="Customers" iconAwesome="user-circle" />
+					<b:navLink href="vehicledata.xhtml" value="Vehicles" iconAwesome="car"/>
+					<b:navLink href="parkingspot.xhtml" value="Parking Spots" iconAwesome="map-signs"/>
+				</b:listLinks>
+			</b:column>
+			<b:column col-sm="9" offset-sm="3" col-md="10" offset="2"
+				styleClass="main">	
+				<b:row styleClass="table-responsive">
+					<div id="content">
+						<ui:insert name="content">
+							<ui:include src="/template/common/commonContent.xhtml" />
+						</ui:insert>
+					</div>
+				</b:row>
+			</b:column>			 
+		</b:row>
+	</b:container>
+	
+	
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+	
+</h:body>
+
+</html>

@@ -2,8 +2,11 @@ package io.altar.parkee.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,48 +15,41 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column (name ="InputSpotNumber")
-	private int inputSpotNum;
-	@Column(name="ParkSpotNumber")
-	private int number;
-	@Column(name="ParkSpotRow")
-	private String row;
-	@Column(name="statusId")
-	private int statusId;
+    @ManyToOne(optional=false, targetEntity=Park.class, 
+    		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Park park;
 	
-	public int getInputSpotNum() {
-		return inputSpotNum;
+	@Column(name="status")
+	private String status;
+	@Column(name="SpotRef")
+	private String spotRef;
+        
+    public void setPark(Park park) {
+		this.park = park;
 	}
 
-	public void setInputSpotNum(int inputSpotNum) {
-		this.inputSpotNum = inputSpotNum;
+	public String getSpotRef() {
+		return spotRef;
 	}
 
-	public int getNumber() {
-		return number;
+	public void setSpotRef(String spotRef) {
+		this.spotRef = spotRef;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public Park getPark() { return park; }
+
+	public String getStatus() {
+		return status;
 	}
 
-	public String getRow() {
-		return row;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public void setRow(String row) {
-		this.row = row;
+	public ParkSpot() {}
+	
+	public ParkSpot(String status, String spotRef){
+		this.status=status;
+		this.spotRef=spotRef;
 	}
-
-	public int getStatusId() {
-		return statusId;
-	}
-
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
-	}
-
-	public ParkSpot() {
-	}
-
 }

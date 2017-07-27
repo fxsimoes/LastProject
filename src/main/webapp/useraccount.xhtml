@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="template/common/commonDashboardForUser.xhtml">
+		<ui:define name="content">
+			<div id="account" class="col-xs-10 col-xs-offset-1">
+				<h1>Your Account</h1>
+
+				//se tivermos tempo: extrato pdf para o mail do cliente //faturas
+				//mensagem confirmacao de reserva (site e mail?) <br /> <br />
+
+				<h4>Personal Info</h4>
+				<div class="userAccountInfo">
+					<h:form>
+						<h:panelGrid columns="2" cellpadding="5">
+
+							<p:outputLabel for="name" value="Name:" />
+							<p:inputMask id="name" value="#{maskView.taxId}"/>
+
+							<p:outputLabel for="contact" value="Contact:" />
+							<p:inputMask id="contact" mask="99 999 99 99" value="#{maskView.phone}"/>
+
+							<p:outputLabel for="nif" value="NIF:" />
+							<p:inputMask id="nif" value="#{maskView.phoneExt}" />
+							<br />
+							<p:commandButton id="submitUserAccount" value="Submit"
+								update="display" oncomplete="PF('dlg').show()" />
+						</h:panelGrid>
+
+						<p:dialog widgetVar="dlg" modal="true" resizable="false"
+							header="Values" showEffect="fade">
+							<p:panelGrid id="display" columns="2" columnClasses="label,value">
+								<h:outputText value="Date: " />
+								<h:outputText id="dateValue" value="#{maskView.date}" />
+
+								<h:outputText value="Phone: " />
+								<h:outputText id="phoneValue" value="#{maskView.phone}" />
+
+								<h:outputText value="Phone with Ext: " />
+								<h:outputText id="phoneWithExtValue"
+									value="#{maskView.phoneExt}" />
+
+								<h:outputText value="taxId: " />
+								<h:outputText id="taxValue" value="#{maskView.taxId}" />
+
+							</p:panelGrid>
+						</p:dialog>
+					</h:form>
+				</div>
+
+				<h4>Your vehicle</h4>
+				<div class="userAccountInfo">
+					<h:form>
+						<h:panelGrid columns="2" cellpadding="5">
+
+							<p:outputLabel for="vehicleLicense" value="License" />
+							<p:inputMask id="vehicleLicense" value="#{maskView.taxId}"
+								mask="99-99-99" />
+						
+							<p:outputLabel for="vehicleBrand" value="Brand" />
+							<p:inputMask id="vehicleBrand" value="#{maskView.taxId}" />
+				
+							<p:outputLabel for="vehicleColor" value="Color" />
+							<p:inputMask id="vehicleColor" value="#{maskView.taxId}"/>
+								<br />
+							<p:commandButton id="submitUserAccount" value="Submit"
+								update="display" oncomplete="PF('dlg').show()"/>
+
+						</h:panelGrid>
+
+						<p:dialog widgetVar="dlg" modal="true" resizable="false"
+							header="Values" showEffect="fade">
+							<p:panelGrid id="display" columns="2" columnClasses="label,value">
+								<h:outputText value="Date: " />
+								<h:outputText id="dateValue" value="#{maskView.date}" />
+
+								<h:outputText value="Phone: " />
+								<h:outputText id="phoneValue" value="#{maskView.phone}" />
+
+								<h:outputText value="Phone with Ext: " />
+								<h:outputText id="phoneWithExtValue"
+									value="#{maskView.phoneExt}" />
+
+								<h:outputText value="taxId: " />
+								<h:outputText id="taxValue" value="#{maskView.taxId}" />
+
+								<h:outputText value="SSN: " />
+								<h:outputText id="ssnValue" value="#{maskView.ssn}" />
+
+								<h:outputText value="Product Key: " />
+								<h:outputText id="keyValue" value="#{maskView.productKey}" />
+							</p:panelGrid>
+						</p:dialog>
+					</h:form>
+				</div>
+				<h4>Extra info</h4>
+
+
+
+				<!--
+			<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+						<h3>Add/Edit your details</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="Customer Name: " />
+							<h:inputText value="#{CustomerBean.newCustomer.customerName}"
+								placeholder="Enter name" required="true" />
+							<br />
+							<h:outputText value="Customer Contact: " />
+							<h:inputText value="#{CustomerBean.newCustomer.customerContact}"
+								required="true" />
+							<br />
+							<h:outputText value="Customer Nif: " />
+							<h:inputText value="#{CustomerBean.newCustomer.nif}"
+								required="true" />
+							<br />
+							<p:commandButton value="Submit"
+								action="#{CustomerBean.addCustomer()}"  />
+						</h:form>
+					</div>
+				</div>
+			-->
+
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
