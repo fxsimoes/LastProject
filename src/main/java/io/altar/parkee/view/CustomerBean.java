@@ -56,9 +56,4 @@ public class CustomerBean implements Serializable {
 		customerService.addEntity(newCustomer);
 	}
 	
-	//TESTE
-	public Collection<Customer> getCustomersById() {
-		
-		return customerService.showCustomersById(customerService.getCustomerRepository());
-	}
 }

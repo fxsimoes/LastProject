@@ -32,19 +32,6 @@ import io.altar.parkee.repository.ParkSpotRepository;
 			return newPark;
 		}
 		
-		public String getIncrementedString(String str){
-	        StringBuilder sb = new StringBuilder();
-	        for(char c:str.toCharArray()){
-	            sb.append(++c);
-	        }
-	        return sb.toString();
-	    }
-		
-//		@Transactional
-//		public Park update(E entity){
-//			parkList.create(entity);
-//			return entity;
-//		}
 		
 		@Transactional
 		public Park remove(Park oldPark){
@@ -53,19 +40,15 @@ import io.altar.parkee.repository.ParkSpotRepository;
 		}
 		
 		@Transactional
-		public Park removeIt(Park oldPark){
-			parkList.delete(oldPark);
-			return oldPark;
+		public Park update(Park currentPark){
+			parkList.update(currentPark);
+			return currentPark;
 		}
 		
 		public List<Park> showParks(ParkRepository parkList){
 			List<Park> list = parkList.getDbElements();
 			return list;
 		}
-		
-		@Inject
-		private ParkSpotRepository spotsList;
-		
 		
 		
 		public ParkRepository getParkList() {
@@ -80,14 +63,6 @@ import io.altar.parkee.repository.ParkSpotRepository;
 			return spotsDbList;
 		}
 
-		public void setSpotsList(ParkSpotRepository spotsList) {
-			this.spotsList = spotsList;
-		}
-
-		private List<ParkSpot> spotsDB(){
-			return spotsList.getSpots();
-		}
-		
 		private List<String> spotsDbList = new ArrayList<>();
 
 		public List<String> getSpotsList() {
@@ -97,27 +72,6 @@ import io.altar.parkee.repository.ParkSpotRepository;
 		public void setSpotsDbList(List<String> spotsDbList) {
 			this.spotsDbList = spotsDbList;
 		}
-
-//		public void addPark() {
-//			Set<ParkSpot> spotSet = spotList.getCategoriesFromNames(categoryNameList);
-//			Set<Park> parkSet = parkList.getPlatformsFromNames(platformNameList);
-//			parkList.setParkSpotSet(spotSet);
-//			newProduct.setPlatformSet(platformSet);
-//			parkList.addToDb(newProduct);	
-//			for(Category category: categorySet){
-//				Set<ParkSpot> productSetTemp = category.getProductSet();
-//				productSetTemp.add(newProduct);
-//				category.setProductSet(productSetTemp);
-//				spotList.update(category);
-//			}
-//			for(Park park: parkSet){
-//				Set<Park> parkSetTemp = park.getProductSet();
-//				parkSetTemp.add(newProduct);
-//				park.setProductSet(parkSetTemp);
-//				parkList.update(park);
-//			}	
-//		}
-		
 
 //		public void modifyEntity(int id, String name, int spots, String spotRef, String location, int longitude, int latitude, int price){
 //			parkList.modifyDb(id, name, spots, spotRef, location, longitude, latitude, price);

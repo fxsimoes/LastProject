@@ -19,13 +19,12 @@
 						selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
 						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
 						paginator="true" rows="10" style="margin-bottom:20px">
-							
+
 						<f:facet name="header">
 							<p:commandButton update="ParkList" value="Add"
 								oncomplete="PF('parkAdd').show()" />
 							<p:commandButton update="ParkList" value="Edit"
 								oncomplete="PF('parkEdit').show()" />
-
 							<!-- DELETE -->
 							<p:commandButton value="Delete" update="ParkList"
 								action="#{ParkBean.deletePark()}">
@@ -106,40 +105,43 @@
 					</p:dialog>
 
 					<!-- FUTURO EDIT mudar nomes conforme -->
-<!-- 					<p:dialog header="Edit Park" widgetVar="parktEdit" modal="true"
+					<p:dialog header="Edit Park" widgetVar="parkEdit" modal="true"
 						showEffect="fade" rendered="#{not empty ParkBean.activePark}"
 						hideEffect="fade" resizable="false">
-						<p:outputPanel id="editPark" style="text-align:center;">
+						<p:outputPanel id="editPark"
+							style="text-align:center; color:black;">
 							<p:panelGrid columns="2" columnClasses="label,value">
-								<h:outputText value="Nome" />
+								<h:outputText value="Name" />
 								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.parkName}" required="true" />
+									value="#{ParkBean.activePark.parkName}" />
 
 								<h:outputText value="Hourly Price" />
 								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.hourlyPrice}" required="true" />
+									value="#{ParkBean.activePark.hourlyPrice}" />
 
 								<h:outputText value="Nr of spots" />
 								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.nrOfSpots}" required="true" />
+									value="#{ParkBean.activePark.nrOfSpots}" />
 
 								<h:outputText value="Location" />
-								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.parkLocation}" required="true" />
+								<p:inputText styleClass="input"
+									value="#{ParkBean.newPark.parkLocation}" />
+
 
 								<h:outputText value="Latitude" />
 								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.latitude}" required="true" />
+									value="#{ParkBean.activePark.latitude}" />
 
 								<h:outputText value="Longitude" />
 								<p:inputText styleClass="input" readonly="false"
-									value="#{ParkBean.activePark.longitude}" required="true" />
+									value="#{ParkBean.activePark.longitude}" />
+
 							</p:panelGrid>
 							<p:commandButton id="ParkEditSubmit" value="Submit"
-								update="ParkList" 
-								oncomplete="PF('productEdit').hide()" />
+								action="#{ParkBean.updatePark()}" update="ParkList"
+								oncomplete="PF('parkEdit').hide()" />
 						</p:outputPanel>
-					</p:dialog> -->
+					</p:dialog>
 				</h:form>
 			</div>
 		</ui:define>

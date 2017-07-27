@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
+import io.altar.parkee.service.CustomerService;
 import io.altar.parkee.service.VehicleService;
 
 
@@ -52,6 +53,10 @@ public class VehicleBean implements Serializable {
 		vehicleService.removeVehicle(id);
 	}
 	
-	
+	//TESTE
+		public Collection<Vehicle> getCustomersById() {
+			
+			return vehicleService.showCustomersById(vehicleService.getVehicleList());
+		}
 	
 }

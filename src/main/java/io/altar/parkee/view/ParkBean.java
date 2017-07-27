@@ -120,54 +120,13 @@ public class ParkBean implements Serializable {
 	
 	
 	
-//	public void addPark2() {
-//		
-//	newPark.setParkSpot(parkService);
-//	parkService.addEntity(newPark);
-//	for (ParkSpot pSpot : parkService) {
-//		Set<Product> productSetTemp = category.getProductSet();
-//		productSetTemp.add(newPark);
-//		pSpot.setProductSet(productSetTemp);
-//		parkService.update(pSpot);
-//	}
-//	}
-
-//	public String editPark() {
-//		System.out.println(activePark.toString());
-//		parkService.modifyEntity(parkId, parkName, nrOfSpots, spotRef, parkLocation, longitude, latitude, hourlyPrice);
-//		return null;
-//	}
-
+	public void updatePark(){
+		parkService.update(activePark);
+	}
+	
 	public void deletePark() {
 		parkService.remove(activePark);
 	}
 	
-	public void removeFromDb(Park oldPark){
-
-	}
 }
 
-// public void addPark() {
-// newPark = parkService.addEntity(getParkId(), getParkName(),
-// getNrOfSpots(), getSpotRef(), getParkLocation(), getLongitude(),
-// getLatitude(), getHourlyPrice());
-//// newPark.setHourlyPrice(hourlyPrice);
-//// newPark.setParkName(parkName);
-//// newPark.setNrOfSpots(nrOfSpots);
-//// newPark.setSpotRef(spotRef);
-//// newPark.setParkLocation(parkLocation);
-//// newPark.setLongitude(longitude);
-//// newPark.setLatitude(latitude);
-// }
-
-//public Park addPark() {
-//	newPark.setHourlyPrice(hourlyPrice);
-//	newPark.setParkName(parkName);
-//	newPark.setNrOfSpots(nrOfSpots);
-//	newPark.setSpotRef(spotRef);
-//	newPark.setParkLocation(parkLocation);
-//	newPark.setLongitude(longitude);
-//	newPark.setLatitude(latitude);
-//	parkService.addEntity(parkService.getParkRepository(), newPark);
-//	return newPark;
-//}
