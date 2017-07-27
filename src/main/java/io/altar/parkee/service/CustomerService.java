@@ -44,8 +44,4 @@ public class CustomerService extends EntityService<Customer> {
 		customerList.modifyDb(id, customerName, customerContact, nif);
 	}
 	
-	public void deleteCustomer(Customer customer) {
-		
-		customerList.delete(customer);
-	}
 }

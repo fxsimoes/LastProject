@@ -38,7 +38,6 @@ public class VehicleService extends EntityService<Vehicle>{
 		List<Vehicle> list = vehicleList.getDbVehiclesByCustomerName();
 		return list;
 	}
-		
 	
 	public Vehicle addVehicle(Vehicle newVehicle){
 		
@@ -49,11 +48,6 @@ public class VehicleService extends EntityService<Vehicle>{
 		
 //		vehicleList.addToDb(newVehicle);
 		return newVehicle;
-	}
-
-	public void removeVehicle(int id) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public Collection<Vehicle> showVehicles(VehicleRepository vehicleList) {

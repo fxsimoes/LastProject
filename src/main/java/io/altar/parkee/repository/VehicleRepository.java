@@ -7,7 +7,6 @@ import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
@@ -27,4 +26,12 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		List<Vehicle> dbVehicles = (List<Vehicle>) queryvehicles.getResultList();
 		return dbVehicles;
 	}
+	
+	@Override
+	@Transactional
+	public void delete(Vehicle activeVehicle){
+		Vehicle vehicleToRemove = getEm().find(Vehicle.class, activeVehicle.getId());
+		getEm().remove(vehicleToRemove);
+	}
+	
 }

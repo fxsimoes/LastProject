@@ -17,6 +17,7 @@ public class VehicleBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private Vehicle newVehicle = new Vehicle();
+	private Vehicle activeVehicle = new Vehicle();
 	
 	public Vehicle getNewVehicle() {
 		return newVehicle;
@@ -24,6 +25,14 @@ public class VehicleBean implements Serializable {
 
 	public void setNewVehicle(Vehicle newVehicle) {
 		this.newVehicle = newVehicle;
+	}
+	
+	public Vehicle getActiveVehicle() {
+		return activeVehicle;
+	}
+
+	public void setActiveVehicle(Vehicle activeVehicle) {
+		this.activeVehicle = activeVehicle;
 	}
 
 	@Inject
@@ -41,12 +50,14 @@ public class VehicleBean implements Serializable {
 		return vehicleService.showVehicles(vehicleService.getVehicleRepository());
 	}
 
-	public void addNewVehicle(){
+	public void addVehicle(){
 		vehicleService.addVehicle(newVehicle);
 	}
 	
-	public void removeNewVehicle(int id){
-		vehicleService.removeVehicle(id);
+	public String deleteVehicle() {
+		
+		vehicleService.removeEntity(vehicleService.getVehicleRepository(), activeVehicle);
+		return null;
 	}
 	
 	//TESTE
