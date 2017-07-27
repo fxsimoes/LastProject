@@ -5,11 +5,7 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
-<<<<<<< HEAD
 import javax.transaction.Transactional;
-
-=======
->>>>>>> 412346be9db215bb59739b84dd3221c9d2c4761b
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
