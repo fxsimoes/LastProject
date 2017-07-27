@@ -1,6 +1,6 @@
 package io.altar.parkee.view;
 
-
+ 
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +11,11 @@ import org.primefaces.model.chart.MeterGaugeChartModel;
 @ManagedBean
 public class ChartView implements Serializable {
  
-    private MeterGaugeChartModel meterGaugeModel1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private MeterGaugeChartModel meterGaugeModel1;
     private MeterGaugeChartModel meterGaugeModel2;
  
     @PostConstruct
