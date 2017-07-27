@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +25,6 @@ public class Customer extends EntityModel implements Serializable {
 	private int customerContact;
 	@Column(name="NIF")
 	private int nif;
-	
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(name = "CUSTOMER_VEHICLE",
@@ -32,6 +32,7 @@ public class Customer extends EntityModel implements Serializable {
 			inverseJoinColumns = { @JoinColumn(name = "VEHICLE_ID") })
 	private List<Vehicle> vehicles;
 	
+
 	public String getCustomerName() {
 		return customerName;
 	}

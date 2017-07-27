@@ -5,9 +5,6 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
-
-import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
@@ -19,6 +16,7 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		List<Vehicle> dbVehicles = (List<Vehicle>) query.getResultList();
 		return dbVehicles;
 	}
+
 	
 	//TESTE
 	public List<Vehicle> getDbElementsById() {

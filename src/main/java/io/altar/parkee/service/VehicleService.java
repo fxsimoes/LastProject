@@ -3,6 +3,7 @@ package io.altar.parkee.service;
 import java.util.Collection;
 import java.util.List;
 
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

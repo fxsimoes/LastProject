@@ -7,7 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import io.altar.parkee.model.Park;
 import io.altar.parkee.model.Vehicle;
 import io.altar.parkee.service.CustomerService;
 import io.altar.parkee.service.VehicleService;
@@ -18,6 +17,7 @@ import io.altar.parkee.service.VehicleService;
 public class VehicleBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private Vehicle newVehicle = new Vehicle();
 	
 	public Vehicle getNewVehicle() {
@@ -51,6 +51,7 @@ public class VehicleBean implements Serializable {
 	
 	public void removeNewVehicle(int id){
 		vehicleService.removeVehicle(id);
+		System.out.println(id);
 	}
 	
 	//TESTE
