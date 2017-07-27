@@ -10,12 +10,6 @@
 
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
-<<<<<<< HEAD
-			<div class="col-xs-10 col-xs-offset-1">
-			<div id="customers">
-				<h1>Customers</h1>
-			
-=======
 				
 	<div class="col-xs-10 col-xs-offset-1">
 		<h1>Customers</h1>
@@ -37,7 +31,7 @@
 	      <b:dataTableColumn value="#{customer.nif}" label="Nif"/>
 	  </b:dataTable>
 	</h:form>
-		
+		</div>
 <!-- 		<div id= "CustomerVehiclesTable" class="customervehiclestable"> -->
 <!-- 				<p:dataTable var="customer" id="CustomerList" value="#{CustomerBean.customers}" > -->
 				
@@ -111,8 +105,9 @@
 				<h3>
 					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
 				</h3>
-				<h:form>		
-
+<!-- 			<h:form>		
+				
+				 
 				Select a park (<b>ID</b>) to remove:
 					<br />
 							<h:inputText style="width: 50px;"
@@ -123,7 +118,7 @@
 
 							<p:commandButton value="Submit" action="#" />
 						</h:form>
->>>>>>> origin/TiagoCruz
+-->
 					</div>
 				</div>
 		</ui:define>

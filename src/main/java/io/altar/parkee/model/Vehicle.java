@@ -66,9 +66,7 @@ public class Vehicle extends EntityModel implements Serializable {
 	public Vehicle() {
 	}
 
-<<<<<<< HEAD
-}
-=======
+
 	public List<Customer> getCustomers() {
 		return customers;
 	}
@@ -78,4 +76,3 @@ public class Vehicle extends EntityModel implements Serializable {
 		this.customers = customers;
 	}
 }
->>>>>>> origin/TiagoCruz

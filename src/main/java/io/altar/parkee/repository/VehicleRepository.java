@@ -21,9 +21,7 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		return dbVehicles;
 	}
 	
-<<<<<<< HEAD
-}
-=======
+
 	//TESTE
 	public List<Vehicle> getDbVehiclesByCustomerName() {
 			
@@ -32,4 +30,3 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		return dbVehicles;
 	}
 }
->>>>>>> origin/TiagoCruz

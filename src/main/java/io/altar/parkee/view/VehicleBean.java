@@ -45,9 +45,7 @@ public class VehicleBean implements Serializable {
 		vehicleService.addVehicle(newVehicle);
 	}
 	
-<<<<<<< HEAD
-}
-=======
+
 	public void removeNewVehicle(int id){
 		vehicleService.removeVehicle(id);
 	}
@@ -59,4 +57,4 @@ public class VehicleBean implements Serializable {
 	}
 	
 }
->>>>>>> origin/TiagoCruz
+

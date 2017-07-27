@@ -51,9 +51,6 @@ public class VehicleService extends EntityService<Vehicle>{
 		return newVehicle;
 	}
 
-<<<<<<< HEAD
-}
-=======
 	public void removeVehicle(int id) {
 		// TODO Auto-generated method stub
 		
@@ -65,4 +62,3 @@ public class VehicleService extends EntityService<Vehicle>{
 	}
 
 }
->>>>>>> origin/TiagoCruz
