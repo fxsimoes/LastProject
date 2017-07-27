@@ -8,7 +8,6 @@ import javax.inject.Named;
 
 import io.altar.parkee.model.Account;
 import io.altar.parkee.service.AccountService;
-import io.altar.parkee.utils.LoginFilter;
 
 @Named("AccountBean")
 @SessionScoped
@@ -18,14 +17,6 @@ public class AccountBean implements Serializable {
 	@Inject
 	private AccountService accountService;
 	
-	private Account newAccount = new Account();
-	
-	public Account getNewAccount() {
-		return newAccount;
-	}
-	public void setNewAccount(Account newAccount) {
-		this.newAccount = newAccount;
-	}
 
 	private Account account;
 	
@@ -38,7 +29,7 @@ public class AccountBean implements Serializable {
 	}
 
 	public void action(){
-		account = new Account();
+	
 		account.setLoggedIn(true);
 		
 		if(account.isLoggedIn() == true){
@@ -50,9 +41,6 @@ public class AccountBean implements Serializable {
 		accountService.action(account);
 	}
 	
-	public void register(){
-		accountService.addAccount(newAccount);
-		accountService.action(newAccount);
-	}
+
 	
 }

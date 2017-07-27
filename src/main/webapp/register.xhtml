@@ -14,18 +14,18 @@
             <h:form styleClass="form-signin" prependId="false">
                 <h3 class="form-signin-heading">Please register</h3>
                 <b:inputText id="email" placeholder="Email address" required="true" requiredMessage="Please fill with email adress"
-                value="#{AccountBean.newAccount.email}">
+                value="#{RegisterBean.newAccount.email}">
                     <f:facet name="prepend">
                         <b:icon name="user" />
                     </f:facet>
                 </b:inputText>
                 <b:inputText id="password" placeholder="Password" type="password" required="true" requiredMessage="Please insert a password"
-                value="#{AccountBean.newAccount.password}">
+                value="#{RegisterBean.newAccount.password}">
                     <f:facet name="prepend">
                         <b:iconAwesome name="key" />
                     </f:facet>
                 </b:inputText>
-                <b:commandButton look="primary btn-block" value="register" icon="log-in" size="lg" action="#{AccountBean.register()}"/>
+                <b:commandButton look="primary btn-block" value="register" icon="log-in" size="lg" action="#{RegisterBean.register()}"/>
             </h:form>
         </b:container>
 		</div>
