@@ -25,7 +25,6 @@
 								oncomplete="PF('parkAdd').show()" />
 							<p:commandButton update="ParkList" value="Edit"
 								oncomplete="PF('parkEdit').show()" />
-
 							<!-- DELETE -->
 							<p:commandButton value="Delete" update="ParkList"
 								action="#{ParkBean.deletePark()}">
@@ -104,11 +103,11 @@
 								update="ParkList" action="#{ParkBean.addPark()}" />
 						</p:outputPanel>
 					</p:dialog>
-				</h:form>
-				<h:form>
+
 					<!-- FUTURO EDIT mudar nomes conforme -->
 					<p:dialog header="Edit Park" widgetVar="parkEdit" modal="true"
-						showEffect="fade" hideEffect="fade" resizable="false">
+						showEffect="fade" rendered="#{not empty ParkBean.activePark}"
+						hideEffect="fade" resizable="false">
 						<p:outputPanel id="editPark"
 							style="text-align:center; color:black;">
 							<p:panelGrid columns="2" columnClasses="label,value">
@@ -139,7 +138,8 @@
 
 							</p:panelGrid>
 							<p:commandButton id="ParkEditSubmit" value="Submit"
-								update="ParkList" oncomplete="PF('productEdit').hide()" />
+								action="#{ParkBean.updatePark()}" update="ParkList"
+								oncomplete="PF('parkEdit').hide()" />
 						</p:outputPanel>
 					</p:dialog>
 				</h:form>
