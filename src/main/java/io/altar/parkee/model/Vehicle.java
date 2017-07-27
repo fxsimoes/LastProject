@@ -32,21 +32,6 @@ public class Vehicle extends EntityModel implements Serializable {
 	
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy="vehicles")
 	private List<Customer> customers;
-	
-	
-//	@ManyToMany(mappedBy="")
-//    private List<Customer> Customers;
-	
-	
-//	public List<Customer> getCustomers(){
-//		return Customers;
-//	}
-//
-//
-//	public void setCustomers(List<Customer> customers) {
-//		Customers = customers;
-//	}
-
 
 	public String getLicense() {
 		return license;
@@ -87,9 +72,4 @@ public class Vehicle extends EntityModel implements Serializable {
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
-	
-//	public void addCustomer(Customer customer) {
-//		customers.add(customer);
-//	}
-	
 }

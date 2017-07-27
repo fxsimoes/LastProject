@@ -9,6 +9,7 @@ target/*
 .tern-project
 /bin/
 /target/
+/.metadata/
 .idea/workspace.xml
 .idea/vcs.xml
 .idea/modules.xml

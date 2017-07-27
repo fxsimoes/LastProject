@@ -43,4 +43,5 @@ public class CustomerService extends EntityService<Customer> {
 		
 		customerList.modifyDb(id, customerName, customerContact, nif);
 	}
+	
 }

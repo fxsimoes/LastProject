@@ -5,6 +5,11 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
+<<<<<<< HEAD
+import javax.transaction.Transactional;
+
+=======
+>>>>>>> 412346be9db215bb59739b84dd3221c9d2c4761b
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
@@ -19,10 +24,18 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 
 	
 	//TESTE
-	public List<Vehicle> getDbElementsById() {
+	public List<Vehicle> getDbVehiclesByCustomerName() {
 			
 		Query queryvehicles = getEm().createNativeQuery("SELECT vehicle.* FROM customer INNER JOIN customer_vehicle ON customer.id = customer_vehicle.customer_id INNER JOIN vehicle ON customer_vehicle.vehicle_id = vehicle.id",Vehicle.class);
 		List<Vehicle> dbVehicles = (List<Vehicle>) queryvehicles.getResultList();
 		return dbVehicles;
 	}
+	
+	@Override
+	@Transactional
+	public void delete(Vehicle activeVehicle){
+		Vehicle vehicleToRemove = getEm().find(Vehicle.class, activeVehicle.getId());
+		getEm().remove(vehicleToRemove);
+	}
+	
 }
