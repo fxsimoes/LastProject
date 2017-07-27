@@ -20,12 +20,10 @@
 						<h:panelGrid columns="2" cellpadding="5">
 
 							<p:outputLabel for="name" value="Name:" />
-							<p:inputMask id="name" value="#{maskView.taxId}"
-								mask="99-9999999" />
+							<p:inputMask id="name" value="#{maskView.taxId}"/>
 
 							<p:outputLabel for="contact" value="Contact:" />
-							<p:inputMask id="contact" value="#{maskView.phone}"
-								mask="(999) 999-9999" />
+							<p:inputMask id="contact" mask="99 999 99 99" value="#{maskView.phone}"/>
 
 							<p:outputLabel for="nif" value="NIF:" />
 							<p:inputMask id="nif" value="#{maskView.phoneExt}" />
@@ -50,11 +48,6 @@
 								<h:outputText value="taxId: " />
 								<h:outputText id="taxValue" value="#{maskView.taxId}" />
 
-								<h:outputText value="SSN: " />
-								<h:outputText id="ssnValue" value="#{maskView.ssn}" />
-
-								<h:outputText value="Product Key: " />
-								<h:outputText id="keyValue" value="#{maskView.productKey}" />
 							</p:panelGrid>
 						</p:dialog>
 					</h:form>
@@ -68,9 +61,16 @@
 							<p:outputLabel for="vehicleLicense" value="License" />
 							<p:inputMask id="vehicleLicense" value="#{maskView.taxId}"
 								mask="99-99-99" />
-							<br />
+						
+							<p:outputLabel for="vehicleBrand" value="Brand" />
+							<p:inputMask id="vehicleBrand" value="#{maskView.taxId}" />
+				
+							<p:outputLabel for="vehicleColor" value="Color" />
+							<p:inputMask id="vehicleColor" value="#{maskView.taxId}"/>
+								<br />
 							<p:commandButton id="submitUserAccount" value="Submit"
-								update="display" oncomplete="PF('dlg').show()" />
+								update="display" oncomplete="PF('dlg').show()"/>
+
 						</h:panelGrid>
 
 						<p:dialog widgetVar="dlg" modal="true" resizable="false"

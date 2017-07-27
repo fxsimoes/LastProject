@@ -6,8 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,51 +15,41 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="ParkSpotNumber")
-	private int number;
-	@Column(name="ParkSpotRow")
-	private String row;
-	@Column(name="statusId")
-	private int statusId;
-	
-    @OneToOne(optional=false, targetEntity=Park.class, 
+    @ManyToOne(optional=false, targetEntity=Park.class, 
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    @JoinColumn(
-      name="nrOfSpots", unique=false, updatable=true)
     private Park park;
-    
+	
+	@Column(name="status")
+	private String status;
+	@Column(name="SpotRef")
+	private String spotRef;
         
     public void setPark(Park park) {
 		this.park = park;
 	}
 
+	public String getSpotRef() {
+		return spotRef;
+	}
+
+	public void setSpotRef(String spotRef) {
+		this.spotRef = spotRef;
+	}
+
 	public Park getPark() { return park; }
 
-	public int getNumber() {
-		return number;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public String getRow() {
-		return row;
+	public ParkSpot() {}
+	
+	public ParkSpot(String status, String spotRef){
+		this.status=status;
+		this.spotRef=spotRef;
 	}
-
-	public void setRow(String row) {
-		this.row = row;
-	}
-
-	public int getStatusId() {
-		return statusId;
-	}
-
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
-	}
-
-	public ParkSpot() {
-	}
-
 }

@@ -22,11 +22,10 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 
 	
 	@Transactional
-	public void modifyDb(int id, int inputSpotNum, int number, String row, int statusId) {
+	public void modifyDb(int id, String spotRef, String status) {
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);
-		dbParkSpot.setNumber(number);		
-		dbParkSpot.setRow(row);
-		dbParkSpot.setStatusId(statusId);	
+		dbParkSpot.setSpotRef(spotRef);		;
+		dbParkSpot.setStatus(status);	
 	}
 	
 	@Override
