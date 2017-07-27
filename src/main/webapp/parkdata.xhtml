@@ -145,7 +145,7 @@
 
 								</p:panelGrid>
 								<p:commandButton id="ParkEditSubmit" value="Submit"
-									update="ParkList" oncomplete="PF('productEdit').hide()"/>
+									update="ParkList" oncomplete="PF('productEdit').hide()" action="#{ParkBean.editPark()}"/>
 							</p:outputPanel>
 						</p:dialog>
 						
