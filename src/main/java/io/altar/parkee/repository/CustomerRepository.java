@@ -22,9 +22,8 @@ public class CustomerRepository extends EntityRepository<Customer> {
 	
 	@Override
 	@Transactional
-	public void delete(Customer customer){
-		
-		Customer customerToRemove = getEm().find(Customer.class, customer.getId());
+	public void delete(Customer activeCustomer){
+		Customer customerToRemove = getEm().find(Customer.class, activeCustomer.getId());
 		getEm().remove(customerToRemove);
 	}
 	
