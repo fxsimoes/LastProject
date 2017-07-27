@@ -22,18 +22,22 @@ public class LoginFilter implements Filter {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 	@Inject
 	AccountBean accountBean;
-
+	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		
-		accountBean = (AccountBean) req.getSession().getAttribute("AccountBean");
+		
 		String url = req.getRequestURI();
+		
+//		System.out.println(accountBean.getAccount().getId());
+//		System.out.println(accountBean.getAccount().getEmail());
+//		System.out.println(accountBean.getAccount().getPassword());
 		
 		if (accountBean == null || !accountBean.getAccount().isLoggedIn()){
 			System.out.println("sem sessao");

@@ -18,7 +18,7 @@ public class AccountBean implements Serializable {
 	private AccountService accountService;
 	
 
-	private Account account;
+	private Account account = new Account();
 	
 
 	public Account getAccount() {
@@ -29,14 +29,9 @@ public class AccountBean implements Serializable {
 	}
 
 	public void action(){
-	
-		account.setLoggedIn(true);
 		
-		if(account.isLoggedIn() == true){
-			System.out.println("teste");
-		} else {
-			System.out.println("desteste");
-		}
+		
+		
 		
 		accountService.action(account);
 	}
