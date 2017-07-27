@@ -16,6 +16,7 @@ import io.altar.parkee.service.VehicleService;
 public class VehicleBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private Vehicle newVehicle = new Vehicle();
 	private Vehicle activeVehicle = new Vehicle();
 	
@@ -54,10 +55,16 @@ public class VehicleBean implements Serializable {
 		vehicleService.addVehicle(newVehicle);
 	}
 	
+<<<<<<< HEAD
 	public String deleteVehicle() {
 		
 		vehicleService.removeEntity(vehicleService.getVehicleRepository(), activeVehicle);
 		return null;
+=======
+	public void removeNewVehicle(int id){
+		vehicleService.removeVehicle(id);
+		System.out.println(id);
+>>>>>>> 412346be9db215bb59739b84dd3221c9d2c4761b
 	}
 	
 	//TESTE

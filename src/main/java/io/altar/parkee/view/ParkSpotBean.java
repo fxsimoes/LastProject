@@ -37,6 +37,7 @@ public class ParkSpotBean implements Serializable {
 		this.activeParkSpot = activeParkSpot;
 	}
 
+	
 	public ParkSpotService getParkSpotService() {
 		return parkSpotService;
 	}
@@ -50,6 +51,7 @@ public class ParkSpotBean implements Serializable {
 	public Collection<ParkSpot> getSpots() {
 		return parkSpotService.showSpots(parkSpotService.getParkRepository());
 	}
+	
 	
 	public void addParkSpot(){
 		parkRepo.getParkFromId(1).addToSpots(new ParkSpot());

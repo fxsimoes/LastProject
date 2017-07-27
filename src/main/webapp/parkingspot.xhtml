@@ -21,6 +21,49 @@
 						<p:column headerText="Status">
 							<h:outputText value="#{ParkSpot.status}" />
 						</p:column>
+<<<<<<< HEAD
+
+					</p:dataTable>
+				</div>
+
+
+				<div class="AdminActions flex-container flex-item">
+					<div class="Add flex-item">
+						<h3>
+							<span class="glyphicon glyphicon-th"></span><b> Add parking
+								spot details</b>
+						</h3>
+						<p></p>
+						<h:form>
+							<br />
+							<h:outputText value="InputSpotNum: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.statusId}"
+								required="true" />
+							<br />
+							<h:outputText value="Number: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.number}"
+								required="true" />
+							<br />
+							<h:outputText value="Row: " />
+							<br />
+							<h:inputText value="#{ParkSpotBean.newParkSpot.row}"
+								required="true" />
+							<br />
+							<h:outputText value="Status: " />
+							<br />
+							<!-- 					<p:selectOneMenu id="console"
+						value="#{ParkSpotBean.newParkSpot.statusId}">
+						<f:selectItem itemLabel="Free" itemValue="Free" />
+						<f:selectItem itemLabel="Occupied" itemValue="Occupied" />
+						<f:selectItem itemLabel="Reserved" itemValue="Reserved" />
+					</p:selectOneMenu> -->
+							<br />
+
+
+
+=======
 					</p:dataTable>
 				</div>
 				<div class="AdminActions flex-container flex-item">
@@ -93,13 +136,13 @@
 								<h:outputText value="Status: " />
 								<br />
 
+>>>>>>> dev
 
-								<p:commandButton value="Submit"
-									action="#{ParkSpotBean.addParkSpot()}" />
-							</h:form>
-						</div>
-						<div class="divider"></div>
+							<p:commandButton value="Submit"
+								action="#{ParkSpotBean.addParkSpot()}" />
+						</h:form>
 					</div>
+					<div class="divider"></div>
 
 				</div>
 			</div>

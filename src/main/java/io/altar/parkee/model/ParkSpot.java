@@ -1,6 +1,7 @@
 package io.altar.parkee.model;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "ParkSpot")
@@ -19,11 +21,13 @@ public class ParkSpot extends EntityModel implements Serializable {
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
 	
+    
 	@Column(name="status")
 	private String status;
 	@Column(name="SpotRef")
 	private String spotRef;
-        
+	
+  
     public void setPark(Park park) {
 		this.park = park;
 	}
@@ -45,11 +49,61 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+//	private int cenas;
+	private StatusSpot statusSpot = r.random();
+	private String coisas= ""+statusSpot;
 
+//	public String getCoisas() {
+//		return coisas;
+//	}
+//
+//	public void setCoisas(String coisas) {
+//		this.coisas = coisas;
+//	}
+
+	public enum StatusSpot {
+		FREE, RESERVED, OCCUPIED;
+	}
+	
+	private static final RandomEnum<StatusSpot> r = new RandomEnum<StatusSpot>(StatusSpot.class);
+
+	// public static void main(String[] args) {
+	// System.out.println(r.random());
+	// }
+
+	private static class RandomEnum<E extends Enum> {
+
+		private static final Random RND = new Random();
+		private final E[] values;
+
+		public RandomEnum(Class<E> token) {
+			values = token.getEnumConstants();
+		}
+
+	public E random() {
+			return values[RND.nextInt(values.length)];
+		}
+	}
+	
 	public ParkSpot() {}
 	
-	public ParkSpot(String status, String spotRef){
-		this.status=status;
+	public ParkSpot(String coisas, String spotRef){
+		this.status=coisas;
 		this.spotRef=spotRef;
-	}
+		
+		
+	}	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
