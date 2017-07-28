@@ -42,7 +42,7 @@ public class LoginFilter implements Filter {
 		if (accountBean == null || !accountBean.getAccount().isLoggedIn()){
 			System.out.println("sem sessao");
 			//Se a sessao for nula e tentar aceder a certas paginas, segue para o Login para o utilizador se autenticar
-			if(url.indexOf("index.xhtml") >= 0 || url.indexOf("userConsole.xhtml") >= 0){
+			if(url.indexOf("index.xhtml") >= 0 || url.indexOf("overviewUser.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
 			} else{
 				chain.doFilter(request, response);
@@ -51,7 +51,7 @@ public class LoginFilter implements Filter {
 			System.out.println("com sessao");
 			//Se a sessao for autenticada e tentar ir ao login / registar, redirecciona para o customer page(?)
 			if(url.indexOf("login.xhtml") >= 0 || url.indexOf("register.xhtml") >= 0){
-				resp.sendRedirect(req.getServletContext().getContextPath() + "/userConsole.xhtml");
+				resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
 			} else if (url.indexOf("logout.xhtml") >= 0) {
 				req.getSession().removeAttribute("AccountBean");
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
