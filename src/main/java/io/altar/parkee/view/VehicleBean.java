@@ -55,10 +55,6 @@ public class VehicleBean implements Serializable {
 		vehicleService.addVehicle(newVehicle);
 	}
 	
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 	public String deleteVehicle() {
 		
 		vehicleService.removeEntity(vehicleService.getVehicleRepository(), activeVehicle);
