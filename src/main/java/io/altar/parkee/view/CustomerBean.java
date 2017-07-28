@@ -61,5 +61,10 @@ public class CustomerBean implements Serializable {
 		customerService.removeEntity(customerService.getCustomerRepository(), activeCustomer);
 		return null;
 	}
+	
+	public void updateCustomer() {
+		
+		customerService.editEntity(customerService.getCustomerRepository(), activeCustomer);
+	}
 
 }
