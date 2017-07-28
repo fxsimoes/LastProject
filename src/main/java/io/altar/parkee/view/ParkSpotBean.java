@@ -57,4 +57,8 @@ public class ParkSpotBean implements Serializable {
 		parkRepo.getParkFromId(1).addToSpots(new ParkSpot());
 	}
 	
+	public void updateParkSpot(){
+		parkSpotService.update(activeParkSpot);
+	}
+	
 }

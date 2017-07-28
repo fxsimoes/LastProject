@@ -26,7 +26,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 	private String status= ""+r.random();
 	@Column(name="SpotRef")
 	private String spotRef;
-	private enum StatusSpot {
+	public enum StatusSpot {
 		FREE, RESERVED, OCCUPIED;
 	}
   
@@ -54,6 +54,7 @@ public class ParkSpot extends EntityModel implements Serializable {
 	
 //----------------------------------------------------------------------------------------------------------//
 	
+	
 	private static final RandomEnum<StatusSpot> r = new RandomEnum<StatusSpot>(StatusSpot.class);
 
 
@@ -64,12 +65,15 @@ public class ParkSpot extends EntityModel implements Serializable {
 
 		public RandomEnum(Class<E> token) {
 			values = token.getEnumConstants();
+				
 		}
 
 	public E random() {
 			return values[RND.nextInt(values.length)];
 		}
 	}
+	
+
 //----------------------------------------------------------------------------------------------------------//	
 	
 	public ParkSpot() {}
@@ -77,7 +81,6 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public ParkSpot(String status, String spotRef){
 		this.status=status;
 		this.spotRef=spotRef;
-		
 	}		
 }
 

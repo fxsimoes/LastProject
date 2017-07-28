@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import io.altar.parkee.model.Park;
 import io.altar.parkee.model.ParkSpot;
+import io.altar.parkee.model.ParkSpot.StatusSpot;
 import io.altar.parkee.service.ParkService;
 
 @Named("ParkBean")
@@ -63,13 +64,16 @@ public class ParkBean implements Serializable {
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
+	
+//--------------------------------------------------------------------------------------//	
+	
 	private char row = 'A';
 	private String spotRef;
-		
-
+	
 	public void addPark(){
 		int rowNumber=1;
-		
+		int j=0;
+	
 		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
 			spotRef=String.valueOf(row)+rowNumber;
 			
@@ -80,9 +84,28 @@ public class ParkBean implements Serializable {
 				
 				ParkSpot p = new ParkSpot();		
 		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
+		
+		while(j<=newPark.getNrOfSpots()){
+		switch(p.getStatus()){
+		
+		case "FREE": System.out.println("FUCK THE WORLD");break;
+		case "RESERVED": System.out.println("CONA");break;
+		case "OCCUPIED": System.out.println("PILA");break;
 		}
+		j++;
+		}
+		
+//		if(){}
+//		while(p.getStatus()=="FREE"){
+//			
+//			System.out.println("CONAA!!");	
+//		}
+		
+		}	
 		parkService.create(newPark);
 	}
+	
+//--------------------------------------------------------------------------------------//	
 	
 	public void updatePark(){
 		parkService.update(activePark);

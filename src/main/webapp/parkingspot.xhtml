@@ -11,7 +11,7 @@
 			<div class="col-xs-10 col-xs-offset-1">
 				<h1>Parking spots</h1>
 				<div class="ParkSpotTable">
-					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots} scrollable="true" scrollHeight="150">
+					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}" scrollable="true" scrollHeight="150">
 						<p:column headerText="ID">
 							<h:outputText value="#{ParkSpot.id}" />
 						</p:column>
@@ -61,8 +61,8 @@
 								<br />
 								<h:outputText value="Status: " />
 								<br />
-								<p:commandButton value="Submit"
-									action="#{ParkSpotBean.addParkSpot()}" />
+							<!-- 	<p:commandButton value="Submit"
+									action="#{ParkSpotBean.addParkSpot()}" /> -->
 							</h:form>
 
 						</div>

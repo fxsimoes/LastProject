@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
+import io.altar.parkee.model.Park;
 import io.altar.parkee.model.ParkSpot;
 import io.altar.parkee.repository.ParkSpotRepository;
 
@@ -25,6 +26,12 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 	public ParkSpot addEntity(ParkSpot newParkSpot){
 		parkSpotList.delete(newParkSpot);
 		return newParkSpot;
+	}
+	
+	@Transactional
+	public ParkSpot update(ParkSpot currentParkSpot){
+		parkSpotList.update(currentParkSpot);
+		return currentParkSpot;
 	}
 	
 	public List<ParkSpot> showSpots(ParkSpotRepository parkSpotList){
