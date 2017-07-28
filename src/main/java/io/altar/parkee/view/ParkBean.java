@@ -130,8 +130,12 @@ public class ParkBean implements Serializable {
 	}
 	
 	public void deletePark() {
-		parkService.remove(activePark);
-	}
-	
+		
+		if(activePark==null){
+			System.out.println("Can't delete anything");
+		}else{
+			parkService.remove(activePark);
+		}
+	}	
 }
 
