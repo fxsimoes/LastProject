@@ -31,6 +31,14 @@ public class Account extends EntityModel implements Serializable {
 	
 	private boolean isAdmin = false;
 	
+	private boolean registered = false;
+	
+	public boolean isRegistered() {
+		return registered;
+	}
+	public void setRegistered(boolean registered) {
+		this.registered = registered;
+	}
 
 	public boolean isAdmin() {
 		return isAdmin;

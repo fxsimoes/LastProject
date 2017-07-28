@@ -1,6 +1,6 @@
 package io.altar.parkee.service;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -10,11 +10,13 @@ import org.primefaces.context.RequestContext;
 
 import io.altar.parkee.model.Account;
 import io.altar.parkee.repository.AccountRepository;
+import java.io.Serializable;
 
 
 @Named("AccountService")
-@RequestScoped
-public class AccountService extends EntityService<Account>{
+@SessionScoped
+public class AccountService extends EntityService<Account> implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	@Inject
 	private AccountRepository accountList;

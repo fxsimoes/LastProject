@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import io.altar.parkee.view.AccountBean;
+import io.altar.parkee.view.RegisterBean;
 
 
 public class LoginFilter implements Filter {
@@ -25,6 +26,9 @@ public class LoginFilter implements Filter {
 
 	@Inject
 	AccountBean accountBean;
+	
+	@Inject
+	RegisterBean registerBean;
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -40,7 +44,7 @@ public class LoginFilter implements Filter {
 //		System.out.println(accountBean.getAccount().getPassword());
 		
 		if (accountBean == null || !accountBean.getAccount().isLoggedIn()){
-			System.out.println("sem sessao");
+		
 			//Se a sessao for nula e tentar aceder a certas paginas, segue para o Login para o utilizador se autenticar
 			if(url.indexOf("index.xhtml") >= 0 || url.indexOf("overviewUser.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
@@ -48,7 +52,7 @@ public class LoginFilter implements Filter {
 				chain.doFilter(request, response);
 			}
 		} else {
-			System.out.println("com sessao");
+			
 			//Se a sessao for autenticada e tentar ir ao login / registar, redirecciona para o customer page(?)
 			if(url.indexOf("login.xhtml") >= 0 || url.indexOf("register.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
@@ -58,6 +62,10 @@ public class LoginFilter implements Filter {
 			} else {
 				chain.doFilter(request, response);
 			}
+		}
+		
+		if (registerBean.getNewAccount().isRegistered()) {
+			resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
 		}
 		
 	}
