@@ -21,6 +21,27 @@ public class ParkSpotBean implements Serializable {
 	private ParkSpot activeParkSpot = new ParkSpot();
 	private ParkRepository parkRepo;
 	
+	
+	public ParkSpot getActiveParkSpot() {
+		return activeParkSpot;
+	}
+
+	public void setActiveParkSpot(ParkSpot activeParkSpot) {
+		this.activeParkSpot = activeParkSpot;
+	}
+
+	public ParkRepository getParkRepo() {
+		return parkRepo;
+	}
+
+	public void setParkRepo(ParkRepository parkRepo) {
+		this.parkRepo = parkRepo;
+	}
+
+	public void setParkSpotService(ParkSpotService parkSpotService) {
+		this.parkSpotService = parkSpotService;
+	}
+
 	public ParkSpot getNewParkSpot() {
 		return newParkSpot;
 	}
@@ -52,9 +73,15 @@ public class ParkSpotBean implements Serializable {
 		return parkSpotService.showSpots(parkSpotService.getParkRepository());
 	}
 	
-	
-	public void addParkSpot(){
-		parkRepo.getParkFromId(1).addToSpots(new ParkSpot());
+//	
+//	public void addParkSpot(){
+//		parkRepo.getParkFromId(1).addToSpots(newParkSpot);
+//		parkSpotService.create(newParkSpot);
+//	}
+//	
+	public void changeStatus(){
+		newParkSpot.setStatus("Occuppied");
+		parkSpotService.update(newParkSpot);
 	}
 	
 }
