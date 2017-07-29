@@ -85,23 +85,6 @@ public class ParkBean implements Serializable {
 				ParkSpot p = new ParkSpot();		
 		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
 		
-		while(j<=newPark.getNrOfSpots()){
-		switch(p.getStatus()){
-		
-		case "FREE": System.out.println("FUCK THE WORLD");break;
-		case "OCCUPIED": System.out.println("PILA");break;
-		case "RESERVED": System.out.println("CONA");break;
-		
-		}
-		j++;
-		}
-		
-//		if(){}
-//		while(p.getStatus()=="FREE"){
-//			
-//			System.out.println("CONAA!!");	
-//		}
-		
 		}	
 		parkService.create(newPark);
 	}
