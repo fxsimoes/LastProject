@@ -68,19 +68,7 @@ public class ParkBean implements Serializable {
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
-<<<<<<< HEAD
-	
-//--------------------------------------------------------------------------------------//	
-	
-	private char row = 'A';
-	private String spotRef;
-	
-=======
 
-
-//-----------------------------------------------------------------------------------------------------//
-
->>>>>>> dev
 	public void addPark(){
 		int rowNumber=1;
 		int j=0;
@@ -91,48 +79,14 @@ public class ParkBean implements Serializable {
 			if(rowNumber%5==0) {
 				row++;
 				rowNumber=0;}
-				rowNumber++;
+				rowNumber++;	
 				
-<<<<<<< HEAD
-				ParkSpot p = new ParkSpot();		
+		ParkSpot p = new ParkSpot();		
 		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
 		
 		}	
-=======
-		newPark.addToSpots(new ParkSpot(status, spotRef));
-		}
->>>>>>> dev
 		parkService.create(newPark);
 	}
-
-//----------------------------------------------------------------------------------------//
-	
-//
-//	public Collection<Park> getParks() {
-//		return parkService.showParks(parkService.getParkRepository());
-//	}
-//	private char row = 'A';
-//	private String spotRef;
-//
-//	public void addPark(){
-//		int rowNumber=1;
-//		
-//		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
-//			spotRef=String.valueOf(row)+rowNumber;
-//			
-//			if(rowNumber%5==0) {
-//				row++;
-//				rowNumber=0;}
-//				rowNumber++;
-//				
-//		newPark.addToSpots(new ParkSpot("Free", spotRef));
-//		}
-//		parkService.create(newPark);
-//	}
-	
-	
-	
-//--------------------------------------------------------------------------------------//	
 	
 	public void updatePark(){
 //		int rowNumber=1;
