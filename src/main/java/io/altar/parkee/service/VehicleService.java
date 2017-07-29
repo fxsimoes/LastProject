@@ -7,6 +7,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.Vehicle;
@@ -34,13 +35,13 @@ public class VehicleService extends EntityService<Vehicle>{
 		return vehicleList;
 	}
 	
-		public List<Vehicle> showCustomersById(VehicleRepository vehicleList){
+	public List<Vehicle> showVehiclesByCustomerName(VehicleRepository vehicleList){
 			
-			List<Vehicle> list = vehicleList.getDbElementsById();
-			return list;
-		}
-		
+		List<Vehicle> list = vehicleList.getDbVehiclesByCustomerName();
+		return list;
+	}
 	
+	@Transactional
 	public Vehicle addVehicle(Vehicle newVehicle){
 		
 		// APAGAR DEPOIS
@@ -52,14 +53,9 @@ public class VehicleService extends EntityService<Vehicle>{
 		return newVehicle;
 	}
 
-	public void removeVehicle(int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Collection<Vehicle> showVehicles(VehicleRepository vehicleList2) {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Vehicle> showVehicles(VehicleRepository vehicleList) {
+		List<Vehicle> list = vehicleList.getDbElements();
+		return list;
 	}
 
 }
