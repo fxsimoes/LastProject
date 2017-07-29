@@ -35,11 +35,11 @@ public class VehicleService extends EntityService<Vehicle>{
 		return vehicleList;
 	}
 	
-	public List<Vehicle> showVehiclesByCustomerName(VehicleRepository vehicleList){
-			
-		List<Vehicle> list = vehicleList.getDbVehiclesByCustomerName();
-		return list;
-	}
+//	public List<Vehicle> showVehiclesByCustomerName(VehicleRepository vehicleList){
+//			
+//		List<Vehicle> list = vehicleList.getDbVehiclesByCustomerName();
+//		return list;
+//	}
 	
 	@Transactional
 	public Vehicle addVehicle(Vehicle newVehicle){

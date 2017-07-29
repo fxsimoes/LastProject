@@ -48,14 +48,17 @@ public class LoginFilter implements Filter {
 			//Se a sessao for nula e tentar aceder a certas paginas, segue para o Login para o utilizador se autenticar
 			if(url.indexOf("index.xhtml") >= 0 || url.indexOf("overviewUser.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
+				
 			} else{
 				chain.doFilter(request, response);
 			}
 		} else {
 			
-			resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
 			
+			System.out.println("ta logado no loginFilter");
+		
 			//Se a sessao for autenticada e tentar ir ao login / registar, redirecciona para o customer page(?)
+			
 			if(url.indexOf("login.xhtml") >= 0 || url.indexOf("register.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
 			} else if (url.indexOf("logout.xhtml") >= 0) {
@@ -66,9 +69,14 @@ public class LoginFilter implements Filter {
 			}
 		}
 		
-		if (registerBean.getNewAccount().isRegistered()) {
-			resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
-		}
+//		if (registerBean.getNewAccount().isRegistered()) {
+//			resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
+//		}
+//		
+//		if (accountBean.getAccount().isLoggedIn()){
+//			resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
+//			System.out.println("Ta logado");
+//		}
 		
 	}
 

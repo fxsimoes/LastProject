@@ -49,15 +49,15 @@ public class VehicleBean implements Serializable {
 		vehicleService.addVehicle(newVehicle);
 	}
 	
-	public void removeNewVehicle(int id){
-		vehicleService.removeVehicle(id);
-		System.out.println(id);
-	}
+//	public void removeNewVehicle(int id){
+//		vehicleService.removeVehicle(id);
+//		System.out.println(id);
+//	}
 	
 	//TESTE
-		public Collection<Vehicle> getCustomersById() {
-			
-			return vehicleService.showCustomersById(vehicleService.getVehicleList());
-		}
+//		public Collection<Vehicle> getCustomersById() {
+//			
+//			return vehicleService.showCustomersById(vehicleService.getVehicleList());
+//		}
 	
 }
