@@ -81,8 +81,8 @@ public class ParkBean implements Serializable {
 				rowNumber=0;}
 				rowNumber++;	
 				
-		ParkSpot p = new ParkSpot();		
-		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
+	
+		newPark.addToSpots(new ParkSpot(spotRef));
 		
 		}	
 		parkService.create(newPark);
