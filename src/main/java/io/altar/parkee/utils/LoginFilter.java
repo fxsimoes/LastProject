@@ -53,6 +53,8 @@ public class LoginFilter implements Filter {
 			}
 		} else {
 			
+			resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
+			
 			//Se a sessao for autenticada e tentar ir ao login / registar, redirecciona para o customer page(?)
 			if(url.indexOf("login.xhtml") >= 0 || url.indexOf("register.xhtml") >= 0){
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
