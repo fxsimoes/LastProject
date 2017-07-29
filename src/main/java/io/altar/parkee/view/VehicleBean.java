@@ -60,6 +60,12 @@ public class VehicleBean implements Serializable {
 		vehicleService.removeEntity(vehicleService.getVehicleRepository(), activeVehicle);
 		return null;
 	}
+	
+	public void updateVehicle() {
+		
+		vehicleService.editEntity(vehicleService.getVehicleRepository(), activeVehicle);
+	}
+	
 	//TESTE
 	public Collection<Vehicle> getVehiclesByCustomerName() {
 			

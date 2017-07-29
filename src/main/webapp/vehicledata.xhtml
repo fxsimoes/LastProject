@@ -82,6 +82,33 @@
 								update="VehicleList" action="#{VehicleBean.addVehicle()}" />
 						</p:outputPanel>
 					</p:dialog>
+					
+					<!-- EDIT -->
+					<p:dialog header="Edit Vehicle" widgetVar="vehicleEdit" modal="true"
+						showEffect="fade" rendered="#{not empty VehicleBean.activeVehicle}"
+						hideEffect="fade" resizable="false">
+						<p:outputPanel id="editVehicle"
+							style="text-align:center; color:black;">
+							<p:panelGrid columns="2" columnClasses="label,value">
+								<h:outputText value="License" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{VehicleBean.activeVehicle.license}" />
+
+								<h:outputText value="Brand" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{VehicleBean.activeVehicle.brand}" />
+
+								<h:outputText value="Color" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{VehicleBean.activeVehicle.color}" />
+
+							</p:panelGrid>
+							<p:commandButton id="VehicleEditSubmit" value="Submit"
+								action="#{VehicleBean.updateVehicle()}" update="VehicleList"
+								oncomplete="PF('vehicleEdit').hide()" />
+						</p:outputPanel>
+					</p:dialog>
+					
 				</h:form>
 			</div>
 		</ui:define>
