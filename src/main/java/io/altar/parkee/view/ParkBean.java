@@ -2,6 +2,7 @@ package io.altar.parkee.view;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Random;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,6 +21,10 @@ public class ParkBean implements Serializable {
 	private Park newPark = new Park();
 	private Park oldPark = new Park();
 	private Park activePark = new Park();
+	private ParkSpot p = new ParkSpot();
+	private String status = p.getStatus();
+	private char row = 'A';
+	private String spotRef;
 	
 	
 	public Park getActivePark() {
@@ -57,12 +62,14 @@ public class ParkBean implements Serializable {
 	
 	@Inject
 	private ParkService parkService;
-
+	
+	
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
-	private char row = 'A';
-	private String spotRef;
+
+
+//-----------------------------------------------------------------------------------------------------//
 
 	public void addPark(){
 		int rowNumber=1;
@@ -75,18 +82,60 @@ public class ParkBean implements Serializable {
 				rowNumber=0;}
 				rowNumber++;
 				
-		newPark.addToSpots(new ParkSpot("Free", spotRef));
+		newPark.addToSpots(new ParkSpot(status, spotRef));
 		}
 		parkService.create(newPark);
 	}
+
+//----------------------------------------------------------------------------------------//
+	
+//
+//	public Collection<Park> getParks() {
+//		return parkService.showParks(parkService.getParkRepository());
+//	}
+//	private char row = 'A';
+//	private String spotRef;
+//
+//	public void addPark(){
+//		int rowNumber=1;
+//		
+//		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
+//			spotRef=String.valueOf(row)+rowNumber;
+//			
+//			if(rowNumber%5==0) {
+//				row++;
+//				rowNumber=0;}
+//				rowNumber++;
+//				
+//		newPark.addToSpots(new ParkSpot("Free", spotRef));
+//		}
+//		parkService.create(newPark);
+//	}
+	
+	
 	
 	public void updatePark(){
+//		int rowNumber=1;
+//		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
+//			spotRef=String.valueOf(row)+rowNumber;
+//			
+//			if(rowNumber%5==0) {
+//				row++;
+//				rowNumber=0;}
+//				rowNumber++;
+//				
+//		newPark.addToSpots(new ParkSpot(status, spotRef));
+//		}
 		parkService.update(activePark);
 	}
 	
 	public void deletePark() {
-		parkService.remove(activePark);
-	}
-	
+		
+		if(activePark==null){
+			System.out.println("Can't delete anything");
+		}else{
+			parkService.remove(activePark);
+		}
+	}	
 }
 

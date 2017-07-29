@@ -33,13 +33,6 @@ public class CustomerService extends EntityService<Customer> {
 		return newCustomer;
 	}
 	
-	//TESTE
-	public List<Customer> showCustomersById(CustomerRepository customerList){
-		
-		List<Customer> list = customerList.getDbElementsById();
-		return list;
-	}
-	
 	public List<Customer> showCustomers(CustomerRepository customerList){
 		
 		List<Customer> list = customerList.getDbElements();
@@ -50,4 +43,5 @@ public class CustomerService extends EntityService<Customer> {
 		
 		customerList.modifyDb(id, customerName, customerContact, nif);
 	}
+	
 }

@@ -3,18 +3,114 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 
 	<ui:composition template="template/common/commonDashboard.xhtml">
 		<ui:define name="content">
+				
 			<div class="col-xs-10 col-xs-offset-1">
-			<div id="customers">
 				<h1>Customers</h1>
-			
-					</div>
-				</div>
+		
+				<h:form>
+					<p:growl id="msg" showDetail="true" />
+					<p:dataTable id="CustomerList" var="customerList"
+						value="#{CustomerBean.customers}" selectionMode="single" 
+						selection="#{CustomerBean.activeCustomer}" rowKey="#{customerList.id}"
+						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+						paginator="true" rows="10" style="margin-bottom:20px">
+							
+						<f:facet name="header">
+							<p:commandButton update="CustomerList" value="Add"
+								oncomplete="PF('customerAdd').show()" />
+							<p:commandButton update="CustomerList" value="Edit"
+								oncomplete="PF('customerEdit').show()" />
+		
+							<!-- DELETE -->
+							<p:commandButton value="Delete" update="CustomerList"
+								action="#{CustomerBean.deleteCustomer()}">
+		<!-- 						<p:confirm header="Confirmation" message="Are you sure?" -->
+		<!-- 							icon="ui-icon-alert" /> -->
+							</p:commandButton>
+		<!-- 					<p:confirmDialog global="true" showEffect="fade" -->
+		<!-- 						hideEffect="fade" modal="true" resizable="false"> -->
+		<!-- 						<p:commandButton value="Yes" type="button" -->
+		<!-- 							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" /> -->
+		<!-- 						<p:commandButton value="No" type="button" -->
+		<!-- 							styleClass="ui-confirmdialog-no" icon="ui-icon-close" /> -->
+		<!-- 					</p:confirmDialog> -->
+						</f:facet>
+		
+						<p:column headerText="ID">
+							<h:outputText value="#{customerList.id}" />
+						</p:column>
+		
+						<p:column headerText="Name">
+							<h:outputText value="#{customerList.customerName}" />
+						</p:column>
+		
+						<p:column headerText="Contact">
+							<h:outputText value="#{customerList.customerContact}" />
+						</p:column>
+		
+						<p:column headerText="Nif">
+							<h:outputText value="#{customerList.nif}" />
+						</p:column>
+					</p:dataTable>
+		
+					<p:dialog header="Add Customer" widgetVar="customerAdd" modal="true"
+						showEffect="fade" hideEffect="fade" resizable="false">
+						<p:outputPanel id="addCustomer"
+							style="text-align:center; color:black;">
+							<p:panelGrid columns="2" columnClasses="label,value">
+								<h:outputText value="Name" />
+								<p:inputText styleClass="input"
+									value="#{CustomerBean.newCustomer.customerName}" />
+		
+								<h:outputText value="Contact" />
+								<p:inputText styleClass="input"
+									value="#{CustomerBean.newCustomer.customerContact}" />
+		
+								<h:outputText value="Nif" />
+								<p:inputText styleClass="input"
+									value="#{CustomerBean.newCustomer.nif}" />
+		
+							</p:panelGrid>
+							<p:commandButton id="CustomerAddSubmit" value="Submit"
+								update="CustomerList" action="#{CustomerBean.addCustomer()}" />
+						</p:outputPanel>
+					</p:dialog>
+					
+					<!-- EDIT -->
+					<p:dialog header="Edit Customer" widgetVar="customerEdit" modal="true"
+						showEffect="fade" rendered="#{not empty CustomerBean.activeCustomer}"
+						hideEffect="fade" resizable="false">
+						<p:outputPanel id="editCustomer"
+							style="text-align:center; color:black;">
+							<p:panelGrid columns="2" columnClasses="label,value">
+								<h:outputText value="Name" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{CustomerBean.activeCustomer.customerName}" />
+
+								<h:outputText value="Contact" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{CustomerBean.activeCustomer.customerContact}" />
+
+								<h:outputText value="Nif" />
+								<p:inputText styleClass="input" readonly="false"
+									value="#{CustomerBean.activeCustomer.nif}" />
+
+							</p:panelGrid>
+							<p:commandButton id="CostumerEditSubmit" value="Submit"
+								action="#{CustomerBean.updateCustomer()}" update="CustomerList"
+								oncomplete="PF('customerEdit').hide()" />
+						</p:outputPanel>
+					</p:dialog>
+					
+				</h:form>
+			</div>
 		</ui:define>
 	</ui:composition>
 
