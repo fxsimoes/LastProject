@@ -7,6 +7,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Customer;
 import io.altar.parkee.model.Vehicle;
@@ -40,6 +41,7 @@ public class VehicleService extends EntityService<Vehicle>{
 		return list;
 	}
 	
+	@Transactional
 	public Vehicle addVehicle(Vehicle newVehicle){
 		
 		// APAGAR DEPOIS
