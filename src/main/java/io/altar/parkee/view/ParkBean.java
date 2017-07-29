@@ -89,8 +89,9 @@ public class ParkBean implements Serializable {
 		switch(p.getStatus()){
 		
 		case "FREE": System.out.println("FUCK THE WORLD");break;
-		case "RESERVED": System.out.println("CONA");break;
 		case "OCCUPIED": System.out.println("PILA");break;
+		case "RESERVED": System.out.println("CONA");break;
+		
 		}
 		j++;
 		}
