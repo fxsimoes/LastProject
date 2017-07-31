@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import io.altar.parkee.model.Account;
 import io.altar.parkee.service.AccountService;
@@ -28,13 +29,15 @@ public class AccountBean implements Serializable {
 		this.account = account;
 	}
 
-	public void action(){
+	public void login(){
 		
-		
-		
-		
-		accountService.action(account);
+		accountService.login(account);
 	}
+	
+//	public void logout(){
+//		
+//		accountService.logout(account);
+//	}
 	
 
 	

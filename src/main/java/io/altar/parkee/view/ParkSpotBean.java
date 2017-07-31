@@ -81,7 +81,7 @@ public class ParkSpotBean implements Serializable {
 //	
 	public void changeStatus(){
 		newParkSpot.setStatus("Occuppied");
-		parkSpotService.update(newParkSpot);
+		//parkSpotService.update(newParkSpot);
 	}
 	
 }
