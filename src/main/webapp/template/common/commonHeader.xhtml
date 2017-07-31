@@ -22,15 +22,17 @@
 							<b:navLink value="User" href="overviewUser.xhtml"></b:navLink>
 							<b:navLink value="Admin" href="overviewAdmin.xhtml"></b:navLink>
 						</b:dropMenu>
-						<b:navLink value="Home" href="index.xhtml"></b:navLink>
+						<b:navLink value="Home" href="index.xhtml"></b:navLink>s
 						<b:navLink value="About" href="#about"></b:navLink>
 						<b:navLink value="Contact" href="#contact"></b:navLink>
 					</b:navbarLinks>
 					
 					<b:navbarLinks pull="right">
 						<b:navLink value="Search for Parking" href="index.xhtml"></b:navLink>
-						<b:navLink value="Login" href="login.xhtml"></b:navLink>
-						<b:navLink value="Sign Up" href="register.xhtml"></b:navLink>
+						<b:navLink value="Login" href="login.xhtml" rendered="#{!AccountBean.account.loggedIn}"></b:navLink>
+						<b:navLink value="Sign Up" href="register.xhtml" rendered="#{!AccountBean.account.loggedIn}"></b:navLink>
+						<b:navLink value="User: #{AccountBean.account.email}" href="index.xhtml" rendered="#{AccountBean.account.loggedIn}"></b:navLink>
+						
 					</b:navbarLinks>
 				</b:navBar>
 

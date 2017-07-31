@@ -36,10 +36,10 @@ public class AccountRepository extends EntityRepository<Account> {
 			System.out.println(l);
 			
 			if(l != null){
-				System.out.println("passa verdadeiro o login");
+			
 				return true;
 			}
-			System.out.println("passa verdadeiro o login");
+			
 			return false;
 			
 		}catch (Exception e){

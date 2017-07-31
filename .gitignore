@@ -30,3 +30,4 @@ target/*
 .idea/artifacts/Parkee_war_exploded.xml
 .idea/libraries/bootstrap_1_0_10.xml
 .idea/libraries/bootstrap_1_0_101.xml
+pom.xml

@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import io.altar.parkee.model.Account;
 import io.altar.parkee.service.RegisterService;
+import io.altar.parkee.utils.LoginFilter;
 
 @Named("RegisterBean")
 @RequestScoped
@@ -24,5 +25,6 @@ public class RegisterBean {
 	
 	public void register(){
 		registerService.addAccount(newAccount);
+		
 	}
 }

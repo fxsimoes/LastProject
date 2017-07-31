@@ -22,21 +22,18 @@ public class AccountService extends EntityService<Account> implements Serializab
 	private AccountRepository accountList;
 	
 	public void login(Account account){
-//		RequestContext context = RequestContext.getCurrentInstance();
-//		context.execute(script);
-		
-//		account.
-		System.out.println("teste acc service");
+
 		
 		if(!account.isLoggedIn()){
 		
 		if(accountList.loginControl(account.getEmail(), account.getPassword())){
-			System.out.println("passa no login control");
-			account = new Account();
 			account.setLoggedIn(true);
+			
+			RequestContext.getCurrentInstance().update("growl");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.FACES_MESSAGES, "Login Sucessful"));
+			
 		} else {
-		
-			System.out.println("NAO passa no login control");
 			
 			RequestContext.getCurrentInstance().update("growl");
 			FacesContext context = FacesContext.getCurrentInstance();

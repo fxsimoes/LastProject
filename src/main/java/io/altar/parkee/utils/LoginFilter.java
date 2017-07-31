@@ -25,10 +25,10 @@ public class LoginFilter implements Filter {
 	}
 
 	@Inject
-	AccountBean accountBean;
+	RegisterBean registerBean;
 	
 	@Inject
-	RegisterBean registerBean;
+	AccountBean accountBean;
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -54,14 +54,9 @@ public class LoginFilter implements Filter {
 			}
 		} else {
 			
-			
-			System.out.println("ta logado no loginFilter");
-		
 			//Se a sessao for autenticada e tentar ir ao login / registar, redirecciona para o customer page(?)
 			
-			if(url.indexOf("login.xhtml") >= 0 || url.indexOf("register.xhtml") >= 0){
-				resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
-			} else if (url.indexOf("logout.xhtml") >= 0) {
+			if (url.indexOf("logout.xhtml") >= 0) {
 				req.getSession().removeAttribute("AccountBean");
 				resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
 			} else {
@@ -69,14 +64,11 @@ public class LoginFilter implements Filter {
 			}
 		}
 		
-//		if (registerBean.getNewAccount().isRegistered()) {
-//			resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
-//		}
-//		
-//		if (accountBean.getAccount().isLoggedIn()){
-//			resp.sendRedirect(req.getServletContext().getContextPath() + "/overviewUser.xhtml");
-//			System.out.println("Ta logado");
-//		}
+		
+		if (registerBean.getNewAccount().isRegistered()) {
+			resp.sendRedirect(req.getServletContext().getContextPath() + "/login.xhtml");
+		}
+
 		
 	}
 
