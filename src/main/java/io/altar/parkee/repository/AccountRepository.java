@@ -34,10 +34,14 @@ public class AccountRepository extends EntityRepository<Account> {
 //			Login l = (Login) em.createNativeQuery("SELECT * FROM LOGIN WHERE Username = '"+ username + "' and Password = '" + password + "'", Login.class).getResultList().get(0);
 //			Login l = (Login) em.createNativeQuery("SELECT * FROM LOGIN", Login.class).getResultList().get(0);
 			System.out.println(l);
+			
 			if(l != null){
+			
 				return true;
 			}
+			
 			return false;
+			
 		}catch (Exception e){
 			System.out.println("teste "+ e.getMessage());
 			return false;
