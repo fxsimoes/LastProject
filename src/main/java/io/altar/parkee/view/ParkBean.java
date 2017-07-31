@@ -23,8 +23,7 @@ public class ParkBean implements Serializable {
 	private Park activePark = new Park();
 	private char row = 'A';
 	private String spotRef;
-	
-	
+
 	public Park getActivePark() {
 		return activePark;
 	}
@@ -32,7 +31,6 @@ public class ParkBean implements Serializable {
 	public void setActivePark(Park activePark) {
 		this.activePark = activePark;
 	}
-
 
 	public Park getOldPark() {
 		return oldPark;
@@ -57,91 +55,88 @@ public class ParkBean implements Serializable {
 	public void setParkService(ParkService parkService) {
 		this.parkService = parkService;
 	}
-	
+
 	@Inject
 	private ParkService parkService;
-	
-	
+
 	public Collection<Park> getParks() {
 		return parkService.showParks(parkService.getParkRepository());
 	}
-	private char row = 'A';
-	private String spotRef;
-	
-	
-	ParkSpot p = new ParkSpot();
-	private String status = p.getStatus();
 
-//-----------------------------------------------------------------------------------------------------//
+	// -----------------------------------------------------------------------------------------------------//
 
-	public void addPark(){
-		int rowNumber=1;
-		
-		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
-			spotRef=String.valueOf(row)+rowNumber;
-			
-			if(rowNumber%5==0) {
+	public void addPark() {
+		int rowNumber = 1;
+		int j = 0;
+
+		for (int i = 1; i <= newPark.getNrOfSpots(); i++) {
+			spotRef = String.valueOf(row) + rowNumber;
+
+			if (rowNumber % 5 == 0) {
 				row++;
-				rowNumber=0;}
-				rowNumber++;
-				
-		newPark.addToSpots(new ParkSpot(status, spotRef));
-				ParkSpot p = new ParkSpot();
-		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
+				rowNumber = 0;
+			}
+			rowNumber++;
+
+			ParkSpot spot = new ParkSpot(spotRef);
+			newPark.addToSpots(spot);
+
+			if (spot.getStatus() == "FREE") {
+				j++;
+			}
+
 		}
+		
 		parkService.create(newPark);
 	}
 
-//----------------------------------------------------------------------------------------//
-	
-//
-//	public Collection<Park> getParks() {
-//		return parkService.showParks(parkService.getParkRepository());
-//	}
-//	private char row = 'A';
-//	private String spotRef;
-//
-//	public void addPark(){
-//		int rowNumber=1;
-//		
-//		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
-//			spotRef=String.valueOf(row)+rowNumber;
-//			
-//			if(rowNumber%5==0) {
-//				row++;
-//				rowNumber=0;}
-//				rowNumber++;
-//				
-//		newPark.addToSpots(new ParkSpot("Free", spotRef));
-//		}
-//		parkService.create(newPark);
-//	}
-	
-	
-	
-	public void updatePark(){
-//		int rowNumber=1;
-//		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
-//			spotRef=String.valueOf(row)+rowNumber;
-//			
-//			if(rowNumber%5==0) {
-//				row++;
-//				rowNumber=0;}
-//				rowNumber++;
-//				
-//		newPark.addToSpots(new ParkSpot(status, spotRef));
-//		}
+	// ----------------------------------------------------------------------------------------//
+
+	//
+	// public Collection<Park> getParks() {
+	// return parkService.showParks(parkService.getParkRepository());
+	// }
+	// private char row = 'A';
+	// private String spotRef;
+	//
+	// public void addPark(){
+	// int rowNumber=1;
+	//
+	// for(int i=1; i<=newPark.getNrOfSpots(); i++){
+	// spotRef=String.valueOf(row)+rowNumber;
+	//
+	// if(rowNumber%5==0) {
+	// row++;
+	// rowNumber=0;}
+	// rowNumber++;
+	//
+	// newPark.addToSpots(new ParkSpot("Free", spotRef));
+	// }
+	// parkService.create(newPark);
+	// }
+
+	public void updatePark() {
+		// int rowNumber=1;
+		// for(int i=1; i<=newPark.getNrOfSpots(); i++){
+		// spotRef=String.valueOf(row)+rowNumber;
+		//
+		// if(rowNumber%5==0) {
+		// row++;
+		// rowNumber=0;}
+		// rowNumber++;
+		//
+		// newPark.addToSpots(new ParkSpot(status, spotRef));
+		// }
 		parkService.update(newPark);
 		parkService.update(activePark);
 	}
-	
+
 	public void deletePark() {
-		
-		if(activePark==null){
+
+		if (activePark == null) {
 			System.out.println("Can't delete anything");
-		}else{
+		} else {
 			parkService.remove(activePark);
 		}
-	}	
+	}
 }
-

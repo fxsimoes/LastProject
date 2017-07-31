@@ -77,8 +77,11 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public ParkSpot(String status, String spotRef){
 		this.status=status;
 		this.spotRef=spotRef;
-		
 	}		
+	
+	public ParkSpot(String spotRef) {
+		this.spotRef=spotRef;	
+	}
 }
 
 
