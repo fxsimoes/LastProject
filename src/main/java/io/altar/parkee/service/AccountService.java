@@ -21,38 +21,27 @@ public class AccountService extends EntityService<Account> implements Serializab
 	@Inject
 	private AccountRepository accountList;
 	
-	public String login(Account account){
+	public void login(Account account){
 //		RequestContext context = RequestContext.getCurrentInstance();
 //		context.execute(script);
 		
 //		account.
 		System.out.println("teste acc service");
 		
+		if(!account.isLoggedIn()){
+		
 		if(accountList.loginControl(account.getEmail(), account.getPassword())){
 			System.out.println("passa no login control");
+			account = new Account();
 			account.setLoggedIn(true);
-			return "overviewUser.xhtml";
-		} 
+		} else {
 		
-		System.out.println("NAO passa no login control");
-		RequestContext.getCurrentInstance().update("growl");
-		FacesContext context = FacesContext.getCurrentInstance();
-		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Error", "Username or Password invalid!"));
-		return "login.xhtml";
-	
-		
-		
-//	public String logout(account){
-//		return "";
-//	}
-		
+			System.out.println("NAO passa no login control");
 			
-		
-	
-	
+			RequestContext.getCurrentInstance().update("growl");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Error", "Username or Password invalid!"));
+			}
+		}
 	}
-
-
-	
-	
 }
