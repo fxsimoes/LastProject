@@ -10,6 +10,7 @@
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
 				<h1>Parking spots</h1>
+				<div class="tabelaCSS">
 				<div class="ParkSpotTable">
 					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}" scrollable="true" scrollHeight="150">
 						<p:column headerText="ID">
@@ -18,18 +19,21 @@
 						<p:column headerText="Park ID">
 							<h:outputText value="#{ParkSpot.park.id}" />
 						</p:column>
+						<p:column headerText="Park Name">
+							<h:outputText value="#{ParkSpot.park.parkName}" />
+						</p:column>
+						<p:column headerText="Spot Ref">
+							<h:outputText value="#{ParkSpot.spotRef}" />
+						</p:column>
 						<p:column headerText="Status">
 							<h:outputText value="#{ParkSpot.status}" />
 						</p:column>
 					</p:dataTable>
+					</div>
 				</div>
 				<div class="AdminActions flex-container flex-item">
 					<div class="Add flex-item">
-						<h3>
-							<span class="glyphicon glyphicon-th"></span><b> Add parking
-								spot details</b>
-						</h3>
-						<p></p>
+					
 						<h:form>
 							<br />
 							<h:outputText value="SpotRef: " />
@@ -44,13 +48,13 @@
 							<br />
 						</h:form>
 					</div>
+
+					<div class="divider"></div>
+
+
 					<div class="AdminActions flex-container flex-item">
 						<div class="Add flex-item">
-							<h3>
-								<span class="glyphicon glyphicon-th"></span><b> Add parking
-									spot details</b>
-							</h3>
-							<p></p>
+						
 							<h:form>
 								<br />
 								<h:outputText value="InputSpotNum: " />

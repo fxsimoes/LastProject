@@ -73,12 +73,11 @@ public class ParkSpotBean implements Serializable {
 		return parkSpotService.showSpots(parkSpotService.getParkRepository());
 	}
 	
-//	
-//	public void addParkSpot(){
-//		parkRepo.getParkFromId(1).addToSpots(newParkSpot);
-//		parkSpotService.create(newParkSpot);
-//	}
-//	
+	
+	public void addParkSpot(){
+		parkRepo.getParkFromId(1).addToSpots(newParkSpot);
+	}
+	
 	public void changeStatus(){
 		newParkSpot.setStatus("Occuppied");
 		//parkSpotService.update(newParkSpot);

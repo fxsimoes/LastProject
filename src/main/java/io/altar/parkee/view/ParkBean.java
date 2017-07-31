@@ -76,11 +76,12 @@ public class ParkBean implements Serializable {
 			if(rowNumber%5==0) {
 				row++;
 				rowNumber=0;}
-				rowNumber++;	
+				rowNumber++;		
+
 				
 		newPark.addToSpots(new ParkSpot(spotRef));
-		
-		}	
+		}
+
 		parkService.create(newPark);
 	}
 	

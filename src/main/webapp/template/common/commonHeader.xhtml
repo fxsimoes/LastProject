@@ -18,19 +18,21 @@
 						<b:navLink class="logotipo" href="index.xhtml">
 						<span id="glyphLogo" class="glyphicon glyphicon-map-marker"> </span><span>PARKEET</span>
 						</b:navLink>
-						<b:dropMenu value="Menu">
-							<b:navLink value="User" href="overviewUser.xhtml"></b:navLink>
-							<b:navLink value="Admin" href="overviewAdmin.xhtml"></b:navLink>
-						</b:dropMenu>
-						<b:navLink value="Home" href="index.xhtml"></b:navLink>
-						<b:navLink value="About" href="#about"></b:navLink>
-						<b:navLink value="Contact" href="#contact"></b:navLink>
+						
+						<b:navLink value="Home" icon="home" href="index.xhtml"></b:navLink>
+<!-- 						<b:dropMenu value="Menu"> -->
+<!-- 							<b:navLink value="User" icon="user" href="overviewUser.xhtml"></b:navLink> -->
+<!-- 							<b:navLink value="Admin" href="overviewAdmin.xhtml"></b:navLink> -->
+<!-- 						</b:dropMenu> -->
+						<b:navLink value="Customer" icon="user" href="overviewUser2.xhtml"></b:navLink>
+						<b:navLink value="Parkeet Admin" icon="road" href="overviewAdmin.xhtml"></b:navLink>
+						<b:navLink value="Map" icon="globe" href="map2.xhtml"></b:navLink>
 					</b:navbarLinks>
 					
-					<b:navbarLinks pull="right">
-						<b:navLink value="Search for Parking" href="index.xhtml"></b:navLink>
-						<b:navLink value="Login" href="login.xhtml"></b:navLink>
-						<b:navLink value="Sign Up" href="register.xhtml"></b:navLink>
+					<b:navbarLinks pull="right" class="navbarright">
+						<b:navLink value="Search for Parking" icon="search" href="findParking.xhtml"></b:navLink>
+						<b:navLink value="Login" icon="log-in" href="login.xhtml"></b:navLink>
+						<b:navLink value="Sign Up" icon="log-in" href="register.xhtml"></b:navLink>
 					</b:navbarLinks>
 				</b:navBar>
 

@@ -16,6 +16,7 @@
 		
 				<h:form>
 					<p:growl id="msg" showDetail="true" />
+		<div class="tabelaCSS">
 					<p:dataTable id="CustomerList" var="customerList"
 						value="#{CustomerBean.customers}" selectionMode="single" 
 						selection="#{CustomerBean.activeCustomer}" rowKey="#{customerList.id}"
@@ -55,11 +56,11 @@
 							<h:outputText value="#{customerList.customerContact}" />
 						</p:column>
 		
-						<p:column headerText="Nif">
+						<p:column headerText="NIF">
 							<h:outputText value="#{customerList.nif}" />
 						</p:column>
 					</p:dataTable>
-		
+		</div>
 					<p:dialog header="Add Customer" widgetVar="customerAdd" modal="true"
 						showEffect="fade" hideEffect="fade" resizable="false">
 						<p:outputPanel id="addCustomer"

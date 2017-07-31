@@ -9,16 +9,61 @@
 	<ui:composition template="template/common/commonLayoutBlured.xhtml">
 		<ui:define name="content">
 			<div class="col-xs-12">
-				
-				<div class="container searchResults">
 
-					<hgroup class="mb20">
-						<h1>Parking spots near -user input-</h1>
-						<h6 class="lead">
-							<strong class="text-danger">3</strong> results were found for the
-							search for <strong class="text-danger">Lorem</strong>
-						</h6>
-					</hgroup>
+				<div class="container searchResults">
+					<h4>Parking spots available</h4>
+					<div class="parksTable col-xs-8 col-xs-offset-2">
+						<h2>Choose a Park to make your reservation</h2>
+						<h:form id="form">
+							<p:growl id="msgs" showDetail="true" />
+							<div class="tabelaCSS">
+								<p:dataTable id="ParkList" var="pList"
+									value="#{ParkBean.getParks()}"
+									selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
+									style="margin-bottom:20px">
+									<f:facet name="header">
+
+									</f:facet>
+									<p:column selectionMode="single"
+										style="width:50px;text-align:center" />
+
+									<p:column headerText="ID" style="width:50px;text-align:center">
+										<h:outputText value="#{pList.id}" />
+									</p:column>
+
+									<p:column headerText="Name" style="text-align:center">
+										<h:outputText value="#{pList.parkName}" />
+									</p:column>
+
+									<p:column headerText="Hourly Price" style="text-align:center">
+										<h:outputText value="#{pList.hourlyPrice}" />
+									</p:column>
+
+									<p:column headerText="Nr of spots" style="text-align:center">
+										<h:outputText value="#{pList.nrOfSpots}" />
+									</p:column>
+									
+									<p:column headerText="Nr of free spots" style="text-align:center">
+										<h:outputText value="#{pList.nrOfSpots}" />
+									</p:column>
+
+									<p:column headerText="Location" style="text-align:center">
+										<h:outputText value="#{pList.parkLocation}" />
+									</p:column>
+
+									<f:facet name="footer">
+
+										<p:link outcome="overviewUser2" value="+ Reserve Spot">
+											<f:param name="user" value="10" />
+										</p:link>
+
+									</f:facet>
+								</p:dataTable>
+							</div>
+						</h:form>
+					</div>
+
+
 
 					<section class="col-xs-12 col-sm-6 col-md-12">
 						<article class="search-result row">
@@ -27,20 +72,18 @@
 									src="resources/img/parque1.jpg" alt="Lorem ipsum" /></a>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-2">
-								<ul class="meta-search" style="padding-top:10px; list-style-type: none;">
+								<ul class="meta-search"
+									style="padding-top: 10px; list-style-type: none;">
 									<li><i class="glyphicon glyphicon-calendar"></i> <span>01/01/2017</span></li>
 									<li><i class="glyphicon glyphicon-time"></i> <span>4:28
 											pm</span></li>
-									<li><i class="glyphicon glyphicon-road"></i> <span>15/90 spots</span></li>
+									<li><i class="glyphicon glyphicon-road"></i> <span>15/90
+											spots</span></li>
 								</ul>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-								<h6>
-									Parque A
-								</h6>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatem, exercitationem, suscipit, distinctio, qui sapiente
-									aspernatu</p>
+								<h6>Parque A</h6>
+								<p>parque A</p>
 								<span class="plus"><a href="#" title="Lorem ipsum"><i
 										class="glyphicon glyphicon-plus"></i></a></span>
 							</div>
@@ -53,20 +96,18 @@
 									src="resources/img/parque2.jpg" alt="Lorem ipsum" /></a>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-2">
-								<ul class="meta-search" style="padding-top:10px; list-style-type: none;">
+								<ul class="meta-search"
+									style="padding-top: 10px; list-style-type: none;">
 									<li><i class="glyphicon glyphicon-calendar"></i> <span>01/01/2017</span></li>
 									<li><i class="glyphicon glyphicon-time"></i> <span>8:32
 											pm</span></li>
-									<li><i class="glyphicon glyphicon-road"></i> <span>50/90 spots</span></li>
+									<li><i class="glyphicon glyphicon-road"></i> <span>50/90
+											spots</span></li>
 								</ul>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-7">
-								<h6>
-									Parque B
-								</h6>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatem, exercitationem, suscipit, distinctio, qui sapiente
-									aspernatur</p>
+								<h6>Parque B</h6>
+								<p>parque B</p>
 								<span class="plus"><a href="#" title="Lorem ipsum"><i
 										class="glyphicon glyphicon-plus"></i></a></span>
 							</div>
@@ -79,20 +120,18 @@
 									src="resources/img/parque3.jpg" alt="Lorem ipsum" /></a>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-2">
-								<ul class="meta-search" style="padding-top:10px; list-style-type: none;">
+								<ul class="meta-search"
+									style="padding-top: 10px; list-style-type: none;">
 									<li><i class="glyphicon glyphicon-calendar"></i> <span>01/01/2017</span></li>
 									<li><i class="glyphicon glyphicon-time"></i> <span>10:13
 											am</span></li>
-									<li><i class="glyphicon glyphicon-road"></i> <span>65/90 spots</span></li>
+									<li><i class="glyphicon glyphicon-road"></i> <span>65/90
+											spots</span></li>
 								</ul>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-7">
-								<h6>
-								Parque C
-								</h6>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatem, exercitationem, suscipit, distinctio, qui sapiente
-									aspernatur.</p>
+								<h6>Parque C</h6>
+								<p>parque C.</p>
 								<span class="plus"><a href="#" title="Lorem ipsum"><i
 										class="glyphicon glyphicon-plus"></i></a></span>
 							</div>

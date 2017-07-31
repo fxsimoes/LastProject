@@ -34,6 +34,19 @@ public class Park extends EntityModel implements Serializable {
 //	private int 
 
 
+	@Column(name= "NumberOfFreeSpots")
+	private int numFreeSpot=(int) (Math.random()*70);
+	
+	
+	
+	public int getNumFreeSpot() {
+		return numFreeSpot;
+	}
+
+	public void setNumFreeSpot(int numFreeSpot) {
+		this.numFreeSpot = numFreeSpot;
+	}
+
 	public void addToSpots(ParkSpot spot){
 		spot.setPark(this);
 		this.parkSpots.add(spot);
