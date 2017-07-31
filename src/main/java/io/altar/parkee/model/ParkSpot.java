@@ -24,6 +24,8 @@ public class ParkSpot extends EntityModel implements Serializable {
     
     private String cona = r.random().toString();
     
+ 
+    
 	@Column(name="Status")
 	private String status= cona;
 	@Column(name="SpotRef")
@@ -77,6 +79,25 @@ public class ParkSpot extends EntityModel implements Serializable {
 	}
 		
 //----------------------------------------------------------------------------------------------------------//	
+	public static int j=0;
+	
+//	
+//	public int getJ() {
+//		return j;
+//	}
+//
+//	public void setJ(int j) {
+//		this.j = j;
+//	}
+
+//	public int cenas(){
+//		
+//		if(status=="FREE"){
+//			j++;
+//		}
+//		System.out.println(j);
+//		return j;	
+//	}
 	
 	public ParkSpot() {}
 	
@@ -88,7 +109,12 @@ public class ParkSpot extends EntityModel implements Serializable {
 	
 	public ParkSpot(String spotRef){
 		this.spotRef=spotRef;
-		
+		if(status=="FREE"){
+			j++;
+		}
+		System.out.println(j);
+		return;
+		//cenas();
 	}
 }
 
