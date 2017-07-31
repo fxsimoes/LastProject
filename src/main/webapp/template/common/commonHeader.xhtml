@@ -24,8 +24,8 @@
 <!-- 							<b:navLink value="User" icon="user" href="overviewUser.xhtml"></b:navLink> -->
 <!-- 							<b:navLink value="Admin" href="overviewAdmin.xhtml"></b:navLink> -->
 <!-- 						</b:dropMenu> -->
-						<b:navLink value="Customer" icon="user" href="overviewUser.xhtml"></b:navLink>
-						<b:navLink value="Parkeet Admin" icon="road" href="overviewAdmin.xhtml"></b:navLink>
+						<b:navLink value="Customer" icon="user" href="overviewUser.xhtml" rendered="#{!AccountBean.account.admin}"></b:navLink>
+						<b:navLink value="Parkeet Admin" icon="road" href="overviewAdmin.xhtml" rendered="#{AccountBean.account.admin}"></b:navLink>
 						<b:navLink value="Map" icon="globe" href="map2.xhtml"></b:navLink>
 					</b:navbarLinks>
 					

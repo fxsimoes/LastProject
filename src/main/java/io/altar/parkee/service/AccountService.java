@@ -29,9 +29,13 @@ public class AccountService extends EntityService<Account> implements Serializab
 		if(accountList.loginControl(account.getEmail(), account.getPassword())){
 			account.setLoggedIn(true);
 			
+			if(account.getEmail().equals("admin")){
+				account.setAdmin(true);
+			}
+			
 			RequestContext.getCurrentInstance().update("growl");
 			FacesContext context = FacesContext.getCurrentInstance();
-			context.addMessage(null, new FacesMessage(FacesMessage.FACES_MESSAGES, "Login Sucessful"));
+			context.addMessage(null, new FacesMessage("Sucess", "Login Sucessfull!"));
 			
 		} else {
 			
