@@ -1,8 +1,7 @@
 @CHARSET "UTF-8";
 
+/* ----------------/MAP-----------------*/
 
-  /* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
 #map {
   height: 100%;
 }
@@ -82,32 +81,101 @@
 
 }    
 
+/* ----------------/MAP-----------------*/
 
 
+/* ----------------Sign In-----------------*/
+
+.form-signin {
+	margin: 0 auto;
+	margin-top: 100px;
+	max-width: 330px;
+	background-color: rgba(245, 245, 245, 0.6);
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;	
+}
 
 
+.form-signin-heading{
+	background-color: rgba(245, 245, 245, 0.7);
+	padding: 10px;
+	padding-top: 15px;
+	margin-top: -10px;
+	margin-left: -20px;
+	margin-right: -20px;
+	height: 50px;
+}
+
+.checkbox {
+	background-color: rgba(245, 245, 245, 0.7);
+	padding: 5px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.ui-growl-item{ 
+	background-color: white !important;  
+	} 
+
+#growl_container{
+	   z-index: 1031 !important;
+}
+
+.ui-growl-message{
+	text-shadow: 0px 0px 0px #333 !important;
+}
+
+.signIn .ui-dialog {
+    color: black !important;
+    background-color: white !important;
+    opacity: 0.9 !important;
+    border-color: transparent !important;
+}
+
+.ui-growl {
+    position: absolute !important;
+    top: 42% !important;
+    left: 50% !important;
+    right: 50% !important;
+    width: 301px !important;   
+    margin-top: 200px;
+  	margin-left: -152px; 
+}
+
+/* ---------------- /Sign In-----------------.*/
+
+.navbar-left>li>a:hover, .navbar-right>li>a:hover{
+/* 	background-color: #428bca !important; */
+	color: #428bca !important;
+}
 
 
+.navbar-left>li>a, .navbar-right>li>a {
+	color: white !important;
+}
+
+.navbar .glyphicon{
+	padding-right: 3px !important;
+	color: #428bca !important;
+}
 
 
+.nav-list>.active>a, .nav-sidebar>.active>a:hover, .nav-sidebar>.active>a:focus
+	{
+	background-color: #428bca;
+	color: #000000;
+}
 
+.nav-list>li>a{
+	color: white !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.nav-list>li>a:hover{
+	color: black !important;
+}
 
 
 
@@ -123,22 +191,13 @@
 
 }
 
-
 /*Bootfaces*/
-.nav>li>a {
-	color: white !important;
-}
+
 
 .navbar, .navbar-inverse, .navbar-fixed-top {
 	background-color: rgba(34, 34, 34, 1) !important;
 	border-bottom: 0px solid !important;
 	filter: drop-shadow(10px 5px 5px black);
-}
-
-.form-signin {
-	margin: 0 auto;
-	margin-top: 100px;
-	max-width: 330px;
 }
 
 .sidebar {
@@ -197,8 +256,8 @@
 }
 
 #glyphLogo {
-	font-size: 22px;
-	padding-right: 5px;
+	font-size: 23px;
+	padding-right: 10px;
 	color: #428bca;
 }
 
@@ -226,6 +285,7 @@
 }
 
 /*TABELA PRIMEFACES */
+
 .ui-datatable-header, .ui-widget-header, .ui-corner-top, .ui-paginator, .ui-paginator-top, .ui-widget-header {
 	color: #800000 !important;
 	background-color: rgba(245, 245, 245, 0.3);
@@ -262,6 +322,56 @@
 	left: 576.5px; top: 200px !important; z-index: 1005; display: block;
 }
 
+.ui-datatable-footer a{
+	padding: 10px !important;
+	background-color: #428bca !important;
+	color: black !important;
+		text-decoration:none !important;  
+}
+
+
+
+.ui-widget-header {
+   text-shadow: 0 0px 0 rgba(255,255,255,0.7);
+}
+
+
+.ticket {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	padding: 10px !important;
+	margin-bottom: 10px;
+	padding-left: 20px !important;
+
+
+}
+
+.userAccountInfoReservation label{
+	color: black !important;
+	font-size: 15px !important;
+	padding-bottom: 2px !important;
+	widht: 100px !important;
+	margin-right: 10px !important;
+}
+
+.userAccountInfo label {
+	color: black !important;
+	font-size: 15px !important;
+	padding-bottom: 10px !important;
+	widht: 100px !important;
+}
+
+.userAccountInfo input {
+	margin-left: 20px !important;
+	color: black !important;
+	font-size: 13px !important;
+	margin-bottom: 15px !important;
+	height: 25px;
+}
+
+.userAccountInfo button{
+		margin-left: 20px !important;
+}
 /*TABELA PRIMEFACES */
 
 /* MUDAR CORES TABELA{
@@ -291,6 +401,8 @@
 	text-shadow: 1px 1px 2px #550000;
 	color: #800000 !important;
 	font-size: 35px !important;
+	margin-right: 50px !important;
+	margin-left: -90px !important;
 }
 
 .timeline-event, .timeline-event-box, .ui-widget, .ui-state-default {
@@ -299,7 +411,7 @@
 
 h1 {
 	font-family: 'Lalezar', cursive !important;
-	color: #800000 !important;
+	/*color: #800000 !important;*/
 	border-bottom: 1px solid #800000;
 	padding-bottom: 5px;
 }
@@ -342,6 +454,22 @@ h4 {
 	color: #800000 !important;
 	border-bottom: 1px solid #800000;
 	font-size: 20px;
+	padding-bottom: 5px;
+}
+
+.searchResults h4{
+	font-family: 'Lalezar', cursive !important;
+	color: #800000 !important;
+	border-bottom: 1px solid #800000;
+	font-size: 30px;
+	padding-bottom: 5px;
+}
+
+h8 {
+	font-family: 'Lalezar', cursive !important;
+	color: #800000 !important;
+	border-bottom: 1px solid #800000;
+	font-size: 40px;
 	padding-bottom: 5px;
 }
 
@@ -499,6 +627,10 @@ body {
 	/*border-color: rgba(128, 0, 0, .50) !important; */
 }
 
+.navbarright{
+	margin-right: -60px !important;
+}
+
 .brandicon {
 	/*float: left !important;*/
 	/*padding: 10px;
@@ -506,6 +638,7 @@ body {
 	text-align: center !important;*/
 	
 }
+
 
 @media ( min-width : 768px) {
 	.sidebar {
@@ -534,11 +667,9 @@ body {
 	padding-right: 20px;
 }
 
-.nav-list>.active>a, .nav-sidebar>.active>a:hover, .nav-sidebar>.active>a:focus
-	{
-	background-color: #428bca;
-	color: #fff;
-}
+
+
+
 
 .main {
 	padding: 20px;
