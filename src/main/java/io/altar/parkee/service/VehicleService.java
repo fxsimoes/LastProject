@@ -3,7 +3,6 @@ package io.altar.parkee.service;
 import java.util.Collection;
 import java.util.List;
 
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -35,11 +34,11 @@ public class VehicleService extends EntityService<Vehicle>{
 		return vehicleList;
 	}
 	
-/*	public List<Vehicle> showVehiclesByCustomerName(VehicleRepository vehicleList){
+	public List<Vehicle> showVehiclesByCustomerName(VehicleRepository vehicleList){
 			
 		List<Vehicle> list = vehicleList.getDbVehiclesByCustomerName();
 		return list;
-	}*/
+	}
 	
 	@Transactional
 	public Vehicle addVehicle(Vehicle newVehicle){

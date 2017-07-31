@@ -37,19 +37,6 @@
 					</div>
 
 
-					<h:form>
-						<p:growl id="growl" showDetail="true" />
-
-						<h:panelGrid columns="2" columnClasses="left,right"
-							style="width:100%">
-							<p:chart type="pie" model="#{chartView.pieModel1}"
-								style="width:400px;height:300px">
-								<p:ajax event="itemSelect" listener="#{chartView.itemSelect}"
-									update="growl" />
-							</p:chart>
-						</h:panelGrid>
-
-					</h:form>
 					<!--  	<p:chart type="metergauge" model="#{chartBean.meterGaugeModel1}"
 					style="width:400px;height:250px" />
 

@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Vehicle;
-import io.altar.parkee.service.CustomerService;
 import io.altar.parkee.service.VehicleService;
 
 
@@ -19,6 +18,7 @@ public class VehicleBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Vehicle newVehicle = new Vehicle();
+	private Vehicle activeVehicle = new Vehicle();
 	
 	public Vehicle getNewVehicle() {
 		return newVehicle;
@@ -27,11 +27,17 @@ public class VehicleBean implements Serializable {
 	public void setNewVehicle(Vehicle newVehicle) {
 		this.newVehicle = newVehicle;
 	}
+	
+	public Vehicle getActiveVehicle() {
+		return activeVehicle;
+	}
+
+	public void setActiveVehicle(Vehicle activeVehicle) {
+		this.activeVehicle = activeVehicle;
+	}
 
 	@Inject
 	private VehicleService vehicleService;
-	
-	
 	
 	public VehicleService getVehicleService() {
 		return vehicleService;
@@ -42,22 +48,28 @@ public class VehicleBean implements Serializable {
 	}
 	
 	public Collection<Vehicle> getVehicles() {
-		return vehicleService.showVehicles(vehicleService.getVehicleList());
+		return vehicleService.showVehicles(vehicleService.getVehicleRepository());
 	}
 
-	public void addNewVehicle(){
+	public void addVehicle(){
 		vehicleService.addVehicle(newVehicle);
 	}
 	
-/*	public void removeNewVehicle(int id){
-		vehicleService.removeVehicle(id);
-		System.out.println(id);
-	}*/
+	public String deleteVehicle() {
+		
+		vehicleService.removeEntity(vehicleService.getVehicleRepository(), activeVehicle);
+		return null;
+	}
+	
+	public void updateVehicle() {
+		
+		vehicleService.editEntity(vehicleService.getVehicleRepository(), activeVehicle);
+	}
 	
 	//TESTE
-	/*	public Collection<Vehicle> getCustomersById() {
+	public Collection<Vehicle> getVehiclesByCustomerName() {
 			
-			return vehicleService.showCustomersById(vehicleService.getVehicleList());
-		}*/
+		return vehicleService.showVehiclesByCustomerName(vehicleService.getVehicleRepository());
+	}
 	
 }
