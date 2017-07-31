@@ -262,7 +262,7 @@
 	position: absolute !important;
 }
 
-#history, #ticket, #account, #overview, #parks, #customers, #vehicles, #parkingspots {
+#history, #account, #overview, #parks, #customers, #vehicles, #parkingspots {
 	height: 1000px;
 }
 
