@@ -8,9 +8,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Customer;
-import io.altar.parkee.model.Vehicle;
 import io.altar.parkee.service.CustomerService;
-import io.altar.parkee.service.VehicleService;
+
 
 @Named("CustomerBean")
 @RequestScoped
