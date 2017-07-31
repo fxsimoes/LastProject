@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.parkee.model.Vehicle;
+import io.altar.parkee.service.CustomerService;
 import io.altar.parkee.service.VehicleService;
 
 
@@ -19,14 +20,7 @@ public class VehicleBean implements Serializable {
 	
 	private Vehicle newVehicle = new Vehicle();
 	private Vehicle activeVehicle = new Vehicle();
-	
-	public Vehicle getNewVehicle() {
-		return newVehicle;
-	}
 
-	public void setNewVehicle(Vehicle newVehicle) {
-		this.newVehicle = newVehicle;
-	}
 	
 	public Vehicle getActiveVehicle() {
 		return activeVehicle;
@@ -36,8 +30,18 @@ public class VehicleBean implements Serializable {
 		this.activeVehicle = activeVehicle;
 	}
 
+	public Vehicle getNewVehicle() {
+		return newVehicle;
+	}
+
+	public void setNewVehicle(Vehicle newVehicle) {
+		this.newVehicle = newVehicle;
+	}
+
 	@Inject
 	private VehicleService vehicleService;
+	
+	
 	
 	public VehicleService getVehicleService() {
 		return vehicleService;
@@ -48,10 +52,10 @@ public class VehicleBean implements Serializable {
 	}
 	
 	public Collection<Vehicle> getVehicles() {
-		return vehicleService.showVehicles(vehicleService.getVehicleRepository());
+		return vehicleService.showVehicles(vehicleService.getVehicleList());
 	}
 
-	public void addVehicle(){
+	public void addNewVehicle(){
 		vehicleService.addVehicle(newVehicle);
 	}
 	
@@ -68,7 +72,7 @@ public class VehicleBean implements Serializable {
 	
 	//TESTE
 	public Collection<Vehicle> getVehiclesByCustomerName() {
-			
+		
 		return vehicleService.showVehiclesByCustomerName(vehicleService.getVehicleRepository());
 	}
 	

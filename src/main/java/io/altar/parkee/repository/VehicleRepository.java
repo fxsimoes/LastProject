@@ -6,6 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
+
 import io.altar.parkee.model.Vehicle;
 
 @Named("VehicleRepository")
@@ -33,5 +34,4 @@ public class VehicleRepository extends EntityRepository<Vehicle> {
 		Vehicle vehicleToRemove = getEm().find(Vehicle.class, activeVehicle.getId());
 		getEm().remove(vehicleToRemove);
 	}
-	
 }
