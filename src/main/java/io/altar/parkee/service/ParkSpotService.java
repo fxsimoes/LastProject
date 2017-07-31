@@ -32,8 +32,14 @@ public class ParkSpotService extends EntityService<ParkSpot>{
 		return list;
 	}
 	
+	@Transactional
 	public void modifyEntity(int id, String spotRef, String status){
 		parkSpotList.modifyDb(id, spotRef, status);
+	}
+	
+	public ParkSpot update(ParkSpot newParkSpot){
+		parkSpotList.update(newParkSpot);
+		return newParkSpot;
 	}
 	
 }
