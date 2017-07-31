@@ -10,10 +10,6 @@
 		<ui:define name="content">
 			<div id="account" class="col-xs-10 col-xs-offset-1">
 				<h1>Your Account</h1>
-
-				//se tivermos tempo: extrato pdf para o mail do cliente //faturas
-				//mensagem confirmacao de reserva (site e mail?) <br /> <br />
-
 				<h4>Personal Info</h4>
 				<div class="userAccountInfo">
 					<h:form>
@@ -85,17 +81,17 @@
 						<h:panelGrid columns="2" cellpadding="5">
 
 							<h:outputLabel value="License" />
-							<h:inputText value="#{VehicleBean.newVehicle.license}"
+							<h:inputText tyleClass="input" value="#{VehicleBean.newVehicle.license}"
 								placeholder="Enter license" required="true" />
 							<h:outputLabel value="Brand" />
-							<h:inputText value="#{VehicleBean.newVehicle.brand}"
+							<h:inputText value="#{VehicleBean.newVehicle.brand}" styleClass="input"
 								required="true" />
 							<h:outputLabel value="Color" />
-							<h:inputText value="#{VehicleBean.newVehicle.color}"
+							<h:inputText value="#{VehicleBean.newVehicle.color}" styleClass="input"
 								required="true" />
 							<br />
 							<p:commandButton value="Submit"
-								action="#{VehicleBean.addNewVehicle()}" />
+								action="#{VehicleBean.addVehicle()}" />
 						</h:panelGrid>
 						<br />
 
