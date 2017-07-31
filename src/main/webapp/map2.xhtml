@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui">
+
+<h:head>
+<title>Place Autocomplete</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+	
+</h:head>
+<h:body>
+	
+	<div class="pac-card" id="pac-card">
+		<div>
+			<div id="title">Autocomplete search</div>
+			<div id="type-selector" class="pac-controls">
+				<input type="radio" name="type" id="changetype-all"
+					checked="checked" /><label for="changetype-all">All</label> <input
+					type="radio" name="type" id="changetype-establishment" /><label
+					for="changetype-establishment">Establishments</label> <input
+					type="radio" name="type" id="changetype-address" /><label
+					for="changetype-address">Addresses</label> <input type="radio"
+					name="type" id="changetype-geocode" /><label
+					for="changetype-geocode">Geocodes</label>
+			</div>
+			<div id="strict-bounds-selector" class="pac-controls">
+				<input type="checkbox" id="use-strict-bounds" value="" /><label
+					for="use-strict-bounds">Strict Bounds</label>
+			</div>
+		</div>
+		<div id="pac-container">
+			<input id="pac-input" type="text" placeholder="Enter a location" />
+		</div>
+	</div>
+
+	<div class="mapContainer">
+		<div id="map"></div>
+	</div>
+
+	<div id="infowindow-content">
+		<img src="" width="16" height="16" id="place-icon" /><span
+			id="place-name" class="title"></span><br /> <span id="place-address"></span>
+	</div>
+
+		<script src="resources/js/script.js"></script>
+	
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA6BP-V67_klKwRAHdU3MlABuRqx-mVQU&amp;libraries=places&amp;callback=initMap"
+		type="text/javascript"></script>
+</h:body>
+</html>
+

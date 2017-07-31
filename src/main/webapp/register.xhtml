@@ -9,10 +9,10 @@
 
 	<ui:composition template="template/common/commonLayout.xhtml">
 		<ui:define name="content">
-		<div class="col-xs-12">
+		<div class="col-xs-12 signIn">
 			  <b:container>
             <h:form styleClass="form-signin" prependId="false">
-                <h3 class="form-signin-heading">Please register</h3>
+                <h4 class="form-signin-heading">Please register</h4>
                 <b:inputText id="email" placeholder="Email address" required="true" requiredMessage="Please fill with email adress"
                 value="#{RegisterBean.newAccount.email}">
                     <f:facet name="prepend">
@@ -25,7 +25,7 @@
                         <b:iconAwesome name="key" />
                     </f:facet>
                 </b:inputText>
-                <b:commandButton look="primary btn-block" value="register" icon="log-in" size="lg" action="#{RegisterBean.register()}"/>
+                <b:commandButton look="primary btn-block" value="Register" icon="log-in" size="lg" action="#{RegisterBean.register()}"/>
             </h:form>
         </b:container>
 		</div>

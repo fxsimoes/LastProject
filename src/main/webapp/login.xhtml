@@ -9,23 +9,25 @@
 
 	<ui:composition template="template/common/commonLayout.xhtml">
 		<ui:define name="content">
+
 		<div class="col-xs-12 signIn">
 			  <b:container>
-            <h:form styleClass="form-signin" prependId="false">
-                <h3 class="form-signin-heading">Please log in</h3>
-                <b:inputText id="email" placeholder="Email address" value="#{AccountBean.account.email}" >
-                    <f:facet name="prepend">
-                        <b:icon name="user" />
-                    </f:facet>
-                </b:inputText>
-                <b:inputText id="password" placeholder="Password" type="password" value="#{AccountBean.account.password}">
-                    <f:facet name="prepend">
-                        <b:iconAwesome name="key" />
-                    </f:facet>
-                </b:inputText>
-                <b:selectBooleanCheckbox value="true" caption="remember me"/>
-                <b:commandButton look="primary btn-block" value="Log In" icon="log-in" size="lg" action="#{AccountBean.action()}"/>
-            </h:form>
+         	   <h:form styleClass="form-signin" prependId="false">
+	                <h4 class="form-signin-heading">Please log in</h4>
+	                <b:inputText id="email" placeholder="Email address" value="#{AccountBean.account.email}" >
+	                    <f:facet name="prepend">
+	                        <b:icon name="user" />
+	                    </f:facet>
+	                </b:inputText>
+	                <b:inputText id="password" placeholder="Password" type="password" value="#{AccountBean.account.password}">
+	                    <f:facet name="prepend">
+	                        <b:iconAwesome name="key" />
+	                    </f:facet>
+	                </b:inputText>
+	                <b:selectBooleanCheckbox value="true" caption="remember me"/>
+	                <b:commandButton look="primary btn-block" value="Log In" icon="log-in" size="lg" action="#{AccountBean.login()}"/>
+           	 </h:form>
+           	 			<p:growl id="growl" showDetail="true" sticky="true"></p:growl>
         </b:container>
 
 		</div>

@@ -5,8 +5,10 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -26,10 +28,25 @@ public class Customer extends EntityModel implements Serializable {
 	@Column(name="NIF")
 	private int nif;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	/*@ManyToMany(fetch = FetchType.EAGER, cascade={CascadeType.ALL})
 	@JoinTable(name = "CUSTOMER_VEHICLE",
 			joinColumns = { @JoinColumn(name = "CUSTOMER_ID") }, 
-			inverseJoinColumns = { @JoinColumn(name = "VEHICLE_ID") })
+			inverseJoinColumns = { @JoinColumn(name = "VEHICLE_ID") })*/
+	@ManyToMany(fetch = FetchType.LAZY,
+	        cascade =
+	        {
+	                CascadeType.ALL
+	        },
+	        targetEntity = Vehicle.class)
+	@JoinTable(name = "CUSTOMER_VEHICLE",
+	        joinColumns = @JoinColumn(name = "CUSTOMER_ID",
+	                nullable = false,
+	                updatable = false),
+	        inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID",
+	                nullable = false,
+	                updatable = false),
+	        foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
+	        inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
 	private List<Vehicle> vehicles;
 	
 

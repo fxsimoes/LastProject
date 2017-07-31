@@ -17,39 +17,65 @@
 				<h4>Personal Info</h4>
 				<div class="userAccountInfo">
 					<h:form>
+						<!-- 						<h:panelGrid columns="2" cellpadding="5"> -->
+
+						<!-- 							<h:outputLabel for="name" value="Name:" /> -->
+						<!-- 							<p:inpuText id="name" value="#{CustomerBean.newCustomer.customerName}"/> -->
+
+						<!-- 							<h:outputLabel for="contact" value="Contact:" /> -->
+						<!-- 							<p:inputText id="contact" value="#{CustomerBean.newCustomer.customerContact}"/> -->
+
+						<!-- 							<p:outputLabel for="nif" value="NIF:" /> -->
+						<!-- 							<p:inputText id="nif" value="#{CustomerBean.newCustomer.nif}" /> -->
+						<!-- 							<br /> -->
+
+						<!-- 						</h:panelGrid> -->
+
 						<h:panelGrid columns="2" cellpadding="5">
+							<h:outputLabel value="Name" />
+							<h:inputText value="#{CustomerBean.newCustomer.customerName}"
+								required="true" />
 
-							<p:outputLabel for="name" value="Name:" />
-							<p:inputMask id="name" value="#{maskView.taxId}"/>
+							<h:outputLabel value="Contact" />
+							<h:inputText value="#{CustomerBean.newCustomer.customerContact}"
+								required="true" />
 
-							<p:outputLabel for="contact" value="Contact:" />
-							<p:inputMask id="contact" mask="99 999 99 99" value="#{maskView.phone}"/>
-
-							<p:outputLabel for="nif" value="NIF:" />
-							<p:inputMask id="nif" value="#{maskView.phoneExt}" />
+							<h:outputLabel value="NIF" />
+							<h:inputText value="#{CustomerBean.newCustomer.nif}"
+								required="true" />
 							<br />
-							<p:commandButton id="submitUserAccount" value="Submit"
-								update="display" oncomplete="PF('dlg').show()" />
+							<p:commandButton value="Submit"
+								action="#{CustomerBean.addCustomer()}"
+								oncomplete="PF('dlg').show()" />
 						</h:panelGrid>
+						<br />
 
-						<p:dialog widgetVar="dlg" modal="true" resizable="false"
-							header="Values" showEffect="fade">
-							<p:panelGrid id="display" columns="2" columnClasses="label,value">
-								<h:outputText value="Date: " />
-								<h:outputText id="dateValue" value="#{maskView.date}" />
+						<!-- 						<p:dialog widgetVar="dlg" modal="true" resizable="false" -->
+						<!-- 							header="Customer" showEffect="fade"> -->
 
-								<h:outputText value="Phone: " />
-								<h:outputText id="phoneValue" value="#{maskView.phone}" />
 
-								<h:outputText value="Phone with Ext: " />
-								<h:outputText id="phoneWithExtValue"
-									value="#{maskView.phoneExt}" />
+						<!-- 							<p:dataTable id="CustomerList" var="customerList" -->
+						<!-- 								value="#{CustomerBean.customers}" selectionMode="single" -->
+						<!-- 								rowKey="#{customerList.id}"> -->
 
-								<h:outputText value="taxId: " />
-								<h:outputText id="taxValue" value="#{maskView.taxId}" />
+						<!-- 								<p:column headerText="ID"> -->
+						<!-- 									<h:outputText value="#{customerList.id}" /> -->
+						<!-- 								</p:column> -->
 
-							</p:panelGrid>
-						</p:dialog>
+						<!-- 								<p:column headerText="Name"> -->
+						<!-- 									<h:outputText value="#{customerList.customerName}" /> -->
+						<!-- 								</p:column> -->
+
+						<!-- 								<p:column headerText="Contact"> -->
+						<!-- 									<h:outputText value="#{customerList.customerContact}" /> -->
+						<!-- 								</p:column> -->
+
+						<!-- 								<p:column headerText="Nif"> -->
+						<!-- 									<h:outputText value="#{customerList.nif}" /> -->
+						<!-- 								</p:column> -->
+						<!-- 							</p:dataTable> -->
+						<!-- 						</p:dialog> -->
+
 					</h:form>
 				</div>
 
@@ -58,76 +84,68 @@
 					<h:form>
 						<h:panelGrid columns="2" cellpadding="5">
 
-							<p:outputLabel for="vehicleLicense" value="License" />
-							<p:inputMask id="vehicleLicense" value="#{maskView.taxId}"
-								mask="99-99-99" />
-						
-							<p:outputLabel for="vehicleBrand" value="Brand" />
-							<p:inputMask id="vehicleBrand" value="#{maskView.taxId}" />
-				
-							<p:outputLabel for="vehicleColor" value="Color" />
-							<p:inputMask id="vehicleColor" value="#{maskView.taxId}"/>
-								<br />
-							<p:commandButton id="submitUserAccount" value="Submit"
-								update="display" oncomplete="PF('dlg').show()"/>
-
-						</h:panelGrid>
-
-						<p:dialog widgetVar="dlg" modal="true" resizable="false"
-							header="Values" showEffect="fade">
-							<p:panelGrid id="display" columns="2" columnClasses="label,value">
-								<h:outputText value="Date: " />
-								<h:outputText id="dateValue" value="#{maskView.date}" />
-
-								<h:outputText value="Phone: " />
-								<h:outputText id="phoneValue" value="#{maskView.phone}" />
-
-								<h:outputText value="Phone with Ext: " />
-								<h:outputText id="phoneWithExtValue"
-									value="#{maskView.phoneExt}" />
-
-								<h:outputText value="taxId: " />
-								<h:outputText id="taxValue" value="#{maskView.taxId}" />
-
-								<h:outputText value="SSN: " />
-								<h:outputText id="ssnValue" value="#{maskView.ssn}" />
-
-								<h:outputText value="Product Key: " />
-								<h:outputText id="keyValue" value="#{maskView.productKey}" />
-							</p:panelGrid>
-						</p:dialog>
-					</h:form>
-				</div>
-				<h4>Extra info</h4>
-
-
-
-				<!--
-			<div class="AdminActions flex-container flex-item">
-					<div class="Add flex-item">
-						<h3>Add/Edit your details</h3>
-						<p></p>
-						<h:form>
-							<br />
-							<h:outputText value="Customer Name: " />
-							<h:inputText value="#{CustomerBean.newCustomer.customerName}"
-								placeholder="Enter name" required="true" />
-							<br />
-							<h:outputText value="Customer Contact: " />
-							<h:inputText value="#{CustomerBean.newCustomer.customerContact}"
+							<h:outputLabel value="License" />
+							<h:inputText value="#{VehicleBean.newVehicle.license}"
+								placeholder="Enter license" required="true" />
+							<h:outputLabel value="Brand" />
+							<h:inputText value="#{VehicleBean.newVehicle.brand}"
 								required="true" />
-							<br />
-							<h:outputText value="Customer Nif: " />
-							<h:inputText value="#{CustomerBean.newCustomer.nif}"
+							<h:outputLabel value="Color" />
+							<h:inputText value="#{VehicleBean.newVehicle.color}"
 								required="true" />
 							<br />
 							<p:commandButton value="Submit"
-								action="#{CustomerBean.addCustomer()}"  />
-						</h:form>
-					</div>
-				</div>
-			-->
+								action="#{VehicleBean.addNewVehicle()}" />
+						</h:panelGrid>
+						<br />
 
+						<!-- 						<p:dialog widgetVar="dlg" modal="true" resizable="false" -->
+						<!-- 							header="Values" showEffect="fade"> -->
+						<!-- 							<p:panelGrid id="display" columns="2" columnClasses="label,value"> -->
+						<!-- 								<h:outputText value="Date: " /> -->
+						<!-- 								<h:outputText id="dateValue" value="#{maskView.date}" /> -->
+
+						<!-- 								<h:outputText value="Phone: " /> -->
+						<!-- 								<h:outputText id="phoneValue" value="#{maskView.phone}" /> -->
+
+						<!-- 								<h:outputText value="Phone with Ext: " /> -->
+						<!-- 								<h:outputText id="phoneWithExtValue" -->
+						<!-- 									value="#{maskView.phoneExt}" /> -->
+
+						<!-- 								<h:outputText value="taxId: " /> -->
+						<!-- 								<h:outputText id="taxValue" value="#{maskView.taxId}" /> -->
+
+						<!-- 								<h:outputText value="SSN: " /> -->
+						<!-- 								<h:outputText id="ssnValue" value="#{maskView.ssn}" /> -->
+
+						<!-- 								<h:outputText value="Product Key: " /> -->
+						<!-- 								<h:outputText id="keyValue" value="#{maskView.productKey}" /> -->
+						<!-- 							</p:panelGrid> -->
+						<!-- 						</p:dialog> -->
+					</h:form>
+
+				</div>
+
+				<h4>Your reservation</h4>
+				<div class="userAccountInfoReservation">
+
+
+					<h:outputLabel value="Name" />
+					<h:outputText value="Name" />
+					<br />
+					<h:outputLabel value="Park" />
+					<h:outputText value="{ParkBean.getRandomPark()}" />
+					<br />
+					<h:outputLabel value="Spot" />
+					<h:outputText value="A3" />
+					<br />
+					<h:outputLabel value="Cost" />
+					<h:outputText value="2 €" />
+					<br />
+					<h:outputLabel value="Time" />
+					<h:outputText value="2h" />
+					<br />
+				</div>
 			</div>
 		</ui:define>
 	</ui:composition>

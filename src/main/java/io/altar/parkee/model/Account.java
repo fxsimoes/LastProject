@@ -4,10 +4,18 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
+@NamedQueries({
+	@NamedQuery(name = "Account.control", query = "SELECT l FROM Account l WHERE l.email = :email and l.password = :password"),
+	@NamedQuery(name = "Account.findAll", query = "SELECT l FROM Account l"),
+	@NamedQuery(name = "Account.findById", query = "SELECT l FROM Account l WHERE l.customer = :customer"),
+	@NamedQuery(name = "Account.findByUsername", query ="SELECT l FROM Account l WHERE l.email = :email"),
+	@NamedQuery(name = "Account.findByPassword", query = "SELECT l FROM Account l WHERE l.password = :password")
+})
 @Entity
 @Table(name = "Accounts")
 public class Account extends EntityModel implements Serializable {
@@ -21,7 +29,23 @@ public class Account extends EntityModel implements Serializable {
 	
 	private boolean loggedIn = false;
 	
+	private boolean isAdmin = false;
+	
+	private boolean registered = false;
+	
+	public boolean isRegistered() {
+		return registered;
+	}
+	public void setRegistered(boolean registered) {
+		this.registered = registered;
+	}
 
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 	public boolean isLoggedIn() {
 		return loggedIn;
 	}

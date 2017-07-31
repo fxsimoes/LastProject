@@ -22,11 +22,13 @@ public class ParkSpot extends EntityModel implements Serializable {
     private Park park;
 	
     
-	@Column(name="status")
-	private String status;
+	@Column(name="Status")
+	private String status= ""+r.random();
 	@Column(name="SpotRef")
 	private String spotRef;
-	
+	private enum StatusSpot {
+		FREE, RESERVED, OCCUPIED;
+	}
   
     public void setPark(Park park) {
 		this.park = park;
@@ -50,27 +52,10 @@ public class ParkSpot extends EntityModel implements Serializable {
 		this.status = status;
 	}
 	
-//	private int cenas;
-	private StatusSpot statusSpot = r.random();
-	private String coisas= ""+statusSpot;
-
-//	public String getCoisas() {
-//		return coisas;
-//	}
-//
-//	public void setCoisas(String coisas) {
-//		this.coisas = coisas;
-//	}
-
-	public enum StatusSpot {
-		FREE, RESERVED, OCCUPIED;
-	}
+//----------------------------------------------------------------------------------------------------------//
 	
 	private static final RandomEnum<StatusSpot> r = new RandomEnum<StatusSpot>(StatusSpot.class);
 
-	// public static void main(String[] args) {
-	// System.out.println(r.random());
-	// }
 
 	private static class RandomEnum<E extends Enum> {
 
@@ -85,16 +70,15 @@ public class ParkSpot extends EntityModel implements Serializable {
 			return values[RND.nextInt(values.length)];
 		}
 	}
+//----------------------------------------------------------------------------------------------------------//	
 	
 	public ParkSpot() {}
 	
-	public ParkSpot(String coisas, String spotRef){
-		this.status=coisas;
+	public ParkSpot(String status, String spotRef){
+		this.status=status;
 		this.spotRef=spotRef;
 		
-		
-	}	
-	
+	}		
 }
 
 

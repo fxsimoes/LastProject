@@ -21,6 +21,8 @@ public class ParkBean implements Serializable {
 	private Park newPark = new Park();
 	private Park oldPark = new Park();
 	private Park activePark = new Park();
+	private char row = 'A';
+	private String spotRef;
 	
 	
 	public Park getActivePark() {
@@ -84,6 +86,8 @@ public class ParkBean implements Serializable {
 				rowNumber++;
 				
 		newPark.addToSpots(new ParkSpot(status, spotRef));
+				ParkSpot p = new ParkSpot();
+		newPark.addToSpots(new ParkSpot(p.getStatus(), spotRef));
 		}
 		parkService.create(newPark);
 	}
@@ -128,11 +132,16 @@ public class ParkBean implements Serializable {
 //		newPark.addToSpots(new ParkSpot(status, spotRef));
 //		}
 		parkService.update(newPark);
+		parkService.update(activePark);
 	}
 	
 	public void deletePark() {
-		parkService.remove(activePark);
-	}
-	
+		
+		if(activePark==null){
+			System.out.println("Can't delete anything");
+		}else{
+			parkService.remove(activePark);
+		}
+	}	
 }
 
