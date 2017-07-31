@@ -50,31 +50,31 @@
 						</h:panelGrid>
 						<br />
 
-<!-- 						<p:dialog widgetVar="dlg" modal="true" resizable="false" -->
-<!-- 							header="Customer" showEffect="fade"> -->
+						<!-- 						<p:dialog widgetVar="dlg" modal="true" resizable="false" -->
+						<!-- 							header="Customer" showEffect="fade"> -->
 
 
-<!-- 							<p:dataTable id="CustomerList" var="customerList" -->
-<!-- 								value="#{CustomerBean.customers}" selectionMode="single" -->
-<!-- 								rowKey="#{customerList.id}"> -->
+						<!-- 							<p:dataTable id="CustomerList" var="customerList" -->
+						<!-- 								value="#{CustomerBean.customers}" selectionMode="single" -->
+						<!-- 								rowKey="#{customerList.id}"> -->
 
-<!-- 								<p:column headerText="ID"> -->
-<!-- 									<h:outputText value="#{customerList.id}" /> -->
-<!-- 								</p:column> -->
+						<!-- 								<p:column headerText="ID"> -->
+						<!-- 									<h:outputText value="#{customerList.id}" /> -->
+						<!-- 								</p:column> -->
 
-<!-- 								<p:column headerText="Name"> -->
-<!-- 									<h:outputText value="#{customerList.customerName}" /> -->
-<!-- 								</p:column> -->
+						<!-- 								<p:column headerText="Name"> -->
+						<!-- 									<h:outputText value="#{customerList.customerName}" /> -->
+						<!-- 								</p:column> -->
 
-<!-- 								<p:column headerText="Contact"> -->
-<!-- 									<h:outputText value="#{customerList.customerContact}" /> -->
-<!-- 								</p:column> -->
+						<!-- 								<p:column headerText="Contact"> -->
+						<!-- 									<h:outputText value="#{customerList.customerContact}" /> -->
+						<!-- 								</p:column> -->
 
-<!-- 								<p:column headerText="Nif"> -->
-<!-- 									<h:outputText value="#{customerList.nif}" /> -->
-<!-- 								</p:column> -->
-<!-- 							</p:dataTable> -->
-<!-- 						</p:dialog> -->
+						<!-- 								<p:column headerText="Nif"> -->
+						<!-- 									<h:outputText value="#{customerList.nif}" /> -->
+						<!-- 								</p:column> -->
+						<!-- 							</p:dataTable> -->
+						<!-- 						</p:dialog> -->
 
 					</h:form>
 				</div>
@@ -123,26 +123,30 @@
 						<!-- 							</p:panelGrid> -->
 						<!-- 						</p:dialog> -->
 					</h:form>
-		
+
 				</div>
-			
+
 				<h4>Your reservation</h4>
 				<div class="userAccountInfoReservation">
-				
-							<h:outputLabel value="Park" />
-							<h:outputText value="{ParkBean.getRandomPark()}" />
-										<br />
-							<h:outputLabel value="Spot" />
-							<h:outputText value="A3" />
-										<br />
-							<h:outputLabel value="Cost" />
-							<h:outputText value="2 €" />
-										<br />
-							<h:outputLabel value="Time" />
-							<h:outputText value="2h" />							
-							<br />
+
+
+					<h:outputLabel value="Name" />
+					<h:outputText value="Name" />
+					<br />
+					<h:outputLabel value="Park" />
+					<h:outputText value="{ParkBean.getRandomPark()}" />
+					<br />
+					<h:outputLabel value="Spot" />
+					<h:outputText value="A3" />
+					<br />
+					<h:outputLabel value="Cost" />
+					<h:outputText value="2 €" />
+					<br />
+					<h:outputLabel value="Time" />
+					<h:outputText value="2h" />
+					<br />
 				</div>
-		</div>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>

@@ -4,7 +4,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:body>
 	<ui:composition template="template/common/commonDashboard.xhtml">
@@ -14,61 +15,68 @@
 				<h1>Parks</h1>
 
 				<h:form>
+
 					<p:growl id="msg" showDetail="true" />
-					<p:dataTable id="ParkList" var="pList"
-						value="#{ParkBean.getParks()}" selectionMode="single"
-						selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
-						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-						paginator="true" rows="10" style="margin-bottom:20px">
+					<div class="tabelaCSS">
+						<p:dataTable id="ParkList" var="pList"
+							value="#{ParkBean.getParks()}" selectionMode="single"
+							selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
+							paginatorTemplate="  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+							paginator="true" rows="10" style="margin-bottom:20px">
 
-						<f:facet name="header">
-							<p:commandButton update="ParkList" value="Add"
-								oncomplete="PF('parkAdd').show()" />
-							<p:commandButton update="ParkList" value="Edit"
-								oncomplete="PF('parkEdit').show()" />
-							<!-- DELETE -->
-							<p:commandButton value="Delete" update="ParkList"
-								action="#{ParkBean.deletePark()}">
-								<p:confirm header="Confirmation" message="Are you sure?"
-									icon="ui-icon-alert" />
-							</p:commandButton>
-							<p:confirmDialog global="true" showEffect="fade"
-								hideEffect="fade">
-								<p:commandButton value="Yes" type="button"
-									styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-								<p:commandButton value="No" type="button"
-									styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-							</p:confirmDialog>
-						</f:facet>
+							<f:facet name="header">
+								<p:commandButton update="ParkList" value="Add"
+									oncomplete="PF('parkAdd').show()" />
+								<p:commandButton update="ParkList" value="Edit"
+									oncomplete="PF('parkEdit').show()" />
+								<!-- DELETE -->
+								<p:commandButton value="Delete" update="ParkList"
+									action="#{ParkBean.deletePark()}">
+									<p:confirm header="Confirmation" message="Are you sure?"
+										icon="ui-icon-alert" />
+								</p:commandButton>
+								<p:confirmDialog global="true" showEffect="fade"
+									hideEffect="fade">
+									<p:commandButton value="Yes" type="button"
+										styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+									<p:commandButton value="No" type="button"
+										styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+								</p:confirmDialog>
+							</f:facet>
 
-						<p:column headerText="ID">
-							<h:outputText value="#{pList.id}" />
-						</p:column>
+							<p:column headerText="ID">
+								<h:outputText value="#{pList.id}" />
+							</p:column>
 
-						<p:column headerText="Name">
-							<h:outputText value="#{pList.parkName}" />
-						</p:column>
+							<p:column headerText="Name">
+								<h:outputText value="#{pList.parkName}" />
+							</p:column>
 
-						<p:column headerText="Hourly Price">
-							<h:outputText value="#{pList.hourlyPrice}" />
-						</p:column>
+							<p:column headerText="Hourly Price">
+								<h:outputText value="#{pList.hourlyPrice}" />
+							</p:column>
 
-						<p:column headerText="Nr of spots">
-							<h:outputText value="#{pList.nrOfSpots}" />
-						</p:column>
+							<p:column headerText="Nr of spots">
+								<h:outputText value="#{pList.nrOfSpots}" />
+							</p:column>
+							
+							<p:column headerText="Location">
+								<h:outputText value="#{pList.parkLocation}" />
+							</p:column>
 
-						<p:column headerText="Location">
-							<h:outputText value="#{pList.parkLocation}" />
-						</p:column>
+							<p:column headerText="Latitude">
+								<h:outputText value="#{pList.latitude}" />
+							</p:column>
 
-						<p:column headerText="Latitude">
-							<h:outputText value="#{pList.latitude}" />
-						</p:column>
-
-						<p:column headerText="Longitude">
-							<h:outputText value="#{pList.longitude}" />
-						</p:column>
-					</p:dataTable>
+							<p:column headerText="Longitude">
+								<h:outputText value="#{pList.longitude}" />
+							</p:column>
+							
+							<p:column headerText="Nr of FreeSpots">
+								<h:outputText value="#{pList.numFreeSpot}" />
+							</p:column>	
+						</p:dataTable>
+					</div>
 
 					<p:dialog header="Add Park" widgetVar="parkAdd" modal="true"
 						showEffect="fade" hideEffect="fade" resizable="false">
@@ -84,7 +92,7 @@
 									value="#{ParkBean.newPark.hourlyPrice}" />
 
 								<h:outputText value="Nr of spots" />
-								<p:inputText styleClass="input"
+								<p:inputText styleClass="input" placeholder="search"
 									value="#{ParkBean.newPark.nrOfSpots}" />
 
 								<h:outputText value="Location" />
@@ -144,8 +152,9 @@
 						</p:outputPanel>
 					</p:dialog>
 				</h:form>
-
 			</div>
+
+
 
 		</ui:define>
 	</ui:composition>

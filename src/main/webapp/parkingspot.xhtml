@@ -10,7 +10,7 @@
 		<ui:define name="content">
 			<div class="col-xs-10 col-xs-offset-1">
 				<h1>Parking spots</h1>
-
+				<div class="tabelaCSS">
 				<div class="ParkSpotTable">
 					<p:dataTable var="ParkSpot" value="#{ParkSpotBean.spots}" scrollable="true" scrollHeight="150">
 						<p:column headerText="ID">
@@ -29,6 +29,7 @@
 							<h:outputText value="#{ParkSpot.status}" />
 						</p:column>
 					</p:dataTable>
+					</div>
 				</div>
 
 				<div class="AdminActions flex-container flex-item">

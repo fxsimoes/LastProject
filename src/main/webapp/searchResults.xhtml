@@ -13,51 +13,53 @@
 				<div class="container searchResults">
 					<h4>Parking spots available</h4>
 					<div class="parksTable col-xs-8 col-xs-offset-2">
-					<h2>Choose a Park to make your reservation</h2>
+						<h2>Choose a Park to make your reservation</h2>
 						<h:form id="form">
 							<p:growl id="msgs" showDetail="true" />
+							<div class="tabelaCSS">
+								<p:dataTable id="ParkList" var="pList"
+									value="#{ParkBean.getParks()}"
+									selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
+									style="margin-bottom:20px">
+									<f:facet name="header">
 
-							<p:dataTable id="ParkList" var="pList"
-								value="#{ParkBean.getParks()}"
-								selection="#{ParkBean.activePark}" rowKey="#{pList.id}"
-								style="margin-bottom:20px">
-								<f:facet name="header">
-								
-       					 </f:facet>
-								<p:column selectionMode="single"
-									style="width:50px;text-align:center" />
-								
-								<p:column headerText="ID" style="width:50px;text-align:center">
-									<h:outputText value="#{pList.id}" />
-								</p:column>
+									</f:facet>
+									<p:column selectionMode="single"
+										style="width:50px;text-align:center" />
 
-								<p:column headerText="Name" style="text-align:center">
-									<h:outputText value="#{pList.parkName}" />
-								</p:column>
+									<p:column headerText="ID" style="width:50px;text-align:center">
+										<h:outputText value="#{pList.id}" />
+									</p:column>
 
-								<p:column headerText="Hourly Price" style="text-align:center">
-									<h:outputText value="#{pList.hourlyPrice}" />
-								</p:column>
+									<p:column headerText="Name" style="text-align:center">
+										<h:outputText value="#{pList.parkName}" />
+									</p:column>
 
-								<p:column headerText="Nr of spots" style="text-align:center">
-									<h:outputText value="#{pList.nrOfSpots}" />
-								</p:column>
+									<p:column headerText="Hourly Price" style="text-align:center">
+										<h:outputText value="#{pList.hourlyPrice}" />
+									</p:column>
 
-								<p:column headerText="Location" style="text-align:center">
-									<h:outputText value="#{pList.parkLocation}" />
-								</p:column>
-
-								<f:facet name="footer">
-								
-								<p:link outcome="overviewUser2" value="+ Reserve Spot on this Park">
-  										  <f:param name="user" value="10" />
-								</p:link>
+									<p:column headerText="Nr of spots" style="text-align:center">
+										<h:outputText value="#{pList.nrOfSpots}" />
+									</p:column>
 									
-								
-									
-									
-								</f:facet>
-							</p:dataTable>
+									<p:column headerText="Nr of free spots" style="text-align:center">
+										<h:outputText value="#{pList.nrOfSpots}" />
+									</p:column>
+
+									<p:column headerText="Location" style="text-align:center">
+										<h:outputText value="#{pList.parkLocation}" />
+									</p:column>
+
+									<f:facet name="footer">
+
+										<p:link outcome="overviewUser2" value="+ Reserve Spot">
+											<f:param name="user" value="10" />
+										</p:link>
+
+									</f:facet>
+								</p:dataTable>
+							</div>
 						</h:form>
 					</div>
 
