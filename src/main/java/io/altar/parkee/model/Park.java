@@ -30,6 +30,8 @@ public class Park extends EntityModel implements Serializable {
 	private int longitude;
 	@Column(name="Latitude")
 	private int latitude;
+//	@Column(name= "NumberOfFreeSpots")
+//	private int 
 
 
 	public void addToSpots(ParkSpot spot){

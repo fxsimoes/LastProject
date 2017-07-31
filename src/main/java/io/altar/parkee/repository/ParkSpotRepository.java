@@ -1,5 +1,9 @@
 package io.altar.parkee.repository;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -19,8 +23,16 @@ public class ParkSpotRepository extends EntityRepository<ParkSpot> {
 		List<ParkSpot> dbParkSpots = (List<ParkSpot>) query.getResultList();
 		return dbParkSpots;
 	}
-
 	
+//  public Query cenas() throws SQLException {
+//	  
+//	  Query num = getEm().createQuery("SELECT COUNT (Status) FROM dbParkSpots WHERE Status = FREE");
+//	  num.getFirstResult();
+//	return num;
+//	}
+	
+	
+
 	@Transactional
 	public void modifyDb(int id, String spotRef, String status) {
 		ParkSpot dbParkSpot = getEm().find(ParkSpot.class, id);

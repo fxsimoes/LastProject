@@ -88,4 +88,6 @@ public class ParkSpotBean implements Serializable {
 		parkSpotService.update(activeParkSpot);
 	}
 	
+	
+	
 }

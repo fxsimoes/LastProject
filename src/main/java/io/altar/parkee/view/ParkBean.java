@@ -22,8 +22,6 @@ public class ParkBean implements Serializable {
 	private Park newPark = new Park();
 	private Park oldPark = new Park();
 	private Park activePark = new Park();
-	private ParkSpot p = new ParkSpot();
-	private String status = p.getStatus();
 	private char row = 'A';
 	private String spotRef;
 	
@@ -71,8 +69,7 @@ public class ParkBean implements Serializable {
 
 	public void addPark(){
 		int rowNumber=1;
-		int j=0;
-	
+
 		for(int i=1; i<=newPark.getNrOfSpots(); i++){		
 			spotRef=String.valueOf(row)+rowNumber;
 			
@@ -81,7 +78,6 @@ public class ParkBean implements Serializable {
 				rowNumber=0;}
 				rowNumber++;	
 				
-	
 		newPark.addToSpots(new ParkSpot(spotRef));
 		
 		}	

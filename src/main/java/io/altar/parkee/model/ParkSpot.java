@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Query;
 import javax.persistence.Table;
 
 
@@ -20,16 +21,17 @@ public class ParkSpot extends EntityModel implements Serializable {
     @ManyToOne(optional=false, targetEntity=Park.class, 
     		cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Park park;
-	
+    
+    private String cona = r.random().toString();
     
 	@Column(name="Status")
-	private String status= ""+r.random();
+	private String status= cona;
 	@Column(name="SpotRef")
 	private String spotRef;
 	public enum StatusSpot {
 		FREE, RESERVED, OCCUPIED;
 	}
-  
+		
     public void setPark(Park park) {
 		this.park = park;
 	}
@@ -51,9 +53,8 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
+		
 //----------------------------------------------------------------------------------------------------------//
-	
 	
 	private static final RandomEnum<StatusSpot> r = new RandomEnum<StatusSpot>(StatusSpot.class);
 
@@ -64,16 +65,17 @@ public class ParkSpot extends EntityModel implements Serializable {
 		private final E[] values;
 
 		public RandomEnum(Class<E> token) {
-			values = token.getEnumConstants();
-				
+			values = token.getEnumConstants();		
 		}
 
 	public E random() {
+	
 			return values[RND.nextInt(values.length)];
+			
+			
 		}
 	}
-	
-
+		
 //----------------------------------------------------------------------------------------------------------//	
 	
 	public ParkSpot() {}
@@ -81,10 +83,12 @@ public class ParkSpot extends EntityModel implements Serializable {
 	public ParkSpot(String status, String spotRef){
 		this.status=status;
 		this.spotRef=spotRef;
-	}		
+		
+	}
 	
 	public ParkSpot(String spotRef){
 		this.spotRef=spotRef;
+		
 	}
 }
 
