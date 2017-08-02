@@ -21,7 +21,7 @@
 					<p:dataTable id="VehicleList" var="vehicleList"
 						value="#{VehicleBean.vehicles}" selectionMode="single"
 						selection="#{VehicleBean.activeVehicle}" rowKey="#{vehicleList.id}"
-						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
 						paginator="true" rows="10" style="margin-bottom:20px">
 							
 						<f:facet name="header">
